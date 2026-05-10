@@ -1,0 +1,10 @@
+{
+  "id": "shmry-79b8d80e",
+  "customer_id": "cust-565860b7",
+  "service": "ai_ml",
+  "plan": "enterprise",
+  "region": "Islamabad-A",
+  "status": "RUNNING",
+  "isolation": "tenant-directory",
+  "created_at": 1778315466.544644
+}

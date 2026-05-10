@@ -1,0 +1,12 @@
+{
+  "id": "shmry-47376f63",
+  "customer_id": "cust-ext-001",
+  "service": "compute_pro",
+  "plan": "starter",
+  "region": "Islamabad-A",
+  "status": "RUNNING",
+  "isolation": "tenant-directory",
+  "created_at": 1778317917.1552958,
+  "healed_at": 1778397054.2847836,
+  "healed_by": "shmry_healer"
+}

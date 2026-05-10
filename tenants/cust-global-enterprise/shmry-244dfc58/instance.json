@@ -1,0 +1,9 @@
+{
+  "id": "shmry-244dfc58",
+  "customer_id": "cust-global-enterprise",
+  "service": "erp_backbone",
+  "plan": "enterprise",
+  "status": "RUNNING",
+  "capabilities": ["multi-tenant", "global-reach"],
+  "timestamp": 1778411443
+}

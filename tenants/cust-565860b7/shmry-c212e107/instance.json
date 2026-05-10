@@ -1,0 +1,10 @@
+{
+  "id": "shmry-c212e107",
+  "customer_id": "cust-565860b7",
+  "service": "compute",
+  "plan": "enterprise",
+  "region": "Islamabad-A",
+  "status": "RUNNING",
+  "isolation": "tenant-directory",
+  "created_at": 1778315466.2721038
+}

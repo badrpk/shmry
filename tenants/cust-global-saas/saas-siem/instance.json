@@ -1,0 +1,12 @@
+{
+  "id": "saas-siem",
+  "customer_id": "cust-global-saas",
+  "service": "siem",
+  "plan": "CATALOG_STUB",
+  "region": "global",
+  "status": "HEALTHY",
+  "provider": "SHMRY-NIFDU",
+  "type": "saas_catalog_stub",
+  "created_at": 1778411458,
+  "note": "Catalog metadata only. Not a real deployed SaaS workload."
+}

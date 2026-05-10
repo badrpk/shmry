@@ -1,0 +1,12 @@
+{
+  "id": "saas-ticketing",
+  "customer_id": "cust-global-saas",
+  "service": "ticketing",
+  "plan": "CATALOG_STUB",
+  "region": "global",
+  "status": "HEALTHY",
+  "provider": "SHMRY-NIFDU",
+  "type": "saas_catalog_stub",
+  "created_at": 1778411456,
+  "note": "Catalog metadata only. Not a real deployed SaaS workload."
+}

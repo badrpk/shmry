@@ -1,0 +1,9 @@
+{
+  "id": "shmry-85c7904b",
+  "customer_id": "cust-global-enterprise",
+  "service": "cdn_edge_global",
+  "plan": "enterprise",
+  "status": "RUNNING",
+  "capabilities": ["multi-tenant", "global-reach"],
+  "timestamp": 1778411443
+}

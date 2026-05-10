@@ -1,0 +1,9 @@
+{
+  "id": "shmry-234b5189",
+  "customer_id": "cust-global-enterprise",
+  "service": "fintech_ledger",
+  "plan": "enterprise",
+  "status": "RUNNING",
+  "capabilities": ["multi-tenant", "global-reach"],
+  "timestamp": 1778411443
+}

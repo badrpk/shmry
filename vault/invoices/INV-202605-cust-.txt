@@ -1,0 +1,10 @@
+--- SHMRY SOVEREIGN CLOUD INVOICE ---
+Invoice ID: INV-202605-cust-
+Customer:   TechLogix_Global (cust-ext-001)
+Date:       2026-05-10
+------------------------------------
+Base Tier (business):      $499.00
+Data Usage (476.84 MB):  $23.84
+------------------------------------
+TOTAL DUE:                $522.84
+Status:                   UNPAID

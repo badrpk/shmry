@@ -1,0 +1,6 @@
+{
+  "shmry_compute": { "equivalent": ["EC2", "GCE", "Azure VM"], "status": "staged" },
+  "shmry_storage": { "equivalent": ["S3", "Google Cloud Storage", "Oracle Object"], "status": "staged" },
+  "shmry_ai_ml": { "equivalent": ["Vertex AI", "Bedrock", "Azure OpenAI"], "status": "staged" },
+  "shmry_productivity": { "equivalent": ["M365", "Google Workspace", "Meta Workplace"], "status": "staged" }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "shmry-f03be6a5",
+  "customer_id": "cust-global-enterprise",
+  "service": "hrm_payroll",
+  "plan": "enterprise",
+  "status": "RUNNING",
+  "capabilities": ["multi-tenant", "global-reach"],
+  "timestamp": 1778411443
+}

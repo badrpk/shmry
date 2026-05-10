@@ -1,0 +1,10 @@
+{
+  "id": "shmry-c1282615",
+  "customer_id": "cust-565860b7",
+  "service": "storage",
+  "plan": "enterprise",
+  "region": "Islamabad-A",
+  "status": "RUNNING",
+  "isolation": "tenant-directory",
+  "created_at": 1778315466.4111521
+}

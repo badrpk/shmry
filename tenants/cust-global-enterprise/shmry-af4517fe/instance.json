@@ -1,0 +1,9 @@
+{
+  "id": "shmry-af4517fe",
+  "customer_id": "cust-global-enterprise",
+  "service": "crm_master",
+  "plan": "enterprise",
+  "status": "RUNNING",
+  "capabilities": ["multi-tenant", "global-reach"],
+  "timestamp": 1778411443
+}
