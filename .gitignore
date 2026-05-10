@@ -1,6 +1,5 @@
-venv/
+secrets/
+*.env
+get-docker.sh
 __pycache__/
-*.log
-*.bin
-snapshots/
-tenants/*/instance.json
+*.pyc

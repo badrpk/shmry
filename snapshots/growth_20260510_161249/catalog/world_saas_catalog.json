@@ -1,0 +1,8 @@
+{
+  "catalog": "world_saas_categories",
+  "provider": "SHMRY-NIFDU",
+  "status": "expanded",
+  "mode": "metadata_stubs",
+  "created_at": 1778411460,
+  "warning": "This does not mean SHMRY/NIFDU truly offers every SaaS product in the world. It creates broad category coverage stubs."
+}
