@@ -1,13 +1,14 @@
 # SHMRY Runbook
 
-## Health Check
-`./scripts/healthcheck.sh`
+## Verify
+Run: ./scripts/healthcheck.sh
 
-## Maintenance
-- **Pulse:** `curl -s http://localhost:5000/pulse`
-- **Audit:** `tail -f logs/shmry_intelligence.log`
-- **Backup:** `cp vault/shmry_cloud.db backups/shmry_$(date +%Y%m%d).db`
+## Backup
+Run: ./scripts/backup.sh
 
-## Response
-1. `systemctl --user status shmry-intelligence`
-2. `find tenants -name instance.json -exec jq empty {} \;`
+## Restore
+Run: ./scripts/restore_latest.sh
+
+## Dashboard
+Run: python3 observability/dashboard.py
+Open: http://localhost:8088
