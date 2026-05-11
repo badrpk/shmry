@@ -9,3 +9,4 @@
 {"ts": 1778315466.7063873, "event": "INVOICE_CREATED", "payload": {"invoice_id": "inv-ac8b24e6", "customer_id": "cust-565860b7", "amount": 2500}}
 {"ts": 1778315467.0618842, "event": "INSTANCE_PROVISIONED", "payload": {"id": "shmry-3efd0d99", "customer_id": "cust-565860b7", "service": "devops", "plan": "enterprise", "region": "Islamabad-A", "status": "RUNNING", "isolation": "tenant-directory", "created_at": 1778315466.8531096}}
 {"ts": 1778315467.0621626, "event": "INVOICE_CREATED", "payload": {"invoice_id": "inv-a07d692c", "customer_id": "cust-565860b7", "amount": 2500}}
+{"id": "TEST_LEAD_99", "timestamp": "2026-05-11T06:45:14Z", "tenant": "cust-global-saas", "payload": "CRM Service Test"}
