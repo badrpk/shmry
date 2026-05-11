@@ -15,7 +15,3 @@
 - persistent memory
 - governance before execution
 - modular subsystems
-
-## Design Goal
-
-SHMRY wraps autonomous execution inside supervision and auditability.
