@@ -1,0 +1,13 @@
+{
+  "max_sharpe_portfolio": {
+    "expected_return": "18.21%",
+    "volatility": "16.47%",
+    "sharpe_ratio": 0.436,
+    "weights": {
+      "ENGROH": "20.34%",
+      "LUCK": "39.75%",
+      "HUBC": "39.89%",
+      "OGDC": "0.02%"
+    }
+  }
+}

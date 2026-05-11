@@ -1,0 +1,659 @@
+[
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Manual test mint",
+    "timestamp": 1777583208.5143907,
+    "prev": "GENESIS",
+    "hash": "b8c23753bec7b605c6a34a9198a9a124999a1121f775ed8c5b8607886f24808a"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583214.0794108,
+    "prev": "b8c23753bec7b605c6a34a9198a9a124999a1121f775ed8c5b8607886f24808a",
+    "hash": "354c894c03a9cf650523e1b1c9b99f069cda74325b1f56d2d4984911c700c3d0"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583214.0835664,
+    "prev": "354c894c03a9cf650523e1b1c9b99f069cda74325b1f56d2d4984911c700c3d0",
+    "hash": "6b88449016c20601bdaa1413cdb6610a4abffde2165b350b11ec8d57ead0a736"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583214.0894945,
+    "prev": "6b88449016c20601bdaa1413cdb6610a4abffde2165b350b11ec8d57ead0a736",
+    "hash": "f98fc67a5c40e43789500656420b1a0238cf7cab05cc91ce5b326903b68c2f1c"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583214.0905974,
+    "prev": "f98fc67a5c40e43789500656420b1a0238cf7cab05cc91ce5b326903b68c2f1c",
+    "hash": "cc21cbc8a403a2a97ca45237367ee0e672a59e451630e891b2d0be47c11f4883"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583274.0935283,
+    "prev": "cc21cbc8a403a2a97ca45237367ee0e672a59e451630e891b2d0be47c11f4883",
+    "hash": "5e08b6af9cbdc3f18f2e7c4d6980376aef94f3c8e4ae2bb2d93ab1171043244c"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583274.1003313,
+    "prev": "5e08b6af9cbdc3f18f2e7c4d6980376aef94f3c8e4ae2bb2d93ab1171043244c",
+    "hash": "2da7e815f1d1abb4d789a8c8143b3d6e1919b01ec0add3de41297ced88b41d3f"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583274.1034565,
+    "prev": "2da7e815f1d1abb4d789a8c8143b3d6e1919b01ec0add3de41297ced88b41d3f",
+    "hash": "aef6ff2051b07a5c54ab50de29b7b757fc70fd43b4b04c87b8a69c6a41ca8547"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583274.1068919,
+    "prev": "aef6ff2051b07a5c54ab50de29b7b757fc70fd43b4b04c87b8a69c6a41ca8547",
+    "hash": "42eb392c7129c61e3f489c37abd0fdfb83c3754cd165b6e24be24d0378d8622b"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583334.1117299,
+    "prev": "42eb392c7129c61e3f489c37abd0fdfb83c3754cd165b6e24be24d0378d8622b",
+    "hash": "bc9db76c4bb7ea2c8de1193597c5f6e961f56ae1534c9d6741b5b2a94357e748"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583334.1156435,
+    "prev": "bc9db76c4bb7ea2c8de1193597c5f6e961f56ae1534c9d6741b5b2a94357e748",
+    "hash": "0f23ac63941fcdf9c80867603ef8f685ae03ef53943c38918668bb8414f90afd"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583334.1189132,
+    "prev": "0f23ac63941fcdf9c80867603ef8f685ae03ef53943c38918668bb8414f90afd",
+    "hash": "8e46c747a01571d72f1a69013b2d452ffa744bfe516f116c9f833fda67f75b8c"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583334.1224682,
+    "prev": "8e46c747a01571d72f1a69013b2d452ffa744bfe516f116c9f833fda67f75b8c",
+    "hash": "e6126ae32b008c8da3f56de85f66db3f9a1e71ad512437acbb491297677a7cc7"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583394.1276858,
+    "prev": "e6126ae32b008c8da3f56de85f66db3f9a1e71ad512437acbb491297677a7cc7",
+    "hash": "a4e34a2da79d974abc8805bc63247f21698b05575b67aba6b4113919b4ae55ab"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583394.131769,
+    "prev": "a4e34a2da79d974abc8805bc63247f21698b05575b67aba6b4113919b4ae55ab",
+    "hash": "5711a5ab6d527e8c4ffb9e493c19797fb664e0ad06893beb2726d9747140866a"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583394.1355002,
+    "prev": "5711a5ab6d527e8c4ffb9e493c19797fb664e0ad06893beb2726d9747140866a",
+    "hash": "5f6eefc77d68bf40296384d3749ec8117f9a37f7d9576285cd2e19798686c851"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583394.1398642,
+    "prev": "5f6eefc77d68bf40296384d3749ec8117f9a37f7d9576285cd2e19798686c851",
+    "hash": "2146b59eaeaaf1065dfe4bbb052569fa424faf6ffa36f587ca13200dc0ad792b"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583454.1468647,
+    "prev": "2146b59eaeaaf1065dfe4bbb052569fa424faf6ffa36f587ca13200dc0ad792b",
+    "hash": "d29aeb31e2cd1660167c88fb1436544cbffc05a63f2b0eee6faab6329cc7d1cd"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583454.149372,
+    "prev": "d29aeb31e2cd1660167c88fb1436544cbffc05a63f2b0eee6faab6329cc7d1cd",
+    "hash": "944d0b17f79bf486143dd2b2472b46af0c9fde7413d43b58feb4502f7d14d324"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583454.150958,
+    "prev": "944d0b17f79bf486143dd2b2472b46af0c9fde7413d43b58feb4502f7d14d324",
+    "hash": "8241701e3d54066309642da0b01b49157d1051ceda3d94105358e49633be71dd"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583454.1522458,
+    "prev": "8241701e3d54066309642da0b01b49157d1051ceda3d94105358e49633be71dd",
+    "hash": "aa22eeb9b1d3b1044931d0f5c72745b59ceeb1bd279319d166af43a9aa0c402d"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583514.191543,
+    "prev": "aa22eeb9b1d3b1044931d0f5c72745b59ceeb1bd279319d166af43a9aa0c402d",
+    "hash": "1e0a6b79a467f64406b097e7924632f58df8fb10b94352c049e97e8c15132a8a"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583514.2716289,
+    "prev": "1e0a6b79a467f64406b097e7924632f58df8fb10b94352c049e97e8c15132a8a",
+    "hash": "607c56e81fd1f99816b22b679efb5446cd70a7546e8bd347f4eba6ee7aac76b4"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583514.278788,
+    "prev": "607c56e81fd1f99816b22b679efb5446cd70a7546e8bd347f4eba6ee7aac76b4",
+    "hash": "82491bed3e6af851646bec882eb590f6dc2b0177a2ed7f43109feb35570387df"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583514.2921045,
+    "prev": "82491bed3e6af851646bec882eb590f6dc2b0177a2ed7f43109feb35570387df",
+    "hash": "e222a222d2930b28c69d5d1f0124cd6d6c421b848f02ff06defba3703ea49051"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583574.2943184,
+    "prev": "e222a222d2930b28c69d5d1f0124cd6d6c421b848f02ff06defba3703ea49051",
+    "hash": "6a3f6e8873562fe75540b8967579f8056516629719baa5f641b74772271a1176"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583574.2961767,
+    "prev": "6a3f6e8873562fe75540b8967579f8056516629719baa5f641b74772271a1176",
+    "hash": "5d0eb92b9f22addc0417e0a4938568eca0646761f69af71875a2a03aa91b9a8f"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583574.2980618,
+    "prev": "5d0eb92b9f22addc0417e0a4938568eca0646761f69af71875a2a03aa91b9a8f",
+    "hash": "bbeaed72c53adc0549df95d69d8c40ee9c8eb1366686972a6c090da27fc88c86"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583574.2995417,
+    "prev": "bbeaed72c53adc0549df95d69d8c40ee9c8eb1366686972a6c090da27fc88c86",
+    "hash": "703fb269a64c373c9af6bb170cd511ab4f233823d481a586f106a891b4b918cb"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583634.3018267,
+    "prev": "703fb269a64c373c9af6bb170cd511ab4f233823d481a586f106a891b4b918cb",
+    "hash": "678d21eccefeecdc62e045660ee0338849b348d17b33b9e305c5e7b6fc349f32"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583634.3036444,
+    "prev": "678d21eccefeecdc62e045660ee0338849b348d17b33b9e305c5e7b6fc349f32",
+    "hash": "810f1b5122cbdd219c744f6704f6a8144d224bd8af1d8cc25fce7b92c20d2780"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583634.3055015,
+    "prev": "810f1b5122cbdd219c744f6704f6a8144d224bd8af1d8cc25fce7b92c20d2780",
+    "hash": "1630b0cdb33f5d189f68cc6bffeaae7ab0f4e4501510b6349c2299aed446a01d"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583634.3076835,
+    "prev": "1630b0cdb33f5d189f68cc6bffeaae7ab0f4e4501510b6349c2299aed446a01d",
+    "hash": "c467281785e40d47e7f3f102a85d311503b1e0e53a5cfb2b82741d5edbf3a828"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583694.3115394,
+    "prev": "c467281785e40d47e7f3f102a85d311503b1e0e53a5cfb2b82741d5edbf3a828",
+    "hash": "611ce6c57469cd3cf0a70f6baa7a629735f83208b6045797f76f50b87e303ed1"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583694.3156745,
+    "prev": "611ce6c57469cd3cf0a70f6baa7a629735f83208b6045797f76f50b87e303ed1",
+    "hash": "ac388887278288bfc1174b72d7c40afab09b119bf0eb92835b2eef232113e664"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583694.3176448,
+    "prev": "ac388887278288bfc1174b72d7c40afab09b119bf0eb92835b2eef232113e664",
+    "hash": "8658f8d7c8b07c81b942b63a24023c5be5f48984f39f7b8fc9d49c449fad57f4"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583694.3196912,
+    "prev": "8658f8d7c8b07c81b942b63a24023c5be5f48984f39f7b8fc9d49c449fad57f4",
+    "hash": "2cd2690a5a494c9d9f7c38f2e24777d216d0104bf3b26c8c80ac36f24a547dcf"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583754.328158,
+    "prev": "2cd2690a5a494c9d9f7c38f2e24777d216d0104bf3b26c8c80ac36f24a547dcf",
+    "hash": "48a4f6242242e05eb87d343ffdc83a0b18983c39e4d976e150b2cabc4b453f43"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583754.336062,
+    "prev": "48a4f6242242e05eb87d343ffdc83a0b18983c39e4d976e150b2cabc4b453f43",
+    "hash": "10c9a08812924d4981988a1ade2865f84c6a9c78d05947518c458304cd8962a0"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583754.338535,
+    "prev": "10c9a08812924d4981988a1ade2865f84c6a9c78d05947518c458304cd8962a0",
+    "hash": "ae358b6f73daca7221927a0742ee3040ab4e7e3150acd8c96de945157efdde7a"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583754.341738,
+    "prev": "ae358b6f73daca7221927a0742ee3040ab4e7e3150acd8c96de945157efdde7a",
+    "hash": "0caac5c2bd46dc72e9fb9c44a414a1b7869e3538a4d3a5119434e3d1cb7abb10"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583814.3485246,
+    "prev": "0caac5c2bd46dc72e9fb9c44a414a1b7869e3538a4d3a5119434e3d1cb7abb10",
+    "hash": "4c8f8dc3589527fc012b1c8df035e8291e8a929f24783a40a7efc401b528ec1f"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583814.3628743,
+    "prev": "4c8f8dc3589527fc012b1c8df035e8291e8a929f24783a40a7efc401b528ec1f",
+    "hash": "06037f5a26227b99eb3eb4345dde9097b2de227eb61d20c237837808a7542eb1"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583814.3669157,
+    "prev": "06037f5a26227b99eb3eb4345dde9097b2de227eb61d20c237837808a7542eb1",
+    "hash": "09923159e9d8c9ea7fb11af32bdf67ea43bfb0da127f24c0f106dc4b69aa87a8"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583814.3690083,
+    "prev": "09923159e9d8c9ea7fb11af32bdf67ea43bfb0da127f24c0f106dc4b69aa87a8",
+    "hash": "dd61696e424b6f78cc61d9116a84dc2e248ac47d923b406eeb472d32814a8d8e"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583874.373086,
+    "prev": "dd61696e424b6f78cc61d9116a84dc2e248ac47d923b406eeb472d32814a8d8e",
+    "hash": "7e647218fe6625cd235c660bd78b860c0c44e6a3e962b4ee9b99bbff8ef64374"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583874.375512,
+    "prev": "7e647218fe6625cd235c660bd78b860c0c44e6a3e962b4ee9b99bbff8ef64374",
+    "hash": "bcc5eca6aa31eecc4023ff2940e2b73355953c99ab419a39cf1bb3b14d22a77a"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583874.3775997,
+    "prev": "bcc5eca6aa31eecc4023ff2940e2b73355953c99ab419a39cf1bb3b14d22a77a",
+    "hash": "7315fda521fe153329672920e7e91835bc71395469dddbd93f7dcb465841c8f7"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583874.380244,
+    "prev": "7315fda521fe153329672920e7e91835bc71395469dddbd93f7dcb465841c8f7",
+    "hash": "44f8a79f10d2eb2e6afb695d12cf660881153f00fb7e4c68ab25cbd71f1f76a5"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583934.3867242,
+    "prev": "44f8a79f10d2eb2e6afb695d12cf660881153f00fb7e4c68ab25cbd71f1f76a5",
+    "hash": "39f8e10bd0af8304b34c5a61cfb33c0e0037dcdd8c43df5b50e6433af83e7fe7"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583934.3900843,
+    "prev": "39f8e10bd0af8304b34c5a61cfb33c0e0037dcdd8c43df5b50e6433af83e7fe7",
+    "hash": "4b0842231fb72dcef84bec7ec5040d588776e4f18ae9323a364edf379bb521cb"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583934.3945873,
+    "prev": "4b0842231fb72dcef84bec7ec5040d588776e4f18ae9323a364edf379bb521cb",
+    "hash": "04659b200fbc3046a87446f2d5976df0704679d54c4183f528c97ad982860e64"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583934.403547,
+    "prev": "04659b200fbc3046a87446f2d5976df0704679d54c4183f528c97ad982860e64",
+    "hash": "1e7cf4403bd08d0c62a39e68052ba9350f6f9a99aac6e266889e95ecb41a4588"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583994.4080195,
+    "prev": "1e7cf4403bd08d0c62a39e68052ba9350f6f9a99aac6e266889e95ecb41a4588",
+    "hash": "3ea344e96897217fc1ede03e9a5fc4117d4aa84a4a9331a753adc72c82d3e0a0"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583994.4764547,
+    "prev": "3ea344e96897217fc1ede03e9a5fc4117d4aa84a4a9331a753adc72c82d3e0a0",
+    "hash": "db91485c1caa0f68c4b7f71100b8508579795b4ac755266183811622e63538ad"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583994.5585647,
+    "prev": "db91485c1caa0f68c4b7f71100b8508579795b4ac755266183811622e63538ad",
+    "hash": "0a878cc9f8f71fa7135a8441c60b227d2e9331339e4d8b7189d3ee3970b2ab00"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777583994.6311457,
+    "prev": "0a878cc9f8f71fa7135a8441c60b227d2e9331339e4d8b7189d3ee3970b2ab00",
+    "hash": "2772e93a5e88ae0bd206aa2800eec07ac84dac17c7a03e096096e6e3d9a60721"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584054.7984514,
+    "prev": "2772e93a5e88ae0bd206aa2800eec07ac84dac17c7a03e096096e6e3d9a60721",
+    "hash": "490753336c26bf63ab0ac663ffad3b72661ecab00c44a3b2344becbf5aba5f6b"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584054.8072522,
+    "prev": "490753336c26bf63ab0ac663ffad3b72661ecab00c44a3b2344becbf5aba5f6b",
+    "hash": "235791ada9d78f0da89bff651245b5657061dbab3d2b065531ae1e029338fa74"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584054.814868,
+    "prev": "235791ada9d78f0da89bff651245b5657061dbab3d2b065531ae1e029338fa74",
+    "hash": "3e21ba6c670b46a535851a5b76c8fae93251b89246bc4757fd1549864d307f22"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584054.8255374,
+    "prev": "3e21ba6c670b46a535851a5b76c8fae93251b89246bc4757fd1549864d307f22",
+    "hash": "dcb085be71dd1b2a0e9a7e3eb4e6366936f7e719fe840683bb5c5f4aab7b8e33"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584114.8339088,
+    "prev": "dcb085be71dd1b2a0e9a7e3eb4e6366936f7e719fe840683bb5c5f4aab7b8e33",
+    "hash": "f54265153e6c081f4fc8a9f1e7317b01aebc6e96f88123a2a6068d4bb8e998c4"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584114.8408248,
+    "prev": "f54265153e6c081f4fc8a9f1e7317b01aebc6e96f88123a2a6068d4bb8e998c4",
+    "hash": "2a614536aff9038214cb32ab50fce8706e4adea577b36fdd6aae0d5ed41d4868"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584114.8432374,
+    "prev": "2a614536aff9038214cb32ab50fce8706e4adea577b36fdd6aae0d5ed41d4868",
+    "hash": "c43b40ce9dbe2aa88c154d94fcc726c04a78036bcf92111aaab5b44343384e4c"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584114.8457658,
+    "prev": "c43b40ce9dbe2aa88c154d94fcc726c04a78036bcf92111aaab5b44343384e4c",
+    "hash": "e904391aa3267bb76320637818eb0329730170bd32131157a899676fb6670ea0"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584174.8488445,
+    "prev": "e904391aa3267bb76320637818eb0329730170bd32131157a899676fb6670ea0",
+    "hash": "da39f0bd96b381b5335b7b3f4079b77bc66e090883cf072ac21f656453a18f66"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584174.851616,
+    "prev": "da39f0bd96b381b5335b7b3f4079b77bc66e090883cf072ac21f656453a18f66",
+    "hash": "1517e86c9f948b7212d4c208e3c8a09b7c82e611824c8ffe5192706fff89a7a0"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584174.8777568,
+    "prev": "1517e86c9f948b7212d4c208e3c8a09b7c82e611824c8ffe5192706fff89a7a0",
+    "hash": "820c5736756e000205301785f116fa26c07c9292c116396642b6e807a106ed1f"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584174.8902564,
+    "prev": "820c5736756e000205301785f116fa26c07c9292c116396642b6e807a106ed1f",
+    "hash": "99af41aa391ba1c55a2c8f41c9e5d2afd66ce85676976dd3233326adb2cb5e59"
+  },
+  {
+    "type": "mint",
+    "to": "badrpk",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584234.8969147,
+    "prev": "99af41aa391ba1c55a2c8f41c9e5d2afd66ce85676976dd3233326adb2cb5e59",
+    "hash": "63da55506d09a0082e1776b797b72d6b213f3f25d5887a39e02a13bf9aa0c657"
+  },
+  {
+    "type": "mint",
+    "to": "soufia",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584234.903882,
+    "prev": "63da55506d09a0082e1776b797b72d6b213f3f25d5887a39e02a13bf9aa0c657",
+    "hash": "770125d24eec0c77c7ca939121f638a4db03fc7bcfb2e74dfd4049dc6160be16"
+  },
+  {
+    "type": "mint",
+    "to": "adnan",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584234.9070988,
+    "prev": "770125d24eec0c77c7ca939121f638a4db03fc7bcfb2e74dfd4049dc6160be16",
+    "hash": "ae31f6f263fe984794541eb7cd0d423f75237173895e89468b5eb297c1803cc8"
+  },
+  {
+    "type": "mint",
+    "to": "customer_beta",
+    "amount": 1.0,
+    "reason": "Presence Reward",
+    "timestamp": 1777584234.9102387,
+    "prev": "ae31f6f263fe984794541eb7cd0d423f75237173895e89468b5eb297c1803cc8",
+    "hash": "c8be979e4bed91abbaeb95905158df9888503fc951b31c37d4802c4468bcf82f"
+  }
+]

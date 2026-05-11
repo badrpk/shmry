@@ -1,0 +1,13 @@
+{
+  "ticker": "LUCK",
+  "parameters": {
+    "wacc_hurdle": "15.53%",
+    "growth_stage1": "12.9%",
+    "exit_multiple": 8.5
+  },
+  "valuation": {
+    "pv_growth_stage": 383768741518.51,
+    "pv_terminal_stage": 622711069825.98,
+    "total_intrinsic_value": 1006479811344.5
+  }
+}

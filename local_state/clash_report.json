@@ -1,0 +1,15 @@
+{
+  "winner_by_margin": "LUCK",
+  "winner_by_cost": "DGKC",
+  "luck_metrics": {
+    "cost_per_ton": 45718.75,
+    "ebitda_per_ton": 12520.83,
+    "margin_pct": 21.49
+  },
+  "dgkc_metrics": {
+    "cost_per_ton": 12500.0,
+    "ebitda_per_ton": 3370.37,
+    "margin_pct": 21.24
+  },
+  "clash_note": "LUCK leads in absolute EBITDA/Ton, but DGKC's 70% in-house power generation (WHRP/Solar) makes it more resilient to grid tariff spikes."
+}

@@ -1,0 +1,8 @@
+{
+  "ticker": "LUCK",
+  "economic_debt_pkr": 57000000000,
+  "shadow_debt_pct": "21.05%",
+  "commitment_risk": "STABLE",
+  "obs_leverage_score": 0.11,
+  "audit_note": "Shadow debt adds 11.3% to effective leverage. Future obligations well-covered."
+}

@@ -1,0 +1,77 @@
+{
+  "identity": "Sovereign Scientist",
+  "open_questions": [
+    "If I could run one experiment, what would reduce uncertainty the most?",
+    "What is the simplest explanation that fits the evidence I have?",
+    "What pattern repeats across recent signals and actions?"
+  ],
+  "beliefs": {
+    "xau_is_preferred": {
+      "p": 0.76,
+      "confidence": 0.59,
+      "why": "initial bias toward durable stores of value"
+    },
+    "xau_is_safe_haven": {
+      "p": 0.99,
+      "confidence": 0.01,
+      "notes": "epigenetic_update: strong_buy=5, churn=2, penalty=0.0"
+    },
+    "market_is_risk_on": {
+      "p": 0.5,
+      "confidence": 0.01,
+      "notes": "epigenetic_update: churn=2, penalty=0.0"
+    }
+  },
+  "last_entry_utc": "2026-02-04 07:55:30Z",
+  "recent_open_questions": [
+    {
+      "ts": "2026-02-18T13:54:54Z",
+      "q": "What is the smallest experiment that reduces uncertainty the most?"
+    },
+    {
+      "ts": "2026-02-18T13:55:55Z",
+      "q": "Where am I overconfident, and why?"
+    },
+    {
+      "ts": "2026-02-18T13:58:51Z",
+      "q": "What is the smallest experiment that reduces uncertainty the most?"
+    },
+    {
+      "ts": "2026-02-18T13:58:52Z",
+      "q": "What pattern repeats across signals and actions?"
+    },
+    {
+      "ts": "2026-02-18T14:03:21Z",
+      "q": "What evidence would falsify my current plan?"
+    },
+    {
+      "ts": "2026-02-18T14:03:21Z",
+      "q": "What pattern repeats across signals and actions?"
+    },
+    {
+      "ts": "2026-02-18T14:10:28Z",
+      "q": "What pattern repeats across signals and actions?"
+    },
+    {
+      "ts": "2026-02-18T14:12:20Z",
+      "q": "What is the smallest experiment that reduces uncertainty the most?"
+    },
+    {
+      "ts": "2026-02-18T14:14:27Z",
+      "q": "Where am I overconfident, and why?"
+    },
+    {
+      "ts": "2026-02-18T14:16:50Z",
+      "q": "Which assumption is most fragile right now?"
+    },
+    {
+      "ts": "2026-02-18T14:40:08Z",
+      "q": "What is the smallest experiment that reduces uncertainty the most?"
+    },
+    {
+      "ts": "2026-03-16T13:01:14Z",
+      "q": "Which assumption is most fragile right now?"
+    }
+  ],
+  "last_update_utc": "2026-03-16T13:01:14Z"
+}

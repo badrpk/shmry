@@ -1,0 +1,6 @@
+{
+  "dark": { "bg": "bg-slate-950", "accent": "text-cyan-400", "font": "Outfit" },
+  "swiss": { "bg": "bg-white", "accent": "text-red-600", "font": "Inter" },
+  "mono": { "bg": "bg-black", "accent": "text-emerald-500", "font": "JetBrains Mono" },
+  "strictness": 0.95
+}

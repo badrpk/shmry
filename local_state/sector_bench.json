@@ -1,0 +1,22 @@
+{
+  "Materials_Cement": {
+    "psx_avg_pe": 8.6,
+    "global_avg_pe": 14.2,
+    "status": "UNDERVALUED_RELATIVE",
+    "top_performers": [
+      "LUCK",
+      "MLCF",
+      "DGKC"
+    ]
+  },
+  "Energy_E_P": {
+    "psx_avg_pe": 8.1,
+    "global_avg_pe": 11.5,
+    "status": "CASH_COW_REGIME",
+    "top_performers": [
+      "OGDC",
+      "PPL",
+      "MARI"
+    ]
+  }
+}

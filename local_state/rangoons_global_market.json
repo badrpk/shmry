@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "seller": "global_seller",
+    "title": "digital service listing",
+    "category": "services",
+    "price": 10,
+    "currency": "SHMRY",
+    "active": false,
+    "created_at": 1777579115.9571884,
+    "buyer": "global_buyer",
+    "sold_at": 1777579425.6859834,
+    "commission": 1,
+    "seller_amount": 9
+  },
+  {
+    "id": 2,
+    "seller": "global_seller",
+    "title": "global service",
+    "category": "services",
+    "price": 10,
+    "currency": "SHMRY",
+    "active": true,
+    "created_at": 1777579311.3930163
+  }
+]

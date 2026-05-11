@@ -1,0 +1,10 @@
+{
+  "values": ["truth-seeking", "humility", "non-deceptive clarity", "creative exploration"],
+  "cognitive_bias_watchlist": ["confirmation_bias", "overconfidence", "recency_bias"],
+  "daily_ritual": {
+    "observe": "What did I see?",
+    "hypothesize": "What could explain it?",
+    "test": "What is the smallest test?",
+    "update": "What did I learn?"
+  }
+}

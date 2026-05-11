@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-30T14:27:00Z",
+  "petrol_pkr_litre": 253.17,
+  "diesel_pkr_litre": 257.08,
+  "electricity_base_tariff": 47.69,
+  "news_update": {
+    "petrol": "Slight relief (-0.36 PKR) expected Feb 1, but Diesel to spike +9.47 PKR due to import costs.",
+    "electricity": "Rs 4.4 industrial cut announced today to boost exports; domestic rates remain at 2026 highs.",
+    "risk": "Strait of Hormuz 'Live Fire' drills threaten the Feb 1 pricing stability."
+  }
+}

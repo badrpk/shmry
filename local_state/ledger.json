@@ -1,0 +1,19 @@
+{
+    "balance": 20275.25,
+    "history": [
+        {
+            "timestamp": "2026-02-03T22:23:18.027642",
+            "item": "Spiral Notebook Batch",
+            "gain": 1251.25,
+            "new_balance": 20000.25,
+            "hash": "60827beccf"
+        },
+        {
+            "timestamp": "2026-02-03T22:30:42.935448",
+            "item": "Rangoons Premium Spiral Notebook",
+            "gain": 275.0,
+            "new_balance": 20275.25,
+            "hash": "1e0c28ff78"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+  "hedge_target_pkr": 1899.9,
+  "target_units": {
+    "BTC": "0.00004941",
+    "ETH": "0.00062319",
+    "SOL": "0.00881096"
+  },
+  "strategy": "60/40 Large-Cap Hedge",
+  "note": "Hedge designed to offset PKR devaluation via 'Hard Money' BTC."
+}

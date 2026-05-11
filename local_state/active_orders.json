@@ -1,0 +1,144 @@
+[
+  {
+    "timestamp": "2026-02-05 23:30",
+    "customer": "Fariha (F-7)",
+    "product": "Stationery Bundle",
+    "status": "PAID",
+    "momentum": 7900
+  },
+  {
+    "timestamp": "2026-02-05 23:45",
+    "customer": "Laiba (F-7)",
+    "product": "Assorted Socks",
+    "status": "CONFIRMED",
+    "momentum": 9400,
+    "pushed_to_fariha": true,
+    "shipping_recheck_required": true
+  },
+  {
+    "customer": "Zain (E-11)",
+    "product": "Stationery Bundle",
+    "status": "CONFIRMED",
+    "momentum": 2500,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "Lead_923001",
+    "product": "Unicorn Geometry Box",
+    "status": "CONFIRMED",
+    "momentum": 1500,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "Lead_923002",
+    "product": "Hello Kitty Cutlery Set",
+    "status": "CONFIRMED",
+    "momentum": 1200,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "Lead_923003",
+    "product": "Unicorn Socks Set",
+    "status": "CONFIRMED",
+    "momentum": 1500,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "Lead_923004",
+    "product": "Stylish Cat Pouch",
+    "status": "CONFIRMED",
+    "momentum": 1200,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "Corporate_Alpha",
+    "product": "Flower Pens Bulk",
+    "status": "CONFIRMED",
+    "momentum": 4500,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "ISB_BOUTIQUE_F7",
+    "product": "Premium Rangoons Bulk Bundle",
+    "status": "CONFIRMED",
+    "momentum": 15000,
+    "pushed_to_fariha": true,
+    "shipping_recheck_required": true
+  },
+  {
+    "customer": "PUNJAB_DISTRO",
+    "product": "Bulk Stationery Crate",
+    "status": "CONFIRMED",
+    "momentum": 6000,
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "ALMATY_CORP_KAZ",
+    "product": "Bulk Stationery Export Bundle",
+    "status": "CONFIRMED",
+    "momentum": 200,
+    "currency": "USD",
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "ISB_RETAIL_OUTLET",
+    "product": "Unicorn Stationery Mega-Crate",
+    "momentum": 35000,
+    "status": "CONFIRMED",
+    "pushed_to_fariha": false,
+    "shipping_recheck_required": true
+  },
+  {
+    "customer": "LHR_DISTRO_HUB",
+    "product": "Premium Sock Collection Bulk",
+    "momentum": 55000,
+    "status": "CONFIRMED",
+    "pushed_to_fariha": false,
+    "shipping_recheck_required": true
+  },
+  {
+    "customer": "SOVEREIGN_ARCHITECT",
+    "product": "SHMRY_CORE_v2_BRAIN",
+    "momentum": 100000,
+    "status": "INTEGRATED",
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "RANGOONS_RESERVE",
+    "product": "Luxury Stationery Crate (15x)",
+    "momentum": 58500,
+    "status": "STOCKED",
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "ALMATY_TEST_BRIDGE",
+    "product": "Premium Sock Samples (Procured)",
+    "momentum": 1000,
+    "status": "OPERATIONAL",
+    "pushed_to_fariha": true
+  },
+  {
+    "customer": "ISB_TARGET_F7",
+    "product": "Retail Outlet (High-Traffic)",
+    "momentum": 25000,
+    "status": "SCOUTING",
+    "pushed_to_fariha": true,
+    "price_review_required": true
+  },
+  {
+    "customer": "ISB_TARGET_I8",
+    "product": "Retail Outlet (Mid-Density)",
+    "momentum": 20000,
+    "status": "SCOUTING",
+    "pushed_to_fariha": true,
+    "price_review_required": true
+  },
+  {
+    "customer": "ISB_TARGET_BAHRIA",
+    "product": "Retail Outlet (Expansive)",
+    "momentum": 15000,
+    "status": "SCOUTING",
+    "pushed_to_fariha": true,
+    "price_review_required": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-01-30T14:30:00Z",
+  "instruments": {
+    "pk_10y_pib": 11.03,
+    "pk_5y_pib": 10.53,
+    "pk_3y_pib": 10.14,
+    "us_pk_bond_2026": 6.00
+  },
+  "credit_metrics": {
+    "sbp_policy_rate": 10.50,
+    "kibor_6m": 10.49,
+    "sovereign_rating": "B- (Stable)",
+    "forex_reserves_total": "21.29B USD"
+  },
+  "analysis": "Yield curve remains slightly inverted at the front end; 10Y yields spiking on US-Iran naval tension. Reserves building but NIR remains negative."
+}

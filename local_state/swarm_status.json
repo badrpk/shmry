@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-22T23:47:53.685915",
+  "total_nodes": 2,
+  "nodes": [
+    {
+      "id": "Master-01",
+      "status": "ONLINE",
+      "temp_c": 45,
+      "efficiency_pct": 100
+    },
+    {
+      "id": "Shadow-01",
+      "status": "ONLINE",
+      "temp_c": 62,
+      "efficiency_pct": 98
+    }
+  ],
+  "healthy": true,
+  "revenue_risk_pkr_per_hr": 0.0
+}

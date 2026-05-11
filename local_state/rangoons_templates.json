@@ -1,0 +1,10 @@
+{
+  "Stationery": [
+    {"id":"S1", "text":"Hi {{name}}, checking in from Rangoons! We have new stationery stock in Rawalpindi. Would you like to see the catalog?"},
+    {"id":"S2", "text":"Salaam {{name}}! Rangoons here — fresh stationery arrivals today. Want prices + photos?"}
+  ],
+  "Socks": [
+    {"id":"K1", "text":"Hi {{name}}, Soufia here from Rangoons! Our new sock collection is in. Want me to send photos?"},
+    {"id":"K2", "text":"Hello {{name}} 👋 Rangoons update: new socks drop just landed. Should I share designs + rates?"}
+  ]
+}

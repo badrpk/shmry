@@ -1,0 +1,6 @@
+{
+  "alert_id": "ALRT_20260130_GSR",
+  "priority": "HIGH",
+  "note": "Current GSR 49.35 is within the historical success window (48-52) identified in 2025 memories.",
+  "action": "Authorization for PROPOSE_TRADE is active."
+}

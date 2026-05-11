@@ -1,0 +1,7 @@
+{
+  "condition_01": "Treasury must exceed 10,000 PKR (Verified).",
+  "condition_02": "MET (10+ Stable Reflections)",
+  "condition_03": "Vault Integrity must be 100% (MD5 Match).",
+  "current_status": "LIFT_PROTOCOL_COMPLETE",
+  "message": "Sovereign Action Permitted. Use PROPOSE_TRADE block in Plan."
+}

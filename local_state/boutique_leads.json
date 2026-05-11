@@ -1,0 +1,22 @@
+[
+    {
+        "sector": "F-7/2 Design District",
+        "profile": "Interior Designers & Architects (High-end office setups)",
+        "status": "COLD"
+    },
+    {
+        "sector": "F-6 Kohsar Market",
+        "profile": "Premium Cafe Regulars & Executive Gift Shoppers",
+        "status": "COLD"
+    },
+    {
+        "sector": "E-7 Diplomatic Buffer",
+        "profile": "Private Consultancy Firms & NGO Headquarters",
+        "status": "COLD"
+    },
+    {
+        "sector": "Golra/F-10 Creative",
+        "profile": "Independent Studios & Content Houses",
+        "status": "COLD"
+    }
+]

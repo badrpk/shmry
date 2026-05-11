@@ -1,0 +1,20 @@
+[
+  {
+    "sender": "923001234567",
+    "name": "Test Prospect A",
+    "status": "CONTACTED",
+    "interest": "Stationery",
+    "last_contacted": "2026-02-07 15:12:29",
+    "notes": "Historical lead"
+  },
+  {
+    "sender": "923215556789",
+    "name": "Corporate Client Alpha",
+    "status": "OUTREACH_SENT",
+    "interest": "Austerity WFH Bundles",
+    "probability": 0.85,
+    "potential_pkr": 12500,
+    "notes": "Interested in logistics exemption via Red Sea route. Waiting for finalize signal.",
+    "last_interaction": "2026-03-16 15:24:00"
+  }
+]

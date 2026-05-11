@@ -1,0 +1,14 @@
+{
+  "project": "SHMRY",
+  "core": "NIFDU",
+  "vitals": {
+    "target_treasury": "100,000 PKR",
+    "current_status": "Infrastructure Optimized",
+    "primary_asset": "XAU/Gold"
+  },
+  "rules": [
+    "Maintain sub-5ms latency",
+    "Ensure semantic portability",
+    "Prioritize sovereign data ownership"
+  ]
+}
