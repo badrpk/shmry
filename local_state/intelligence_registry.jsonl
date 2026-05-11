@@ -1,7 +1,0 @@
-{"entity":"Pearl Securities Islamabad","location":"ISE Towers, Suite 1014","contact":"051-2895066","instruction":"Initiate IPS account opening for T-Bill subscription; 350M PKR target","date":"2026-05-11"}
-{"entity":"IPS Account Status","action":"Verification","protocol":"Primary Dealer Link","priority":"CRITICAL","date":"2026-05-11"}
-{"entity":"IPS Account","status":"PENDING","action":"Contact Pearl Securities (051-2895066)","reason":"Verify primary dealer link for T-Bill subscription","date":"2026-05-11"}
-{"entity":"Safety Gate","status":"LOCKED","action":"Awaiting IPS/Yield Verification","priority":"FINAL","date":"2026-05-11"}
-{"entity":"Final Verdict","status":"SEALED","architecture":"L4 behavior-confirmed","native_audit":"L5_NATIVE_AUDIT_SUCCESS","safety_gate":"ACTIVE","next_action":"Pearl Securities IPS verification only; no transfer without human approval","date":"2026-05-11T13:24:00+05:00"}
-{"entity":"Sensory Cortex","status":"PIERCED","vibe":"-27.5dB","action":"Awaiting Voice/Phone Verification","date":"2026-05-11"}
-{"entity":"Sensory Cortex","status":"PIERCED","vibe":"-27.5dB","action":"Awaiting Voice/Phone Verification","date":"2026-05-11"}

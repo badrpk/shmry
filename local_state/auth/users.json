@@ -1,9 +1,0 @@
-{
-  "+10000000000": {
-    "phone": "+10000000000",
-    "vault_id": "0a6b22ab3a3450681386767fa2169f26fa0ccd507d250603f48ffafd02b6e0db",
-    "public_key": "ssh-ed25519 DEV_PUBLIC_KEY",
-    "created_at": 1777580389.1414213,
-    "status": "active"
-  }
-}

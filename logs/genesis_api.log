@@ -1,6 +1,0 @@
-[2026-04-30 23:29:09 +0500] [21727] [INFO] Starting gunicorn 25.3.0
-[2026-04-30 23:29:09 +0500] [21727] [INFO] Listening at: http://0.0.0.0:5001 (21727)
-[2026-04-30 23:29:09 +0500] [21727] [INFO] Using worker: sync
-[2026-04-30 23:29:09 +0500] [21736] [INFO] Booting worker with pid: 21736
-[2026-04-30 23:29:09 +0500] [21737] [INFO] Booting worker with pid: 21737
-[2026-04-30 23:29:10 +0500] [21727] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
