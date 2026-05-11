@@ -4,3 +4,4 @@ get-docker.sh
 __pycache__/
 *.pyc
 bin/nifdu_sez_ingestor
+bin/nifdu_load_balancer
