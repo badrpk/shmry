@@ -8,3 +8,7 @@ backups/
 .DS_Store
 .vscode/
 .idea/
+
+# Runtime logs
+*.log
+vault/*.log
