@@ -7,3 +7,7 @@ bin/nifdu_sez_ingestor
 bin/nifdu_load_balancer
 bin/nifdu_load_balancer
 bin/nifdu_mastery_final
+
+bin/nifdu_sez_ingestor
+bin/nifdu_load_balancer
+bin/nifdu_mastery_final
