@@ -1,7 +1,7 @@
 import time
 import random
 
-regions = ["Islamabad-A", "Lahore-A", "Global-Core"]
+regions = ["Islamabad-A", "Lahore-A", "Global-Core", "Karachi-A"]
 sez_count = 44
 
 print("=== SHMRY HYPERSCALE SERVICE MONITOR ===")
