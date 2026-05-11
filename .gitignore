@@ -3,3 +3,4 @@ secrets/
 get-docker.sh
 __pycache__/
 *.pyc
+bin/nifdu_sez_ingestor
