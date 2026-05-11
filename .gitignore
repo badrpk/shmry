@@ -1,13 +1,23 @@
-secrets/
-*.env
-get-docker.sh
+# Python
 __pycache__/
 *.pyc
-bin/nifdu_sez_ingestor
-bin/nifdu_load_balancer
-bin/nifdu_load_balancer
-bin/nifdu_mastery_final
+*.pyo
 
-bin/nifdu_sez_ingestor
-bin/nifdu_load_balancer
-bin/nifdu_mastery_final
+# Virtual environments
+.venv/
+venv/
+
+# Logs
+logs/
+*.log
+
+# Local runtime state
+local_state/
+backups/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
