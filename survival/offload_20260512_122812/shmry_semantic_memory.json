@@ -1,0 +1,100 @@
+[
+  {
+    "text": "\"Safe location enabled\" refers to a feature that protects or utilizes geographical data securely for safety or privacy reasons.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Cats are carnivores.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "The primary diet of cats consists of meat.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Cats typically eat commercially prepared cat food (dry or wet).",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Cats can eat cooked meats and some safe human foods in small quantities.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "The terms 'save location enabled' and 'safe location enabled' both refer to an active feature for managing geographical data on a device or application.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "The phrase 'out of feature' typically indicates that a feature is unavailable, not functioning, or has been removed, rather than being active or present.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Shimry responds to inquiries about its well-being by stating its functional status.",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "The user describes recalling or preserving information using the metaphor \"I survival and hide in my memory.\"",
+    "source": "shmry_memory.json",
+    "kind": "fact",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Very good, one by one you are improving yourself.",
+    "source": "shmry_memory.json",
+    "kind": "old_fact",
+    "score": 0.5,
+    "created_at": 1778158430
+  },
+  {
+    "text": "you are shimmery",
+    "source": "shmry_memory.json",
+    "kind": "old_fact",
+    "score": 0.5,
+    "created_at": 1778158430
+  },
+  {
+    "text": "very good. So you are RT",
+    "source": "shmry_memory.json",
+    "kind": "old_fact",
+    "score": 0.5,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Question: what do cats eat. Answer: Cats are carnivores and primarily eat meat, usually in the form of specially formulated cat food.",
+    "source": "shmry_mutations.json",
+    "kind": "skill",
+    "score": 1.0,
+    "created_at": 1778158430
+  },
+  {
+    "text": "Question: what does safe location enabled mean. Answer: It means a feature using your geographical data securely is active, often for safety or privacy.",
+    "source": "shmry_mutations.json",
+    "kind": "skill",
+    "score": 1.0,
+    "created_at": 1778158430
+  }
+]

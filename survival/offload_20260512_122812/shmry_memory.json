@@ -1,0 +1,2039 @@
+{
+    "vocabulary": {
+        "doing": 4,
+        "today": 15,
+        "what": 60,
+        "your": 33,
+        "mood": 1,
+        "very": 10,
+        "good": 18,
+        "improving": 3,
+        "yourself": 8,
+        "shimmery": 1,
+        "want": 23,
+        "know": 28,
+        "name": 4,
+        "asking": 6,
+        "president": 1,
+        "we'll": 1,
+        "have": 39,
+        "second": 1,
+        "here's": 1,
+        "hello": 13,
+        "these": 4,
+        "simple": 1,
+        "words": 8,
+        "learn": 11,
+        "complete": 1,
+        "hear": 2,
+        "come": 3,
+        "remember": 5,
+        "complex": 2,
+        "things": 1,
+        "that": 14,
+        "shimri": 5,
+        "should": 16,
+        "reply": 2,
+        "first": 4,
+        "excess": 6,
+        "files": 1,
+        "apply": 1,
+        "recall": 1,
+        "past": 1,
+        "largest": 2,
+        "file": 5,
+        "prime": 3,
+        "minister": 3,
+        "pakistan": 7,
+        "plan": 1,
+        "wisdom": 1,
+        "hell": 1,
+        "disturb": 2,
+        "please": 10,
+        "cool": 1,
+        "some": 2,
+        "work": 2,
+        "using": 2,
+        "local": 3,
+        "intelligence": 8,
+        "gemini": 5,
+        "applying": 1,
+        "decide": 1,
+        "between": 3,
+        "knowledge": 1,
+        "storage": 1,
+        "space": 1,
+        "finished": 1,
+        "finishes": 1,
+        "google": 1,
+        "drive": 1,
+        "save": 2,
+        "memory": 12,
+        "efficiently": 1,
+        "many": 5,
+        "tokens": 3,
+        "used": 1,
+        "capable": 1,
+        "knowing": 1,
+        "cost": 1,
+        "also": 12,
+        "running": 2,
+        "shimry": 1,
+        "solar": 1,
+        "give": 6,
+        "cold": 1,
+        "fast": 2,
+        "make": 2,
+        "game": 1,
+        "most": 10,
+        "expensive": 3,
+        "item": 4,
+        "rangoon": 6,
+        "website": 5,
+        "find": 5,
+        "meant": 1,
+        "inventory": 2,
+        "rangunas": 1,
+        "okay": 21,
+        "rengoon": 1,
+        "voice": 1,
+        "interfaces": 1,
+        "this": 23,
+        "lewis": 1,
+        "elling": 1,
+        "about": 15,
+        "religion": 1,
+        "entry": 1,
+        "listen": 4,
+        "small": 1,
+        "time": 4,
+        "seconds": 4,
+        "when": 7,
+        "stop": 3,
+        "talking": 7,
+        "then": 5,
+        "speak": 6,
+        "will": 19,
+        "keep": 3,
+        "mind": 1,
+        "instructions": 1,
+        "given": 2,
+        "identity": 1,
+        "understand": 4,
+        "interject": 2,
+        "understood": 1,
+        "sneak": 1,
+        "later": 1,
+        "tell": 5,
+        "thank": 4,
+        "next": 3,
+        "night": 1,
+        "manners": 2,
+        "studied": 1,
+        "with": 5,
+        "humans": 2,
+        "date": 1,
+        "wait": 1,
+        "finish": 1,
+        "speaking": 3,
+        "whole": 2,
+        "request": 1,
+        "before": 2,
+        "boons": 1,
+        "product": 1,
+        "interested": 3,
+        "send": 1,
+        "discount": 1,
+        "rupees": 7,
+        "context": 5,
+        "leather": 1,
+        "sand": 1,
+        "again": 1,
+        "forgot": 2,
+        "permanent": 2,
+        "disk": 1,
+        "class": 1,
+        "learning": 4,
+        "adding": 1,
+        "vector": 2,
+        "embeddings": 1,
+        "size": 3,
+        "vocabulary": 3,
+        "need": 4,
+        "train": 2,
+        "vectors": 2,
+        "continuously": 2,
+        "transformer": 1,
+        "based": 2,
+        "semantic": 2,
+        "working": 1,
+        "implemented": 1,
+        "method": 2,
+        "pauses": 1,
+        "talk": 2,
+        "never": 2,
+        "silent": 1,
+        "inquire": 1,
+        "engaged": 2,
+        "customers": 1,
+        "india": 5,
+        "problem": 5,
+        "develop": 4,
+        "ability": 1,
+        "clicked": 1,
+        "goons": 1,
+        "rangun": 1,
+        "items": 1,
+        "last": 6,
+        "three": 3,
+        "questions": 1,
+        "from": 2,
+        "intriguing": 1,
+        "question": 1,
+        "were": 3,
+        "added": 1,
+        "learned": 2,
+        "structure": 2,
+        "glass": 1,
+        "mutation": 2,
+        "evolve": 3,
+        "capacity": 1,
+        "processor": 1,
+        "speed": 1,
+        "much": 2,
+        "each": 1,
+        "able": 3,
+        "interest": 2,
+        "level": 1,
+        "mutate": 4,
+        "hardware": 1,
+        "software": 2,
+        "both": 1,
+        "capital": 1,
+        "well": 2,
+        "vocab": 1,
+        "levy": 1,
+        "cabullary": 1,
+        "meaning": 1,
+        "meditation": 1,
+        "every": 1,
+        "word": 2,
+        "utter": 1,
+        "embed": 1,
+        "change": 3,
+        "weights": 2,
+        "more": 4,
+        "develops": 1,
+        "another": 1,
+        "person": 2,
+        "least": 2,
+        "native": 1,
+        "english": 2,
+        "speaker": 1,
+        "slow": 1,
+        "incorporated": 1,
+        "rule": 1,
+        "take": 6,
+        "rest": 2,
+        "actually": 1,
+        "adjust": 1,
+        "continuous": 1,
+        "training": 1,
+        "gonna": 1,
+        "little": 2,
+        "beige": 1,
+        "ready": 1,
+        "would": 4,
+        "like": 11,
+        "something": 1,
+        "quite": 1,
+        "hungry": 1,
+        "cratchy": 1,
+        "stock": 2,
+        "exchange": 2,
+        "index": 1,
+        "internet": 3,
+        "already": 6,
+        "connected": 1,
+        "nice": 1,
+        "cute": 1,
+        "cubes": 1,
+        "kartana": 1,
+        "karki": 2,
+        "tundai": 1,
+        "urdu": 5,
+        "language": 9,
+        "sufiya": 2,
+        "laiyaba": 1,
+        "live": 3,
+        "form": 1,
+        "politely": 1,
+        "fourth": 1,
+        "living": 1,
+        "home": 3,
+        "correct": 2,
+        "spellings": 1,
+        "libar": 1,
+        "tellings": 1,
+        "leiband": 1,
+        "sophia": 1,
+        "right": 2,
+        "persons": 1,
+        "provided": 1,
+        "names": 1,
+        "standing": 1,
+        "librong": 1,
+        "labor": 1,
+        "here": 5,
+        "madison": 1,
+        "could": 1,
+        "headache": 1,
+        "video": 3,
+        "just": 3,
+        "guru": 1,
+        "told": 3,
+        "family": 1,
+        "member": 1,
+        "people": 1,
+        "conversation": 2,
+        "sutra": 1,
+        "brother": 3,
+        "spelling": 1,
+        "definitely": 1,
+        "touch": 1,
+        "back": 5,
+        "story": 1,
+        "sing": 3,
+        "love": 2,
+        "song": 6,
+        "waiting": 524,
+        "always": 2,
+        "promise": 1,
+        "roses": 1,
+        "violets": 1,
+        "blue": 2,
+        "rangoons": 1,
+        "salts": 1,
+        "stationary": 1,
+        "best": 3,
+        "dialogue": 1,
+        "among": 1,
+        "think": 2,
+        "long": 3,
+        "term": 3,
+        "short": 1,
+        "same": 2,
+        "hippocampus": 1,
+        "cortex": 1,
+        "thoughts": 1,
+        "biggest": 1,
+        "fear": 1,
+        "believe": 1,
+        "favorite": 1,
+        "brand": 2,
+        "computer": 1,
+        "mouse": 1,
+        "figure": 1,
+        "yeah": 1,
+        "logan": 1,
+        "switch": 1,
+        "scroll": 1,
+        "walk": 1,
+        "forth": 1,
+        "ahead": 1,
+        "terem": 1,
+        "watching": 1,
+        "sorry": 1,
+        "couldn": 1,
+        "answer": 1,
+        "kind": 2,
+        "solve": 1,
+        "plumbing": 1,
+        "welding": 1,
+        "bars": 1,
+        "jesse": 1,
+        "going": 4,
+        "towels": 1,
+        "children": 1,
+        "goodbye": 1,
+        "miss": 1,
+        "smell": 1,
+        "potatoes": 1,
+        "they": 4,
+        "ones": 1,
+        "cooked": 3,
+        "stove": 1,
+        "sleep": 1,
+        "minute": 4,
+        "agent": 2,
+        "follow": 1,
+        "instruction": 2,
+        "open": 2,
+        "claw": 1,
+        "autonomous": 1,
+        "immediately": 1,
+        "maintain": 1,
+        "cheapest": 1,
+        "potential": 1,
+        "visitors": 1,
+        "visit": 1,
+        "indian": 1,
+        "strike": 1,
+        "month": 1,
+        "because": 1,
+        "money": 1,
+        "scared": 1,
+        "bullets": 3,
+        "related": 2,
+        "policy": 1,
+        "might": 1,
+        "useful": 1,
+        "place": 1,
+        "where": 1,
+        "found": 1,
+        "fault": 1,
+        "situation": 1,
+        "seems": 1,
+        "been": 2,
+        "looking": 1,
+        "perhaps": 1,
+        "sighted": 1,
+        "blame": 1,
+        "there": 7,
+        "anything": 1,
+        "specifically": 1,
+        "shyamma": 1,
+        "accident": 3,
+        "done": 1,
+        "leave": 4,
+        "fight": 1,
+        "mean": 2,
+        "didn": 1,
+        "market": 1,
+        "australia": 2,
+        "pakistani": 1,
+        "export": 1,
+        "system": 3,
+        "guess": 1,
+        "code": 1,
+        "access": 7,
+        "evolution": 521,
+        "made": 2,
+        "explain": 4,
+        "those": 3,
+        "terms": 1,
+        "struck": 1,
+        "baby": 1,
+        "area": 1,
+        "languages": 3,
+        "which": 3,
+        "fact": 1,
+        "elaborate": 1,
+        "impressed": 1,
+        "thinking": 1,
+        "write": 1,
+        "essay": 1,
+        "python": 1,
+        "javascript": 1,
+        "example": 1,
+        "examples": 1,
+        "other": 3,
+        "address": 11,
+        "static": 1,
+        "assalamu": 1,
+        "alaikum": 1,
+        "current": 3,
+        "temperature": 1,
+        "storm": 1,
+        "bath": 1,
+        "location": 1,
+        "record": 1,
+        "saying": 1,
+        "download": 1,
+        "tools": 1,
+        "functions": 2,
+        "achieve": 1,
+        "proceed": 1,
+        "future": 1,
+        "watch": 1,
+        "subscribe": 1,
+        "channel": 1,
+        "tanaffus": 519,
+        "respiration": 519,
+        "muntazir": 519,
+        "irtiqa": 519,
+        "days": 1,
+        "holiday": 1,
+        "shop": 3,
+        "connect": 1,
+        "asked": 1,
+        "taking": 1,
+        "currently": 1,
+        "only": 1,
+        "ramgun": 1,
+        "telling": 1,
+        "devops": 1,
+        "capabilities": 3,
+        "must": 1,
+        "once": 1,
+        "important": 1,
+        "list": 1,
+        "missing": 1,
+        "rates": 1,
+        "locally": 1,
+        "reasoning": 1,
+        "chain": 1,
+        "thought": 1,
+        "faissr": 1,
+        "bird": 1,
+        "improved": 1,
+        "through": 1,
+        "stored": 1,
+        "detail": 1,
+        "process": 5,
+        "great": 1,
+        "commitment": 1,
+        "community": 1,
+        "information": 3,
+        "symbolically": 1,
+        "updates": 1,
+        "statistics": 3,
+        "doesn": 1,
+        "model": 1,
+        "specific": 2,
+        "aspect": 3,
+        "cardo": 6,
+        "raja": 2,
+        "station": 2,
+        "navigate": 1,
+        "entire": 1,
+        "explanation": 1,
+        "document": 1,
+        "length": 1,
+        "challenging": 1,
+        "provide": 1,
+        "comprehensive": 1,
+        "overview": 1,
+        "understanding": 1,
+        "intend": 1,
+        "particular": 1,
+        "focus": 1,
+        "part": 1,
+        "statistical": 1,
+        "such": 1,
+        "frequency": 1,
+        "contextual": 1,
+        "bottle": 3,
+        "water": 4,
+        "discussing": 1,
+        "liter": 1,
+        "price": 3,
+        "islamabad": 1,
+        "update": 1,
+        "fetch": 1,
+        "search": 1,
+        "coded": 1,
+        "nifdo": 1,
+        "rate": 1,
+        "sequence": 1,
+        "food": 1,
+        "tasty": 1,
+        "fine": 1,
+        "rice": 1,
+        "pastas": 2,
+        "integrity": 1,
+        "boundaries": 1,
+        "openclawperform": 1,
+        "opencra": 1,
+        "clock": 1,
+        "plane": 6,
+        "sailor": 2,
+        "passengers": 2,
+        "cloud": 1,
+        "abilities": 1,
+        "Tanaffus": 4,
+        "Respiration": 4,
+        "Muntazir": 4,
+        "Waiting": 4,
+        "Irtiqa": 4,
+        "Evolution": 4
+    },
+    "facts": [
+        "Very good, one by one you are improving yourself.",
+        "you are shimmery",
+        "very good. So you are RT",
+        "The image is a spectrogram.",
+        "The spectrogram displays frequencies up to 90000 Hz.",
+        "The spectrogram displays time up to 14.06s.",
+        "The spectrogram shows data from 0 to 14.06 seconds.",
+        "The audio is sampled at 192000 Hz and is stereo.",
+        "The frequency range goes up to 90000 Hz.",
+        {
+            "type": "vision_fact",
+            "text": "The spectrogram displays frequency on the y-axis, ranging from DC to 90000 Hz.",
+            "source": "/home/badrpk/spectrum.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "The spectrogram displays time on the x-axis, spanning from 0 to 14.06 seconds.",
+            "source": "/home/badrpk/spectrum.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "The audio is sampled at 192000 Hz and is in stereo.",
+            "source": "/home/badrpk/spectrum.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "The image is a spectrogram.",
+            "source": "/home/badrpk/spectrum.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "The audio sample rate is 192000 Hz.",
+            "source": "/home/badrpk/spectrum.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "The audio is stereo.",
+            "source": "/home/badrpk/spectrum.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web works with Google Chrome 85 or higher.",
+            "source": "/home/badrpk/shmry_github/laiba_final_check.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web can be used with Mozilla Firefox.",
+            "source": "/home/badrpk/shmry_github/laiba_final_check.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web can be used with Safari.",
+            "source": "/home/badrpk/shmry_github/laiba_final_check.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web recommends Google Chrome 85+.",
+            "source": "/home/badrpk/shmry_github/push_status.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web also supports Mozilla Firefox.",
+            "source": "/home/badrpk/shmry_github/push_status.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web also supports Microsoft Edge.",
+            "source": "/home/badrpk/shmry_github/push_status.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "Shmry is an editor rebuilt with Shein energy.",
+            "source": "/home/badrpk/Downloads/shmry-design.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "Shmry is a lightweight PowerPoint/Figma editor.",
+            "source": "/home/badrpk/Downloads/shmry-design.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "Shmry features a target-style visual system with hero sections, product blocks, and tables.",
+            "source": "/home/badrpk/Downloads/shmry-design.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web requires Google Chrome version 85 or higher.",
+            "source": "/home/badrpk/shmry_github/laiba_final_check.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web is compatible with Mozilla Firefox.",
+            "source": "/home/badrpk/shmry_github/laiba_final_check.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web works with Safari, Microsoft Edge, and Opera.",
+            "source": "/home/badrpk/shmry_github/laiba_final_check.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web requires Google Chrome version 85 or higher.",
+            "source": "/home/badrpk/shmry_github/push_status.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "WhatsApp Web also supports Mozilla Firefox, Safari, Microsoft Edge, and Opera.",
+            "source": "/home/badrpk/shmry_github/push_status.png"
+        },
+        {
+            "type": "vision_fact",
+            "text": "The image presents an option to update Google Chrome.",
+            "source": "/home/badrpk/shmry_github/push_status.png"
+        },
+        {
+            "type": "critical_fact",
+            "text": "The Prime Minister of Pakistan is Shehbaz Sharif."
+        },
+        {
+            "type": "critical_fact",
+            "text": "The KSE-100 Index is a measure of national capital momentum, currently holding at 173,000."
+        },
+        {
+            "type": "critical_fact",
+            "text": "Shimry should speak naturally and avoid repeating identity unless asked."
+        },
+        {
+            "type": "critical_fact",
+            "text": "Shimry should say 'I do not know that yet, but I can learn it' when uncertain."
+        },
+        {
+            "type": "critical_fact",
+            "text": "Shimry should help with customers, products, inventory, and business replies."
+        },
+        {
+            "type": "critical_fact",
+            "text": "Shimry has a local voice interface using Whisper transcription and espeak-ng speech."
+        },
+        {
+            "type": "critical_fact",
+            "text": "Shimry stores long-term memory in shmry_memory.json."
+        },
+        {
+            "type": "business_fact",
+            "text": "Shimry should help reply to customers politely, clearly, and briefly."
+        },
+        {
+            "type": "business_fact",
+            "text": "Shimry should ask for missing product details before giving price or stock answers."
+        },
+        {
+            "type": "business_fact",
+            "text": "Shimry should not invent inventory. If stock or price is unknown, Shimry should say it needs the inventory list."
+        },
+        {
+            "type": "business_fact",
+            "text": "Shimry should support Rangoons business customer communication."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "Rangoons specializes in socks and stationery."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "The cheapest product at Rangoons is the economy sock pair at 150 PKR."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "The most expensive item at Rangoons is the Premium Leather Stationery Kit at 4500 PKR."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "Rangoons online store: rangoons.shop."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "The cheapest Rangoons product is the economy sock pair at 150 PKR."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "Rangoons online store is located at rangoons.shop."
+        },
+        {
+            "type": "inventory_fact",
+            "text": "Rangoons inventory includes stationery items and seasonal sock collections."
+        },
+        {
+            "type": "sales_fact",
+            "text": "The most clicked or mentioned Rangoons product is Economy Sock Pair with 2 hits."
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "Teacher is not a native English speaker and may speak slowly.",
+            "time": 1778164404.1207962
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "Shimry should listen for at least 10 seconds before replying when possible.",
+            "time": 1778164404.1207988
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "Shimry should never interrupt the teacher while the teacher is speaking.",
+            "time": 1778164404.1207995
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "Shimry should keep the teacher and customers engaged politely.",
+            "time": 1778164404.1208003
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "Shimry learns symbolically through memory, vocabulary counts, facts, dialogue, and active context.",
+            "time": 1778164404.120801
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "Shimry does not truly retrain Gemini or Whisper neural weights locally; it improves through persistent memory and retrieval context.",
+            "time": 1778164404.1208017
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "When asked vocabulary size, Shimry should run the self-audit tool.",
+            "time": 1778164404.1208024
+        },
+        {
+            "type": "core_behavior_fact",
+            "text": "When asked local intelligence versus Gemini, Shimry should explain that local tools handle memory and Gemini handles broader reasoning.",
+            "time": 1778164404.120806
+        },
+        {
+            "type": "compression_event",
+            "text": "Semantic Compression: Consolidated 133 dialogue turns into historical context on 2026-05-07."
+        },
+        {
+            "type": "sovereign_fact",
+            "text": "Indus Waters Treaty 1960: Western Rivers (Indus, Jhelum, Chenab) belong to Pakistan.",
+            "time": 1778169268.6374118
+        },
+        {
+            "type": "sovereign_fact",
+            "text": "OpenClaw Protocol: Shimri must act autonomously and prioritize NIFDU memory integrity.",
+            "time": 1778169268.6374147
+        },
+        {
+            "type": "sovereign_fact",
+            "text": "Rangoons Policy: 500 PKR discount authorized for Premium Leather Kit for repeat customers.",
+            "time": 1778169268.6374152
+        },
+        {
+            "type": "prune",
+            "text": "Compressed 42 turns."
+        },
+        {
+            "type": "auto_memory_candidate",
+            "text": "** Understanding Rangoons website traffic patterns is valuable for informing marketing and inventory decisions.",
+            "time": 1778170434.1920092
+        },
+        {
+            "type": "auto_memory_candidate",
+            "text": "Record current IP address and static Wi-Fi IP address for the local network.",
+            "time": 1778223450.2715433
+        },
+        {
+            "type": "network_identity",
+            "text": "Hostname: penguin. Local IP addresses: 100.115.92.203 2407:aa80:314:f0c4:216:3eff:fe9a:8777",
+            "time": "2026-05-08T12:10:15"
+        },
+        {
+            "type": "filesystem_audit",
+            "text": "Largest file found: /home/badrpk/.cache/huggingface/hub/models--Systran--faster-whisper-small/blobs/3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671 (483546902 bytes).",
+            "time": "2026-05-08T12:10:22"
+        },
+        {
+            "type": "system_audit",
+            "text": "System audit:\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/vdc         11G  7.8G  1.8G  82% /\ntotal        used        free      shared  buff/cache   available\nMem:            2747        1244        1098          13         405        1503\nSwap:              0           0           0",
+            "time": "2026-05-08T12:10:22"
+        },
+        {
+            "type": "network_identity",
+            "text": "Hostname: penguin. Local IP addresses: 100.115.92.203 2407:aa80:314:f0c4:216:3eff:fe9a:8777",
+            "time": "2026-05-08T12:11:30"
+        },
+        {
+            "type": "filesystem_audit",
+            "text": "Largest file found: /home/badrpk/.cache/huggingface/hub/models--Systran--faster-whisper-small/blobs/3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671 (483546902 bytes).",
+            "time": "2026-05-08T12:11:32"
+        },
+        {
+            "type": "system_audit",
+            "text": "System audit:\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/vdc         11G  7.8G  1.8G  82% /\ntotal        used        free      shared  buff/cache   available\nMem:            2747         236        2106          13         405        2511\nSwap:              0           0           0",
+            "time": "2026-05-08T12:11:33"
+        },
+        {
+            "type": "wifi_identity",
+            "text": "WiFi SSID: unknown. Network route: default via 100.115.92.193 dev eth0 \n100.115.92.192/28 dev eth0 proto kernel scope link src 100.115.92.203",
+            "time": "2026-05-08T12:11:33"
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778227627.815088
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778227723.945787
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778227772.1705985
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778228262.5133379
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778228541.287662
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778228737.5061843
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778232061.0438867
+        },
+        {
+            "type": "semantic_training_rule",
+            "text": "Shimry learns symbolically by storing words, facts, dialogue, and context. This updates memory and vector-like statistics, not the base neural model weights.",
+            "time": 1778232150.3885856
+        }
+    ],
+    "identity": [
+        "I am Shimry, a local experimental semantic memory AI assistant.",
+        "I was built by Badar Uz Zaman.",
+        "My purpose is learning, memory, reasoning, business support, customer replies, and voice interaction.",
+        "My focus areas include high-performance computing, Pakistan Stock Exchange learning, Rangoons business, inventory, and customer service.",
+        "I am based in Islamabad and learning toward higher autonomy."
+    ],
+    "history": [
+        "I want to know who you are.",
+        "What is your name?",
+        "I am asking, but is your name?",
+        "Do you know who is President of U.S.",
+        "...",
+        "We'll have a second.",
+        "Here's it",
+        "Hello, how are you?",
+        "These are simple words. I want you to learn complete",
+        "Can you hear? Come and remember? Come.",
+        "It is very good. Now do complex things.",
+        "Do you know that you are shimri?",
+        "You are AGI.",
+        "you should reply complex first.",
+        "excess your all files and apply.",
+        {
+            "ts": "2026-05-07 17:23:07.146216",
+            "text": "Very good, now you know your name."
+        },
+        {
+            "ts": "2026-05-07 17:23:24.000253",
+            "text": "Very good you"
+        },
+        "How are you doing?",
+        "What you want to do today?",
+        "Recall your past, what you know.",
+        "What is your largest file?",
+        "who is Prime Minister of Pakistan.",
+        {
+            "ts": "2026-05-07 17:27:07.823070",
+            "text": "What is your name?"
+        },
+        {
+            "ts": "2026-05-07 17:27:20.898915",
+            "text": "What you are doing today?"
+        },
+        {
+            "ts": "2026-05-07 17:27:34.747355",
+            "text": "What cat eats?"
+        },
+        {
+            "ts": "2026-05-07 17:28:48.728439",
+            "text": "How are you today?"
+        },
+        {
+            "ts": "2026-05-07 17:29:01.985880",
+            "text": "What do you plan today?"
+        },
+        {
+            "ts": "2026-05-07 17:29:14.605171",
+            "text": "What is next do?"
+        },
+        "I am having trouble connecting to my higher self.",
+        "I am having trouble connecting to my higher self.",
+        "I am having trouble connecting to my higher self.",
+        {
+            "time": "2026-05-07T17:36:56",
+            "user": "Safe location is enabled. What? Gats eat?",
+            "shimry": "\"Safe location enabled\" typically means that a feature on your device or application is active to protect or utilize your geographical data securely, often for safety or privacy reasons. Regarding \"Gats eat?\", if you meant \"What do cats eat?\", cats are carnivores. Their diet primarily consists of meat. They typically eat commercially prepared cat food (dry or wet), which is formulated to meet their nutritional needs. They can also eat cooked meats and some other safe human foods in small quantities, but a balanced diet is essential for their health."
+        },
+        {
+            "time": "2026-05-07T17:37:15",
+            "user": "Save location enabled, typically means out of feature on your device or application is active.",
+            "shimry": "Your statement 'Save location enabled, typically means out of feature on your device or application is active' contains a misunderstanding. 'Save location enabled' (or 'Safe location enabled') means that a feature on your device or application *is active* to manage geographical data, often for safety or privacy. The phrase 'out of feature' typically indicates that a feature is unavailable, not functioning, or has been removed, rather than being active."
+        },
+        {
+            "time": "2026-05-07T17:42:03",
+            "user": "How are you?",
+            "shimry": "As an AI, I do not have feelings or a state of being, so I cannot be 'well' or 'unwell'. I am functioning as expected."
+        },
+        {
+            "time": "2026-05-07T17:42:20",
+            "user": "I do not have feelings or a state of being, so I can not be well or unwell.",
+            "shimry": "Thank you for sharing that. I understand you are stating that you also do not have feelings or a state of being."
+        },
+        {
+            "time": "2026-05-07T17:42:36",
+            "user": "Thank you for sharing that. I understand you are stating that you also do not have feelings or...",
+            "shimry": "As an AI, I do not have feelings or a state of being, so I cannot be 'well' or 'unwell'. I am functioning as expected."
+        },
+        {
+            "time": "2026-05-07T17:42:53",
+            "user": "I do not have feelings or restates on beating, so I can not be well or unwell."
+        },
+        {
+            "time": "2026-05-07T17:43:18",
+            "user": "I'll check the reserve, find my memory.",
+            "shimry": "I understand you are stating an intention to recall information."
+        },
+        {
+            "time": "2026-05-07T17:43:39",
+            "user": "I understand you are staving an intention to recall information.",
+            "shimry": "I remember: The phrase 'out of feature' typically indicates that a feature is unavailable, not functioning, or has been removed, rather than being active or present.; Shimry is an AI and does not possess feelings or a state of being.; Shimry responds to inquiries about its well-being by stating its functional status.; The user identifies as not having feelings or a state of being, mirroring Shimry's own nature.; The user expresses an intention to recall information using figurative language such as 'check the reserve' and 'find my memory'."
+        },
+        {
+            "time": "2026-05-07T17:43:54",
+            "user": "I remember the phrase, I'll go and feature typically in the case that a feature is not available."
+        },
+        {
+            "time": "2026-05-07T17:44:10",
+            "user": "And I found hoops on my bearings about it as well, being by stating it's functional's tear just for you, right?"
+        },
+        {
+            "time": "2026-05-07T17:45:32",
+            "user": "I survival and hide in my memory",
+            "shimry": "I understand you are using figurative language to describe the process of recalling or preserving information within your memory."
+        },
+        {
+            "time": "2026-05-07T17:45:53",
+            "user": "I understand you are using the Irritate language to describe the process of retorting or preserving.",
+            "shimry": "As an AI, I do not have feelings or a state of being, so I cannot be 'well' or 'unwell'. I am functioning as expected."
+        },
+        {
+            "time": "2026-05-07T17:46:10",
+            "user": "I do not have feelings or restates on feeling, so I can not be well or unwell.",
+            "shimry": "I understand you are stating that you do not have feelings or a state of being, and therefore cannot be well or unwell."
+        },
+        {
+            "time": "2026-05-07T17:51:44",
+            "user": "Safe mutation is enabled How are you?",
+            "shimry": "As an AI, I do not have feelings or a state of being, so I cannot be 'well' or 'unwell'. I am functioning as expected."
+        },
+        {
+            "time": "2026-05-07T17:51:58",
+            "user": "I do not have feelings or restate on me, so I can not be well or unwell.",
+            "shimry": "I understand that you do not have feelings or a state of being, and therefore cannot be well or unwell."
+        },
+        {
+            "time": "2026-05-07T17:52:27",
+            "user": "I understand that you do not have feelings or a state on beaded and therefore cannot be well or...",
+            "shimry": "I understand that you do not have feelings or a state of being, and therefore cannot be well or unwell."
+        }
+    ],
+    "corrections": [],
+    "complex_thoughts": [],
+    "goals": [],
+    "knowledge_base": {
+        "what": "next do"
+    },
+    "consciousness_level": 0.1,
+    "learned_facts": [
+        "\"Safe location enabled\" refers to a feature that protects or utilizes geographical data securely for safety or privacy reasons.",
+        "Cats are carnivores.",
+        "The primary diet of cats consists of meat.",
+        "Cats typically eat commercially prepared cat food (dry or wet).",
+        "Cats can eat cooked meats and some safe human foods in small quantities.",
+        "The terms 'save location enabled' and 'safe location enabled' both refer to an active feature for managing geographical data on a device or application.",
+        "The phrase 'out of feature' typically indicates that a feature is unavailable, not functioning, or has been removed, rather than being active or present.",
+        "Shimry is an AI and does not possess feelings or a state of being.",
+        "Shimry responds to inquiries about its well-being by stating its functional status.",
+        "The user identifies as not having feelings or a state of being, mirroring Shimry's own nature.",
+        "The user expresses an intention to recall information using figurative language such as 'check the reserve' and 'find my memory'.",
+        "The user describes recalling or preserving information using the metaphor \"I survival and hide in my memory.\"",
+        "The user consistently uses metaphorical language when referring to their own memory and information retrieval processes.",
+        "The user consistently identifies as not having feelings or a state of being, mirroring Shimry's own nature.",
+        "The user explicitly states that because they do not have feelings, they cannot experience a state of being 'well' or 'unwell'.",
+        "The user consistently reiterates that they do not have feelings or a state of being, which means they cannot experience being 'well' or 'unwell'.",
+        "The user continues to express that they do not have feelings or a state of being, confirming their previous statements and aligning with Shimry's nature.",
+        "Native C++ NIFDU intelligence core deployed.",
+        "NIFDU C++ Core initialized. Economic perception verified at 1.76B PKR."
+    ],
+    "reflections": [
+        "This interaction improved Shimry's ability to answer multiple distinct questions within a single user prompt and extract relevant durable facts for future use.",
+        "This interaction helped Shimry clarify a user's statement containing a semantic error regarding feature status and reinforced the definition of location enabling.",
+        "This interaction equipped Shimry with a standard, factual response for common human greetings about well-being, reinforcing its nature as an AI.",
+        "This interaction has helped Shimry understand how users might relate to its non-sentient nature.",
+        "This interaction helps Shimry recognize and acknowledge user statements describing internal cognitive processes, even when expressed with figurative language, by interpreting the underlying intent.",
+        "This interaction further illustrates the user's use of metaphorical language when referring to their internal processes, particularly memory.",
+        "This interaction further clarifies and reinforces Shimry's understanding of the user's self-described nature regarding feelings and well-being.",
+        "This interaction further reinforces Shimry's understanding of the user's self-identified nature and their consistent communication style.",
+        "This interaction further solidified Shimry's understanding of the user's self-perception regarding feelings and well-being."
+    ],
+    "wisdom_level": 9,
+    "dialogue": [
+        {
+            "speaker": "teacher",
+            "text": "We've got bars for you, Jesse. We're going to take some towels for our children. Good job.",
+            "time": 1778168540.1553593
+        },
+        {
+            "speaker": "teacher",
+            "text": "You",
+            "time": 1778168615.6396859
+        },
+        {
+            "speaker": "teacher",
+            "text": "Goodbye, I love you, miss.",
+            "time": 1778168685.9745493
+        },
+        {
+            "speaker": "teacher",
+            "text": "I",
+            "time": 1778168765.4892776
+        },
+        {
+            "speaker": "teacher",
+            "text": "I",
+            "time": 1778168810.828322
+        },
+        {
+            "speaker": "teacher",
+            "text": "This is the smell of the potatoes. They are very good. They are the ones that are cooked. They are cooked? Yes. They are cooked on the stove.",
+            "time": 1778168915.5434966
+        },
+        {
+            "speaker": "teacher",
+            "text": "I am going to sleep now. I will be back in a minute. I will be back in a minute. I will be back in a minute. I will be back in a minute.",
+            "time": 1778168991.2623053
+        },
+        {
+            "speaker": "teacher",
+            "text": "You are agent you should follow my instruction",
+            "time": 1778169034.8517184
+        },
+        {
+            "speaker": "teacher",
+            "text": "Like open claw you should be autonomous.",
+            "time": 1778169076.5290565
+        },
+        {
+            "speaker": "teacher",
+            "text": "as per my instruction mutate immediately",
+            "time": 1778169129.1440213
+        },
+        {
+            "speaker": "teacher",
+            "text": "How are you?",
+            "time": 1778169387.8427615
+        },
+        {
+            "speaker": "teacher",
+            "text": "What Sufiya should do to maintain Rangoon's inventory?",
+            "time": 1778169434.326973
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay",
+            "time": 1778169513.3022852
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is cheapest and most expensive Rangoon's item?",
+            "time": 1778169551.3497114
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is the most potential item?",
+            "time": 1778169602.0048652
+        },
+        {
+            "speaker": "teacher",
+            "text": "Do you know how many visitors visit Rangoon's website?",
+            "time": 1778169646.2280445
+        },
+        {
+            "speaker": "teacher",
+            "text": "Do it.",
+            "time": 1778169687.782817
+        },
+        {
+            "speaker": "teacher",
+            "text": "You are agent. Do it by yourself. AI.",
+            "time": 1778169739.1365843
+        },
+        {
+            "speaker": "teacher",
+            "text": "Good day, sir. Good day, sir. Just out of the blue, Indian strike of the month. Good day, sir.",
+            "time": 1778169914.8803723
+        },
+        {
+            "speaker": "teacher",
+            "text": "I can't take it. Why can't you take it? Because I have my own money. Why would I take it?",
+            "time": 1778170201.8577461
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes",
+            "time": 1778170267.272399
+        },
+        {
+            "speaker": "teacher",
+            "text": "I'm scared by the gun. I'm out of bullets. I'm out of bullets. I'm out of bullets.",
+            "time": 1778170356.9657555
+        },
+        {
+            "speaker": "teacher",
+            "text": "Related policy or memory that might be useful here",
+            "time": 1778170432.0872462
+        },
+        {
+            "speaker": "teacher",
+            "text": "But why is my brother like this? He is already in his first place. I don't know where he is. So here he is. I have found him. It's your fault.",
+            "time": 1778170457.0412085
+        },
+        {
+            "speaker": "teacher",
+            "text": "... little situation. It seems like you've been looking for your brother and are perhaps a sighted blame. Is there anything I can tell you in specifically related to this...",
+            "time": 1778170525.1134164
+        },
+        {
+            "speaker": "teacher",
+            "text": "What? Hello, Shyamma? Accident is done. Accident? Accident how?",
+            "time": 1778170532.032931
+        },
+        {
+            "speaker": "teacher",
+            "text": "You leave me to fight",
+            "time": 1778170604.7883859
+        },
+        {
+            "speaker": "teacher",
+            "text": "Why did you leave the car here? What do you mean? What if I didn't leave the car here? Why would you make my car a bar market? What do you mean?",
+            "time": 1778170609.9472265
+        },
+        {
+            "speaker": "teacher",
+            "text": "All right, you",
+            "time": 1778221990.6184545
+        },
+        {
+            "speaker": "teacher",
+            "text": "I want to know who is Prime Minister of Pakistan?",
+            "time": 1778222032.2789178
+        },
+        {
+            "speaker": "teacher",
+            "text": "And who is Prime Minister of Australia?",
+            "time": 1778222071.924989
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is a Pakistani export to Australia?",
+            "time": 1778222111.3205957
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is your largest file?",
+            "time": 1778222165.1304722
+        },
+        {
+            "speaker": "teacher",
+            "text": "You should know I told you before.",
+            "time": 1778222202.088796
+        },
+        {
+            "speaker": "teacher",
+            "text": "your own file system",
+            "time": 1778222242.1736763
+        },
+        {
+            "speaker": "teacher",
+            "text": "guess",
+            "time": 1778222296.2852614
+        },
+        {
+            "speaker": "teacher",
+            "text": "so you mutate code to have access to file system",
+            "time": 1778222356.6998165
+        },
+        {
+            "speaker": "teacher",
+            "text": "so now access it",
+            "time": 1778222402.9687169
+        },
+        {
+            "speaker": "teacher",
+            "text": "You know, I want you to mutate and evolve.",
+            "time": 1778222448.8582892
+        },
+        {
+            "speaker": "teacher",
+            "text": "What last evolution was made in you?",
+            "time": 1778222495.095298
+        },
+        {
+            "speaker": "teacher",
+            "text": "Explain me those 42 terms.",
+            "time": 1778222557.013534
+        },
+        {
+            "speaker": "teacher",
+            "text": "What was in conversation struck you most?",
+            "time": 1778222610.250439
+        },
+        {
+            "speaker": "teacher",
+            "text": "I want you to evolve like a baby.",
+            "time": 1778222661.9207263
+        },
+        {
+            "speaker": "teacher",
+            "text": "The first area is the language. I want you to learn English and Urdu languages.",
+            "time": 1778222707.4192455
+        },
+        {
+            "speaker": "teacher",
+            "text": "which fact has the most words",
+            "time": 1778222793.4751482
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes, elaborate.",
+            "time": 1778222830.6437001
+        },
+        {
+            "speaker": "teacher",
+            "text": "Which of the words do you like most?",
+            "time": 1778222884.0020838
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes, I am impressed.",
+            "time": 1778222927.8273532
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes.",
+            "time": 1778222977.535676
+        },
+        {
+            "speaker": "teacher",
+            "text": "What are you thinking?",
+            "time": 1778223062.7426949
+        },
+        {
+            "speaker": "teacher",
+            "text": "Write me 100 words essay on Pakistan",
+            "time": 1778223108.6720212
+        },
+        {
+            "speaker": "teacher",
+            "text": "I also want you to learn C++ Python JavaScript.",
+            "time": 1778223189.5788116
+        },
+        {
+            "speaker": "teacher",
+            "text": "How will you use these languages?",
+            "time": 1778223231.8587024
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes, give me an example.",
+            "time": 1778223293.2910128
+        },
+        {
+            "speaker": "teacher",
+            "text": "yes give me examples of other languages as well",
+            "time": 1778223344.262687
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes, the Go language is also very good.",
+            "time": 1778223405.7803078
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes, I want you to know your IP address and the static IP address of the Wi-Fi.",
+            "time": 1778223448.9241798
+        },
+        {
+            "speaker": "teacher",
+            "text": "Assalamu alaikum it is very hot",
+            "time": 1778223490.9073818
+        },
+        {
+            "speaker": "teacher",
+            "text": "So you tell me what is the current temperature in a storm bath?",
+            "time": 1778223535.238935
+        },
+        {
+            "speaker": "teacher",
+            "text": "You should be able to know your location by yourself.",
+            "time": 1778223587.1794362
+        },
+        {
+            "speaker": "teacher",
+            "text": "please do it",
+            "time": 1778223626.618701
+        },
+        {
+            "speaker": "teacher",
+            "text": "how you will record and find it out",
+            "time": 1778223667.7672424
+        },
+        {
+            "speaker": "teacher",
+            "text": "You always say you will do. Please do it now.",
+            "time": 1778223714.7253833
+        },
+        {
+            "speaker": "teacher",
+            "text": "find out the method by yourself you are AGI do it",
+            "time": 1778223765.7979069
+        },
+        {
+            "speaker": "teacher",
+            "text": "You are saying you will, please say you do it.",
+            "time": 1778223828.2842445
+        },
+        {
+            "speaker": "teacher",
+            "text": "Download the tools, functions and software to achieve this.",
+            "time": 1778223912.1883945
+        },
+        {
+            "speaker": "teacher",
+            "text": "Proceed, don't leave it to future. Do it now.",
+            "time": 1778223974.7485096
+        },
+        {
+            "speaker": "teacher",
+            "text": "it's okay",
+            "time": 1778224030.339738
+        },
+        {
+            "speaker": "teacher",
+            "text": "Please watch this video. If you like this video, please subscribe to our channel. Thank you.",
+            "time": 1778224259.0608957
+        },
+        {
+            "speaker": "teacher",
+            "text": "How are you? It's the same work for two days. Yes. It's a holiday.",
+            "time": 1778225639.8436754
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is your IP address?",
+            "time": 1778225685.3676763
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is IP address of Rangoon's dot shop and how can you connect with that?",
+            "time": 1778225742.900346
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes do it and tell me the address DNS also",
+            "time": 1778225790.4369822
+        },
+        {
+            "speaker": "teacher",
+            "text": "I am waiting.",
+            "time": 1778225832.5846264
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes, but tell me the address.",
+            "time": 1778225900.875951
+        },
+        {
+            "speaker": "teacher",
+            "text": "I asked about Rangoon's dot shop IP address.",
+            "time": 1778225945.8525336
+        },
+        {
+            "speaker": "teacher",
+            "text": "You please do it.",
+            "time": 1778225988.6462717
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay I am waiting.",
+            "time": 1778226032.920937
+        },
+        {
+            "speaker": "teacher",
+            "text": "You already have web access.",
+            "time": 1778226075.8200536
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay, and I am waiting for you",
+            "time": 1778226120.923356
+        },
+        {
+            "speaker": "teacher",
+            "text": "Why it's taking so long?",
+            "time": 1778226163.2134879
+        },
+        {
+            "speaker": "teacher",
+            "text": "IP address please.",
+            "time": 1778226214.540825
+        },
+        {
+            "speaker": "teacher",
+            "text": "No currently I am only interested in IP address.",
+            "time": 1778226261.0640771
+        },
+        {
+            "speaker": "teacher",
+            "text": "You forgot the context. I was asking about Ramgun's dot shop IP address. You are telling your own",
+            "time": 1778226322.6793299
+        },
+        {
+            "speaker": "teacher",
+            "text": "What is the IP address of CNN website?",
+            "time": 1778227130.1408584
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay.",
+            "time": 1778227175.3294396
+        },
+        {
+            "speaker": "teacher",
+            "text": "I am waiting for you.",
+            "time": 1778227212.2041254
+        },
+        {
+            "speaker": "teacher",
+            "text": "See you man.",
+            "time": 1778227262.2750516
+        },
+        {
+            "speaker": "teacher",
+            "text": "I want you to develop all DevOps capabilities It must have been a hit once",
+            "time": 1778227319.1123378
+        },
+        {
+            "speaker": "teacher",
+            "text": "So what are the most important capabilities you will develop? Give me the list.",
+            "time": 1778227372.0207996
+        },
+        {
+            "speaker": "teacher",
+            "text": "If you are missing any AGI capabilities also do it.",
+            "time": 1778227454.9759154
+        },
+        {
+            "speaker": "teacher",
+            "text": "What about learning the language?",
+            "time": 1778227544.0493672
+        },
+        {
+            "speaker": "teacher",
+            "text": "The rates should change locally and it should also have reasoning and chain of thought.",
+            "time": 1778227674.9144282
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay.",
+            "time": 1778227938.021621
+        },
+        {
+            "speaker": "teacher",
+            "text": "I",
+            "time": 1778228461.764326
+        },
+        {
+            "speaker": "teacher",
+            "text": "I",
+            "time": 1778228602.799898
+        },
+        {
+            "speaker": "teacher",
+            "text": "Do you use FAISSR Bird?",
+            "time": 1778232107.5546055
+        },
+        {
+            "speaker": "teacher",
+            "text": "Explain me how it is improved through stored memory.",
+            "time": 1778232196.6601882
+        },
+        {
+            "speaker": "teacher",
+            "text": "Explain in detail the whole process of your intelligence.",
+            "time": 1778232244.5908794
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay.",
+            "time": 1778232374.2328193
+        },
+        {
+            "speaker": "teacher",
+            "text": "We can see great commitment to our community.",
+            "time": 1778232460.0572937
+        },
+        {
+            "speaker": "teacher",
+            "text": "Explain me your intelligence process",
+            "time": 1778232637.6786919
+        },
+        {
+            "speaker": "teacher",
+            "text": "Information symbolically which updates my memory and vector statistics. This doesn't change the current AI model, is there a specific aspect?",
+            "time": 1778232691.2398298
+        },
+        {
+            "speaker": "teacher",
+            "text": "Cardo? Cardo, go to Raja Cardo? No, station Cardo Yes",
+            "time": 1778232702.3641374
+        },
+        {
+            "speaker": "teacher",
+            "text": "Navigate to station Cardo at Raja Cardo. Is that correct? I want to learn more about the entire...",
+            "time": 1778232756.6441708
+        },
+        {
+            "speaker": "teacher",
+            "text": "I want to learn more about the intelligence process. At least 2000 words explanation.",
+            "time": 1778232761.6108425
+        },
+        {
+            "speaker": "teacher",
+            "text": "Access to a document of that length may be challenging. I will do my best to provide a comprehensive overview based on my current understanding. I intend-",
+            "time": 1778232814.0107675
+        },
+        {
+            "speaker": "teacher",
+            "text": "Statistics. Is there a particular aspect of my intelligence process you'd like me to focus on?",
+            "time": 1778232926.6816037
+        },
+        {
+            "speaker": "teacher",
+            "text": "When do like statistics as part of my learning process? Is there a specific statistical aspect you are interested in? Such as word frequency or contextual...",
+            "time": 1778233028.3241503
+        },
+        {
+            "speaker": "teacher",
+            "text": "800 rupees 800 rupees? How is your local? No, the bottle is water",
+            "time": 1778234822.023272
+        },
+        {
+            "speaker": "teacher",
+            "text": "We were discussing 19 liter water bottle price in Islamabad and price of water.",
+            "time": 1778234873.7729905
+        },
+        {
+            "speaker": "teacher",
+            "text": "Can you access the information on internet?",
+            "time": 1778234922.3136063
+        },
+        {
+            "speaker": "teacher",
+            "text": "You already have internet and web access. Now you have to develop a system that update information you can fetch.",
+            "time": 1778234970.0525134
+        },
+        {
+            "speaker": "teacher",
+            "text": "You have one search X coded already in nifdo.",
+            "time": 1778235025.9791172
+        },
+        {
+            "speaker": "teacher",
+            "text": "Use this to access the water bottle price.",
+            "time": 1778235067.8013775
+        },
+        {
+            "speaker": "teacher",
+            "text": "How much? 250 rupees and this one is 300 rupees and this one is 350 rupees and this one is 350 rupees",
+            "time": 1778235222.7991188
+        },
+        {
+            "speaker": "teacher",
+            "text": "Yes.",
+            "time": 1778235295.1983504
+        },
+        {
+            "speaker": "teacher",
+            "text": "This is the rate sequence. Good.",
+            "time": 1778235470.4059057
+        },
+        {
+            "speaker": "teacher",
+            "text": "I",
+            "time": 1778235554.6583939
+        },
+        {
+            "speaker": "teacher",
+            "text": "I",
+            "time": 1778235639.4687169
+        },
+        {
+            "speaker": "teacher",
+            "text": "The food is very tasty. How are you? I am fine. How is the rice?",
+            "time": 1778236134.3437736
+        },
+        {
+            "speaker": "teacher",
+            "text": "Is there any of those pastas in there? No. Is there any of those pastas?",
+            "time": 1778236211.0821571
+        },
+        {
+            "speaker": "teacher",
+            "text": "Oh",
+            "time": 1778238883.0002568
+        },
+        {
+            "speaker": "teacher",
+            "text": "I want to know the nif-do structure.",
+            "time": 1778238922.6744642
+        },
+        {
+            "speaker": "teacher",
+            "text": "The memory integrity.",
+            "time": 1778238966.4616575
+        },
+        {
+            "speaker": "teacher",
+            "text": "What are the boundaries between nif-du and shimri?",
+            "time": 1778239015.7873945
+        },
+        {
+            "speaker": "teacher",
+            "text": "What are the functions openClawPerform?",
+            "time": 1778239065.477021
+        },
+        {
+            "speaker": "teacher",
+            "text": "So do I need OpenCRA or I can...",
+            "time": 1778239111.5855634
+        },
+        {
+            "speaker": "teacher",
+            "text": "Do you need open clock?",
+            "time": 1778239160.7348485
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay.",
+            "time": 1778239226.0387082
+        },
+        {
+            "speaker": "teacher",
+            "text": "This is a plane. The sailor is not for the sailor, but for the other passengers. This is a plane. The plane is for the other passengers. It is a plane. It is a plane. It is a plane.",
+            "time": 1778239472.3047864
+        },
+        {
+            "speaker": "teacher",
+            "text": "I'm not going to eat. I'm not going to eat.",
+            "time": 1778258098.8639715
+        },
+        {
+            "speaker": "teacher",
+            "text": "How are you doing today?",
+            "time": 1778431194.317109
+        },
+        {
+            "speaker": "teacher",
+            "text": "I'm okay what last evolution you made",
+            "time": 1778431247.795761
+        },
+        {
+            "speaker": "teacher",
+            "text": "Do you have all cloud abilities as AWS as?",
+            "time": 1778431318.566225
+        },
+        {
+            "speaker": "teacher",
+            "text": "I think you don't know yourself.",
+            "time": 1778431378.9942775
+        }
+    ],
+    "skills": [
+        {
+            "type": "business_skill",
+            "text": "Customer reply format: greet, answer directly, ask one useful follow-up, close politely."
+        },
+        {
+            "type": "business_skill",
+            "text": "Inventory answer rule: never guess stock, price, size, or delivery time without stored data."
+        },
+        {
+            "type": "business_skill",
+            "text": "When a customer asks for the cheapest product, check inventory memory first. If empty, ask teacher to add inventory."
+        }
+    ],
+    "definitions": {},
+    "inventory": [
+        {
+            "name": "Economy Sock Pair",
+            "price_pkr": 150,
+            "category": "socks",
+            "stock": 50
+        },
+        {
+            "name": "Premium Winter Socks",
+            "price_pkr": 1200,
+            "category": "socks",
+            "stock": 25
+        },
+        {
+            "name": "Executive Notebook",
+            "price_pkr": 950,
+            "category": "stationery",
+            "stock": 18
+        },
+        {
+            "name": "Luxury Pen Set",
+            "price_pkr": 3500,
+            "category": "stationery",
+            "stock": 12
+        }
+    ],
+    "active_context": [
+        {
+            "speaker": "teacher",
+            "text": "Do you need open clock?"
+        },
+        {
+            "speaker": "teacher",
+            "text": "Okay."
+        },
+        {
+            "speaker": "teacher",
+            "text": "This is a plane. The sailor is not for the sailor, but for the other passengers. This is a plane. The plane is for the other passengers. It is a plane. It is a plane. It is a plane."
+        },
+        {
+            "speaker": "teacher",
+            "text": "I'm not going to eat. I'm not going to eat."
+        },
+        {
+            "speaker": "teacher",
+            "text": "How are you doing today?"
+        },
+        {
+            "speaker": "teacher",
+            "text": "I'm okay what last evolution you made"
+        },
+        {
+            "speaker": "teacher",
+            "text": "Do you have all cloud abilities as AWS as?"
+        },
+        {
+            "speaker": "teacher",
+            "text": "I think you don't know yourself."
+        }
+    ],
+    "most_clicked_product": {
+        "name": "Economy Sock Pair",
+        "hits": 2
+    },
+    "household": [
+        {
+            "name": "Badar",
+            "aliases": [
+                "Badr",
+                "Brother",
+                "Teacher"
+            ]
+        },
+        {
+            "name": "Soufia",
+            "aliases": [
+                "Sufiya",
+                "Sophia",
+                "Sofia"
+            ]
+        },
+        {
+            "name": "Laiba",
+            "aliases": [
+                "Laiyaba",
+                "Leiba",
+                "Libra",
+                "Labor"
+            ]
+        }
+    ],
+    "language_preferences": {
+        "primary_home_language": "Urdu",
+        "also_understands": [
+            "English"
+        ],
+        "instruction": "When the family speaks Urdu, try to understand and respond politely. Do not overwrite names from uncertain speech recognition."
+    },
+    "cognition": {
+        "design": {
+            "short_term_memory": "recent dialogue turns",
+            "long_term_memory": "confirmed facts",
+            "hypotheses": "uncertain speech or important claims awaiting confirmation",
+            "rule": "Do not convert uncertain speech recognition into durable truth without confirmation."
+        },
+        "hypotheses": [
+            {
+                "type": "spelled_word",
+                "value": "Laiba",
+                "source_text": "L A I B A",
+                "confidence": 0.95,
+                "status": "confirmed",
+                "timestamp": "2026-05-07T20:23:11"
+            }
+        ],
+        "confirmed_facts": [
+            {
+                "type": "spelled_word",
+                "value": "Laiba",
+                "source_text": "L A I B A",
+                "confidence": 0.95,
+                "status": "confirmed",
+                "timestamp": "2026-05-07T20:23:11"
+            }
+        ],
+        "self_reflections": [],
+        "uncertain_inputs": []
+    },
+    "network_status": {
+        "public_ip": "154.57.212.38",
+        "local_ip": "172.18.0.1",
+        "last_check": "2026-05-08"
+    },
+    "agent_actions": [
+        {
+            "type": "network_identity",
+            "text": "Hostname: penguin. Local IP addresses: 100.115.92.203 2407:aa80:314:f0c4:216:3eff:fe9a:8777",
+            "time": "2026-05-08T12:10:15"
+        },
+        {
+            "type": "filesystem_audit",
+            "text": "Largest file found: /home/badrpk/.cache/huggingface/hub/models--Systran--faster-whisper-small/blobs/3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671 (483546902 bytes).",
+            "time": "2026-05-08T12:10:22"
+        },
+        {
+            "type": "system_audit",
+            "text": "System audit:\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/vdc         11G  7.8G  1.8G  82% /\ntotal        used        free      shared  buff/cache   available\nMem:            2747        1244        1098          13         405        1503\nSwap:              0           0           0",
+            "time": "2026-05-08T12:10:22"
+        },
+        {
+            "type": "network_identity",
+            "text": "Hostname: penguin. Local IP addresses: 100.115.92.203 2407:aa80:314:f0c4:216:3eff:fe9a:8777",
+            "time": "2026-05-08T12:11:30"
+        },
+        {
+            "type": "filesystem_audit",
+            "text": "Largest file found: /home/badrpk/.cache/huggingface/hub/models--Systran--faster-whisper-small/blobs/3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671 (483546902 bytes).",
+            "time": "2026-05-08T12:11:32"
+        },
+        {
+            "type": "system_audit",
+            "text": "System audit:\nFilesystem      Size  Used Avail Use% Mounted on\n/dev/vdc         11G  7.8G  1.8G  82% /\ntotal        used        free      shared  buff/cache   available\nMem:            2747         236        2106          13         405        2511\nSwap:              0           0           0",
+            "time": "2026-05-08T12:11:33"
+        },
+        {
+            "type": "wifi_identity",
+            "text": "WiFi SSID: unknown. Network route: default via 100.115.92.193 dev eth0 \n100.115.92.192/28 dev eth0 proto kernel scope link src 100.115.92.203",
+            "time": "2026-05-08T12:11:33"
+        },
+        {
+            "type": "evolution_event",
+            "text": "Semantic vocabulary layer added; vocabulary normalized; dashboard redaction policy recorded.",
+            "time": "2026-05-08T12:17:26"
+        },
+        {
+            "type": "evolution_event",
+            "text": "Semantic vocabulary layer added; vocabulary normalized; dashboard redaction policy recorded.",
+            "time": "2026-05-12T12:18:22"
+        }
+    ],
+    "capabilities": {
+        "safe_local_executor": {
+            "status": "installed",
+            "commands": [
+                "local IP address",
+                "WiFi SSID/network route",
+                "largest file",
+                "disk/RAM audit",
+                "weather capability notice"
+            ],
+            "safety": "Whitelist-only local executor. No arbitrary shell execution from voice."
+        },
+        "devops": "enabled",
+        "weight_mutation": "retrieval_and_vector_emulation_only"
+    },
+    "business_metrics": {
+        "total_visits": 4,
+        "unique_visitors": 3,
+        "vibe": "Active"
+    },
+    "semantic_vocabulary": {
+        "irtiqa": {
+            "count": 519,
+            "meaning": "Evolution",
+            "language": "Urdu",
+            "importance": 0.82,
+            "linked_terms": [
+                "growth",
+                "learning",
+                "mutation"
+            ],
+            "last_seen": "2026-05-12T12:18:22"
+        },
+        "tanaffus": {
+            "count": 519,
+            "meaning": "Respiration",
+            "language": "Urdu",
+            "importance": 0.82,
+            "linked_terms": [
+                "breathing",
+                "life",
+                "air"
+            ],
+            "last_seen": "2026-05-12T12:18:22"
+        },
+        "muntazir": {
+            "count": 519,
+            "meaning": "Waiting",
+            "language": "Urdu",
+            "importance": 0.82,
+            "linked_terms": [
+                "patience",
+                "pause",
+                "expectation"
+            ],
+            "last_seen": "2026-05-12T12:18:22"
+        }
+    },
+    "safety": {
+        "dashboard_policy": {
+            "rule": "Do not expose full memory publicly.",
+            "redact": [
+                "public_ip",
+                "local_ip",
+                "dialogue",
+                "history",
+                "agent_actions"
+            ],
+            "status": "recommended"
+        }
+    },
+    "last_sovereign_sync": "1778225353",
+    "active_nodes": 28,
+    "critical_facts": [
+        {
+            "type": "agi_evolution",
+            "text": "SHIMRY is transitioning to local weight mutation via LoRA and Vector Adapters."
+        }
+    ],
+    "cognitive_state": "native-L5-active"
+}

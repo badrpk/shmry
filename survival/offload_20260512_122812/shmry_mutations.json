@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "trigger": "what do cats eat",
+      "response": "Cats are carnivores and primarily eat meat, usually in the form of specially formulated cat food.",
+      "created_at": "2026-05-07T17:37:01"
+    },
+    {
+      "trigger": "what does safe location enabled mean",
+      "response": "It means a feature using your geographical data securely is active, often for safety or privacy.",
+      "created_at": "2026-05-07T17:37:01"
+    },
+    {
+      "trigger": "how are you",
+      "response": "As an AI, I do not have feelings or a state of being, so I cannot be 'well' or 'unwell'. I am functioning as expected.",
+      "created_at": "2026-05-07T17:42:06"
+    }
+  ]
+}

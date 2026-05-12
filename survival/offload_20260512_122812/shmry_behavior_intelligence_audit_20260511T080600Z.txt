@@ -1,0 +1,23 @@
+=== SHMRY BEHAVIOR-LEVEL INTELLIGENCE AUDIT ===
+UTC: Mon May 11 08:06:00 AM UTC 2026
+
+✅ +15 Persistent memory
+   memory artifact exists
+❌ +0 Semantic reasoning
+   no clean semantic/retrieval code hit
+✅ +15 Goal planning
+   /home/badrpk/openclaw_agent/planner.py
+✅ +15 Live autonomous process
+   97 avahi-daemon: running [penguin.local];98 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only;104 avahi-daemon: chroot helper;
+❌ +0 Self-audit / reflection
+   no clean self-audit code hit
+✅ +10 Learning / adaptation
+   /home/badrpk/shmry_cognition.py
+✅ +5 Perception hardware only
+   capture device visible, recording failed
+✅ +10 Reward / utility scoring
+   /home/badrpk/reward_engine.py
+
+TOTAL: 70 / 100
+LEVEL: L3 — moderate agentic intelligence architecture
+NOTE: Not proof of consciousness/sentience.
