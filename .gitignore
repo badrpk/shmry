@@ -21,3 +21,8 @@ __pycache__/
 *.png
 *.zip
 *.tar.gz
+*.bak
+*.swp
+*.log
+*.tmp
+bin/shmry.bak*
