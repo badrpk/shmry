@@ -1,0 +1,10 @@
+{
+  "commercial_id": "FIN-HFT-01",
+  "ingest_pipeline": "NIFDU-CPP-CORE",
+  "parameters": {
+    "sub_millisecond_tick_ns": 450,
+    "max_acceptable_slippage": 0.0002,
+    "volatility_surge_cap": 0.25
+  },
+  "failover": "local_sqlite_state_vault"
+}

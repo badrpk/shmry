@@ -1,0 +1,10 @@
+{
+  "commercial_id": "IOT-TEL-5G",
+  "slicing_engine": "shmry-network-sensor",
+  "parameters": {
+    "vibration_threshold_g": 1.2,
+    "packet_drop_tolerance": 0.001,
+    "dynamic_reroute_latency_ms": 12
+  },
+  "failover": "isolated_airgapped_buffer"
+}

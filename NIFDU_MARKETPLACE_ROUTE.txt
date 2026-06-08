@@ -1,0 +1,7 @@
+Add this route in NIFDU reverse proxy/router:
+
+www.nifdu.com/marketplace  ->  http://127.0.0.1:5060/
+www.nifdu.com/seller       ->  http://127.0.0.1:5060/seller
+www.nifdu.com/buyer        ->  http://127.0.0.1:5060/buyer
+www.nifdu.com/rider        ->  http://127.0.0.1:5060/rider
+www.nifdu.com/dashboard    ->  http://127.0.0.1:5060/dashboard

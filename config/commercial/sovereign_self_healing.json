@@ -1,0 +1,10 @@
+{
+  "commercial_id": "SOV-CLOUD-HEAL",
+  "healer_daemon": "shmry-healer",
+  "parameters": {
+    "auto_symlink_repair": true,
+    "corruption_rollback_checkpoint_count": 5,
+    "unattended_zero_ops_privilege": true
+  },
+  "failover": "immutable_cold_state"
+}
