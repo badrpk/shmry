@@ -1,0 +1,79 @@
+import time, re, json
+from bs4 import BeautifulSoup
+import requests
+
+STEEL_SYMBOLS = ["MUGHAL", "ISL", "ASTL", "AGHA", "ITTEFAQ"]
+
+def _num(x):
+    if x is None:
+        return None
+    x = re.sub(r"[^\d.\-]", "", str(x))
+    try:
+        return float(x)
+    except Exception:
+        return None
+
+def fetch_company(symbol):
+    symbol = symbol.upper().strip()
+    urls = [
+        f"https://dps.psx.com.pk/company/{symbol}",
+        f"https://www.psx.com.pk/psx/company/{symbol}",
+    ]
+
+    headers = {"User-Agent": "Mozilla/5.0 SHMRY/1.0"}
+    for url in urls:
+        try:
+            r = requests.get(url, headers=headers, timeout=8)
+            if r.status_code != 200 or len(r.text) < 100:
+                continue
+
+            soup = BeautifulSoup(r.text, "html.parser")
+            text = soup.get_text(" ", strip=True)
+
+            price = None
+            patterns = [
+                r"PRICE\s+([0-9,.]+)",
+                r"Current Price\s+([0-9,.]+)",
+                r"LDCP\s+[0-9,.]+\s+OPEN\s+[0-9,.]+\s+HIGH\s+[0-9,.]+\s+LOW\s+[0-9,.]+\s+CURRENT\s+([0-9,.]+)",
+            ]
+            for p in patterns:
+                m = re.search(p, text, re.I)
+                if m:
+                    price = _num(m.group(1))
+                    break
+
+            change = None
+            m = re.search(r"CHANGE\s+([+\-]?[0-9,.]+)", text, re.I)
+            if m:
+                change = _num(m.group(1))
+
+            volume = None
+            m = re.search(r"VOLUME\s+([0-9,]+)", text, re.I)
+            if m:
+                volume = _num(m.group(1))
+
+            if price is not None:
+                return {
+                    "symbol": symbol,
+                    "price": price,
+                    "change": change,
+                    "volume": volume,
+                    "source": url,
+                    "status": "live_scraped",
+                    "timestamp": int(time.time())
+                }
+        except Exception as e:
+            last_error = str(e)
+
+    return {
+        "symbol": symbol,
+        "price": None,
+        "change": None,
+        "volume": None,
+        "source": "psx_live_fetch_failed",
+        "status": "unavailable",
+        "timestamp": int(time.time())
+    }
+
+def fetch_steel_watchlist():
+    return [fetch_company(s) for s in STEEL_SYMBOLS]

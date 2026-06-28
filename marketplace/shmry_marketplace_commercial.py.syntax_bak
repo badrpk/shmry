@@ -1,0 +1,68 @@
+@app.route('/wa/inbound', methods=['POST'])
+def wa_inbound():
+    from shmry_steel_api import get_rfq_response
+    try:
+        data = request.get_json() or {}
+        text = data.get('text', data.get('message', ''))
+        reply = get_rfq_response(text)
+        return jsonify({'status': 'ok', 'reply': reply, 'source': 'steel_api'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    return jsonify({"status": "ok", "source": "executor", "input": text, "reply": result})
+
+@app.route('/steel/rfq', methods=['POST'])
+def steel_rfq():
+    data = request.get_json(silent=True) or {}
+    return jsonify({"status": "ok", "rfq": data, "message": "Steel RFQ received"})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=False)
+
+
+
+@app.route('/inventory')
+def quick_inventory():
+    if not INV_DB.exists():
+        return jsonify({"status": "error", "reply": "No inventory DB"}), 404
+
+    con = sqlite3.connect(INV_DB)
+    cur = con.cursor()
+    cur.execute("SELECT SUM(qty * price_pkr) AS total_value, COUNT(*) AS sku_count FROM inventory")
+    row = cur.fetchone()
+    con.close()
+
+    return jsonify({
+        "status": "ok",
+        "sku_count": row[1] or 0,
+        "total_value_pkr": row[0] or 0
+    })
+
+@app.route('/wa/inbound', methods=['POST'])
+def wa_inbound():
+    from shmry_steel_api import get_rfq_response
+    try:
+        data = request.get_json() or {}
+        text = data.get('text', data.get('message', ''))
+        print(f"[WA Bridge] Received: {text}")
+        # Simple echo for now
+        return jsonify({
+            "status": "ok",
+        reply_text = get_rfq_response(text)
+        return jsonify({"status": "ok", "reply": reply_text, "source": "steel_api"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+# --- SHMRY Steel Bridge v2 ---
+from shmry_steel_api import get_rfq_response
+
+@app.route('/wa/inbound/v2', methods=['POST'])
+def wa_inbound_v2():
+    data = request.get_json() or {}
+    text = data.get('text') or data.get('query') or data.get('message') or ''
+    reply_text = get_rfq_response(text)
+    return jsonify({
+        "status": "ok",
+        "reply": reply_text,
+        "source": "marketplace_steel_bridge_v2"
+    })

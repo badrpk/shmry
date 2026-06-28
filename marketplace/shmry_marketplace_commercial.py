@@ -1,0 +1,189 @@
+#!/usr/bin/env python3
+from flask import Flask, request, jsonify
+import sqlite3, pathlib, time, uuid
+
+from shmry_steel_api import get_rfq_response
+from shmry_psx_live import fetch_steel_watchlist, fetch_company
+import shmry_mining_controller as mining
+
+app = Flask(__name__)
+DB = pathlib.Path.home() / "SHMRY/marketplace/shmry_business.db"
+
+def db():
+    con = sqlite3.connect(DB)
+    con.row_factory = sqlite3.Row
+    return con
+
+def rows_to_list(rows):
+    return [dict(r) for r in rows]
+
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({"status":"ok","service":"SHMRY Marketplace","version":"v60-business-expansion"})
+
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({"status":"healthy","version":"v60-business-expansion"})
+
+@app.route("/api/status", methods=["GET"])
+def api_status():
+    return jsonify({
+        "status":"ok",
+        "service":"marketplace",
+        "modules":["psx_live_steel","mining_controller","rangoons_inventory","nifdu_marketplace","whatsapp_sales_bot"],
+        "time":int(time.time())
+    })
+
+@app.route("/api/psx/steel", methods=["GET"])
+def psx_steel():
+    return jsonify({"status":"ok","data":fetch_steel_watchlist()})
+
+@app.route("/api/psx/company/<symbol>", methods=["GET"])
+def psx_company(symbol):
+    return jsonify({"status":"ok","data":fetch_company(symbol)})
+
+@app.route("/api/mining/status", methods=["GET"])
+def mining_status():
+    return jsonify(mining.status())
+
+@app.route("/api/mining/start", methods=["POST"])
+def mining_start():
+    return jsonify(mining.start())
+
+@app.route("/api/mining/stop", methods=["POST"])
+def mining_stop():
+    return jsonify(mining.stop())
+
+@app.route("/api/mining/solar-policy", methods=["GET"])
+def mining_policy():
+    return jsonify(mining.solar_policy())
+
+@app.route("/api/rangoons/inventory", methods=["GET"])
+def rangoons_inventory():
+    with db() as con:
+        rows = con.execute("SELECT * FROM rangoons_inventory ORDER BY category,name").fetchall()
+    return jsonify({"status":"ok","items":rows_to_list(rows)})
+
+@app.route("/api/rangoons/inventory", methods=["POST"])
+def rangoons_upsert():
+    data = request.get_json() or {}
+    sku = data.get("sku") or "RNG-" + uuid.uuid4().hex[:8].upper()
+    with db() as con:
+        con.execute("""INSERT OR REPLACE INTO rangoons_inventory
+        (sku,name,category,qty,price_pkr,city,updated_at)
+        VALUES (?,?,?,?,?,?,?)""", (
+            sku,
+            data.get("name","Unnamed Item"),
+            data.get("category","General"),
+            float(data.get("qty",0)),
+            float(data.get("price_pkr",0)),
+            data.get("city","Rawalpindi/Islamabad"),
+            int(time.time())
+        ))
+        con.commit()
+    return jsonify({"status":"ok","sku":sku})
+
+@app.route("/api/nifdu/listings", methods=["GET"])
+def nifdu_listings():
+    with db() as con:
+        rows = con.execute("SELECT * FROM nifdu_listings ORDER BY updated_at DESC").fetchall()
+    return jsonify({"status":"ok","listings":rows_to_list(rows)})
+
+@app.route("/api/nifdu/listings", methods=["POST"])
+def nifdu_upsert():
+    data = request.get_json() or {}
+    lid = data.get("id") or "NIFDU-" + uuid.uuid4().hex[:8].upper()
+    with db() as con:
+        con.execute("""INSERT OR REPLACE INTO nifdu_listings
+        (id,title,category,city,price_pkr,seller,status,updated_at)
+        VALUES (?,?,?,?,?,?,?,?)""", (
+            lid,
+            data.get("title","Untitled Listing"),
+            data.get("category","General"),
+            data.get("city","Pakistan"),
+            float(data.get("price_pkr",0)),
+            data.get("seller","SHMRY"),
+            data.get("status","active"),
+            int(time.time())
+        ))
+        con.commit()
+    return jsonify({"status":"ok","id":lid})
+
+def whatsapp_reply(text):
+    q = (text or "").lower()
+
+    if any(x in q for x in ["steel", "rebar", "rate", "price"]):
+        return get_rfq_response(text)
+
+    if any(x in q for x in ["rangoons", "shami", "kabab", "bottle", "ziplock"]):
+        with db() as con:
+            rows = con.execute("SELECT name, qty, price_pkr, city FROM rangoons_inventory WHERE qty > 0 ORDER BY name LIMIT 8").fetchall()
+        lines = [f"- {r['name']}: Rs {r['price_pkr']:.0f}, stock {r['qty']:.0f}, {r['city']}" for r in rows]
+        return "Rangoons available items:\n" + "\n".join(lines)
+
+    if any(x in q for x in ["nifdu", "marketplace", "supplier", "vendor"]):
+        with db() as con:
+            rows = con.execute("SELECT title, category, city, status FROM nifdu_listings WHERE status='active' LIMIT 8").fetchall()
+        lines = [f"- {r['title']} ({r['category']}) - {r['city']}" for r in rows]
+        return "NIFDU marketplace active listings:\n" + "\n".join(lines)
+
+    if any(x in q for x in ["mine", "mining", "xmrig", "monero"]):
+        st = mining.status()
+        return f"Mining controller: running={st['running']}, solar_mode={st['solar_mode']}"
+
+    return "SHMRY Sales Bot: ask for steel prices, Rangoons inventory, NIFDU listings, or mining status."
+
+@app.route("/wa/inbound", methods=["POST"])
+@app.route("/wa/inbound/v2", methods=["POST"])
+@app.route("/api/whatsapp/sales", methods=["POST"])
+def wa_inbound():
+    data = request.get_json() or {}
+    text = data.get("text") or data.get("query") or data.get("message") or ""
+    customer = data.get("customer") or data.get("from") or "unknown"
+    reply = whatsapp_reply(text)
+
+    with db() as con:
+        con.execute("""INSERT INTO whatsapp_leads(customer,query,intent,reply,created_at)
+        VALUES (?,?,?,?,?)""", (customer, text, "auto", reply, int(time.time())))
+        con.commit()
+
+    return jsonify({"status":"ok","reply":reply,"source":"shmry_whatsapp_sales_bot_v1"})
+
+@app.route("/api/whatsapp/leads", methods=["GET"])
+def whatsapp_leads():
+    with db() as con:
+        rows = con.execute("SELECT * FROM whatsapp_leads ORDER BY created_at DESC LIMIT 50").fetchall()
+    return jsonify({"status":"ok","leads":rows_to_list(rows)})
+
+@app.route("/login", methods=["POST"])
+def login():
+    return jsonify({"ok":False,"message":"auth placeholder; enable JWT module next"}), 501
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
+@app.route('/api/fulfillment', methods=['POST'])
+def fulfillment():
+    from fulfillment_engine import process_fulfillment
+    data = request.get_json()
+    success = process_fulfillment(data['invoice_id'])
+    return jsonify({"success": success})
+
+@app.route('/api/analytics', methods=['GET'])
+def analytics():
+    from analytics_engine import get_profit_report
+    return jsonify({"profit_report": get_profit_report()})
+
+
+# --- SHMRY v3 Fulfillment + Analytics Routes ---
+from fulfillment_engine import process_fulfillment
+import analytics_engine
+
+@app.route("/api/fulfillment/process/<invoice_id>", methods=["POST"])
+def api_fulfillment_process(invoice_id):
+    return jsonify(process_fulfillment(invoice_id))
+
+@app.route("/api/analytics/summary", methods=["GET"])
+def api_analytics_summary():
+    return jsonify({"status": "ok", **analytics_engine.summary()})
+

@@ -510,7 +510,6 @@ def hist():
     c.close()
     return jsonify({"ok":True,"rows":rows})
 
-app.run(host="0.0.0.0", port=5060)
 
 # === SHMRY CONSTRUCTION COST PATCH V26 ===
 def _construction_reply_v26(raw):
@@ -586,3 +585,6 @@ def _default_reply(raw):
 
 # In your API function (api_v26), ensure the 'else' block calls this:
 # else: return jsonify({"ok": True, "reply": _default_reply(raw)})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5061, debug=False)

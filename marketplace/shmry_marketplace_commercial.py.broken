@@ -1,0 +1,140 @@
+from shmry_steel_api import get_rfq_response
+import sys
+sys.path.append("/home/badrpk/SHMRY/marketplace")
+from shmry_steel_api import get_rfq_response
+#!/usr/bin/env python3
+from gevent import config
+config.max_blocking_time = 0.1
+config.greenlet_stack_size = 1024 * 64
+
+from flask import Flask, request, jsonify
+import subprocess
+import sqlite3
+from pathlib import Path
+
+app = Flask(__name__)
+INV_DB = Path.home() / "shmry_core/inventory/rangoons_inventory.db"
+
+@app.route('/health')
+@app.route('/status')
+def health():
+    return jsonify({"status": "healthy", "version": "v54-inventory-ai"})
+
+def inventory_reply(query):
+    if not INV_DB.exists():
+        return None
+
+    q = query.lower()
+    if not any(x in q for x in ["stock", "inventory", "rangoons", "sku", "socks", "item"]):
+        return None
+
+    con = sqlite3.connect(INV_DB)
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+
+    tables = [r[0] for r in cur.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()]
+    if not tables:
+        con.close()
+        return "Rangoons inventory DB exists but has no tables."
+
+    table = tables[0]
+    cols = [r[1] for r in cur.execute(f"PRAGMA table_info({table})").fetchall()]
+    select_cols = ", ".join(cols[:8])
+
+    rows = cur.execute(f"SELECT {select_cols} FROM {table} LIMIT 20").fetchall()
+    con.close()
+
+    if not rows:
+        return f"Rangoons inventory table '{table}' is empty."
+
+    lines = [f"Rangoons inventory from table '{table}':"]
+    for r in rows:
+        d = dict(r)
+        lines.append(" | ".join(f"{k}: {v}" for k, v in d.items()))
+
+    return "\n".join(lines)
+
+@app.route('/ai/chat', methods=['POST'])
+def ai_chat():
+    data = request.get_json(silent=True) or {}
+    text = (data.get("text") or data.get("message") or data.get("query") or "").strip()
+
+    if not text:
+        return jsonify({"status": "error", "reply": "No query provided"}), 400
+
+    inv = inventory_reply(text)
+    if inv:
+        return jsonify({"status": "ok", "source": "rangoons_inventory.db", "input": text, "reply": inv})
+
+    try:
+        result = subprocess.check_output(
+            [str(Path.home() / "shmry_ai_executor.py"), text],
+            text=True,
+            timeout=25,
+            stderr=subprocess.STDOUT
+        ).strip()
+    except Exception as e:
+        result = f"Executor error: {e}"
+
+    return jsonify({"status": "ok", "source": "executor", "input": text, "reply": result})
+
+@app.route('/steel/rfq', methods=['POST'])
+def steel_rfq():
+    data = request.get_json(silent=True) or {}
+    return jsonify({"status": "ok", "rfq": data, "message": "Steel RFQ received"})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=False)
+
+
+
+@app.route('/inventory')
+def quick_inventory():
+    if not INV_DB.exists():
+        return jsonify({"status": "error", "reply": "No inventory DB"}), 404
+
+    con = sqlite3.connect(INV_DB)
+    cur = con.cursor()
+    cur.execute("SELECT SUM(qty * price_pkr) AS total_value, COUNT(*) AS sku_count FROM inventory")
+    row = cur.fetchone()
+    con.close()
+
+    return jsonify({
+        "status": "ok",
+        "sku_count": row[1] or 0,
+        "total_value_pkr": row[0] or 0
+    })
+
+@app.route('/wa/inbound', methods=['POST'])
+def wa_inbound():
+    from shmry_steel_api import get_rfq_response
+    try:
+        data = request.get_json() or {}
+        text = data.get('text', data.get('message', ''))
+        print(f"[WA Bridge] Received: {text}")
+        # Simple echo for now
+        return jsonify({
+            "status": "ok",
+        reply_text = get_rfq_response(text)
+            "source": "marketplace_bridge"
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# --- SHMRY Steel Bridge v2 ---
+try:
+    from shmry_steel_api import get_rfq_response
+except Exception:
+    def get_rfq_response(query):
+        return "Steel RFQ module loading. Please try again."
+
+@app.route('/wa/inbound/v2', methods=['POST'])
+def wa_inbound_v2():
+    data = request.get_json() or {}
+    text = data.get('text') or data.get('query') or data.get('message') or ''
+    reply_text = get_rfq_response(text)
+    return jsonify({
+        "status": "ok",
+        "reply": reply_text,
+        "source": "marketplace_steel_bridge_v2"
+    })

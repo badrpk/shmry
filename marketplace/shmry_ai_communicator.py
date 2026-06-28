@@ -27,7 +27,7 @@ def generate_human_message(target_role, entity_name, sku_title, price_or_profit)
     
     # Configure low-overhead payload architecture for Gemini endpoint
     host = "generativelanguage.googleapis.com"
-    endpoint = f"/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    endpoint = f"/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
     
     headers = {"Content-Type": "application/json"}
     payload = {

@@ -1,0 +1,7 @@
+# Add this at the very bottom, replacing any if __name__ == "__main__" or top-level run
+if __name__ == "__main__":
+    print("Starting gateway on custom port to avoid conflict...")
+    app.run(port=5061, debug=False)  # different port
+else:
+    # When imported, just expose the app
+    print("Gateway imported - app exposed but not started")

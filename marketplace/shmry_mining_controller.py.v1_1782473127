@@ -1,0 +1,45 @@
+import subprocess, os, json, time, pathlib, signal
+
+XMRIG = pathlib.Path.home() / "xmrig/build/xmrig"
+CONFIG = pathlib.Path.home() / ".xmrig/config.json"
+LOG = pathlib.Path.home() / "SHMRY/logs/mining_controller.log"
+
+def _run(cmd):
+    return subprocess.run(cmd, shell=True, text=True, capture_output=True, timeout=10)
+
+def status():
+    p = _run("pgrep -af xmrig || true")
+    running = bool(p.stdout.strip())
+    solar_hint = os.environ.get("SHMRY_SOLAR_MODE", "free_solar_assumed")
+    return {
+        "running": running,
+        "processes": p.stdout.strip().splitlines(),
+        "solar_mode": solar_hint,
+        "controller": "shmry_mining_controller_v1",
+        "timestamp": int(time.time())
+    }
+
+def start():
+    if status()["running"]:
+        return {"ok": True, "message": "XMRig already running", "status": status()}
+
+    if not XMRIG.exists():
+        return {"ok": False, "error": f"xmrig not found at {XMRIG}"}
+
+    LOG.parent.mkdir(parents=True, exist_ok=True)
+    cmd = f"nohup nice -n 10 {XMRIG} --config={CONFIG} >> {LOG} 2>&1 &"
+    _run(cmd)
+    time.sleep(2)
+    return {"ok": True, "message": "XMRig start requested", "status": status()}
+
+def stop():
+    _run("pkill -f xmrig || true")
+    time.sleep(1)
+    return {"ok": True, "message": "XMRig stop requested", "status": status()}
+
+def solar_policy():
+    return {
+        "mode": os.environ.get("SHMRY_SOLAR_MODE", "free_solar_assumed"),
+        "rule": "Mine when solar/free power is available; stop manually or by future sensor trigger.",
+        "next_upgrade": "connect inverter/solar API or smart plug meter"
+    }
