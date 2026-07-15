@@ -5,6 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from http_util import JsonAPI, serve, uid, iso
 import payments as pay
+import auth as authmod
 
 HOSTS = {
     "host-1": {"id": "host-1", "name": "edge-khi-01", "tags": ["env:prod", "role:edge"], "status": "up", "last_seen": iso()},
@@ -18,10 +19,15 @@ SYNTH = []
 
 class H(JsonAPI):
     def do_GET(self):
+        _path_early = (self.path.split("?")[0].rstrip("/") or "/")
+        if _path_early.startswith("/auth"):
+            hdrs = {k: v for k, v in self.headers.items()}
+            code, body = authmod.handle_auth_request("GET", _path_early, {}, hdrs, product="shmry")
+            return self._send(code, body)
         path, q = self.parse()
         if path in ("/", "/health"):
             return self._send(200, {"ok": True, "service": "shmry-observability", "version": "3.0.0",
-                "gaps_closed": ["apm_traces", "synthetics", "billing_tiers", "stripe"]})
+                "gaps_closed": ["apm_traces", "synthetics", "billing_tiers", "stripe", "signup", "login", "otp", "oauth_google", "oauth_facebook"]})
         if path == "/capabilities":
             return self._send(200, {"ok": True, "competitor": "Datadog", "features": [
                 "hosts","metrics","logs","alerts","dashboards","apm","synthetics","billing","stripe"]})
@@ -46,6 +52,12 @@ class H(JsonAPI):
         self._send(404, {"ok": False})
 
     def do_POST(self):
+        _path_early = (self.path.split("?")[0].rstrip("/") or "/")
+        if _path_early.startswith("/auth"):
+            hdrs = {k: v for k, v in self.headers.items()}
+            body = self._read_json() if hasattr(self, "_read_json") else self._read()
+            code, resp = authmod.handle_auth_request("POST", _path_early, body if isinstance(body, dict) else {}, hdrs, product="shmry")
+            return self._send(code, resp)
         path, _ = self.parse()
         body = self._read_json()
         if path == "/api/v1/metrics":
