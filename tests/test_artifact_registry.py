@@ -1,6 +1,6 @@
 import unittest
 
-from platform.artifact_registry import Artifact, ArtifactRegistry
+from shmry_platform.artifact_registry import Artifact, ArtifactRegistry
 
 
 class ArtifactRegistryTests(unittest.TestCase):
