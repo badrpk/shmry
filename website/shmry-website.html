@@ -1,0 +1,3101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shmry - The Complete AI & Cloud Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+            --gradient-secondary: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            --gradient-accent: linear-gradient(135deg, #4ecdc4, #44a08d);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--dark);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            padding: 8px 0;
+            top: 100%;
+            left: 0;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            color: var(--white);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        /* Auth Section */
+        .auth-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px; /* Add top padding to account for fixed navbar */
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+            position: relative;
+            margin-top: 2rem; /* Add top margin for better spacing */
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-2px);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin: 1rem 0 2rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+        
+        .feature-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-link:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .hero-trust {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* SHMRY Hero Search Box Styles */
+        .shmry-search-hero {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 0.5rem;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search-input-wrapper:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 8px 32px rgba(0, 255, 136, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .search-icon {
+            color: var(--gray);
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .hero-search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--light);
+            font-size: 1.1rem;
+            padding: 1rem 1.5rem;
+            font-family: inherit;
+        }
+        
+        .hero-search-input::placeholder {
+            color: var(--gray);
+        }
+        
+        .hero-search-btn {
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--darker);
+            font-size: 1.1rem;
+        }
+        
+        .hero-search-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+        }
+        
+        .search-suggestions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .suggestion-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .suggestion-tag:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        /* Search Type Selector Styles */
+        .search-type-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .search-type-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--gray);
+            font-weight: 500;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .search-type-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .search-type-option.active {
+            background: var(--primary);
+            color: var(--darker);
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .search-type-option i {
+            font-size: 1rem;
+        }
+        
+        .search-type-option span {
+            font-weight: 600;
+        }
+        
+        /* Shmry Search Section */
+        .shmry-search-section {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(78, 205, 196, 0.05) 100%);
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .shmry-search-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="search-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,255,136,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23search-grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .search-showcase {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .search-demo {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+        
+        .search-input-container {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.5rem;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            backdrop-filter: blur(10px);
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 1rem 1.5rem;
+            color: var(--light);
+            font-size: 1.1rem;
+            outline: none;
+        }
+        
+        .search-input::placeholder {
+            color: var(--gray);
+        }
+        
+        .search-btn {
+            background: var(--gradient-primary);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            color: var(--darker);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+        
+        .search-examples {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .example-tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .example-tag:hover {
+            background: rgba(0, 255, 136, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .search-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .feature-card .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .search-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .search-cta .btn {
+            margin: 0 0.5rem;
+        }
+        
+        /* Quickstart Section */
+        .quickstart-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .quickstart-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .quickstart-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .quickstart-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .code-block {
+            background: var(--dark);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: var(--darker);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .code-header span {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: var(--accent);
+        }
+        
+        .code-block pre {
+            margin: 0;
+            padding: 1rem;
+            color: var(--light);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        
+        .quickstart-cta {
+            text-align: center;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .pricing-header p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .pricing-cta p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Platform Services Section */
+        .platform-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .platform-service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .platform-service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .platform-service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .platform-service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--darker);
+            margin-bottom: 1rem;
+        }
+        
+        .platform-service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .platform-service-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-service-link:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+        
+        /* Services Section */
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-categories {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .category-header h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .service-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-item p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status.active {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .services-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .services-cta .btn {
+            margin: 0 0.5rem;
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Description Section */
+        .description-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .description-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .description-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .description-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .description-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .description-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .description-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Scale Section */
+        .scale-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .benefit-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Modules Section */
+        .modules-container {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .module-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .module-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+        }
+        
+        .module-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .module-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .module-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        .status-development {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+        
+        .status-planned {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+        
+        .view-all-modules {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-modules {
+            background: var(--gradient-accent);
+            color: var(--darker);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-modules:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .footer-main {
+            text-align: left;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--darker);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-trust {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .trust-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .trust-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .footer-legal p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-legal a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .description-grid,
+            .scale-stats,
+            .benefits-grid,
+            .modules-grid,
+            .pricing-grid,
+            .services-categories,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .trust-links {
+                gap: 1rem;
+            }
+            
+            .quickstart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🚀 Shmry Platform</div>
+            <ul class="nav-links">
+                <li><a href="/search/shmry-search">Shmry Search</a></li>
+                <li class="dropdown">
+                <a href="/services">Products ▾</a>
+                <div class="dropdown-content">
+                    <a href="/products/custom-email">Custom Email</a>
+                    <a href="/products/website-builder">Website Builder</a>
+                    <a href="/products/mobile-app-builder">Mobile App Builder</a>
+                    <a href="/products/edge-computing">Edge Computing</a>
+                    <a href="/services#call-center">Call Center</a>
+                    <a href="/services#vibe-coding">Vibe Coding</a>
+                    <a href="/docs/api/ai-inference">AI Inference</a>
+                    <a href="/docs/api/vector-db">Vector DB</a>
+                    <a href="/docs/api/compute">Compute</a>
+                    <a href="/docs/api/storage">Storage</a>
+                    <a href="/docs/api/functions">Functions</a>
+                    <a href="/docs/api/identity">Identity</a>
+                </div>
+            </li>
+                <li class="dropdown">
+                    <a href="/solutions">Solutions ▾</a>
+                    <div class="dropdown-content">
+                        <a href="/solutions#startups">Startups</a>
+                        <a href="/solutions#ecommerce">E-commerce</a>
+                        <a href="/solutions#datateams">Data Teams</a>
+                        <a href="/solutions#enterprise">Enterprise</a>
+                    </div>
+                </li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/changelog">Changelog</a></li>
+                <li><a href="/status">Status</a></li>
+                <li class="dropdown">
+                    <a href="/about">Company ▾</a>
+                    <div class="dropdown-content">
+                        <a href="/about">About</a>
+                        <a href="/careers">Careers</a>
+                        <a href="/contact">Contact</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="auth-section">
+                <a href="/dashboard" class="btn btn-secondary">Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-content">
+            <h1>The Complete AI & Cloud Platform 🚀</h1>
+            <p class="hero-subtitle">Build, deploy, and scale with custom @shmry.com emails, website builder, mobile app creator, and edge computing power - LIVE from Node.js! Experience <a href="/benchmarks" style="color: var(--primary); text-decoration: underline;">infinite scalability</a>, <a href="/architecture" style="color: var(--primary); text-decoration: underline;">100% edge-powered infrastructure</a>, and <a href="/benchmarks" style="color: var(--primary); text-decoration: underline;">90% cost reduction</a> compared to traditional cloud providers.</p>
+            
+            <!-- SHMRY AI Search Box - Google Style -->
+            <div class="shmry-search-hero">
+                <div class="search-container">
+                    <!-- Search Type Selection -->
+                    <div class="search-type-selector">
+                        <div class="search-type-option active" data-type="ai-search" onclick="selectSearchType('ai-search')">
+                            <i class="fas fa-brain"></i>
+                            <span>AI Search</span>
+                        </div>
+                        <div class="search-type-option" data-type="gpt-search" onclick="selectSearchType('gpt-search')">
+                            <i class="fas fa-robot"></i>
+                            <span>GPT Search</span>
+                        </div>
+                        <div class="search-type-option" data-type="google-search" onclick="selectSearchType('google-search')">
+                            <i class="fab fa-google"></i>
+                            <span>Google Search</span>
+                        </div>
+                        <div class="search-type-option" data-type="code-search" onclick="selectSearchType('code-search')">
+                            <i class="fas fa-code"></i>
+                            <span>Code Search</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Input -->
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="hero-search-input" placeholder="Ask anything... AI will find the best answers" class="hero-search-input">
+                        <button class="hero-search-btn" onclick="performHeroSearch()">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Search Suggestions -->
+                    <div class="search-suggestions">
+                        <span class="suggestion-tag" onclick="setHeroSearch('How to create @shmry.com email?')">@shmry.com Email</span>
+                        <span class="suggestion-tag" onclick="setHeroSearch('Build a website with AI')">Website Builder</span>
+                        <span class="suggestion-tag" onclick="setHeroSearch('Create mobile app')">Mobile App</span>
+                        <span class="suggestion-tag" onclick="setHeroSearch('Edge computing benefits')">Edge Computing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-features">
+                <div class="feature">
+                    <a href="/products/custom-email" class="feature-link">
+                        <span class="feature-icon">📧</span>
+                        <span>Custom @shmry.com Email</span>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="/products/website-builder" class="feature-link">
+                        <span class="feature-icon">🌐</span>
+                        <span>Website Builder</span>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="/products/mobile-app-builder" class="feature-link">
+                        <span class="feature-icon">📱</span>
+                        <span>Mobile App Creator</span>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="/products/edge-computing" class="feature-link">
+                        <span class="feature-icon">⚡</span>
+                        <span>Edge Computing</span>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="/services#call-center" class="feature-link">
+                        <span class="feature-icon">🎯</span>
+                        <span>Call Center Platform</span>
+                    </a>
+                </div>
+                <div class="feature">
+                    <a href="/services#vibe-coding" class="feature-link">
+                        <span class="feature-icon">💻</span>
+                        <span>Vibe Coding Service</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="/dashboard" class="btn btn-primary">Launch Platform</a>
+                <a href="/services" class="btn btn-secondary">Explore 190+ Services</a>
+            </div>
+            <p class="hero-trust">Trusted by teams building the future with Shmry's distributed edge network</p>
+        </div>
+    </section>
+
+    <!-- Shmry Search Section -->
+    <section id="shmry-search" class="section shmry-search-section">
+        <div class="container">
+            <h2 class="section-title">Shmry Search</h2>
+            <p class="section-subtitle">Powerful AI-powered search and coding assistance that works offline</p>
+            
+            <div class="search-showcase">
+                <div class="search-demo">
+                    <div class="search-input-container">
+                        <input type="text" id="search-demo-input" placeholder="Ask anything... Search, code, debug, or get help" class="search-input">
+                        <button class="search-btn" onclick="demoSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="search-examples">
+                        <span class="example-tag" onclick="setSearchExample('How to implement authentication in React?')">React Auth</span>
+                        <span class="example-tag" onclick="setSearchExample('Debug this Python code')">Debug Code</span>
+                        <span class="example-tag" onclick="setSearchExample('Explain edge computing')">Edge Computing</span>
+                        <span class="example-tag" onclick="setSearchExample('Generate API documentation')">API Docs</span>
+                    </span>
+                </div>
+                
+                <div class="search-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Instant Results</h3>
+                        <p>Get answers in milliseconds with our optimized AI models</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3>Code Assistance</h3>
+                        <p>Debug, review, and generate code with intelligent suggestions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Offline First</h3>
+                        <p>Works without internet - perfect for development and learning</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Smart Context</h3>
+                        <p>Understands your project context and provides relevant solutions</p>
+                    </div>
+                </div>
+                
+                <div class="search-cta">
+                    <a href="/search/shmry-search" class="btn btn-primary">Try Shmry Search</a>
+                    <a href="/test-ollama" class="btn btn-secondary">Test AI Connection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quickstart Section -->
+    <section id="quickstart" class="section">
+        <h2 class="section-title">Get Started in 5 Minutes</h2>
+        <div class="quickstart-content">
+            <div class="quickstart-card">
+                <h3>1. Install & Authenticate</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Terminal</span>
+                        <button class="copy-btn" onclick="copyCode('install-code')">Copy</button>
+                    </div>
+                    <pre id="install-code"><code># Install
+pip install shmry
+
+# Authenticate
+export SHMRY_API_KEY=sk_live_or_test_...</code></pre>
+                </div>
+            </div>
+            
+            <div class="quickstart-card">
+                <h3>2. Your First AI App</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Python</span>
+                        <button class="copy-btn" onclick="copyCode('python-code')">Copy</button>
+                    </div>
+                    <pre id="python-code"><code>from shmry import Client
+c = Client()
+
+# 1) Create a vector index
+idx = c.vectors.create(name="products", dim=1536)
+
+# 2) Upsert embeddings
+idx.upsert([{"id":"p1","vector":[...],"metadata":{"title":"T-shirt"}}])
+
+# 3) Query + generate
+hits = idx.query(vector=[...], top_k=5)
+print(c.ai.generate(model="shmry-large", prompt=f"Summarize {hits}"))</code></pre>
+                </div>
+            </div>
+            
+            <div class="quickstart-card">
+                <h3>3. Deploy & Scale</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>JavaScript</span>
+                        <button class="copy-btn" onclick="copyCode('js-code')">Copy</button>
+                    </div>
+                    <pre id="js-code"><code>import { ShmryClient } from 'shmry';
+
+const client = new ShmryClient();
+
+// Deploy function
+const fn = await client.functions.deploy({
+  name: 'my-ai-function',
+  code: async (req) => {
+    const result = await client.ai.inference(req.prompt);
+    return { response: result };
+  }
+});
+
+console.log('Function deployed:', fn.url);</code></pre>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quickstart-cta">
+            <a href="/docs" class="btn btn-primary">View Full Documentation</a>
+            <a href="/dashboard" class="btn btn-secondary">Try in Dashboard</a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <p>Perfect for getting started</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 5k AI inferences/month</li>
+                    <li>✓ 1M vector operations</li>
+                    <li>✓ 5 GB storage</li>
+                    <li>✓ 1 project</li>
+                    <li>✓ Community support</li>
+                </ul>
+                <a href="/dashboard" class="btn btn-secondary">Get Started Free</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3>Builder</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <p>For growing teams</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 100k AI inferences/month</li>
+                    <li>✓ 10M vector operations</li>
+                    <li>✓ 100 GB storage</li>
+                    <li>✓ 3 projects</li>
+                    <li>✓ Email support</li>
+                    <li>✓ Advanced analytics</li>
+                </ul>
+                <a href="/dashboard" class="btn btn-primary">Start Building</a>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Scale</h3>
+                    <div class="price">$199<span>/month</span></div>
+                    <p>For production apps</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ 2M AI inferences/month</li>
+                    <li>✓ 100M vector operations</li>
+                    <li>✓ 1 TB storage</li>
+                    <li>✓ 10 projects</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ Custom models</li>
+                    <li>✓ Advanced security</li>
+                </div>
+                <a href="/dashboard" class="btn btn-secondary">Scale Up</a>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p>For large organizations</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Unlimited everything</li>
+                    <li>✓ SSO/SAML</li>
+                    <li>✓ VPC peering</li>
+                    <li>✓ BYOK encryption</li>
+                    <li>✓ Dedicated support</li>
+                    <li>✓ Custom SLA</li>
+                    <li>✓ On-premise options</li>
+                </ul>
+                <a href="/contact" class="btn btn-secondary">Contact Sales</a>
+            </div>
+        </div>
+        
+        <div class="pricing-cta">
+            <p>All plans include: Edge computing, AI models, Vector database, Cloud infrastructure</p>
+            <a href="/pricing" class="btn btn-primary">View Pricing Details</a>
+        </div>
+    </section>
+
+    <!-- Expanded Platform Services Section -->
+    <section id="platform-services" class="section">
+        <h2 class="section-title">Complete Platform Services</h2>
+        <p class="section-subtitle">Beyond cloud computing - Shmry provides everything you need to build, communicate, and scale</p>
+        
+        <div class="platform-services-grid">
+            <div class="platform-service-card">
+                <div class="platform-service-icon">📧</div>
+                <h3>Custom Email Services</h3>
+                <p>Professional @shmry.com email addresses with enterprise-grade security, collaboration tools, and AI-powered features. As good as Gmail with Shmry's edge computing power.</p>
+                <ul class="service-features">
+                    <li>Custom @shmry.com domains</li>
+                    <li>AI-powered email organization</li>
+                    <li>Enterprise security & compliance</li>
+                    <li>Advanced collaboration tools</li>
+                </ul>
+                <a href="/products/custom-email" class="platform-service-link">Get Started →</a>
+            </div>
+            
+            <div class="platform-service-card">
+                <div class="platform-service-icon">🌐</div>
+                <h3>Website Builder</h3>
+                <p>Drag-and-drop website creator for simple, corporate, and e-commerce sites. AI-powered templates, responsive design, and edge-optimized hosting.</p>
+                <ul class="service-features">
+                    <li>Visual drag-and-drop editor</li>
+                    <li>AI-powered templates</li>
+                    <li>E-commerce integration</li>
+                    <li>Edge-optimized hosting</li>
+                </ul>
+                <a href="/products/website-builder" class="platform-service-link">Start Building →</a>
+            </div>
+            
+            <div class="platform-service-card">
+                <div class="platform-service-icon">📱</div>
+                <h3>Mobile App Builder</h3>
+                <p>Create Android, iOS, and Harmony OS apps with visual development tools. AI assistance, cross-platform compatibility, and edge computing integration.</p>
+                <ul class="service-features">
+                    <li>Visual app development</li>
+                    <li>Cross-platform deployment</li>
+                    <li>AI-powered assistance</li>
+                    <li>Edge computing integration</li>
+                </ul>
+                <a href="/products/mobile-app-builder" class="platform-service-link">Build Apps →</a>
+            </div>
+            
+            <div class="platform-service-card">
+                <div class="platform-service-icon">⚡</div>
+                <h3>Edge Computing Infrastructure</h3>
+                <p>Distributed computing power across millions of connected devices. Ultra-low latency, massive scalability, and intelligent resource distribution.</p>
+                <ul class="service-features">
+                    <li>Millions of connected devices</li>
+                    <li>Ultra-low latency computing</li>
+                    <li>Intelligent resource distribution</li>
+                    <li>Global edge network</li>
+                </ul>
+                <a href="/products/edge-computing" class="platform-service-link">Learn More →</a>
+            </div>
+            
+            <div class="platform-service-card">
+                <div class="platform-service-icon">🎯</div>
+                <h3>Call Center Platform</h3>
+                <p>Human agents and AI voice bots for enterprise customer support. Revenue sharing model with 90% going to agents and service providers.</p>
+                <ul class="service-features">
+                    <li>Human agent recruitment</li>
+                    <li>AI voice bot agents</li>
+                    <li>90% revenue sharing</li>
+                    <li>Enterprise-grade platform</li>
+                </ul>
+                <a href="/services#call-center" class="platform-service-link">Join Platform →</a>
+            </div>
+            
+            <div class="platform-service-card">
+                <div class="platform-service-icon">💻</div>
+                <h3>Shmry Vibe Coding Service</h3>
+                <p>AI-powered coding assistance and development tools that understand your project's vibe and coding style. Personalized code generation, debugging, and optimization.</p>
+                <ul class="service-features">
+                    <li>AI-powered code generation</li>
+                    <li>Personalized coding style</li>
+                    <li>Smart debugging assistance</li>
+                    <li>Project context awareness</li>
+                </ul>
+                <a href="/services#vibe-coding" class="platform-service-link">Start Coding →</a>
+            </div>
+            
+            <div class="platform-service-card">
+                <div class="platform-service-icon">💰</div>
+                <h3>Revenue Sharing Model</h3>
+                <p>Shmry's innovative platform compensates service providers with 90% of revenue. Join our ecosystem and earn while building the future.</p>
+                <ul class="service-features">
+                    <li>90% revenue to providers</li>
+                    <li>Computing power providers</li>
+                    <li>Storage providers</li>
+                    <li>Software developers</li>
+                </ul>
+                <a href="/services#revenue-sharing" class="platform-service-link">Become Provider →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Index Section -->
+    <section id="services" class="section">
+        <h2 class="section-title">190+ Cloud & AI Services</h2>
+        <p class="section-subtitle">Everything you need to build, deploy, and scale AI applications</p>
+        
+        <div class="services-categories">
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>🤖 AI & Language</h3>
+                    <p>Advanced AI models, training, and inference</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h4>ShmryBrain</h4>
+                        <p>Core AI reasoning engine</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryNeural</h4>
+                        <p>Neural network framework</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryTransformer</h4>
+                        <p>Transformer architecture</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryInference</h4>
+                        <p>High-performance inference</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryTraining</h4>
+                        <p>Distributed model training</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryEvaluation</h4>
+                        <p>Model performance metrics</p>
+                        <span class="status active">Active</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>🗄️ Data & Storage</h3>
+                    <p>Vector databases, SQL, and object storage</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h4>ShmryVectorDB</h4>
+                        <p>High-performance vector database</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmrySQL</h4>
+                        <p>Distributed SQL database</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryStorage</h4>
+                        <p>Scalable object storage</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryStreams</h4>
+                        <p>Real-time data streaming</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryCache</h4>
+                        <p>Distributed caching layer</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryAnalytics</h4>
+                        <p>Real-time analytics engine</p>
+                        <span class="status active">Active</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>⚡ Compute & Edge</h3>
+                    <p>Serverless functions, containers, and edge runtime</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h4>ShmryFunctions</h4>
+                        <p>Serverless compute platform</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryContainers</h4>
+                        <p>Container orchestration</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryEdgeRuntime</h4>
+                        <p>Edge computing runtime</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryJobs</h4>
+                        <p>Background job processing</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryScheduler</h4>
+                        <p>Cron job scheduling</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryWorkers</h4>
+                        <p>Distributed worker pool</p>
+                        <span class="status active">Active</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>🔐 Platform & Security</h3>
+                    <p>Authentication, IAM, and security services</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h4>ShmryAuth</h4>
+                        <p>Identity and access management</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryIAM</h4>
+                        <p>Role-based access control</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmrySecurity</h4>
+                        <p>Advanced security features</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryAPI</h4>
+                        <p>API gateway and management</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmrySecrets</h4>
+                        <p>Secure secret management</p>
+                        <span class="status active">Active</span>
+                    </div>
+                    <div class="service-item">
+                        <h4>ShmryMonitoring</h4>
+                        <p>Observability and alerting</p>
+                        <span class="status active">Active</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-cta">
+            <a href="/dashboard" class="btn btn-primary">Launch Platform</a>
+            <a href="/services" class="btn btn-secondary">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section id="description" class="section">
+        <h2 class="section-title">What is Shmry?</h2>
+        <div class="description-grid">
+            <div class="description-card fade-in">
+                <h3><i class="fas fa-cloud"></i> Complete Cloud Platform</h3>
+                <p>Shmry provides a unified platform offering compute, storage, databases, networking, and edge services in one comprehensive ecosystem.</p>
+            </div>
+            <div class="description-card fade-in">
+                <h3><i class="fas fa-brain"></i> Advanced AI & Language</h3>
+                <p>Our proprietary AI models and Shmry Language provide superior performance. Built on edge computing infrastructure supported by millions of subscribers.</p>
+            </div>
+            <div class="description-card fade-in">
+                <h3><i class="fas fa-database"></i> Intelligent Database</h3>
+                <p>Shmry's AI-powered database provides intelligent query optimization, vector search, and real-time analytics with enterprise-grade performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scale Section -->
+    <section id="scale" class="section">
+        <h2 class="section-title">Platform Scale & Capabilities</h2>
+        <div class="scale-stats">
+            <div class="stat-card fade-in">
+                <div class="stat-number">190+</div>
+                <div class="stat-label">Cloud & AI Services</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Scalability</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Global Availability</div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Edge-Powered</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section">
+        <h2 class="section-title">Why Choose Shmry Over Everything Else?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-universal-access"></i></div>
+                <h3>One Platform, Everything</h3>
+                <p>Access all your cloud, AI, and development needs through a single, unified platform. No more vendor lock-in or integration headaches.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-brain"></i></div>
+                <h3>Superior AI Performance</h3>
+                <p>Our AI models provide exceptional performance. Built on edge computing infrastructure that scales with your needs, not corporate data centers.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>Cost Revolution</h3>
+                <p>Up to 90% cost reduction compared to traditional solutions. Edge computing eliminates data center overhead while providing superior performance.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Privacy & Security First</h3>
+                <p>Your data stays on edge devices, not in corporate data centers. Enterprise-grade security with local processing ensures complete privacy control.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Instant Global Deployment</h3>
+                <p>Deploy to millions of edge devices instantly. No waiting for data center provisioning or regional availability issues.</p>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                <h3>Community-Driven Innovation</h3>
+                <p>Built by developers, for developers. Open ecosystem that grows with community contributions and real-world use cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="section">
+        <h2 class="section-title">190+ Cloud & AI Services</h2>
+        <div class="modules-container">
+            <div class="modules-grid" id="modulesGrid">
+                <!-- Module cards will be loaded here -->
+            </div>
+            <div class="view-all-modules">
+                <a href="#" class="btn-modules" onclick="showAllModules()">
+                    <i class="fas fa-th-large"></i>
+                    View All 190+ Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <h2 class="section-title">Launch Your Complete Platform</h2>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem;">
+                Access the complete Shmry platform dashboard to manage your cloud services, AI models, databases, and edge computing infrastructure
+            </p>
+            <a href="shmry-edge-computing.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 3rem;">
+                <i class="fas fa-tachometer-alt"></i>
+                Launch Shmry Platform
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-logo">🚀 Shmry</div>
+                <p class="footer-text">
+                    The complete AI & cloud platform that replaces everything else
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/docs">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/careers">Careers</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/changelog">Changelog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="/status">Status</a></li>
+                        <li><a href="/docs">Help Center</a></li>
+                        <li><a href="/contact">Community</a></li>
+                        <li><a href="/security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-trust">
+            <div class="trust-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+                <a href="/security">Security</a>
+                <a href="/dpa">DPA</a>
+                <a href="/aup">AUP</a>
+                <a href="/sla">SLA</a>
+                <a href="/status">Status</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p>&copy; 2025 Shmry Technologies, Ltd. | 123 Innovation Drive, Tech City, TC 12345</p>
+                <p><a href="mailto:xepcam@gmail.com">xepcam@gmail.com</a> | <a href="https://wa.me/923001555681" target="_blank">WhatsApp +923001555681</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Backend configuration
+        const BACKEND_URL = 'http://154.57.212.38';
+        const ADMIN_PORT = '3001';
+        const MASTER_PORT = '3002';
+        const NETWORK_PORT = '3003';
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        });
+
+        // Shmry Platform Services Data
+        const shmryModules = [
+            // Core AI & Language (17) - ACTIVE for immediate use
+            { name: 'ShmryAI-Core', description: 'Central runtime for model loading, inference routing, and policies', status: 'active' },
+            { name: 'ShmryBrain', description: 'Neuron/synapse simulator for cognitive-like planning loops', status: 'active' },
+            { name: 'ShmryNeural', description: 'Training harness (PyTorch) with accelerators & mixed precision', status: 'active' },
+            { name: 'ShmryTransformer', description: 'Custom encoder/decoder stacks with plug-in attention blocks', status: 'active' },
+            { name: 'ShmryRL', description: 'RL fine-tuning (PPO/DPO/GRPO) with offline dataset tools', status: 'active' },
+            { name: 'ShmryLoRA', description: 'Parameter-efficient adapters & composition graph', status: 'active' },
+            { name: 'ShmryQuant', description: 'Quantization (INT8/4, AWQ, GPTQ) + calibration suite', status: 'active' },
+            { name: 'ShmryScheduler', description: 'Distributed job/epoch scheduler for multi-node training', status: 'active' },
+            { name: 'ShmryEval', description: 'Benchmark suite (reasoning, code, safety, multilingual)', status: 'active' },
+            { name: 'ShmryMemory', description: 'Hierarchical STM/LTM with vector + KV replay', status: 'active' },
+            { name: 'ShmryReason', description: 'Toolformer/function-calling reasoning orchestrator', status: 'active' },
+            { name: 'ShmryMath', description: 'Symbolic & numeric solver tools for models/agents', status: 'active' },
+            { name: 'ShmryGraphAI', description: 'Graph neural toolkits for supply, social, and routes', status: 'active' },
+            { name: 'ShmryTimeSeries', description: 'Forecasting toolkit (ARIMA/Prophet/DeepTS)', status: 'active' },
+            { name: 'ShmryAutoTrain', description: 'AutoML for tabular/NLP/vision with sweeps', status: 'active' },
+            { name: 'ShmrySafety', description: 'Red-team, policy filters, refuse/redirect guardrails', status: 'active' },
+            { name: 'ShmryPromptLab', description: 'Prompt/templates A/B tests with metrics', status: 'active' },
+            
+            // Edge & IoT (13) - These are ACTIVE for your current setup
+            { name: 'ShmryEdge', description: 'Distributed edge runtime & updates', status: 'active' },
+            { name: 'ShmryEdge-Node', description: 'Device agent with watchdog', status: 'active' },
+            { name: 'ShmryEdge-Worker', description: 'Task runner for local jobs', status: 'active' },
+            { name: 'ShmryEdge-Admin', description: 'Fleet dashboard & OTA control', status: 'active' },
+            { name: 'ShmryEdge-Fallback', description: 'Offline cache & sync rules', status: 'active' },
+            { name: 'ShmryEdge-Connect', description: 'LTE/Wi-Fi/MQTT connectivity', status: 'active' },
+            { name: 'ShmryEdge-Vision', description: 'On-device vision pipelines', status: 'development' },
+            { name: 'ShmryEdge-Audio', description: 'Wakeword/ASR/TTS local', status: 'development' },
+            { name: 'ShmryEdge-Sensors', description: 'Telemetry drivers & schema', status: 'development' },
+            { name: 'ShmryEdge-SecureBoot', description: 'Secure boot + attestation', status: 'planned' },
+            { name: 'ShmryEdge-ML', description: 'On-device model packs & loaders', status: 'development' },
+            { name: 'ShmryEdge-Store', description: 'Artifact/cache mgmt', status: 'development' },
+            { name: 'ShmryEdge-SDK', description: 'SDK for 3rd-party device apps', status: 'planned' },
+            
+            // Commerce & Consumer (12) - Including your current Rangoons setup
+            { name: 'ShmryRangoons', description: 'Retail storefront engine', status: 'active' },
+            { name: 'ShmryCatalog', description: 'SKUs, variants, media, specs', status: 'development' },
+            { name: 'ShmryCart', description: 'Cart, coupons, cross-sell hooks', status: 'development' },
+            { name: 'ShmryCheckout', description: 'Checkout UX, wallets, COD', status: 'development' },
+            { name: 'ShmryLoyalty', description: 'Points, tiers, referrals', status: 'planned' },
+            { name: 'ShmryReviews', description: 'UGC, moderation, insights', status: 'planned' },
+            { name: 'ShmrySearchShop', description: 'Merch search, facets, spellfix', status: 'planned' },
+            { name: 'ShmryFeedsShop', description: 'Marketplace & social feeds', status: 'planned' },
+            { name: 'ShmryContentCMS', description: 'Landing pages & blocks', status: 'planned' },
+            { name: 'ShmryNotifications', description: 'Email/SMS/WhatsApp/push', status: 'planned' },
+            { name: 'ShmryCDP', description: 'Customer 360 & segments', status: 'planned' },
+            { name: 'ShmryPromoAI', description: 'AI promos & A/B tests', status: 'active' },
+            
+            // Cloud Infrastructure (15) - ACTIVE
+            { name: 'ShmryCompute', description: 'Virtual machines, containers, and serverless functions', status: 'active' },
+            { name: 'ShmryStorage', description: 'Object storage, block storage, and file systems', status: 'active' },
+            { name: 'ShmryDatabase', description: 'SQL, NoSQL, and vector databases with AI optimization', status: 'active' },
+            { name: 'ShmryNetwork', description: 'Load balancers, CDN, and global networking', status: 'active' },
+            { name: 'ShmrySecurity', description: 'Identity management, encryption, and threat detection', status: 'active' },
+            { name: 'ShmryAnalytics', description: 'Real-time analytics, BI, and data warehousing', status: 'active' },
+            { name: 'ShmryMLOps', description: 'Model deployment, monitoring, and lifecycle management', status: 'active' },
+            { name: 'ShmryDevOps', description: 'CI/CD, infrastructure as code, and automation', status: 'active' },
+            { name: 'ShmryMonitoring', description: 'Application performance monitoring and observability', status: 'active' },
+            { name: 'ShmryBackup', description: 'Automated backup, disaster recovery, and archiving', status: 'active' },
+            { name: 'ShmryCompliance', description: 'GDPR, HIPAA, SOC2, and industry compliance', status: 'active' },
+            { name: 'ShmryCost', description: 'Cost optimization, budgeting, and resource management', status: 'active' },
+            { name: 'ShmrySupport', description: '24/7 technical support and managed services', status: 'active' },
+            { name: 'ShmryTraining', description: 'Certification programs and skill development', status: 'active' },
+            { name: 'ShmryConsulting', description: 'Architecture design and implementation services', status: 'active' },
+            { name: 'ShmryMarketplace', description: 'Third-party integrations and solutions', status: 'active' }
+        ];
+
+        // Display modules
+        function displayModules() {
+            const modulesGrid = document.getElementById('modulesGrid');
+            modulesGrid.innerHTML = '';
+            
+            // Show first 20 modules for overview
+            const displayModules = shmryModules.slice(0, 20);
+            
+            displayModules.forEach(module => {
+                const moduleCard = document.createElement('div');
+                moduleCard.className = 'module-card fade-in';
+                moduleCard.innerHTML = `
+                    <div class="module-name">${module.name}</div>
+                    <div class="module-description">${module.description}</div>
+                    <div class="module-status status-${module.status}">${module.status.toUpperCase()}</div>
+                `;
+                modulesGrid.appendChild(moduleCard);
+            });
+            
+            // Observe new elements
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        function showAllModules() {
+            const modulesGrid = document.getElementById('modulesGrid');
+            modulesGrid.innerHTML = '';
+            
+            shmryModules.forEach(module => {
+                const moduleCard = document.createElement('div');
+                moduleCard.className = 'module-card fade-in';
+                moduleCard.innerHTML = `
+                    <div class="module-name">${module.name}</div>
+                    <div class="module-description">${module.description}</div>
+                    <div class="module-status status-${module.status}">${module.status.toUpperCase()}</div>
+                `;
+                modulesGrid.appendChild(moduleCard);
+            });
+            
+            // Add "Back to Overview" card
+            const backCard = document.createElement('div');
+            backCard.className = 'module-card fade-in';
+            backCard.style.textAlign = 'center';
+            backCard.style.cursor = 'pointer';
+            backCard.innerHTML = `
+                <div class="module-name">🔙 Back to Overview</div>
+                <div class="module-description">Return to module overview</div>
+                <div class="module-status status-active">OVERVIEW</div>
+            `;
+            backCard.onclick = () => displayModules();
+            modulesGrid.appendChild(backCard);
+            
+            // Observe new elements
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // Initialize modules display
+        document.addEventListener('DOMContentLoaded', () => {
+            displayModules();
+        });
+
+        // Shmry Search Demo Functions
+        function demoSearch() {
+            const input = document.getElementById('search-demo-input');
+            const query = input.value.trim();
+            
+            if (!query) {
+                alert('Please enter a search query');
+                return;
+            }
+            
+            // Simulate search processing
+            const searchBtn = document.querySelector('.search-btn');
+            const originalText = searchBtn.innerHTML;
+            searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            searchBtn.disabled = true;
+            
+            // Simulate AI response delay
+            setTimeout(() => {
+                searchBtn.innerHTML = originalText;
+                searchBtn.disabled = false;
+                
+                // Show demo response
+                showDemoResponse(query);
+            }, 2000);
+        }
+        
+        function setSearchExample(example) {
+            document.getElementById('search-demo-input').value = example;
+        }
+        
+        function showDemoResponse(query) {
+            // Create a demo response based on the query
+            let response = '';
+            
+            if (query.toLowerCase().includes('react') && query.toLowerCase().includes('auth')) {
+                response = `Here's how to implement authentication in React:
+
+1. Install required packages:
+   npm install react-router-dom axios
+
+2. Create AuthContext:
+   const AuthContext = createContext();
+
+3. Implement login logic:
+   const login = async (credentials) => {
+     const response = await axios.post('/api/login', credentials);
+     setToken(response.data.token);
+   };
+
+4. Protect routes with PrivateRoute component.
+
+This provides a secure, scalable authentication system for your React app.`;
+            } else if (query.toLowerCase().includes('debug') && query.toLowerCase().includes('python')) {
+                response = `Python Debugging Tips:
+
+1. Use print() statements strategically
+2. Implement logging with the logging module
+3. Use pdb debugger: import pdb; pdb.set_trace()
+4. Try VS Code's built-in debugger
+5. Use try-except blocks for error handling
+
+For your specific code, please share the error message and I can help debug it directly.`;
+            } else if (query.toLowerCase().includes('edge computing')) {
+                response = `Edge Computing Explained:
+
+Edge computing brings computation and data storage closer to where it's needed, reducing latency and bandwidth usage.
+
+Key Benefits:
+• Lower latency for real-time applications
+• Reduced bandwidth costs
+• Improved privacy and security
+• Better reliability and offline capabilities
+
+Shmry's edge computing platform distributes AI workloads across devices for optimal performance.`;
+            } else if (query.toLowerCase().includes('api documentation')) {
+                response = `Generating API Documentation:
+
+1. Use OpenAPI/Swagger specification
+2. Document all endpoints with examples
+3. Include authentication methods
+4. Provide request/response schemas
+5. Add error codes and handling
+
+For Shmry's API, visit /docs/api for comprehensive documentation and examples.`;
+            } else {
+                response = `I understand you're asking about: "${query}"
+
+This is a demo of Shmry Search - our powerful AI-powered search and coding assistance system. In the full version, you'll get:
+
+• Instant, accurate responses
+• Code examples and explanations
+• Debugging assistance
+• Documentation generation
+• Context-aware suggestions
+
+Try the full Shmry Search at /search/shmry-search for complete functionality.`;
+            }
+            
+            // Show response in a modal or alert
+            alert(`Shmry Search Response:\n\n${response}`);
+        }
+        
+        // Hero Search Functions
+        let currentSearchType = 'ai-search'; // Default search type
+        
+        function selectSearchType(searchType) {
+            // Remove active class from all options
+            document.querySelectorAll('.search-type-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            // Add active class to selected option
+            const selectedOption = document.querySelector(`[data-type="${searchType}"]`);
+            if (selectedOption) {
+                selectedOption.classList.add('active');
+            }
+            
+            // Update current search type
+            currentSearchType = searchType;
+            
+            // Update placeholder text based on search type
+            const searchInput = document.getElementById('hero-search-input');
+            switch(searchType) {
+                case 'ai-search':
+                    searchInput.placeholder = 'Ask anything... AI will find the best answers';
+                    break;
+                case 'gpt-search':
+                    searchInput.placeholder = 'Ask like ChatGPT... Get intelligent responses';
+                    break;
+                case 'google-search':
+                    searchInput.placeholder = 'Search the web... Find anything online';
+                    break;
+                case 'code-search':
+                    searchInput.placeholder = 'Search code... Find solutions and examples';
+                    break;
+            }
+            
+            // Save user preference if logged in
+            saveUserSearchPreference(searchType);
+        }
+        
+        function performHeroSearch() {
+            const input = document.getElementById('hero-search-input');
+            const query = input.value.trim();
+            
+            if (!query) {
+                // Add shake animation to input
+                input.style.animation = 'shake 0.5s ease-in-out';
+                setTimeout(() => {
+                    input.style.animation = '';
+                }, 500);
+                return;
+            }
+            
+            // Show loading state
+            const searchBtn = document.querySelector('.hero-search-btn');
+            const originalHTML = searchBtn.innerHTML;
+            searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            searchBtn.disabled = true;
+            
+            // Perform search based on selected type
+            setTimeout(() => {
+                searchBtn.innerHTML = originalHTML;
+                searchBtn.disabled = false;
+                
+                // Execute search based on type
+                executeSearch(query, currentSearchType);
+            }, 1500);
+        }
+        
+        function executeSearch(query, searchType) {
+            switch(searchType) {
+                case 'ai-search':
+                    performAISearch(query);
+                    break;
+                case 'gpt-search':
+                    performGPTSearch(query);
+                    break;
+                case 'google-search':
+                    performGoogleSearch(query);
+                    break;
+                case 'code-search':
+                    performCodeSearch(query);
+                    break;
+                default:
+                    performAISearch(query);
+            }
+        }
+        
+        function performAISearch(query) {
+            // AI-powered search with SHMRY's edge computing
+            const results = [
+                {
+                    title: '🤖 AI-Powered Results',
+                    description: `AI analysis of: "${query}"`,
+                    type: 'ai-analysis',
+                    confidence: '95%',
+                    content: `Based on SHMRY's AI analysis, here are the most relevant results for "${query}":`
+                },
+                {
+                    title: '📧 @shmry.com Email Services',
+                    description: 'Professional email with AI-powered organization',
+                    type: 'service',
+                    url: '/products/custom-email'
+                },
+                {
+                    title: '🌐 Website Builder',
+                    description: 'AI-powered website creation tools',
+                    type: 'service',
+                    url: '/products/website-builder'
+                },
+                {
+                    title: '⚡ Edge Computing',
+                    description: 'Distributed AI processing power',
+                    type: 'service',
+                    url: '/products/edge-computing'
+                }
+            ];
+            
+            showSearchResults(query, 'AI Search', results);
+        }
+        
+        function performGPTSearch(query) {
+            // GPT-style conversational search
+            const results = [
+                {
+                    title: '💬 GPT-Style Response',
+                    description: `Conversational answer to: "${query}"`,
+                    type: 'gpt-response',
+                    content: `Here's a helpful response to your question "${query}":\n\nBased on my knowledge and SHMRY's capabilities, I can help you with this. The answer involves understanding your specific needs and providing tailored solutions.`
+                },
+                {
+                    title: '🔍 Related Questions',
+                    description: 'Similar questions you might have',
+                    type: 'suggestions',
+                    suggestions: [
+                        'How does SHMRY compare to other AI platforms?',
+                        'What are the benefits of edge computing?',
+                        'How to get started with SHMRY?'
+                    ]
+                }
+            ];
+            
+            showSearchResults(query, 'GPT Search', results);
+        }
+        
+        function performGoogleSearch(query) {
+            // Web search simulation
+            const results = [
+                {
+                    title: '🌐 Web Search Results',
+                    description: `Searching the web for: "${query}"`,
+                    type: 'web-search',
+                    content: `Web search results for "${query}" would typically include:\n\n• Relevant websites and articles\n• News and current information\n• Social media discussions\n• Academic resources\n• Professional networks`
+                },
+                {
+                    title: '📊 Search Analytics',
+                    description: 'Search trends and insights',
+                    type: 'analytics',
+                    stats: {
+                        'Total Results': '1,234,567',
+                        'Relevance Score': '94%',
+                        'Search Time': '0.8s'
+                    }
+                }
+            ];
+            
+            showSearchResults(query, 'Google Search', results);
+        }
+        
+        function performCodeSearch(query) {
+            // Code-specific search
+            const results = [
+                {
+                    title: '💻 Code Search Results',
+                    description: `Finding code for: "${query}"`,
+                    type: 'code-search',
+                    content: `Code search results for "${query}":\n\n• Code examples and snippets\n• Documentation and tutorials\n• GitHub repositories\n• Stack Overflow discussions\n• Best practices and patterns`
+                },
+                {
+                    title: '🚀 Quick Start Code',
+                    description: 'Get started with SHMRY',
+                    type: 'code-example',
+                    code: `// SHMRY API Example
+import { ShmryClient } from 'shmry';
+
+const client = new ShmryClient();
+const result = await client.search.query("${query}");
+
+console.log('Search results:', result);`
+                }
+            ];
+            
+            showSearchResults(query, 'Code Search', results);
+        }
+        
+        function showSearchResults(query, searchType, results) {
+            // Create results modal
+            const modal = document.createElement('div');
+            modal.className = 'search-results-modal';
+            
+            let resultsHTML = '';
+            results.forEach((result, index) => {
+                if (result.type === 'ai-analysis' || result.type === 'gpt-response' || result.type === 'web-search' || result.type === 'code-search') {
+                    resultsHTML += `
+                        <div class="search-result main-result">
+                            <h4>${result.title}</h4>
+                            <p>${result.description}</p>
+                            <div class="result-content">${result.content}</div>
+                        </div>
+                    `;
+                } else if (result.type === 'service') {
+                    resultsHTML += `
+                        <div class="search-result">
+                            <h4>${result.title}</h4>
+                            <p>${result.description}</p>
+                            <a href="${result.url}" class="result-link">Learn More →</a>
+                        </div>
+                    `;
+                } else if (result.type === 'suggestions') {
+                    resultsHTML += `
+                        <div class="search-result">
+                            <h4>${result.title}</h4>
+                            <p>${result.description}</p>
+                            <div class="suggestions-list">
+                                ${result.suggestions.map(s => `<span class="suggestion-item">${s}</span>`).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else if (result.type === 'code-example') {
+                    resultsHTML += `
+                        <div class="search-result">
+                            <h4>${result.title}</h4>
+                            <p>${result.description}</p>
+                            <div class="code-example">
+                                <pre><code>${result.code}</code></pre>
+                                <button class="copy-code-btn" onclick="copyCode(this)">Copy Code</button>
+                            </div>
+                        </div>
+                    `;
+                } else if (result.type === 'analytics') {
+                    resultsHTML += `
+                        <div class="search-result">
+                            <h4>${result.title}</h4>
+                            <p>${result.description}</p>
+                            <div class="stats-grid">
+                                ${Object.entries(result.stats).map(([key, value]) => 
+                                    `<div class="stat-item"><span class="stat-label">${key}:</span> <span class="stat-value">${value}</span></div>`
+                                ).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>🔍 ${searchType} Results for: "${query}"</h3>
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" class="close-btn">×</button>
+                    </div>
+                    <div class="modal-body">
+                        ${resultsHTML}
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Add enhanced modal styles
+            addEnhancedModalStyles();
+        }
+        
+        function addEnhancedModalStyles() {
+            if (!document.getElementById('enhanced-modal-styles')) {
+                const style = document.createElement('style');
+                style.id = 'enhanced-modal-styles';
+                style.textContent = `
+                    .search-results-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 10000;
+                        backdrop-filter: blur(10px);
+                    }
+                    .modal-content {
+                        background: var(--dark);
+                        border-radius: 20px;
+                        max-width: 800px;
+                        width: 90%;
+                        max-height: 80vh;
+                        overflow-y: auto;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                    }
+                    .modal-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 1.5rem;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+                    .modal-header h3 {
+                        color: var(--primary);
+                        margin: 0;
+                    }
+                    .close-btn {
+                        background: none;
+                        border: none;
+                        color: var(--gray);
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        padding: 0.5rem;
+                        border-radius: 50%;
+                        transition: all 0.3s ease;
+                    }
+                    .close-btn:hover {
+                        background: rgba(255, 255, 255, 0.1);
+                        color: var(--light);
+                    }
+                    .modal-body {
+                        padding: 1.5rem;
+                    }
+                    .search-result {
+                        padding: 1.5rem;
+                        margin-bottom: 1.5rem;
+                        background: rgba(255, 255, 255, 0.05);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 15px;
+                        transition: all 0.3s ease;
+                    }
+                    .search-result:hover {
+                        background: rgba(255, 255, 255, 0.08);
+                        border-color: var(--primary);
+                        transform: translateY(-2px);
+                    }
+                    .search-result.main-result {
+                        background: rgba(0, 255, 136, 0.1);
+                        border-color: var(--primary);
+                    }
+                    .search-result h4 {
+                        color: var(--primary);
+                        margin-bottom: 0.75rem;
+                        font-size: 1.2rem;
+                    }
+                    .search-result p {
+                        color: var(--gray);
+                        margin-bottom: 1rem;
+                    }
+                    .result-content {
+                        color: var(--light);
+                        line-height: 1.6;
+                        white-space: pre-line;
+                        margin-bottom: 1rem;
+                    }
+                    .result-link {
+                        color: var(--primary);
+                        text-decoration: none;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                        display: inline-block;
+                        padding: 0.5rem 1rem;
+                        background: rgba(0, 255, 136, 0.1);
+                        border-radius: 8px;
+                        border: 1px solid rgba(0, 255, 136, 0.3);
+                    }
+                    .result-link:hover {
+                        background: var(--primary);
+                        color: var(--darker);
+                        transform: translateY(-2px);
+                    }
+                    .suggestions-list {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 0.5rem;
+                        margin-top: 1rem;
+                    }
+                    .suggestion-item {
+                        background: rgba(255, 255, 255, 0.1);
+                        color: var(--light);
+                        padding: 0.5rem 1rem;
+                        border-radius: 20px;
+                        font-size: 0.9rem;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+                    .suggestion-item:hover {
+                        background: var(--primary);
+                        color: var(--darker);
+                        transform: translateY(-2px);
+                    }
+                    .code-example {
+                        background: rgba(0, 0, 0, 0.3);
+                        border-radius: 10px;
+                        padding: 1rem;
+                        margin-top: 1rem;
+                        position: relative;
+                    }
+                    .code-example pre {
+                        margin: 0;
+                        color: var(--light);
+                        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+                        font-size: 0.9rem;
+                        line-height: 1.4;
+                        overflow-x: auto;
+                    }
+                    .copy-code-btn {
+                        position: absolute;
+                        top: 0.5rem;
+                        right: 0.5rem;
+                        background: var(--primary);
+                        color: var(--darker);
+                        border: none;
+                        padding: 0.25rem 0.75rem;
+                        border-radius: 5px;
+                        font-size: 0.8rem;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+                    .copy-code-btn:hover {
+                        background: var(--accent);
+                        transform: scale(1.05);
+                    }
+                    .stats-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                        gap: 1rem;
+                        margin-top: 1rem;
+                    }
+                    .stat-item {
+                        background: rgba(255, 255, 255, 0.05);
+                        padding: 1rem;
+                        border-radius: 10px;
+                        text-align: center;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+                    .stat-label {
+                        color: var(--gray);
+                        font-size: 0.9rem;
+                        display: block;
+                        margin-bottom: 0.5rem;
+                    }
+                    .stat-value {
+                        color: var(--primary);
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        
+        function setHeroSearch(query) {
+            document.getElementById('hero-search-input').value = query;
+            document.getElementById('hero-search-input').focus();
+        }
+        
+        // User preference management
+        function saveUserSearchPreference(searchType) {
+            localStorage.setItem('shmry_search_preference', searchType);
+        }
+        
+        function loadUserSearchPreference() {
+            const savedPreference = localStorage.getItem('shmry_search_preference');
+            if (savedPreference) {
+                selectSearchType(savedPreference);
+            }
+        }
+        
+        function copyCode(button) {
+            const codeBlock = button.parentElement.querySelector('pre code');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeBlock.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Show feedback
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            button.style.background = 'var(--accent)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 2000);
+        }
+        
+        // Add shake animation for empty search
+        const shakeKeyframes = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+        `;
+        
+        if (!document.getElementById('shake-animation')) {
+            const style = document.createElement('style');
+            style.id = 'shake-animation';
+            style.textContent = shakeKeyframes;
+            document.head.appendChild(style);
+        }
+        
+        // Add Enter key support for hero search and initialize search preferences
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSearchInput = document.getElementById('hero-search-input');
+            if (heroSearchInput) {
+                heroSearchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        performHeroSearch();
+                    }
+                });
+            }
+            
+            // Load user search preferences
+            loadUserSearchPreference();
+        });
+    </script>
+</body>
+</html>

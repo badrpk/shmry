@@ -1,0 +1,751 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at SHMRY - Join Our Team</title>
+    <meta name="description" content="Join SHMRY's mission to democratize AI and cloud computing. Explore career opportunities in AI engineering, cloud architecture, and more.">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Careers at SHMRY - Join Our Team">
+    <meta property="og:description" content="Join SHMRY's mission to democratize AI and cloud computing. Explore career opportunities in AI engineering, cloud architecture, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shmry.com/careers">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .why-join-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .why-join-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .why-join-section p {
+            font-size: 1.2rem;
+            color: var(--light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .values-section {
+            margin-bottom: 3rem;
+        }
+        
+        .values-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .value-card p {
+            color: var(--gray);
+        }
+        
+        .positions-section {
+            margin-bottom: 3rem;
+        }
+        
+        .positions-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .position-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .position-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .position-title h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .position-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .position-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background: var(--primary);
+            color: var(--darker);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .position-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .position-requirements {
+            margin-bottom: 1.5rem;
+        }
+        
+        .position-requirements h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .position-requirements ul {
+            list-style: none;
+            color: var(--gray);
+        }
+        
+        .position-requirements li {
+            margin-bottom: 0.3rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .position-requirements li::before {
+            content: "â€¢";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .benefits-section {
+            margin-bottom: 3rem;
+        }
+        
+        .benefits-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .benefit-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .benefit-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .application-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .application-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .application-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .application-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--darker);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .position-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ðŸš€ Shmry Platform</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>Join Our Team</h1>
+            <p>Help us build the future of AI and cloud computing. We're looking for passionate individuals who want to make a difference.</p>
+        </div>
+
+        <div class="why-join-section">
+            <h2>Why Join SHMRY?</h2>
+            <p>We're not just building another cloud platform. We're revolutionizing how AI and computing power are distributed and accessed. Join us in making advanced technology accessible to everyone, everywhere.</p>
+        </div>
+
+        <div class="values-section">
+            <h2>What We Value</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon">ðŸš€</div>
+                    <h3>Innovation</h3>
+                    <p>We encourage creative thinking and pushing boundaries. Your ideas can shape the future of our platform.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">ðŸ¤</div>
+                    <h3>Collaboration</h3>
+                    <p>We believe the best solutions come from working together. Teamwork and open communication are core to our culture.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">ðŸŒ</div>
+                    <h3>Impact</h3>
+                    <p>Your work will directly impact developers and businesses worldwide, democratizing access to AI and cloud computing.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">ðŸ“š</div>
+                    <h3>Growth</h3>
+                    <p>We invest in your development with continuous learning opportunities, mentorship, and career advancement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="positions-section">
+            <h2>Open Positions</h2>
+            
+            <div class="position-card">
+                <div class="position-header">
+                    <div class="position-title">
+                        <h3>Senior AI Engineer</h3>
+                        <div class="position-meta">
+                            <span>ðŸ“ Remote</span>
+                            <span>â° Full-time</span>
+                            <span>ðŸ’° Competitive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-tags">
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Remote</span>
+                </div>
+                <div class="position-description">
+                    <p>Join our AI team to develop and optimize machine learning models for edge computing. You'll work on cutting-edge AI inference, model optimization, and distributed AI systems.</p>
+                </div>
+                <div class="position-requirements">
+                    <h4>What We're Looking For:</h4>
+                    <ul>
+                        <li>5+ years experience in AI/ML engineering</li>
+                        <li>Expertise in Python, TensorFlow, PyTorch</li>
+                        <li>Experience with model optimization and edge deployment</li>
+                        <li>Strong understanding of distributed systems</li>
+                        <li>Passion for making AI accessible to everyone</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <div class="position-title">
+                        <h3>Cloud Infrastructure Engineer</h3>
+                        <div class="position-meta">
+                            <span>ðŸ“ Remote</span>
+                            <span>â° Full-time</span>
+                            <span>ðŸ’° Competitive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-tags">
+                    <span class="tag">Cloud</span>
+                    <span class="tag">DevOps</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Remote</span>
+                </div>
+                <div class="position-description">
+                    <p>Help us build and scale our distributed edge computing infrastructure. You'll work on containerization, orchestration, and ensuring our platform is reliable and performant.</p>
+                </div>
+                <div class="position-requirements">
+                    <h4>What We're Looking For:</h4>
+                    <ul>
+                        <li>3+ years experience in cloud infrastructure</li>
+                        <li>Expertise in Docker, Kubernetes, AWS/GCP</li>
+                        <li>Experience with monitoring and observability</li>
+                        <li>Knowledge of edge computing concepts</li>
+                        <li>Strong problem-solving skills</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <div class="position-title">
+                        <h3>Frontend Developer</h3>
+                        <div class="position-meta">
+                            <span>ðŸ“ Remote</span>
+                            <span>â° Full-time</span>
+                            <span>ðŸ’° Competitive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-tags">
+                    <span class="tag">Frontend</span>
+                    <span class="tag">React</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Remote</span>
+                </div>
+                <div class="position-description">
+                    <p>Create beautiful, intuitive user interfaces for our platform. You'll work on dashboards, service interfaces, and ensuring our users have the best possible experience.</p>
+                </div>
+                <div class="position-requirements">
+                    <h4>What We're Looking For:</h4>
+                    <ul>
+                        <li>3+ years experience in frontend development</li>
+                        <li>Expertise in React, TypeScript, modern CSS</li>
+                        <li>Experience with responsive design and accessibility</li>
+                        <li>Understanding of UX principles</li>
+                        <li>Passion for creating great user experiences</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="position-card">
+                <div class="position-header">
+                    <div class="position-title">
+                        <h3>Developer Relations Engineer</h3>
+                        <div class="position-meta">
+                            <span>ðŸ“ Remote</span>
+                            <span>â° Full-time</span>
+                            <span>ðŸ’° Competitive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-tags">
+                    <span class="tag">DevRel</span>
+                    <span class="tag">Community</span>
+                    <span class="tag">Documentation</span>
+                    <span class="tag">Remote</span>
+                </div>
+                <div class="position-description">
+                    <p>Help developers succeed with our platform. You'll create documentation, tutorials, and build relationships with our developer community.</p>
+                </div>
+                <div class="position-requirements">
+                    <h4>What We're Looking For:</h4>
+                    <ul>
+                        <li>2+ years experience in developer relations or technical writing</li>
+                        <li>Strong technical background and communication skills</li>
+                        <li>Experience creating developer content and documentation</li>
+                        <li>Passion for helping developers succeed</li>
+                        <li>Community building experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits-section">
+            <h2>Benefits & Perks</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">ðŸ’°</div>
+                    <h3>Competitive Salary</h3>
+                    <p>We offer competitive compensation packages with equity options to share in our success.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">ðŸ </div>
+                    <h3>Remote First</h3>
+                    <p>Work from anywhere in the world. We're a fully remote team with flexible hours.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">ðŸ“š</div>
+                    <h3>Learning Budget</h3>
+                    <p>Annual budget for courses, conferences, and learning resources to grow your skills.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">ðŸ¥</div>
+                    <h3>Health Coverage</h3>
+                    <p>Comprehensive health, dental, and vision coverage for you and your family.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">ðŸŽ¯</div>
+                    <h3>Impact</h3>
+                    <p>Work on technology that will democratize AI and cloud computing worldwide.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">ðŸš€</div>
+                    <h3>Growth</h3>
+                    <p>Fast-paced environment with opportunities for rapid career advancement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="application-section">
+            <h2>Ready to Join Us?</h2>
+            <p>We're always looking for talented individuals who share our passion for innovation and making technology accessible to everyone. Don't see a position that fits? Send us your resume anyway!</p>
+            
+            <form class="application-form" id="applicationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Position of Interest *</label>
+                    <select id="position" name="position" required>
+                        <option value="">Select a position</option>
+                        <option value="senior-ai-engineer">Senior AI Engineer</option>
+                        <option value="cloud-infrastructure-engineer">Cloud Infrastructure Engineer</option>
+                        <option value="frontend-developer">Frontend Developer</option>
+                        <option value="developer-relations-engineer">Developer Relations Engineer</option>
+                        <option value="other">Other (specify in message)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Years of Experience</label>
+                    <select id="experience" name="experience">
+                        <option value="">Select experience level</option>
+                        <option value="0-1">0-1 years</option>
+                        <option value="1-3">1-3 years</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Why are you interested in joining SHMRY? *</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Tell us about your passion for AI, cloud computing, or why you want to join our mission..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resume">Resume/CV (PDF, DOC, DOCX)</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Form handling
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.firstName || !data.lastName || !data.email || !data.position || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your application! We\'ll review your submission and get back to you within 5 business days. For immediate questions, contact us at xepcam@gmail.com or WhatsApp +923001555681.');
+            this.reset();
+        });
+
+        // Add some interactivity to position cards
+        document.querySelectorAll('.position-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Scroll to application form
+                document.querySelector('.application-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Auto-select the position if it matches
+                const positionTitle = this.querySelector('h3').textContent;
+                const positionSelect = document.getElementById('position');
+                
+                for (let option of positionSelect.options) {
+                    if (option.text.toLowerCase().includes(positionTitle.toLowerCase().split(' ')[0])) {
+                        positionSelect.value = option.value;
+                        break;
+                    }
+                }
+            });
+            
+            card.style.cursor = 'pointer';
+        });
+    </script>
+</body>
+</html>
+

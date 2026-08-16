@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shmry Mobile Integration</title>
+        <meta name="description" content="Integrate your mobile device with Shmry's edge computing network">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/shmry-theme.css">
+        
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .integration-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        .shortcut-preview {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .shortcut-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+        }
+        
+        .shortcut-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .shortcut-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        
+        .dashboard-preview {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dashboard-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .device-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .device-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .device-name {
+            font-weight: bold;
+            color: #25D366;
+        }
+        
+        .device-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .status-online {
+            background: #22c55e;
+            color: white;
+        }
+        
+        .status-offline {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .device-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .metric {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #25D366;
+        }
+        
+        .metric-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .steps {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .steps-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+        }
+        
+        .step-number {
+            background: #25D366;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            color: #25D366;
+            margin-bottom: 5px;
+        }
+        
+        .step-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+        
+        .benefits {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .benefits-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .cta-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .already-surrendered {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            border-radius: 20px;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .already-surrendered h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .device-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .device-info p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .dashboard-actions {
+            margin-top: 30px;
+        }
+
+        .dashboard-actions .btn {
+            margin: 0 10px;
+            padding: 12px 24px;
+            font-size: 1rem;
+        }
+
+        .re-auth-required {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 20px;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .warning-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .re-auth-required h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .security-notice {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .security-notice p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .re-auth-form {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .help-text {
+            margin-top: 20px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .integration-card,
+            .shortcut-preview,
+            .dashboard-preview,
+            .steps,
+            .benefits {
+                padding: 20px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .device-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🚀</div>
+            <h1 class="title">Shmry Mobile Integration</h1>
+            <p class="subtitle">Join our edge computing network and start earning today!</p>
+        </div>
+        
+        <div class="integration-card">
+            <h2>📱 WhatsApp Integration</h2>
+            <p>Send this link to your mobile device via WhatsApp to start the integration process.</p>
+            
+            <a href="https://wa.me/?text=🚀%20Join%20Shmry%20Edge%20Computing%20Network!%0A%0A📱%20Create%20server%20shortcut%20on%20your%20device%0A🔒%20Surrender%20device%20for%20optimal%20performance%0A💰%20Earn%20revenue%20sharing%0A%0A🌐%20Integration%20Link:%20https://shmry-edge-computing-34xy4hzlp-badar-s-projects.vercel.app/mobile-integrate%0A%0A#ShmryEdgeComputing%20#EdgeComputing%20#RevenueSharing" 
+               class="whatsapp-btn" target="_blank">
+                📱 Share on WhatsApp
+            </a>
+        </div>
+        
+        <div class="shortcut-preview">
+            <h3>🏠 Home Screen Shortcut</h3>
+            <p>After integration, this shortcut will be created on your device's home screen:</p>
+            
+            <div class="shortcut-icon">
+                🚀
+            </div>
+            <div class="shortcut-name">Shmry Dashboard</div>
+            <div class="shortcut-description">Monitor all admin devices & performance</div>
+        </div>
+        
+        <div class="dashboard-preview">
+            <h3 class="dashboard-title">📊 Device Performance Dashboard</h3>
+            <p style="text-align: center; margin-bottom: 20px; opacity: 0.8;">Real-time monitoring of all Shmry admin devices</p>
+            
+            <div class="device-card">
+                <div class="device-header">
+                    <div class="device-name">Vivo V30 Pro</div>
+                    <div class="device-status status-online">Online</div>
+                </div>
+                <div class="device-metrics">
+                    <div class="metric">
+                        <div class="metric-value">45%</div>
+                        <div class="metric-label">CPU Load</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">67%</div>
+                        <div class="metric-label">Memory</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">78%</div>
+                        <div class="metric-label">Storage</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">15d</div>
+                        <div class="metric-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="device-card">
+                <div class="device-header">
+                    <div class="device-name">Samsung Galaxy S24 Ultra</div>
+                    <div class="device-status status-online">Online</div>
+                </div>
+                <div class="device-metrics">
+                    <div class="metric">
+                        <div class="metric-value">78%</div>
+                        <div class="metric-label">CPU Load</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">82%</div>
+                        <div class="metric-label">Memory</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">65%</div>
+                        <div class="metric-label">Storage</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">12d</div>
+                        <div class="metric-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="device-card">
+                <div class="device-header">
+                    <div class="device-name">iPhone 15 Pro Max</div>
+                    <div class="device-status status-online">Online</div>
+                </div>
+                <div class="device-metrics">
+                    <div class="metric">
+                        <div class="metric-value">23%</div>
+                        <div class="metric-label">CPU Load</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">45%</div>
+                        <div class="metric-label">Memory</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">34%</div>
+                        <div class="metric-label">Storage</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">8d</div>
+                        <div class="metric-label">Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="steps">
+            <h3 class="steps-title">🔄 Integration Steps</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Share WhatsApp Link</h4>
+                    <p>Send the integration link to your mobile device</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Open Link on Device</h4>
+                    <p>Click the link on your mobile device</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Grant Permissions</h4>
+                    <p>Allow required permissions for integration</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Create Home Screen Shortcut</h4>
+                    <p>Shmry Dashboard shortcut created on your home screen</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>Device Surrender & Dashboard Access</h4>
+                    <p>Device surrenders to Shmry and you get access to performance dashboard</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefits">
+            <h3 class="benefits-title">💡 Benefits of Integration</h3>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <div>Optimal Performance</div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <div>Revenue Sharing</div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <div>Real-time Dashboard</div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏠</div>
+                    <div>Home Screen Shortcut</div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <div>Enhanced Security</div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔄</div>
+                    <div>Continuous Updates</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <button class="cta-btn" onclick="startIntegration()">
+                🚀 Start Integration Now
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Sample admin devices data
+        const adminDevices = [
+            {
+                name: "Vivo V30 Pro",
+                status: "online",
+                cpuLoad: "45%",
+                memoryUsage: "67%",
+                storageUsage: "78%",
+                uptime: "15d"
+            },
+            {
+                name: "Samsung Galaxy S24 Ultra",
+                status: "online",
+                cpuLoad: "78%",
+                memoryUsage: "82%",
+                storageUsage: "65%",
+                uptime: "12d"
+            },
+            {
+                name: "iPhone 15 Pro Max",
+                status: "online",
+                cpuLoad: "23%",
+                memoryUsage: "45%",
+                storageUsage: "34%",
+                uptime: "8d"
+            },
+            {
+                name: "OnePlus 12",
+                status: "online",
+                cpuLoad: "12%",
+                memoryUsage: "28%",
+                storageUsage: "89%",
+                uptime: "45d"
+            },
+            {
+                name: "Xiaomi 14 Ultra",
+                status: "online",
+                cpuLoad: "56%",
+                memoryUsage: "71%",
+                storageUsage: "42%",
+                uptime: "6d"
+            }
+        ];
+        
+        // Mobile device detection
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        // Create home screen shortcut
+        function createHomeScreenShortcut() {
+            if ('serviceWorker' in navigator && 'BeforeInstallPromptEvent' in window) {
+                // PWA installation
+                console.log('Creating PWA shortcut...');
+                return true;
+            } else if (isMobile()) {
+                // Manual shortcut creation instructions
+                if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    alert('📱 To create Shmry Dashboard shortcut:\n\n1. Tap the Share button (📤)\n2. Scroll down and tap "Add to Home Screen"\n3. Tap "Add" to confirm');
+                } else {
+                    alert('📱 To create Shmry Dashboard shortcut:\n\n1. Tap the menu button (⋮)\n2. Tap "Add to Home screen"\n3. Tap "Add" to confirm');
+                }
+                return true;
+            }
+            return false;
+        }
+        
+        // Start integration process
+        function startIntegration() {
+            if (isMobile()) {
+                // Mobile device - start integration
+                alert('🎉 Starting device integration...\n\nPlease grant the required permissions when prompted.');
+                
+                // Simulate integration process
+                setTimeout(() => {
+                    alert('📱 Device permissions granted!\n\nCreating Shmry Dashboard shortcut...');
+                    
+                    setTimeout(() => {
+                        if (createHomeScreenShortcut()) {
+                            alert('🏠 Shmry Dashboard shortcut created successfully!\n\nYour device is now part of the Shmry edge computing network.\n\nTap the shortcut anytime to monitor all admin devices!');
+                        }
+                    }, 2000);
+                }, 2000);
+            } else {
+                // Desktop - redirect to WhatsApp
+                const text = encodeURIComponent(
+                    "🚀 Join Shmry Edge Computing Network!\n\n" +
+                    "📱 Create server shortcut on your device\n" +
+                    "🔒 Surrender device for optimal performance\n" +
+                    "💰 Earn revenue sharing\n\n" +
+                    "🌐 Integration Link: https://shmry-edge-computing-34xy4hzlp-badar-s-projects.vercel.app/mobile-integrate\n\n" +
+                    "#ShmryEdgeComputing #EdgeComputing #RevenueSharing"
+                );
+                
+                const whatsappUrl = `https://wa.me/?text=${text}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+        
+        // Check if device is already surrendered to Shmry
+        function checkDeviceSurrenderStatus() {
+            const deviceId = localStorage.getItem('shmryDeviceId');
+            const surrenderStatus = localStorage.getItem('shmryDeviceSurrendered');
+            const deviceDeleted = localStorage.getItem('shmryDeviceDeleted');
+            
+            if (deviceId && surrenderStatus === 'true') {
+                if (deviceDeleted === 'true') {
+                    // Device was deleted, require re-authentication
+                    showReAuthenticationRequired();
+                    return true;
+                } else {
+                    // Device already surrendered, redirect to dashboard
+                    showAlreadySurrenderedMessage();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function showAlreadySurrenderedMessage() {
+            const mainContent = document.querySelector('.main-content');
+            mainContent.innerHTML = `
+                <div class="already-surrendered">
+                    <div class="success-icon">✅</div>
+                    <h2>Device Already Connected!</h2>
+                    <p>This device is already integrated with Shmry Edge Computing Network.</p>
+                    <div class="device-info">
+                        <p><strong>Device ID:</strong> ${localStorage.getItem('shmryDeviceId')}</p>
+                        <p><strong>Connected Since:</strong> ${localStorage.getItem('shmryConnectionDate')}</p>
+                        <p><strong>Status:</strong> Active</p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <a href="/admin/dashboard" class="btn btn-primary">📊 View Server Dashboard</a>
+                        <button onclick="disconnectDevice()" class="btn btn-secondary">🔌 Disconnect Device</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function disconnectDevice() {
+            if (confirm('Are you sure you want to disconnect this device from Shmry?')) {
+                localStorage.removeItem('shmryDeviceId');
+                localStorage.removeItem('shmryDeviceSurrendered');
+                localStorage.removeItem('shmryConnectionDate');
+                location.reload();
+            }
+        }
+
+        function showReAuthenticationRequired() {
+            const mainContent = document.querySelector('.container');
+            mainContent.innerHTML = `
+                <div class="re-auth-required">
+                    <div class="warning-icon">⚠️</div>
+                    <h2>Device Access Revoked</h2>
+                    <p>This device has been deleted from Shmry server by the master administrator.</p>
+                    <div class="security-notice">
+                        <p><strong>Security Notice:</strong> Source code files are now password protected.</p>
+                        <p><strong>Required:</strong> Admin ID and Password to regain access.</p>
+                    </div>
+                    <div class="re-auth-form">
+                        <div class="form-group">
+                            <label for="adminId">Admin ID:</label>
+                            <input type="text" id="adminId" placeholder="Enter Admin ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" placeholder="Enter Password" required>
+                        </div>
+                        <button onclick="reAuthenticateDevice()" class="btn btn-primary">🔐 Re-authenticate Device</button>
+                    </div>
+                    <div class="help-text">
+                        <p>Contact your system administrator if you don't have the credentials.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function reAuthenticateDevice() {
+            const adminId = document.getElementById('adminId').value.trim();
+            const password = document.getElementById('password').value;
+            
+            if (!adminId || !password) {
+                alert('❌ Please enter both Admin ID and Password');
+                return;
+            }
+            
+            // Check credentials (in real implementation, this would verify with server)
+            if (adminId === 'badrpk' && password === 'Karachi5846$') {
+                // Re-authentication successful
+                localStorage.removeItem('shmryDeviceDeleted');
+                localStorage.setItem('shmryDeviceReauthenticated', 'true');
+                localStorage.setItem('shmryReauthTimestamp', Date.now().toString());
+                
+                alert('✅ Device re-authentication successful!\n\nAccess to Shmry server has been restored.\n\nRedirecting to dashboard...');
+                
+                setTimeout(() => {
+                    window.location.href = '/admin/dashboard';
+                }, 2000);
+            } else {
+                alert('❌ Invalid Admin ID or Password\n\nPlease check your credentials and try again.');
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        }
+
+        // Check surrender status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (checkDeviceSurrenderStatus()) {
+                return; // Don't show integration UI if already surrendered
+            }
+            
+            // Continue with normal integration flow
+            initializeIntegration();
+        });
+
+        function initializeIntegration() {
+            // ... existing integration code ...
+        }
+
+        // WhatsApp sharing function
+        function shareOnWhatsApp() {
+            const text = encodeURIComponent(
+                "🚀 Join Shmry Edge Computing Network!\n\n" +
+                "📱 Create server shortcut on your device\n" +
+                "🔒 Surrender device for optimal performance\n" +
+                "💰 Earn revenue sharing\n\n" +
+                "🌐 Integration Link: https://shmry-edge-computing-ax2wzes2y-badar-s-projects.vercel.app/mobile-integrate\n\n" +
+                "#ShmryEdgeComputing #EdgeComputing #RevenueSharing"
+            );
+            
+            const whatsappUrl = `https://wa.me/?text=${text}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Update device metrics in real-time (simulation)
+        function updateDeviceMetrics() {
+            adminDevices.forEach(device => {
+                // Simulate real-time updates
+                device.cpuLoad = Math.floor(Math.random() * 100) + "%";
+                device.memoryUsage = Math.floor(Math.random() * 100) + "%";
+                device.storageUsage = Math.floor(Math.random() * 100) + "%";
+            });
+        }
+        
+        // Update metrics every 5 seconds (for demo purposes)
+        setInterval(updateDeviceMetrics, 5000);
+    </script>
+</body>
+</html>

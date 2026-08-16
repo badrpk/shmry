@@ -1,0 +1,788 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shmry Platform Pricing - Simple, Transparent Pricing</title>
+    <meta name="description" content="Simple, transparent pricing for Shmry's unified AI & cloud platform. Free tier available. Start building with AI inference, vector databases, and edge computing.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+            --gradient-secondary: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            --gradient-accent: linear-gradient(135deg, #4ecdc4, #44a08d);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .auth-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: var(--darker);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .price span {
+            font-size: 1.2rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .pricing-header p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .pricing-features li::before {
+            content: 'âœ“';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-cta {
+            margin-top: 2rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--darker);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+        
+        /* Cost Calculator */
+        .calculator-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .calculator-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-input {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .calculator-input label {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .calculator-input input {
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .calculator-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .calculator-result {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        
+        .calculator-result h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .estimated-cost {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--light);
+        }
+        
+        /* Pricing Details */
+        .pricing-details {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .details-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .detail-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .detail-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .detail-card li {
+            color: var(--gray);
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin: 4rem 0;
+        }
+        
+        .faq-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .faq-question {
+            color: var(--light);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(0, 255, 136, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-text {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ðŸš€ Shmry Platform</a>
+            <ul class="nav-links">
+                <li><a href="/services">Products</a></li>
+                <li><a href="/solutions">Solutions</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/changelog">Changelog</a></li>
+                <li><a href="/status">Status</a></li>
+                <li><a href="/company">Company</a></li>
+            </ul>
+            <div class="auth-section">
+                <a href="/dashboard" class="btn btn-secondary">Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Simple, Transparent Pricing</h1>
+            <p class="page-subtitle">Start building with Shmry's unified AI & cloud platform. No hidden fees, no surprises. Scale as you grow.</p>
+        </div>
+
+        <!-- Pricing Grid -->
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <p>Perfect for getting started</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>5k AI inferences/month</li>
+                    <li>1M vector operations</li>
+                    <li>5 GB storage</li>
+                    <li>1 project</li>
+                    <li>Community support</li>
+                    <li>Basic analytics</li>
+                </ul>
+                <div class="pricing-cta">
+                    <a href="/dashboard" class="btn btn-primary">Get Started Free</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3>Builder</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <p>For growing teams</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>100k AI inferences/month</li>
+                    <li>10M vector operations</li>
+                    <li>100 GB storage</li>
+                    <li>3 projects</li>
+                    <li>Email support</li>
+                    <li>Advanced analytics</li>
+                    <li>Custom models</li>
+                    <li>Priority queue</li>
+                </ul>
+                <div class="pricing-cta">
+                    <a href="/dashboard" class="btn btn-primary">Start Building</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Scale</h3>
+                    <div class="price">$199<span>/month</span></div>
+                    <p>For production apps</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>2M AI inferences/month</li>
+                    <li>100M vector operations</li>
+                    <li>1 TB storage</li>
+                    <li>10 projects</li>
+                    <li>Priority support</li>
+                    <li>Custom models</li>
+                    <li>Advanced security</li>
+                    <li>Dedicated resources</li>
+                    <li>Custom integrations</li>
+                </ul>
+                <div class="pricing-cta">
+                    <a href="/dashboard" class="btn btn-primary">Scale Up</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p>For large organizations</p>
+                </div>
+                <ul class="pricing-features">
+                    <li>Unlimited everything</li>
+                    <li>SSO/SAML</li>
+                    <li>VPC peering</li>
+                    <li>BYOK encryption</li>
+                    <li>Dedicated support</li>
+                    <li>Custom SLA</li>
+                    <li>On-premise options</li>
+                    <li>Custom pricing</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <div class="pricing-cta">
+                    <a href="/contact" class="btn btn-primary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Calculator -->
+        <div class="calculator-section">
+            <h2 class="calculator-title">Cost Calculator</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 2rem;">Estimate your monthly costs based on expected usage</p>
+            
+            <div class="calculator-grid">
+                <div class="calculator-input">
+                    <label for="inferences">AI Inferences/month</label>
+                    <input type="number" id="inferences" placeholder="10000" min="0">
+                </div>
+                <div class="calculator-input">
+                    <label for="vectors">Vector Operations/month</label>
+                    <input type="number" id="vectors" placeholder="1000000" min="0">
+                </div>
+                <div class="calculator-input">
+                    <label for="storage">Storage (GB)</label>
+                    <input type="number" id="storage" placeholder="50" min="0">
+                </div>
+                <div class="calculator-input">
+                    <label for="projects">Number of Projects</label>
+                    <input type="number" id="projects" placeholder="2" min="1" max="10">
+                </div>
+            </div>
+            
+            <div class="calculator-result">
+                <h3>Estimated Monthly Cost</h3>
+                <div class="estimated-cost" id="estimatedCost">$29</div>
+                <p style="color: var(--gray); margin-top: 1rem;">Based on Builder plan with your usage</p>
+            </div>
+        </div>
+
+        <!-- Pricing Details -->
+        <div class="pricing-details">
+            <h2 class="details-title">Pricing Details & Overage</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h4>AI Inference</h4>
+                    <ul>
+                        <li>Free: $0.001 per inference after 5k</li>
+                        <li>Builder: $0.0008 per inference after 100k</li>
+                        <li>Scale: $0.0006 per inference after 2M</li>
+                        <li>Enterprise: Custom rates</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h4>Vector Operations</h4>
+                    <ul>
+                        <li>Free: $0.0001 per operation after 1M</li>
+                        <li>Builder: $0.00008 per operation after 10M</li>
+                        <li>Scale: $0.00006 per operation after 100M</li>
+                        <li>Enterprise: Custom rates</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h4>Storage</h4>
+                    <ul>
+                        <li>Free: $0.02 per GB after 5 GB</li>
+                        <li>Builder: $0.015 per GB after 100 GB</li>
+                        <li>Scale: $0.01 per GB after 1 TB</li>
+                        <li>Enterprise: Custom rates</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h4>Bandwidth</h4>
+                    <ul>
+                        <li>Free: $0.08 per GB after 100 GB</li>
+                        <li>Builder: $0.06 per GB after 1 TB</li>
+                        <li>Scale: $0.04 per GB after 10 TB</li>
+                        <li>Enterprise: Custom rates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What happens if I exceed my plan limits?</div>
+                <div class="faq-answer">You'll be charged overage fees based on the rates shown above. We'll notify you when you reach 80% of your limits so you can upgrade or adjust usage.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I change plans at any time?</div>
+                <div class="faq-answer">Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate your billing accordingly.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is there a long-term contract?</div>
+                <div class="faq-answer">No contracts required. All plans are month-to-month with the option to cancel at any time. Enterprise customers can choose annual billing for discounts.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What's included in "unlimited everything" for Enterprise?</div>
+                <div class="faq-answer">Enterprise plans include unlimited AI inferences, vector operations, storage, and projects. We work with you to set reasonable usage expectations and provide dedicated infrastructure.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you offer volume discounts?</div>
+                <div class="faq-answer">Yes! Contact our sales team for custom pricing on high-volume usage. We offer significant discounts for large-scale deployments.</div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Start Building?</h2>
+            <p class="cta-text">Join thousands of developers building the future with Shmry's unified platform</p>
+            <a href="/dashboard" class="btn btn-primary">Get Started Free</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/privacy">Privacy</a>
+                <a href="/terms">Terms</a>
+                <a href="/security">Security</a>
+                <a href="/dpa">DPA</a>
+                <a href="/aup">AUP</a>
+                <a href="/sla">SLA</a>
+                <a href="/status">Status</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shmry Technologies, Ltd. | 123 Innovation Drive, Tech City, TC 12345</p>
+                <p><a href="mailto:xepcam@gmail.com" style="color: var(--primary);">xepcam@gmail.com</a> | <a href="https://wa.me/923001555681" style="color: var(--primary);" target="_blank">WhatsApp +923001555681</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cost Calculator
+        function calculateCost() {
+            const inferences = parseInt(document.getElementById('inferences').value) || 0;
+            const vectors = parseInt(document.getElementById('vectors').value) || 0;
+            const storage = parseInt(document.getElementById('storage').value) || 0;
+            const projects = parseInt(document.getElementById('projects').value) || 1;
+            
+            let cost = 0;
+            let plan = 'Free';
+            
+            // Calculate costs based on usage
+            if (inferences <= 5000 && vectors <= 1000000 && storage <= 5 && projects <= 1) {
+                cost = 0;
+                plan = 'Free';
+            } else if (inferences <= 100000 && vectors <= 10000000 && storage <= 100 && projects <= 3) {
+                cost = 29;
+                plan = 'Builder';
+            } else if (inferences <= 2000000 && vectors <= 100000000 && storage <= 1000 && projects <= 10) {
+                cost = 199;
+                plan = 'Scale';
+            } else {
+                cost = 199; // Base cost for Enterprise
+                plan = 'Enterprise (Custom)';
+            }
+            
+            // Add overage costs
+            if (inferences > 5000) {
+                cost += Math.max(0, (inferences - 5000) * 0.001);
+            }
+            if (vectors > 1000000) {
+                cost += Math.max(0, (vectors - 1000000) * 0.0001);
+            }
+            if (storage > 5) {
+                cost += Math.max(0, (storage - 5) * 0.02);
+            }
+            
+            document.getElementById('estimatedCost').textContent = `$${Math.round(cost)}`;
+        }
+        
+        // Add event listeners to calculator inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = ['inferences', 'vectors', 'storage', 'projects'];
+            inputs.forEach(id => {
+                document.getElementById(id).addEventListener('input', calculateCost);
+            });
+        });
+    </script>
+</body>
+</html>
+

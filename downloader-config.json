@@ -1,0 +1,30 @@
+{
+  "useAdminDevices": true,
+  "localStorageThreshold": 80,
+  "preferredAdminDevices": [
+    {
+      "name": "Admin Server 1",
+      "ip": "192.168.1.100",
+      "storage": "2TB",
+      "availableSpace": "1.5TB",
+      "status": "online",
+      "priority": "high"
+    },
+    {
+      "name": "Admin NAS Storage",
+      "ip": "192.168.1.102",
+      "storage": "10TB",
+      "availableSpace": "8.1TB",
+      "status": "online",
+      "priority": "high"
+    },
+    {
+      "name": "Admin Server 2",
+      "ip": "192.168.1.101",
+      "storage": "4TB",
+      "availableSpace": "3.2TB",
+      "status": "online",
+      "priority": "medium"
+    }
+  ]
+}

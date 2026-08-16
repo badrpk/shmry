@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Shmry - Get Support & Information</title>
+    <meta name="description" content="Contact Shmry for support, sales inquiries, partnerships, and technical assistance. Get in touch with our team.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            width: 40px;
+            text-align: center;
+        }
+        
+        .contact-details h4 {
+            color: var(--light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-details p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-form h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: var(--light);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--darker);
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .company-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .company-info h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .company-detail h4 {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .company-detail p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .support-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .support-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .support-section p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .support-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 100px 1rem 1rem;
+            }
+            
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .support-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Shmry</a>
+            <div>
+                <a href="/dashboard" style="color: var(--light); text-decoration: none; margin-right: 1rem;">Dashboard</a>
+                <a href="/docs" style="color: var(--light); text-decoration: none; margin-right: 1rem;">Docs</a>
+                <a href="/" style="color: var(--light); text-decoration: none;">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="contact-header">
+            <h1>Contact Shmry</h1>
+            <p>Get in touch with our team for support, sales inquiries, partnerships, and technical assistance. We're here to help you succeed.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">ðŸ“§</div>
+                    <div class="contact-details">
+                        <h4>Email Support</h4>
+                        <p>xepcam@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">ðŸ’¼</div>
+                    <div class="contact-details">
+                        <h4>Sales Inquiries</h4>
+                        <p>xepcam@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">ðŸ¤</div>
+                    <div class="contact-details">
+                        <h4>Partnerships</h4>
+                        <p>xepcam@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">ðŸ”’</div>
+                    <div class="contact-details">
+                        <h4>Security Issues</h4>
+                        <p>xepcam@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">ðŸ“±</div>
+                    <div class="contact-details">
+                        <h4>WhatsApp Support (24/7)</h4>
+                        <p>+923001555681</p>
+                        <small style="color: var(--accent);">Pakistan-based chat and 24/7 WhatsApp service</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="technical-support">Technical Support</option>
+                            <option value="sales-inquiry">Sales Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="billing">Billing</option>
+                            <option value="feature-request">Feature Request</option>
+                            <option value="bug-report">Bug Report</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="company-info">
+            <h2>Company Information</h2>
+            <div class="company-grid">
+                <div class="company-detail">
+                    <h4>Company Name</h4>
+                    <p>Shmry Technologies, Ltd.</p>
+                </div>
+                
+                <div class="company-detail">
+                    <h4>Legal Entity</h4>
+                    <p>Private Limited Company</p>
+                </div>
+                
+
+                
+                <div class="company-detail">
+                    <h4>Address</h4>
+                    <p>3, Aurora Drive<br>Colchester<br>United Kingdom</p>
+                </div>
+                
+                <div class="company-detail">
+                    <h4>Office Hours</h4>
+                    <p>24/7 WhatsApp Support Available<br>Pakistan-based chat service</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <h2>Need Immediate Help?</h2>
+            <p>Our support team is available 24/7 to assist you with any questions or issues.</p>
+            <div class="support-buttons">
+                <a href="https://wa.me/923001555681" class="btn" target="_blank">ðŸ“± WhatsApp Support (24/7)</a>
+                <a href="/docs" class="btn">ðŸ“š View Documentation</a>
+                <a href="/status" class="btn">ðŸ“Š Check Service Status</a>
+                <a href="/dashboard" class="btn">ðŸš€ Launch Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+                    // Simulate form submission
+        alert('Thank you for your message! We\'ll get back to you within 24 hours via xepcam@gmail.com or WhatsApp +923001555681.');
+        this.reset();
+        });
+
+        // Add some interactivity to contact methods
+        document.querySelectorAll('.contact-method').forEach(method => {
+            method.addEventListener('click', () => {
+                const email = method.querySelector('p').textContent;
+                if (email.includes('@')) {
+                    window.location.href = `mailto:${email}`;
+                }
+            });
+            
+            method.style.cursor = 'pointer';
+            method.style.transition = 'transform 0.3s ease';
+            
+            method.addEventListener('mouseenter', () => {
+                method.style.transform = 'translateY(-2px)';
+            });
+            
+            method.addEventListener('mouseleave', () => {
+                method.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
+

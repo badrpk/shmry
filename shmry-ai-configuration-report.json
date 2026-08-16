@@ -1,0 +1,1721 @@
+{
+  "timestamp": "2025-08-29T17:50:49.149Z",
+  "configuration": {
+    "analysis": {
+      "totalModels": 81,
+      "modelsByType": {
+        "model-file": [
+          {
+            "name": "soffice.bin",
+            "path": "C:\\Program Files\\LibreOffice\\program\\soffice.bin",
+            "type": "model-file",
+            "format": ".bin",
+            "size": 2730920,
+            "sizeFormatted": "2.6 MB",
+            "discoveredAt": "2025-08-29T17:46:28.131Z"
+          },
+          {
+            "name": "base.pt",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\whisper\\base.pt",
+            "type": "model-file",
+            "format": ".pt",
+            "size": 145262807,
+            "sizeFormatted": "138.53 MB",
+            "discoveredAt": "2025-08-29T17:46:28.219Z"
+          },
+          {
+            "name": "api-versions-50-36.0rev2.bin",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Google\\AndroidStudio2025.1.2\\lint\\api-versions-50-36.0rev2.bin",
+            "type": "model-file",
+            "format": ".bin",
+            "size": 1187560,
+            "sizeFormatted": "1.13 MB",
+            "discoveredAt": "2025-08-29T17:46:28.310Z"
+          },
+          {
+            "name": "KnownGameList.bin",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Microsoft\\GameDVR\\KnownGameList.bin",
+            "type": "model-file",
+            "format": ".bin",
+            "size": 1146840,
+            "sizeFormatted": "1.09 MB",
+            "discoveredAt": "2025-08-29T17:46:28.351Z"
+          },
+          {
+            "name": "ReactNativeBundle.bin",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Packages\\Microsoft.SkypeApp_kzf8qxf38zg5c\\LocalState\\ReactNativeBundle.bin",
+            "type": "model-file",
+            "format": ".bin",
+            "size": 28384822,
+            "sizeFormatted": "27.07 MB",
+            "discoveredAt": "2025-08-29T17:46:28.595Z"
+          }
+        ],
+        "model-directory": [
+          {
+            "name": "models",
+            "path": "D:\\Cursor\\news-website\\models",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 554072243,
+            "sizeFormatted": "528.4 MB",
+            "discoveredAt": "2025-08-29T17:46:29.398Z"
+          },
+          {
+            "name": "@anthropic-ai",
+            "path": "D:\\nifdu\\node_modules\\@anthropic-ai",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 2635453,
+            "sizeFormatted": "2.51 MB",
+            "discoveredAt": "2025-08-29T17:46:29.460Z"
+          },
+          {
+            "name": "openai",
+            "path": "D:\\nifdu\\node_modules\\openai",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 6372656,
+            "sizeFormatted": "6.08 MB",
+            "discoveredAt": "2025-08-29T17:46:29.689Z"
+          },
+          {
+            "name": "models",
+            "path": "D:\\nifdu\\src\\models",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 29124,
+            "sizeFormatted": "28.44 KB",
+            "discoveredAt": "2025-08-29T17:46:29.693Z"
+          },
+          {
+            "name": "numbertext",
+            "path": "C:\\Program Files\\LibreOffice\\share\\numbertext",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 239565,
+            "sizeFormatted": "233.95 KB",
+            "discoveredAt": "2025-08-29T17:46:29.718Z"
+          },
+          {
+            "name": "ollama",
+            "path": "C:\\Python313\\Lib\\site-packages\\ollama",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 127706,
+            "sizeFormatted": "124.71 KB",
+            "discoveredAt": "2025-08-29T17:46:29.764Z"
+          },
+          {
+            "name": "ollama-0.5.3.dist-info",
+            "path": "C:\\Python313\\Lib\\site-packages\\ollama-0.5.3.dist-info",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 6400,
+            "sizeFormatted": "6.25 KB",
+            "discoveredAt": "2025-08-29T17:46:29.765Z"
+          },
+          {
+            "name": "openai_whisper-20250625.dist-info",
+            "path": "C:\\Python313\\Lib\\site-packages\\openai_whisper-20250625.dist-info",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 13795,
+            "sizeFormatted": "13.47 KB",
+            "discoveredAt": "2025-08-29T17:46:29.766Z"
+          },
+          {
+            "name": "models",
+            "path": "C:\\Python313\\Lib\\site-packages\\pip\\_internal\\models",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 135072,
+            "sizeFormatted": "131.91 KB",
+            "discoveredAt": "2025-08-29T17:46:29.769Z"
+          },
+          {
+            "name": "whisper",
+            "path": "C:\\Python313\\Lib\\site-packages\\whisper",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 2055501,
+            "sizeFormatted": "1.96 MB",
+            "discoveredAt": "2025-08-29T17:46:29.779Z"
+          },
+          {
+            "name": "huggingface",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 440,
+            "sizeFormatted": "440 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.782Z"
+          },
+          {
+            "name": "models--deepseek-ai--deepseek-coder-1.3b-base",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--deepseek-ai--deepseek-coder-1.3b-base",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.782Z"
+          },
+          {
+            "name": "models--google--gemma-2b-it",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--google--gemma-2b-it",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.782Z"
+          },
+          {
+            "name": "models--google--gemma-7b",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--google--gemma-7b",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.783Z"
+          },
+          {
+            "name": "models--meta-llama--Llama-2-7b-chat-hf",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--meta-llama--Llama-2-7b-chat-hf",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.783Z"
+          },
+          {
+            "name": "models--meta-llama--Llama-2-7b-hf",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--meta-llama--Llama-2-7b-hf",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.783Z"
+          },
+          {
+            "name": "models--microsoft--DialoGPT-large",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--microsoft--DialoGPT-large",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.783Z"
+          },
+          {
+            "name": "models--microsoft--DialoGPT-medium",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--microsoft--DialoGPT-medium",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.783Z"
+          },
+          {
+            "name": "models--mistralai--Mistral-7B-Instruct-v0.2",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--mistralai--Mistral-7B-Instruct-v0.2",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.783Z"
+          },
+          {
+            "name": "models--mistralai--Mistral-7B-v0.1",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--mistralai--Mistral-7B-v0.1",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.784Z"
+          },
+          {
+            "name": "models--Qwen--Qwen-7B",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--Qwen--Qwen-7B",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.784Z"
+          },
+          {
+            "name": "models--Qwen--Qwen-7B-Chat",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--Qwen--Qwen-7B-Chat",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 40,
+            "sizeFormatted": "40 Bytes",
+            "discoveredAt": "2025-08-29T17:46:29.784Z"
+          },
+          {
+            "name": "whisper",
+            "path": "C:\\Users\\HP 250 G10\\.cache\\whisper",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 145262807,
+            "sizeFormatted": "138.53 MB",
+            "discoveredAt": "2025-08-29T17:46:29.784Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\jan.ai.app\\EBWebView\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:29.790Z"
+          },
+          {
+            "name": "Ollama",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Ollama",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 709595652,
+            "sizeFormatted": "676.72 MB",
+            "discoveredAt": "2025-08-29T17:46:29.795Z"
+          },
+          {
+            "name": "AppUp.IntelGraphicsExperience_8j3eq9eme6ctt",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Packages\\AppUp.IntelGraphicsExperience_8j3eq9eme6ctt",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 8192,
+            "sizeFormatted": "8 KB",
+            "discoveredAt": "2025-08-29T17:46:29.798Z"
+          },
+          {
+            "name": "Microsoft.BioEnrollment_cw5n1h2txyewy",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Packages\\Microsoft.BioEnrollment_cw5n1h2txyewy",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 16384,
+            "sizeFormatted": "16 KB",
+            "discoveredAt": "2025-08-29T17:46:29.800Z"
+          },
+          {
+            "name": "Ollama",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Ollama",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 4166420517,
+            "sizeFormatted": "3.88 GB",
+            "discoveredAt": "2025-08-29T17:46:29.897Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-2cKlrv\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.913Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-6kfdfQ\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.914Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-7dWrQ1\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.915Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-A1tEtq\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.916Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-aU4SCM\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.917Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-cezdFU\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.918Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-dmS23k\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.919Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-fhpxsa\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.922Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-hD9o2G\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.926Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-hkzNR1\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.927Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-IC55Ay\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.930Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-IfCGwn\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.930Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-kH9Hyp\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.931Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-Kqss1U\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.932Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-ku2jva\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.933Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-LceRxQ\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.934Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-LsTdTK\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.935Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-mfO9Lr\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.936Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-P4jALf\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.940Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-P5YNRE\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.943Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-pcZiDk\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.945Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-qbCJAY\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.946Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-QdnWh0\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.946Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-SjyTcQ\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:29.947Z"
+          },
+          {
+            "name": "puppeteer_dev_chrome_profile-UoGPTY",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-UoGPTY",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 1178164,
+            "sizeFormatted": "1.12 MB",
+            "discoveredAt": "2025-08-29T17:46:30.064Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-V8Oa9r\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:30.066Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-vKg2WT\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:30.068Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-vwkZFy\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:30.073Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-WAC7s2\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:30.079Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-y8AFyh\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:30.081Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-Zqj8Kh\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 5837168,
+            "sizeFormatted": "5.57 MB",
+            "discoveredAt": "2025-08-29T17:46:30.083Z"
+          },
+          {
+            "name": "DawnGraphiteCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Code\\DawnGraphiteCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.097Z"
+          },
+          {
+            "name": "DawnGraphiteCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Cursor\\DawnGraphiteCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.099Z"
+          },
+          {
+            "name": "DawnGraphiteCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\GitHub Desktop\\DawnGraphiteCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.102Z"
+          },
+          {
+            "name": "llamacpp",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Jan\\data\\llamacpp",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 1867017214,
+            "sizeFormatted": "1.74 GB",
+            "discoveredAt": "2025-08-29T17:46:30.112Z"
+          },
+          {
+            "name": "DawnGraphiteCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\LM Studio\\DawnGraphiteCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.114Z"
+          },
+          {
+            "name": "ollama app.exe",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\ollama app.exe",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 52223966,
+            "sizeFormatted": "49.8 MB",
+            "discoveredAt": "2025-08-29T17:46:30.175Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\ollama app.exe\\EBWebView\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.176Z"
+          },
+          {
+            "name": "GraphiteDawnCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Opera Software\\Opera Stable\\GraphiteDawnCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.177Z"
+          },
+          {
+            "name": "DawnGraphiteCache",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Windsurf\\DawnGraphiteCache",
+            "type": "model-directory",
+            "format": "directory",
+            "size": 557424,
+            "sizeFormatted": "544.36 KB",
+            "discoveredAt": "2025-08-29T17:46:30.179Z"
+          }
+        ],
+        "python-ai-package": [
+          {
+            "name": "ollama",
+            "path": "C:\\Python313\\Lib\\site-packages\\ollama",
+            "type": "python-ai-package",
+            "format": "python-package",
+            "size": 127706,
+            "sizeFormatted": "124.71 KB",
+            "discoveredAt": "2025-08-29T17:46:30.181Z"
+          },
+          {
+            "name": "ollama-0.5.3.dist-info",
+            "path": "C:\\Python313\\Lib\\site-packages\\ollama-0.5.3.dist-info",
+            "type": "python-ai-package",
+            "format": "python-package",
+            "size": 6400,
+            "sizeFormatted": "6.25 KB",
+            "discoveredAt": "2025-08-29T17:46:30.181Z"
+          },
+          {
+            "name": "openai_whisper-20250625.dist-info",
+            "path": "C:\\Python313\\Lib\\site-packages\\openai_whisper-20250625.dist-info",
+            "type": "python-ai-package",
+            "format": "python-package",
+            "size": 13795,
+            "sizeFormatted": "13.47 KB",
+            "discoveredAt": "2025-08-29T17:46:30.182Z"
+          },
+          {
+            "name": "whisper",
+            "path": "C:\\Python313\\Lib\\site-packages\\whisper",
+            "type": "python-ai-package",
+            "format": "python-package",
+            "size": 2055501,
+            "sizeFormatted": "1.96 MB",
+            "discoveredAt": "2025-08-29T17:46:30.183Z"
+          }
+        ],
+        "executable-ai-tool": [
+          {
+            "name": "numbertext",
+            "path": "C:\\Program Files\\LibreOffice\\share\\numbertext",
+            "type": "executable-ai-tool",
+            "format": "executable",
+            "size": 239565,
+            "sizeFormatted": "233.95 KB",
+            "discoveredAt": "2025-08-29T17:46:30.192Z"
+          },
+          {
+            "name": "Ollama",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Ollama",
+            "type": "executable-ai-tool",
+            "format": "executable",
+            "size": 4166420517,
+            "sizeFormatted": "3.88 GB",
+            "discoveredAt": "2025-08-29T17:46:30.228Z"
+          },
+          {
+            "name": "ollama",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Ollama\\lib\\ollama",
+            "type": "executable-ai-tool",
+            "format": "executable",
+            "size": 4115573165,
+            "sizeFormatted": "3.83 GB",
+            "discoveredAt": "2025-08-29T17:46:30.247Z"
+          },
+          {
+            "name": "Ollama",
+            "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ollama",
+            "type": "executable-ai-tool",
+            "format": "executable",
+            "size": 2187,
+            "sizeFormatted": "2.14 KB",
+            "discoveredAt": "2025-08-29T17:46:30.251Z"
+          }
+        ]
+      },
+      "summary": {
+        "totalModels": 81,
+        "totalSize": 16150137508,
+        "totalSizeFormatted": "15.04 GB",
+        "byType": [
+          {
+            "type": "model-file",
+            "count": 5,
+            "totalSize": 178712949
+          },
+          {
+            "type": "model-directory",
+            "count": 68,
+            "totalSize": 7686985723
+          },
+          {
+            "type": "python-ai-package",
+            "count": 4,
+            "totalSize": 2203402
+          },
+          {
+            "type": "executable-ai-tool",
+            "count": 4,
+            "totalSize": 8282235434
+          }
+        ]
+      }
+    },
+    "capabilities": [
+      "text-generation",
+      "chat",
+      "reasoning",
+      "speech-to-text",
+      "transcription",
+      "code-generation",
+      "code-completion",
+      "multimodal",
+      "cross-modal",
+      "text-to-image",
+      "image-generation"
+    ],
+    "edgeComputing": {
+      "nodes": [
+        {
+          "id": "edge-node-01",
+          "name": "SHMRY-Edge-01",
+          "type": "primary-edge-node",
+          "location": "local",
+          "capabilities": [
+            "ai-inference",
+            "edge-computing",
+            "local-storage"
+          ],
+          "maxConcurrentInferences": 5,
+          "loadBalancing": "round-robin",
+          "failover": true
+        },
+        {
+          "id": "edge-node-02",
+          "name": "SHMRY-Edge-02",
+          "type": "secondary-edge-node",
+          "location": "network",
+          "ip": "192.168.1.100",
+          "capabilities": [
+            "ai-inference",
+            "edge-computing"
+          ],
+          "maxConcurrentInferences": 3,
+          "loadBalancing": "round-robin",
+          "failover": true
+        }
+      ],
+      "loadBalancing": "round-robin",
+      "failover": true,
+      "maxTotalConcurrentInferences": 8
+    },
+    "testResults": [
+      {
+        "model": "soffice.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 2270,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "base.pt",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 2053,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "api-versions-50-36.0rev2.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 2252,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "KnownGameList.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 1089,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "ReactNativeBundle.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 1129,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      }
+    ]
+  },
+  "discovery": {
+    "timestamp": "2025-08-29T17:46:30.258Z",
+    "summary": {
+      "totalModels": 81,
+      "totalSize": 16150137508,
+      "totalSizeFormatted": "15.04 GB",
+      "byType": [
+        {
+          "type": "model-file",
+          "count": 5,
+          "totalSize": 178712949
+        },
+        {
+          "type": "model-directory",
+          "count": 68,
+          "totalSize": 7686985723
+        },
+        {
+          "type": "python-ai-package",
+          "count": 4,
+          "totalSize": 2203402
+        },
+        {
+          "type": "executable-ai-tool",
+          "count": 4,
+          "totalSize": 8282235434
+        }
+      ]
+    },
+    "models": [
+      {
+        "name": "soffice.bin",
+        "path": "C:\\Program Files\\LibreOffice\\program\\soffice.bin",
+        "type": "model-file",
+        "format": ".bin",
+        "size": 2730920,
+        "sizeFormatted": "2.6 MB",
+        "discoveredAt": "2025-08-29T17:46:28.131Z"
+      },
+      {
+        "name": "base.pt",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\whisper\\base.pt",
+        "type": "model-file",
+        "format": ".pt",
+        "size": 145262807,
+        "sizeFormatted": "138.53 MB",
+        "discoveredAt": "2025-08-29T17:46:28.219Z"
+      },
+      {
+        "name": "api-versions-50-36.0rev2.bin",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Google\\AndroidStudio2025.1.2\\lint\\api-versions-50-36.0rev2.bin",
+        "type": "model-file",
+        "format": ".bin",
+        "size": 1187560,
+        "sizeFormatted": "1.13 MB",
+        "discoveredAt": "2025-08-29T17:46:28.310Z"
+      },
+      {
+        "name": "KnownGameList.bin",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Microsoft\\GameDVR\\KnownGameList.bin",
+        "type": "model-file",
+        "format": ".bin",
+        "size": 1146840,
+        "sizeFormatted": "1.09 MB",
+        "discoveredAt": "2025-08-29T17:46:28.351Z"
+      },
+      {
+        "name": "ReactNativeBundle.bin",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Packages\\Microsoft.SkypeApp_kzf8qxf38zg5c\\LocalState\\ReactNativeBundle.bin",
+        "type": "model-file",
+        "format": ".bin",
+        "size": 28384822,
+        "sizeFormatted": "27.07 MB",
+        "discoveredAt": "2025-08-29T17:46:28.595Z"
+      },
+      {
+        "name": "models",
+        "path": "D:\\Cursor\\news-website\\models",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 554072243,
+        "sizeFormatted": "528.4 MB",
+        "discoveredAt": "2025-08-29T17:46:29.398Z"
+      },
+      {
+        "name": "@anthropic-ai",
+        "path": "D:\\nifdu\\node_modules\\@anthropic-ai",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 2635453,
+        "sizeFormatted": "2.51 MB",
+        "discoveredAt": "2025-08-29T17:46:29.460Z"
+      },
+      {
+        "name": "openai",
+        "path": "D:\\nifdu\\node_modules\\openai",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 6372656,
+        "sizeFormatted": "6.08 MB",
+        "discoveredAt": "2025-08-29T17:46:29.689Z"
+      },
+      {
+        "name": "models",
+        "path": "D:\\nifdu\\src\\models",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 29124,
+        "sizeFormatted": "28.44 KB",
+        "discoveredAt": "2025-08-29T17:46:29.693Z"
+      },
+      {
+        "name": "numbertext",
+        "path": "C:\\Program Files\\LibreOffice\\share\\numbertext",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 239565,
+        "sizeFormatted": "233.95 KB",
+        "discoveredAt": "2025-08-29T17:46:29.718Z"
+      },
+      {
+        "name": "ollama",
+        "path": "C:\\Python313\\Lib\\site-packages\\ollama",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 127706,
+        "sizeFormatted": "124.71 KB",
+        "discoveredAt": "2025-08-29T17:46:29.764Z"
+      },
+      {
+        "name": "ollama-0.5.3.dist-info",
+        "path": "C:\\Python313\\Lib\\site-packages\\ollama-0.5.3.dist-info",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 6400,
+        "sizeFormatted": "6.25 KB",
+        "discoveredAt": "2025-08-29T17:46:29.765Z"
+      },
+      {
+        "name": "openai_whisper-20250625.dist-info",
+        "path": "C:\\Python313\\Lib\\site-packages\\openai_whisper-20250625.dist-info",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 13795,
+        "sizeFormatted": "13.47 KB",
+        "discoveredAt": "2025-08-29T17:46:29.766Z"
+      },
+      {
+        "name": "models",
+        "path": "C:\\Python313\\Lib\\site-packages\\pip\\_internal\\models",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 135072,
+        "sizeFormatted": "131.91 KB",
+        "discoveredAt": "2025-08-29T17:46:29.769Z"
+      },
+      {
+        "name": "whisper",
+        "path": "C:\\Python313\\Lib\\site-packages\\whisper",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 2055501,
+        "sizeFormatted": "1.96 MB",
+        "discoveredAt": "2025-08-29T17:46:29.779Z"
+      },
+      {
+        "name": "huggingface",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 440,
+        "sizeFormatted": "440 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.782Z"
+      },
+      {
+        "name": "models--deepseek-ai--deepseek-coder-1.3b-base",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--deepseek-ai--deepseek-coder-1.3b-base",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.782Z"
+      },
+      {
+        "name": "models--google--gemma-2b-it",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--google--gemma-2b-it",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.782Z"
+      },
+      {
+        "name": "models--google--gemma-7b",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--google--gemma-7b",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.783Z"
+      },
+      {
+        "name": "models--meta-llama--Llama-2-7b-chat-hf",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--meta-llama--Llama-2-7b-chat-hf",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.783Z"
+      },
+      {
+        "name": "models--meta-llama--Llama-2-7b-hf",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--meta-llama--Llama-2-7b-hf",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.783Z"
+      },
+      {
+        "name": "models--microsoft--DialoGPT-large",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--microsoft--DialoGPT-large",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.783Z"
+      },
+      {
+        "name": "models--microsoft--DialoGPT-medium",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--microsoft--DialoGPT-medium",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.783Z"
+      },
+      {
+        "name": "models--mistralai--Mistral-7B-Instruct-v0.2",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--mistralai--Mistral-7B-Instruct-v0.2",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.783Z"
+      },
+      {
+        "name": "models--mistralai--Mistral-7B-v0.1",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--mistralai--Mistral-7B-v0.1",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.784Z"
+      },
+      {
+        "name": "models--Qwen--Qwen-7B",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--Qwen--Qwen-7B",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.784Z"
+      },
+      {
+        "name": "models--Qwen--Qwen-7B-Chat",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\huggingface\\hub\\models--Qwen--Qwen-7B-Chat",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 40,
+        "sizeFormatted": "40 Bytes",
+        "discoveredAt": "2025-08-29T17:46:29.784Z"
+      },
+      {
+        "name": "whisper",
+        "path": "C:\\Users\\HP 250 G10\\.cache\\whisper",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 145262807,
+        "sizeFormatted": "138.53 MB",
+        "discoveredAt": "2025-08-29T17:46:29.784Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\jan.ai.app\\EBWebView\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:29.790Z"
+      },
+      {
+        "name": "Ollama",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Ollama",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 709595652,
+        "sizeFormatted": "676.72 MB",
+        "discoveredAt": "2025-08-29T17:46:29.795Z"
+      },
+      {
+        "name": "AppUp.IntelGraphicsExperience_8j3eq9eme6ctt",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Packages\\AppUp.IntelGraphicsExperience_8j3eq9eme6ctt",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 8192,
+        "sizeFormatted": "8 KB",
+        "discoveredAt": "2025-08-29T17:46:29.798Z"
+      },
+      {
+        "name": "Microsoft.BioEnrollment_cw5n1h2txyewy",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Packages\\Microsoft.BioEnrollment_cw5n1h2txyewy",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 16384,
+        "sizeFormatted": "16 KB",
+        "discoveredAt": "2025-08-29T17:46:29.800Z"
+      },
+      {
+        "name": "Ollama",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Ollama",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 4166420517,
+        "sizeFormatted": "3.88 GB",
+        "discoveredAt": "2025-08-29T17:46:29.897Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-2cKlrv\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.913Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-6kfdfQ\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.914Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-7dWrQ1\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.915Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-A1tEtq\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.916Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-aU4SCM\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.917Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-cezdFU\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.918Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-dmS23k\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.919Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-fhpxsa\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.922Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-hD9o2G\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.926Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-hkzNR1\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.927Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-IC55Ay\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.930Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-IfCGwn\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.930Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-kH9Hyp\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.931Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-Kqss1U\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.932Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-ku2jva\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.933Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-LceRxQ\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.934Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-LsTdTK\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.935Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-mfO9Lr\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.936Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-P4jALf\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.940Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-P5YNRE\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.943Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-pcZiDk\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.945Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-qbCJAY\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.946Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-QdnWh0\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.946Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-SjyTcQ\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:29.947Z"
+      },
+      {
+        "name": "puppeteer_dev_chrome_profile-UoGPTY",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-UoGPTY",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 1178164,
+        "sizeFormatted": "1.12 MB",
+        "discoveredAt": "2025-08-29T17:46:30.064Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-V8Oa9r\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:30.066Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-vKg2WT\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:30.068Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-vwkZFy\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:30.073Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-WAC7s2\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:30.079Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-y8AFyh\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:30.081Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Temp\\puppeteer_dev_chrome_profile-Zqj8Kh\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 5837168,
+        "sizeFormatted": "5.57 MB",
+        "discoveredAt": "2025-08-29T17:46:30.083Z"
+      },
+      {
+        "name": "DawnGraphiteCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Code\\DawnGraphiteCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.097Z"
+      },
+      {
+        "name": "DawnGraphiteCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Cursor\\DawnGraphiteCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.099Z"
+      },
+      {
+        "name": "DawnGraphiteCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\GitHub Desktop\\DawnGraphiteCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.102Z"
+      },
+      {
+        "name": "llamacpp",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Jan\\data\\llamacpp",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 1867017214,
+        "sizeFormatted": "1.74 GB",
+        "discoveredAt": "2025-08-29T17:46:30.112Z"
+      },
+      {
+        "name": "DawnGraphiteCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\LM Studio\\DawnGraphiteCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.114Z"
+      },
+      {
+        "name": "ollama app.exe",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\ollama app.exe",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 52223966,
+        "sizeFormatted": "49.8 MB",
+        "discoveredAt": "2025-08-29T17:46:30.175Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\ollama app.exe\\EBWebView\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.176Z"
+      },
+      {
+        "name": "GraphiteDawnCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Opera Software\\Opera Stable\\GraphiteDawnCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.177Z"
+      },
+      {
+        "name": "DawnGraphiteCache",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Windsurf\\DawnGraphiteCache",
+        "type": "model-directory",
+        "format": "directory",
+        "size": 557424,
+        "sizeFormatted": "544.36 KB",
+        "discoveredAt": "2025-08-29T17:46:30.179Z"
+      },
+      {
+        "name": "ollama",
+        "path": "C:\\Python313\\Lib\\site-packages\\ollama",
+        "type": "python-ai-package",
+        "format": "python-package",
+        "size": 127706,
+        "sizeFormatted": "124.71 KB",
+        "discoveredAt": "2025-08-29T17:46:30.181Z"
+      },
+      {
+        "name": "ollama-0.5.3.dist-info",
+        "path": "C:\\Python313\\Lib\\site-packages\\ollama-0.5.3.dist-info",
+        "type": "python-ai-package",
+        "format": "python-package",
+        "size": 6400,
+        "sizeFormatted": "6.25 KB",
+        "discoveredAt": "2025-08-29T17:46:30.181Z"
+      },
+      {
+        "name": "openai_whisper-20250625.dist-info",
+        "path": "C:\\Python313\\Lib\\site-packages\\openai_whisper-20250625.dist-info",
+        "type": "python-ai-package",
+        "format": "python-package",
+        "size": 13795,
+        "sizeFormatted": "13.47 KB",
+        "discoveredAt": "2025-08-29T17:46:30.182Z"
+      },
+      {
+        "name": "whisper",
+        "path": "C:\\Python313\\Lib\\site-packages\\whisper",
+        "type": "python-ai-package",
+        "format": "python-package",
+        "size": 2055501,
+        "sizeFormatted": "1.96 MB",
+        "discoveredAt": "2025-08-29T17:46:30.183Z"
+      },
+      {
+        "name": "numbertext",
+        "path": "C:\\Program Files\\LibreOffice\\share\\numbertext",
+        "type": "executable-ai-tool",
+        "format": "executable",
+        "size": 239565,
+        "sizeFormatted": "233.95 KB",
+        "discoveredAt": "2025-08-29T17:46:30.192Z"
+      },
+      {
+        "name": "Ollama",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Ollama",
+        "type": "executable-ai-tool",
+        "format": "executable",
+        "size": 4166420517,
+        "sizeFormatted": "3.88 GB",
+        "discoveredAt": "2025-08-29T17:46:30.228Z"
+      },
+      {
+        "name": "ollama",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Ollama\\lib\\ollama",
+        "type": "executable-ai-tool",
+        "format": "executable",
+        "size": 4115573165,
+        "sizeFormatted": "3.83 GB",
+        "discoveredAt": "2025-08-29T17:46:30.247Z"
+      },
+      {
+        "name": "Ollama",
+        "path": "C:\\Users\\HP 250 G10\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Ollama",
+        "type": "executable-ai-tool",
+        "format": "executable",
+        "size": 2187,
+        "sizeFormatted": "2.14 KB",
+        "discoveredAt": "2025-08-29T17:46:30.251Z"
+      }
+    ],
+    "searchPaths": [
+      "C:\\Users\\HP 250 G10\\Downloads",
+      "C:\\Users\\HP 250 G10\\Documents",
+      "C:\\Users\\HP 250 G10\\Desktop",
+      "D:\\",
+      "D:\\AI-Models",
+      "D:\\shmry-edge-computing",
+      "D:\\shmry-edge-computing\\AI-Models",
+      "C:\\Program Files",
+      "C:\\Program Files (x86)",
+      "C:\\Python313\\Lib\\site-packages",
+      "C:\\Users\\HP 250 G10\\AppData\\Local\\Programs\\Python",
+      "C:\\Users\\HP 250 G10\\.cache",
+      "C:\\Users\\HP 250 G10\\AppData\\Local",
+      "C:\\Users\\HP 250 G10\\AppData\\Roaming"
+    ]
+  },
+  "summary": {
+    "totalModels": 81,
+    "totalSize": "15.04 GB",
+    "availableCapabilities": [
+      "text-generation",
+      "chat",
+      "reasoning",
+      "speech-to-text",
+      "transcription",
+      "code-generation",
+      "code-completion",
+      "multimodal",
+      "cross-modal",
+      "text-to-image",
+      "image-generation"
+    ],
+    "edgeComputingEnabled": true,
+    "testResults": [
+      {
+        "model": "soffice.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 2270,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "base.pt",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 2053,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "api-versions-50-36.0rev2.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 2252,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "KnownGameList.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 1089,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      },
+      {
+        "model": "ReactNativeBundle.bin",
+        "type": "model-file",
+        "status": "passed",
+        "loadTime": 1129,
+        "capabilities": [
+          "general-ai"
+        ],
+        "testType": "integration"
+      }
+    ]
+  }
+}

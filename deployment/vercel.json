@@ -1,0 +1,80 @@
+{
+  "version": 2,
+  "name": "shmry-edge-computing",
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "shmry-edge-computing.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "shmry-edge-computing.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/website/shmry-website.html"
+    },
+    {
+      "src": "/dashboard",
+      "dest": "/dashboard/index.html"
+    },
+    {
+      "src": "/docs",
+      "dest": "/docs/index.html"
+    },
+    {
+      "src": "/docs/(.*)",
+      "dest": "/docs/$1"
+    },
+    {
+      "src": "/master-dashboard",
+      "dest": "/master-dashboard.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/about/index.html"
+    },
+    {
+      "src": "/careers",
+      "dest": "/careers/index.html"
+    },
+    {
+      "src": "/products/custom-email",
+      "dest": "/products/custom-email/index.html"
+    },
+    {
+      "src": "/products/website-builder",
+      "dest": "/products/website-builder/index.html"
+    },
+    {
+      "src": "/products/mobile-app-builder",
+      "dest": "/products/mobile-app-builder/index.html"
+    },
+    {
+      "src": "/products/edge-computing",
+      "dest": "/products/edge-computing/index.html"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "server.js": {
+      "maxDuration": 30
+    }
+  }
+}

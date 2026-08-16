@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shmry Authentication - Complete AI & Cloud Platform</title>
+    <meta name="description" content="Learn how to authenticate with Shmry using Google OAuth, GitHub OAuth, WhatsApp OTP, and email magic links. Secure API key management and account linking.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .docs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar a {
+            color: var(--gray);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            display: block;
+            transition: color 0.3s ease;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+        }
+        
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: var(--light);
+            border-left-color: var(--primary);
+        }
+        
+        .main-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .main-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--light);
+        }
+        
+        .main-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+        }
+        
+        .main-content p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        .main-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .main-content li {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+        
+        .code-block {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid var(--gray-dark);
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            color: var(--light);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--darker);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .alert {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .alert-info {
+            background: rgba(78, 205, 196, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .alert-warning {
+            background: rgba(255, 107, 107, 0.1);
+            border-color: var(--secondary);
+        }
+        
+        .auth-method {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-method h3 {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .auth-icon {
+            font-size: 2rem;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+                padding: 100px 1rem 1rem;
+            }
+            
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">Shmry</a>
+            <div>
+                <a href="/dashboard" style="color: var(--light); text-decoration: none; margin-right: 1rem;">Dashboard</a>
+                <a href="/docs" style="color: var(--light); text-decoration: none;">Docs</a>
+                <a href="/" style="color: var(--light); text-decoration: none;">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="docs-container">
+        <aside class="sidebar">
+            <h3>Getting Started</h3>
+            <ul>
+                <li><a href="/docs">Overview</a></li>
+                <li><a href="/docs/quickstart">Quickstart</a></li>
+                <li><a href="/docs/auth" class="active">Authentication</a></li>
+            </ul>
+            
+            <h3>API Reference</h3>
+            <ul>
+                <li><a href="/docs/api/ai-inference">AI Inference</a></li>
+                <li><a href="/docs/api/vector-db">Vector Database</a></li>
+                <li><a href="/docs/api/compute">Compute</a></li>
+                <li><a href="/docs/api/storage">Storage</a></li>
+                <li><a href="/docs/api/functions">Serverless Functions</a></li>
+            </ul>
+            
+            <h3>Platform Services</h3>
+            <ul>
+                <li><a href="/docs/services/email">Email Services</a></li>
+                <li><a href="/docs/services/website-builder">Website Builder</a></li>
+                <li><a href="/docs/services/app-builder">Mobile App Builder</a></li>
+                <li><a href="/docs/services/edge-computing">Edge Computing</a></li>
+                <li><a href="/docs/services/call-center">Call Center Platform</a></li>
+                <li><a href="/docs/services/vibe-coding">Vibe Coding Service</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Authentication</h1>
+            <p>Shmry provides multiple secure authentication methods to fit your workflow. Choose from OAuth providers, phone verification, or email magic links.</p>
+            
+            <div class="alert alert-info">
+                <strong>🔐 Multiple Sign-in Methods:</strong> Link multiple accounts to a single Shmry user profile for seamless access across platforms.
+            </div>
+
+            <h2>Authentication Methods</h2>
+            <p>Shmry supports the following authentication methods, all designed with security and user experience in mind:</p>
+
+            <div class="auth-method">
+                <h3><span class="auth-icon">🔑</span>Google OAuth</h3>
+                <p>Sign in with your Google account for quick, secure access. Perfect for teams already using Google Workspace.</p>
+                
+                <h4>Features</h4>
+                <ul>
+                    <li>One-click sign-in with Google account</li>
+                    <li>Automatic profile information sync</li>
+                    <li>Enterprise SSO support</li>
+                    <li>Secure token-based authentication</li>
+                </ul>
+                
+                <h4>Setup</h4>
+                <div class="code-block">
+                    <pre><code># Redirect users to Google OAuth
+GET /auth/google
+
+# Handle OAuth callback
+GET /auth/google/callback?code=...
+
+# Exchange code for access token
+POST /auth/google/token
+{
+  "code": "authorization_code",
+  "redirect_uri": "https://your-app.com/callback"
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="auth-method">
+                <h3><span class="auth-icon">🐙</span>GitHub OAuth</h3>
+                <p>Connect your GitHub account for developer-focused authentication. Ideal for open source projects and development teams.</p>
+                
+                <h4>Features</h4>
+                <ul>
+                    <li>Developer-friendly authentication</li>
+                    <li>Repository access management</li>
+                    <li>GitHub organization support</li>
+                    <li>Code deployment integration</li>
+                </ul>
+                
+                <h4>Setup</h4>
+                <div class="code-block">
+                    <pre><code># Redirect to GitHub OAuth
+GET /auth/github
+
+# Handle OAuth callback
+GET /auth/github/callback?code=...
+
+# Exchange code for access token
+POST /auth/github/token
+{
+  "code": "authorization_code",
+  "state": "random_state_string"
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="auth-method">
+                <h3><span class="auth-icon">📱</span>WhatsApp OTP</h3>
+                <p>Verify your phone number using WhatsApp for secure, SMS-free authentication. Works globally with any WhatsApp-enabled phone.</p>
+                
+                <h4>Features</h4>
+                <ul>
+                    <li>No SMS costs or delays</li>
+                    <li>Global WhatsApp coverage</li>
+                    <li>6-digit OTP verification</li>
+                    <li>Rate limiting and security</li>
+                </ul>
+                
+                <h4>Setup</h4>
+                <div class="code-block">
+                    <pre><code># Send OTP to WhatsApp
+POST /auth/whatsapp/send-otp
+{
+  "phone": "+1234567890",
+  "country_code": "US"
+}
+
+# Verify OTP
+POST /auth/whatsapp/verify-otp
+{
+  "phone": "+1234567890",
+  "otp": "123456"
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="auth-method">
+                <h3><span class="auth-icon">📧</span>Email Magic Link</h3>
+                <p>Receive a secure login link via email. No passwords to remember, just click the link to sign in instantly.</p>
+                
+                <h4>Features</h4>
+                <ul>
+                    <li>Passwordless authentication</li>
+                    <li>Secure, time-limited links</li>
+                    <li>Works with any email provider</li>
+                    <li>No app installation required</li>
+                </ul>
+                
+                <h4>Setup</h4>
+                <div class="code-block">
+                    <pre><code># Send magic link
+POST /auth/email/send-magic-link
+{
+  "email": "user@example.com"
+}
+
+# Verify magic link
+GET /auth/email/verify?token=magic_token_here</code></pre>
+                </div>
+            </div>
+
+            <h2>Account Linking</h2>
+            <p>Link multiple authentication methods to a single Shmry account for flexible access and enhanced security.</p>
+            
+            <div class="code-block">
+                <pre><code># Link a new authentication method
+POST /auth/link-account
+{
+  "provider": "github",
+  "provider_user_id": "github_user_id",
+  "access_token": "github_access_token"
+}
+
+# Unlink an authentication method
+DELETE /auth/unlink-account
+{
+  "provider": "google",
+  "provider_user_id": "google_user_id"
+}</code></pre>
+            </div>
+
+            <h2>API Key Management</h2>
+            <p>Generate and manage API keys for programmatic access to Shmry services.</p>
+            
+            <div class="alert alert-warning">
+                <strong>⚠️ Security Note:</strong> Keep your API keys secure and never commit them to version control. Use environment variables or secure secret management.
+            </div>
+            
+            <h4>Create API Key</h4>
+            <div class="code-block">
+                <pre><code># Create a new API key
+POST /auth/api-keys
+{
+  "name": "Production API Key",
+  "permissions": ["ai:read", "vectors:write", "compute:read"],
+  "expires_at": "2025-12-31T23:59:59Z"
+}
+
+# Response
+{
+  "id": "key_abc123",
+  "name": "Production API Key",
+  "key": "sk_live_abc123...",
+  "permissions": ["ai:read", "vectors:write", "compute:read"],
+  "created_at": "2025-01-15T10:00:00Z",
+  "expires_at": "2025-12-31T23:59:59Z"
+}</code></pre>
+            </div>
+            
+            <h4>Using API Keys</h4>
+            <div class="code-block">
+                <pre><code># Python SDK
+import os
+from shmry import Client
+
+# Set API key in environment
+os.environ['SHMRY_API_KEY'] = 'sk_live_your_api_key_here'
+
+# Or pass directly to client
+client = Client(api_key='sk_live_your_api_key_here')
+
+# JavaScript SDK
+import { ShmryClient } from 'shmry';
+
+const client = new ShmryClient({
+  apiKey: 'sk_live_your_api_key_here'
+});</code></pre>
+            </div>
+
+            <h2>Session Management</h2>
+            <p>Manage user sessions and implement secure logout across all devices.</p>
+            
+            <div class="code-block">
+                <pre><code># Get current session info
+GET /auth/session
+
+# Response
+{
+  "user_id": "user_abc123",
+  "email": "user@example.com",
+  "linked_accounts": ["google", "github"],
+  "created_at": "2025-01-15T10:00:00Z",
+  "last_active": "2025-01-15T15:30:00Z"
+}
+
+# Logout from current session
+POST /auth/logout
+
+# Logout from all devices
+POST /auth/logout-all</code></pre>
+            </div>
+
+            <h2>Security Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔒 JWT Tokens</h4>
+                    <p>Secure, stateless authentication using JSON Web Tokens with configurable expiration.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🛡️ Rate Limiting</h4>
+                    <p>Built-in rate limiting to prevent abuse and protect against brute force attacks.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>📱 Multi-Factor Support</h4>
+                    <p>Optional multi-factor authentication for enhanced security on sensitive operations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔍 Audit Logging</h4>
+                    <p>Comprehensive audit trails for all authentication events and API access.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🌐 CORS Protection</h4>
+                    <p>Cross-origin resource sharing protection for web applications.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h4>🔐 Secure Headers</h4>
+                    <p>Security headers including HSTS, CSP, and X-Frame-Options for web security.</p>
+                </div>
+            </div>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Use HTTPS:</strong> Always use HTTPS in production for secure communication</li>
+                <li><strong>Store API Keys Securely:</strong> Use environment variables or secure secret management</li>
+                <li><strong>Implement Rate Limiting:</strong> Add rate limiting to your applications</li>
+                <li><strong>Regular Key Rotation:</strong> Rotate API keys periodically for security</li>
+                <li><strong>Monitor Access:</strong> Use audit logs to monitor authentication events</li>
+                <li><strong>Error Handling:</strong> Implement proper error handling for authentication failures</li>
+            </ul>
+
+            <h2>Next Steps</h2>
+            <p>Ready to implement authentication in your application?</p>
+            
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="/dashboard" class="btn">🚀 Try Authentication</a>
+                <a href="/docs/api/ai-inference" class="btn">📚 View API Docs</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Highlight current page in sidebar
+        const currentPath = window.location.pathname;
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+        
+        sidebarLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

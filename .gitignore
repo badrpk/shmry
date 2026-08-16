@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Editors
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Runtime state
+runtime-storage/
+admin-devices-storage/
+logs/
+*.log
+tmp/
+temp/
+.cache/
+
+# Downloaded AI assets
+AI-Models/
+models/
+downloads/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

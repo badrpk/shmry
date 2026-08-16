@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage API - SHMRY Documentation</title>
+    <meta name="description" content="SHMRY Storage API documentation for cloud storage, file management, and data persistence services">
+    <meta property="og:title" content="Storage API - SHMRY Documentation">
+    <meta property="og:description" content="SHMRY Storage API documentation for cloud storage, file management, and data persistence services">
+    <meta property="og:url" content="https://www.shmry.com/docs/api/storage">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .api-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .endpoint {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        
+        .method {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .url {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .parameter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .parameter-table th,
+        .parameter-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .parameter-table th {
+            background: #f7fafc;
+            font-weight: 600;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .status-200 { background: #c6f6d5; color: #22543d; }
+        .status-400 { background: #fed7d7; color: #742a2a; }
+        .status-401 { background: #fed7d7; color: #742a2a; }
+        .status-500 { background: #fed7d7; color: #742a2a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="docs-header">
+            <nav class="docs-nav">
+                <ul>
+                    <li><a href="/docs/quickstart">Quickstart</a></li>
+                    <li><a href="/docs/auth">Authentication</a></li>
+                    <li><a href="/docs/api/ai-inference">AI Inference</a></li>
+                    <li><a href="/docs/api/vector-db">Vector Database</a></li>
+                    <li><a href="/docs/api/compute">Compute</a></li>
+                    <li><a href="/docs/api/storage" class="active">Storage</a></li>
+                    <li><a href="/docs/api/functions">Serverless Functions</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="docs-content">
+            <div class="api-section">
+                <h1>💾 Storage API</h1>
+                <p class="lead">Store, manage, and retrieve data with SHMRY's Storage API. From simple file storage to complex data management, we've got you covered.</p>
+            </div>
+
+            <div class="api-section">
+                <h2>Overview</h2>
+                <p>The Storage API provides comprehensive data storage and management capabilities, including:</p>
+                <ul>
+                    <li>File upload, download, and management</li>
+                    <li>Object storage with metadata support</li>
+                    <li>Database storage and querying</li>
+                    <li>Data backup and versioning</li>
+                    <li>Access control and permissions</li>
+                    <li>CDN integration for global delivery</li>
+                </ul>
+            </div>
+
+            <div class="api-section">
+                <h2>Authentication</h2>
+                <p>All Storage API endpoints require authentication. Include your API key in the request headers:</p>
+                <div class="code-block">
+Authorization: Bearer YOUR_API_KEY
+                </div>
+            </div>
+
+            <div class="api-section">
+                <h2>Endpoints</h2>
+
+                <div class="endpoint">
+                    <div class="method">POST</div>
+                    <span class="url">/api/storage/upload</span>
+                    <p>Upload a file to SHMRY storage</p>
+                    
+                    <h4>Request Body (multipart/form-data)</h4>
+                    <div class="code-block">
+file: [binary file data]
+bucket: "my-bucket"
+path: "/documents/report.pdf"
+metadata: {
+  "content_type": "application/pdf",
+  "tags": ["document", "report"],
+  "expires_at": "2025-12-31T23:59:59Z"
+}
+                    </div>
+
+                    <h4>Response</h4>
+                    <div class="code-block">
+{
+  "file_id": "file_123456",
+  "url": "https://storage.shmry.com/my-bucket/documents/report.pdf",
+  "size_bytes": 1048576,
+  "uploaded_at": "2024-01-15T10:30:00Z",
+  "checksum": "sha256:abc123..."
+}
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <span class="url">/api/storage/files</span>
+                    <p>List files in a storage bucket</p>
+                    
+                    <h4>Query Parameters</h4>
+                    <table class="parameter-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bucket</td>
+                                <td>string</td>
+                                <td>Yes</td>
+                                <td>Storage bucket name</td>
+                            </tr>
+                            <tr>
+                                <td>path</td>
+                                <td>string</td>
+                                <td>No</td>
+                                <td>Path prefix to filter files</td>
+                            </tr>
+                            <tr>
+                                <td>limit</td>
+                                <td>integer</td>
+                                <td>No</td>
+                                <td>Maximum number of results (default: 100)</td>
+                            </tr>
+                            <tr>
+                                <td>offset</td>
+                                <td>integer</td>
+                                <td>No</td>
+                                <td>Number of results to skip</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <span class="url">/api/storage/download/{file_id}</span>
+                    <p>Download a file from storage</p>
+                    
+                    <h4>Response</h4>
+                    <p>Returns the file as a binary stream with appropriate headers.</p>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method">PUT</div>
+                    <span class="url">/api/storage/files/{file_id}/metadata</span>
+                    <p>Update file metadata</p>
+                    
+                    <h4>Request Body</h4>
+                    <div class="code-block">
+{
+  "tags": ["updated", "document"],
+  "expires_at": "2026-12-31T23:59:59Z",
+  "custom_fields": {
+    "department": "engineering",
+    "priority": "high"
+  }
+}
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method">DELETE</div>
+                    <span class="url">/api/storage/files/{file_id}</span>
+                    <p>Delete a file from storage</p>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method">POST</div>
+                    <span class="url">/api/storage/buckets</span>
+                    <p>Create a new storage bucket</p>
+                    
+                    <h4>Request Body</h4>
+                    <div class="code-block">
+{
+  "name": "my-project-bucket",
+  "region": "us-east-1",
+  "versioning": true,
+  "encryption": "AES256",
+  "access_control": "private"
+}
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method">GET</div>
+                    <span class="url">/api/storage/buckets</span>
+                    <p>List all storage buckets</p>
+                </div>
+            </div>
+
+            <div class="api-section">
+                <h2>Storage Classes</h2>
+                <p>SHMRY offers different storage classes optimized for various use cases:</p>
+                
+                <table class="parameter-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Use Case</th>
+                            <th>Availability</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Standard</strong></td>
+                            <td>Frequently accessed data</td>
+                            <td>99.99%</td>
+                            <td>Base rate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infrequent Access</strong></td>
+                            <td>Less frequently accessed data</td>
+                            <td>99.9%</td>
+                            <td>40% less</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Archive</strong></td>
+                            <td>Long-term backup and archival</td>
+                            <td>99.9%</td>
+                            <td>70% less</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Edge</strong></td>
+                            <td>Global content delivery</td>
+                            <td>99.99%</td>
+                            <td>+20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="api-section">
+                <h2>Status Codes</h2>
+                <table class="parameter-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="status-badge status-200">200</span></td>
+                            <td>Success</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-400">400</span></td>
+                            <td>Bad Request - Invalid parameters</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-401">401</span></td>
+                            <td>Unauthorized - Invalid API key</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-500">500</span></td>
+                            <td>Internal Server Error</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="api-section">
+                <h2>Rate Limits</h2>
+                <p>Storage API endpoints have the following rate limits:</p>
+                <ul>
+                    <li><strong>Read operations:</strong> 2000 requests per minute</li>
+                    <li><strong>Write operations:</strong> 500 requests per minute</li>
+                    <li><strong>Upload operations:</strong> 100 requests per minute</li>
+                    <li><strong>Download operations:</strong> 1000 requests per minute</li>
+                </ul>
+            </div>
+
+            <div class="api-section">
+                <h2>Examples</h2>
+                
+                <h3>Upload a File</h3>
+                <div class="code-block">
+curl -X POST https://api.shmry.com/api/storage/upload \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -F "file=@document.pdf" \
+  -F "bucket=my-bucket" \
+  -F "path=/documents/report.pdf" \
+  -F "metadata={\"content_type\":\"application/pdf\",\"tags\":\"document,report\"}"
+                </div>
+
+                <h3>List Files in Bucket</h3>
+                <div class="code-block">
+curl -X GET "https://api.shmry.com/api/storage/files?bucket=my-bucket&limit=50" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+                </div>
+
+                <h3>Download a File</h3>
+                <div class="code-block">
+curl -X GET https://api.shmry.com/api/storage/download/file_123456 \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -o downloaded_file.pdf
+                </div>
+            </div>
+
+            <div class="api-section">
+                <h2>Next Steps</h2>
+                <p>Ready to start storing data? Check out these resources:</p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="/docs/quickstart" class="btn btn-secondary">📚 View Quickstart</a>
+                    <a href="/docs/api/functions" class="btn btn-primary">⚡ Functions API →</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Add any interactive functionality here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight active navigation
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.docs-nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

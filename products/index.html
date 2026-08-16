@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHMRY Products - Complete AI & Cloud Platform</title>
+    <meta name="description" content="Explore SHMRY's complete suite of AI and cloud services including custom email, website builder, mobile apps, and edge computing.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+        }
+        
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .product-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .product-features li {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .product-features li::before {
+            content: 'âœ…';
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--darker);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ðŸš€ Shmry Platform</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>SHMRY Products</h1>
+            <p>Discover our complete suite of AI-powered cloud services designed to transform your business operations and accelerate growth.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Custom Email Product -->
+            <div class="product-card">
+                <div class="product-icon">ðŸ“§</div>
+                <h3 class="product-title">Custom @shmry.com Email</h3>
+                <p class="product-description">Professional business email addresses with enterprise-grade security, 99.9% uptime, and advanced features.</p>
+                <ul class="product-features">
+                    <li>Professional @shmry.com domain</li>
+                    <li>Enterprise-grade security</li>
+                    <li>99.9% uptime guarantee</li>
+                    <li>Mobile optimized</li>
+                </ul>
+                <a href="/products/custom-email" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <!-- Website Builder Product -->
+            <div class="product-card">
+                <div class="product-icon">ðŸŒ</div>
+                <h3 class="product-title">Website Builder</h3>
+                <p class="product-description">Drag-and-drop website builder with AI-powered design suggestions, e-commerce integration, and responsive templates.</p>
+                <ul class="product-features">
+                    <li>Drag-and-drop interface</li>
+                    <li>AI design suggestions</li>
+                    <li>E-commerce ready</li>
+                    <li>Mobile responsive</li>
+                </ul>
+                <a href="/products/website-builder" class="btn btn-primary">Build Website</a>
+            </div>
+
+            <!-- Mobile App Builder Product -->
+            <div class="product-card">
+                <div class="product-icon">ðŸ“±</div>
+                <h3 class="product-title">Mobile App Creator</h3>
+                <p class="product-description">Cross-platform mobile app development for Android, iOS, and Harmony OS with AI-powered code generation.</p>
+                <ul class="product-features">
+                    <li>Cross-platform support</li>
+                    <li>AI code generation</li>
+                    <li>Native performance</li>
+                    <li>Easy deployment</li>
+                </ul>
+                <a href="/products/mobile-app-builder" class="btn btn-primary">Create App</a>
+            </div>
+
+            <!-- Edge Computing Product -->
+            <div class="product-card">
+                <div class="product-icon">âš¡</div>
+                <h3 class="product-title">Edge Computing</h3>
+                <p class="product-description">Distributed edge computing platform with low-latency processing, global CDN, and 90% revenue sharing for providers.</p>
+                <ul class="product-features">
+                    <li>Global edge network</li>
+                    <li>Low-latency processing</li>
+                    <li>90% revenue share</li>
+                    <li>Auto-scaling</li>
+                </ul>
+                <a href="/products/edge-computing" class="btn btn-primary">Deploy Now</a>
+            </div>
+
+            <!-- Call Center Platform -->
+            <div class="product-card">
+                <div class="product-icon">ðŸŽ¯</div>
+                <h3 class="product-title">Call Center Platform</h3>
+                <p class="product-description">AI-powered call center solution with intelligent routing, analytics, and seamless human-AI agent collaboration.</p>
+                <ul class="product-features">
+                    <li>AI-powered routing</li>
+                    <li>Human-AI collaboration</li>
+                    <li>Advanced analytics</li>
+                    <li>Revenue sharing</li>
+                </ul>
+                <a href="/products/call-center" class="btn btn-primary">Learn More</a>
+            </div>
+
+            <!-- Vibe Coding Service -->
+            <div class="product-card">
+                <div class="product-icon">ðŸ’»</div>
+                <h3 class="product-title">Vibe Coding Service</h3>
+                <p class="product-description">AI-powered code generation, debugging, and optimization service for developers and teams.</p>
+                <ul class="product-features">
+                    <li>AI code generation</li>
+                    <li>Smart debugging</li>
+                    <li>Code optimization</li>
+                    <li>Team collaboration</li>
+                </ul>
+                <a href="/products/vibe-coding" class="btn btn-primary">Start Coding</a>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Transform Your Business?</h2>
+            <p>Join thousands of businesses already using SHMRY to scale their operations and drive innovation.</p>
+            <div class="btn-group">
+                <a href="/pricing" class="btn btn-primary">View Pricing</a>
+                <a href="/contact" class="btn btn-outline">Contact Sales</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effects for product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
+

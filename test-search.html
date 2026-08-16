@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHMRY Search Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .search-test {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .search-type-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .search-type-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #888;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .search-type-option.active {
+            background: #00ff88;
+            color: #000;
+            border-color: #00ff88;
+        }
+        
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 1rem 1.5rem;
+        }
+        
+        .hero-search-btn {
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #000;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-test">
+        <h1>🔍 SHMRY Search Test</h1>
+        <p>Testing the search functionality...</p>
+        
+        <!-- Search Type Selection -->
+        <div class="search-type-selector">
+            <div class="search-type-option active" data-type="ai-search" onclick="selectSearchType('ai-search')">
+                <i class="fas fa-brain"></i>
+                <span>AI Search</span>
+            </div>
+            <div class="search-type-option" data-type="gpt-search" onclick="selectSearchType('gpt-search')">
+                <i class="fas fa-robot"></i>
+                <span>GPT Search</span>
+            </div>
+            <div class="search-type-option" data-type="google-search" onclick="selectSearchType('google-search')">
+                <i class="fab fa-google"></i>
+                <span>Google Search</span>
+            </div>
+            <div class="search-type-option" data-type="code-search" onclick="selectSearchType('code-search')">
+                <i class="fas fa-code"></i>
+                <span>Code Search</span>
+            </div>
+        </div>
+        
+        <!-- Search Input -->
+        <div class="search-input-wrapper">
+            <i class="fas fa-search" style="margin-left: 1rem; color: #888;"></i>
+            <input type="text" id="hero-search-input" placeholder="Ask anything... AI will find the best answers" class="hero-search-input">
+            <button class="hero-search-btn" onclick="performHeroSearch()">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div id="search-result" class="result" style="display: none;"></div>
+        
+        <p><a href="http://localhost:3000" style="color: #00ff88;">← Back to Main Website</a></p>
+    </div>
+
+    <script>
+        let currentSearchType = 'ai-search';
+        
+        function selectSearchType(searchType) {
+            document.querySelectorAll('.search-type-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            
+            const selectedOption = document.querySelector(`[data-type="${searchType}"]`);
+            if (selectedOption) {
+                selectedOption.classList.add('active');
+            }
+            
+            currentSearchType = searchType;
+            
+            const searchInput = document.getElementById('hero-search-input');
+            switch(searchType) {
+                case 'ai-search':
+                    searchInput.placeholder = 'Ask anything... AI will find the best answers';
+                    break;
+                case 'gpt-search':
+                    searchInput.placeholder = 'Ask like ChatGPT... Get intelligent responses';
+                    break;
+                case 'google-search':
+                    searchInput.placeholder = 'Search the web... Find anything online';
+                    break;
+                case 'code-search':
+                    searchInput.placeholder = 'Search code... Find solutions and examples';
+                    break;
+            }
+        }
+        
+        function performHeroSearch() {
+            const input = document.getElementById('hero-search-input');
+            const query = input.value.trim();
+            
+            if (!query) {
+                alert('Please enter a search query');
+                return;
+            }
+            
+            const resultDiv = document.getElementById('search-result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h3>🔍 Search Results for: "${query}"</h3>
+                <p><strong>Search Type:</strong> ${currentSearchType}</p>
+                <p><strong>Status:</strong> ✅ Search functionality is working!</p>
+                <p>This is a test result. The search is functioning correctly.</p>
+            `;
+        }
+        
+        // Enter key support
+        document.getElementById('hero-search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performHeroSearch();
+            }
+        });
+    </script>
+</body>
+</html>

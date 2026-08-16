@@ -1,0 +1,6 @@
+Contact: mailto:security@shmry.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://www.shmry.com/.well-known/security.txt
+Policy: https://www.shmry.com/security
+Hiring: https://www.shmry.com/careers

@@ -1,0 +1,1183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shmry Platform Services - 190+ Cloud & AI Services</title>
+    <meta name="description" content="Explore Shmry's comprehensive catalog of 190+ cloud and AI services. From AI inference to vector databases, compute to edge computing.">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Shmry Platform Services - 190+ Cloud & AI Services">
+    <meta property="og:description" content="Complete catalog of AI, cloud, and edge computing services">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shmry.com/services">
+    <meta property="og:image" content="https://www.shmry.com/og-services.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shmry Platform Services - 190+ Cloud & AI Services">
+    <meta name="twitter:description" content="Complete catalog of AI, cloud, and edge computing services">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Shmry Platform Services",
+        "description": "190+ Cloud and AI Services",
+        "url": "https://www.shmry.com/services",
+        "numberOfItems": 190
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4ECDC4;
+            --accent: #45B7D1;
+            --darker: #1a1a1a;
+            --dark: #2d2d2d;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --white: #ffffff;
+            --light: #f0f0f0;
+            --gray: #888;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--darker);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--card-bg);
+            border-color: var(--primary);
+        }
+        
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .services-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .services-header p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+        
+        .services-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto 3rem auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 1rem;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-tab {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            background: var(--card-bg);
+            color: var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-tab.active,
+        .category-tab:hover {
+            background: var(--primary);
+            color: var(--darker);
+            border-color: var(--primary);
+        }
+        
+        /* Platform Services Section */
+        .section {
+            margin: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .platform-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .platform-service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .platform-service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .platform-service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .platform-service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .platform-service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(78, 205, 196, 0.1);
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .service-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .service-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-active {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .status-development {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        
+        .status-planned {
+            background: rgba(156, 163, 175, 0.2);
+            color: #9ca3af;
+            border: 1px solid rgba(156, 163, 175, 0.3);
+        }
+
+        .auth-requirement {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+        
+        .auth-none {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .auth-email {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .auth-phone {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+        
+        .auth-github {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .service-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features li {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .service-features li::before {
+            content: 'âœ“';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .service-code {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--light);
+            overflow-x: auto;
+        }
+        
+        .service-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .service-actions .btn {
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .page-btn {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .page-btn.active,
+        .page-btn:hover {
+            background: var(--primary);
+            color: var(--darker);
+            border-color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .services-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ðŸš€ Shmry Platform</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/status">Status</a></li>
+            </ul>
+            <div class="auth-section">
+                <a href="/dashboard" class="btn btn-primary">Launch Platform</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="services-header">
+            <h1>190+ Cloud & AI Services</h1>
+            <p>Everything you need to build, deploy, and scale AI applications on one unified platform</p>
+            
+            <div class="services-stats">
+                <div class="stat">
+                    <span class="stat-number">190+</span>
+                    <span class="stat-label">Services</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Reliability</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platform Services Section -->
+        <section id="platform-services" class="section">
+            <h2 class="section-title">Complete Platform Services</h2>
+            <p class="section-subtitle">Beyond cloud computing - Shmry provides everything you need to build, communicate, and scale</p>
+            
+            <div class="platform-services-grid">
+                <div class="platform-service-card" id="email">
+                    <div class="platform-service-icon">ðŸ“§</div>
+                    <h3>Custom Email Services (@shmry.com)</h3>
+                    <p>Professional @shmry.com email addresses with enterprise-grade security, collaboration tools, and AI-powered features. As good as Gmail with Shmry's edge computing power.</p>
+                    <ul class="service-features">
+                        <li>Custom @shmry.com domains</li>
+                        <li>AI-powered email organization</li>
+                        <li>Enterprise security & compliance</li>
+                        <li>Advanced collaboration tools</li>
+                        <li>Edge-optimized delivery</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Get Started</a>
+                        <a href="/products/custom-email" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="platform-service-card" id="website-builder">
+                    <div class="platform-service-icon">ðŸŒ</div>
+                    <h3>Website Builder</h3>
+                    <p>Drag-and-drop website creator for simple, corporate, and e-commerce sites. AI-powered templates, responsive design, and edge-optimized hosting.</p>
+                    <ul class="service-features">
+                        <li>Visual drag-and-drop editor</li>
+                        <li>AI-powered templates</li>
+                        <li>E-commerce integration</li>
+                        <li>Edge-optimized hosting</li>
+                        <li>Mobile-first responsive design</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Start Building</a>
+                        <a href="/products/website-builder" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="platform-service-card" id="app-builder">
+                    <div class="platform-service-icon">ðŸ“±</div>
+                    <h3>Mobile App Builder</h3>
+                    <p>Create Android, iOS, and Harmony OS apps with visual development tools. AI assistance, cross-platform compatibility, and edge computing integration.</p>
+                    <ul class="service-features">
+                        <li>Visual app development</li>
+                        <li>Cross-platform deployment</li>
+                        <li>AI-powered assistance</li>
+                        <li>Edge computing integration</li>
+                        <li>Native performance optimization</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Build Apps</a>
+                        <a href="/products/mobile-app-builder" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="platform-service-card" id="edge">
+                    <div class="platform-service-icon">âš¡</div>
+                    <h3>Edge Computing Infrastructure</h3>
+                    <p>Distributed computing power across millions of connected devices. Ultra-low latency, massive scalability, and intelligent resource distribution.</p>
+                    <ul class="service-features">
+                        <li>Millions of connected devices</li>
+                        <li>Ultra-low latency computing</li>
+                        <li>Intelligent resource distribution</li>
+                        <li>Global edge network</li>
+                        <li>90% revenue sharing model</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Join Network</a>
+                        <a href="/products/edge-computing" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="platform-service-card" id="call-center">
+                    <div class="platform-service-icon">ðŸŽ¯</div>
+                    <h3>Call Center Platform</h3>
+                    <p>Human agents and AI voice bots for enterprise customer support. Revenue sharing model with 90% going to agents and service providers.</p>
+                    <ul class="service-features">
+                        <li>Human agent recruitment</li>
+                        <li>AI voice bot agents</li>
+                        <li>90% revenue sharing</li>
+                        <li>Enterprise-grade platform</li>
+                        <li>Quality assurance testing</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Join Platform</a>
+                        <a href="/docs/services/call-center.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="platform-service-card" id="vibe-coding">
+                    <div class="platform-service-icon">ðŸ’»</div>
+                    <h3>Shmry Vibe Coding Service</h3>
+                    <p>AI-powered coding assistance and development tools that understand your project's vibe and coding style. Personalized code generation, debugging, and optimization.</p>
+                    <ul class="service-features">
+                        <li>AI-powered code generation</li>
+                        <li>Personalized coding style</li>
+                        <li>Smart debugging assistance</li>
+                        <li>Project context awareness</li>
+                        <li>Multi-language support</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Start Coding</a>
+                        <a href="/docs/services/vibe-coding.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="platform-service-card" id="revenue-sharing">
+                    <div class="platform-service-icon">ðŸ’°</div>
+                    <h3>Revenue Sharing Model</h3>
+                    <p>Shmry's innovative platform compensates service providers with 90% of revenue. Join our ecosystem and earn while building the future.</p>
+                    <ul class="service-features">
+                        <li>90% revenue to providers</li>
+                        <li>Computing power providers</li>
+                        <li>Storage providers</li>
+                        <li>Software developers</li>
+                        <li>Content creators</li>
+                    </ul>
+                    <div class="service-actions">
+                        <a href="/dashboard" class="btn btn-primary">Become Provider</a>
+                        <a href="/pricing" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="search-bar">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search services..." id="searchInput">
+        </div>
+
+        <div class="category-tabs">
+            <div class="category-tab active" data-category="all">All Services</div>
+            <div class="category-tab" data-category="ai">AI & Language</div>
+            <div class="category-tab" data-category="data">Data & Storage</div>
+            <div class="category-tab" data-category="compute">Compute & Edge</div>
+            <div class="category-tab" data-category="platform">Platform & Security</div>
+            <div class="category-tab" data-category="commerce">Commerce & Consumer</div>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+            <!-- No Login Required Services -->
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmrySearch</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-none">No Login</span>
+                </div>
+                <p class="service-description">AI-powered internet search with semantic understanding, real-time results, and intelligent filtering.</p>
+                <ul class="service-features">
+                    <li>Semantic search</li>
+                    <li>Real-time results</li>
+                    <li>Intelligent filtering</li>
+                    <li>Multi-source aggregation</li>
+                </ul>
+                <div class="service-code">
+                    # Direct API access - no authentication required<br>
+                    curl -X POST "https://api.shmry.com/search" \<br>
+                    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                    &nbsp;&nbsp;-d '{"query": "latest AI developments"}'
+                </div>
+                <div class="service-actions">
+                                            <a href="/search" class="btn btn-secondary">Try Now</a>
+                    <a href="/search" class="btn btn-primary">Try Now (Free)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryChat</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-none">No Login</span>
+                </div>
+                <p class="service-description">AI chat assistant for general conversation, problem-solving, and information retrieval.</p>
+                <ul class="service-features">
+                    <li>Natural conversation</li>
+                    <li>Problem-solving</li>
+                    <li>Information retrieval</li>
+                    <li>Multi-language support</li>
+                </ul>
+                <div class="service-code">
+                    # Direct API access - no authentication required<br>
+                    curl -X POST "https://api.shmry.com/chat" \<br>
+                    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                    &nbsp;&nbsp;-d '{"message": "Hello, how can you help me?"}'
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/chat" class="btn btn-primary">Try Now (Free)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryImageGen</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-none">No Login</span>
+                </div>
+                <p class="service-description">AI image generation from text descriptions with high resolution and creative control.</p>
+                <ul class="service-features">
+                    <li>Text-to-image generation</li>
+                    <li>High resolution output</li>
+                    <li>Creative control</li>
+                    <li>Multiple art styles</li>
+                </ul>
+                <div class="service-code">
+                    # Direct API access - no authentication required<br>
+                    curl -X POST "https://api.shmry.com/image/generate" \<br>
+                    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                    &nbsp;&nbsp;-d '{"prompt": "A beautiful sunset over mountains"}'
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/image-gen" class="btn btn-primary">Try Now (Free)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryVoice</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-none">No Login</span>
+                </div>
+                <p class="service-description">AI voice synthesis and recognition with natural-sounding speech and multi-language support.</p>
+                <ul class="service-features">
+                    <li>Text-to-speech</li>
+                    <li>Speech-to-text</li>
+                    <li>Natural voice</li>
+                    <li>Multi-language</li>
+                </ul>
+                <div class="service-code">
+                    # Direct API access - no authentication required<br>
+                    curl -X POST "https://api.shmry.com/voice/synthesize" \<br>
+                    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                    &nbsp;&nbsp;-d '{"text": "Hello world", "voice": "natural"}'
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/voice" class="btn btn-primary">Try Now (Free)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryVideo</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-none">No Login</span>
+                </div>
+                <p class="service-description">AI video generation and editing with text-to-video, style transfer, and motion control.</p>
+                <ul class="service-features">
+                    <li>Text-to-video</li>
+                    <li>Style transfer</li>
+                    <li>Motion control</li>
+                    <li>Video editing</li>
+                </ul>
+                <div class="service-code">
+                    # Direct API access - no authentication required<br>
+                    curl -X POST "https://api.shmry.com/video/generate" \<br>
+                    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                    &nbsp;&nbsp;-d '{"prompt": "A cat playing in a garden"}'
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/video" class="btn btn-primary">Try Now (Free)</a>
+                </div>
+            </div>
+
+            <!-- AI & Language Services (Email Login Required) -->
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryBrain</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Core AI reasoning engine with advanced cognitive capabilities for complex problem-solving and decision-making.</p>
+                <ul class="service-features">
+                    <li>Neural reasoning engine</li>
+                    <li>Cognitive planning loops</li>
+                    <li>Multi-modal understanding</li>
+                    <li>Real-time learning</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import Brain<br>
+                    brain = Brain()<br>
+                    result = brain.reason("Analyze this complex scenario...")
+                </div>
+                <div class="service-actions">
+                    <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryNeural</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Advanced neural network framework with PyTorch integration, accelerators, and mixed precision training.</p>
+                <ul class="service-features">
+                    <li>PyTorch integration</li>
+                    <li>GPU acceleration</li>
+                    <li>Mixed precision</li>
+                    <li>Distributed training</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import Neural<br>
+                    model = Neural.load("gpt-4-equivalent")<br>
+                    output = model.generate("Hello, world!")
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="ai">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryTransformer</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Custom encoder/decoder stacks with plug-in attention blocks for state-of-the-art language models.</p>
+                <ul class="service-features">
+                    <li>Custom attention blocks</li>
+                    <li>Multi-head attention</li>
+                    <li>Positional encoding</li>
+                    <li>Layer normalization</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import Transformer<br>
+                    transformer = Transformer(layers=24, heads=16)<br>
+                    encoded = transformer.encode("Input text")
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/ai-inference" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <!-- Data & Storage Services -->
+            <div class="service-card" data-category="data">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryVectorDB</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">High-performance vector database for semantic search, similarity matching, and AI embeddings.</p>
+                <ul class="service-features">
+                    <li>Semantic search</li>
+                    <li>Similarity matching</li>
+                    <li>Real-time indexing</li>
+                    <li>Scalable architecture</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import VectorDB<br>
+                    db = VectorDB("my_index")<br>
+                    db.upsert(vectors, metadata)
+                </div>
+                <div class="service-actions">
+                    <a href="/docs/api/vector-db" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="data">
+                <div class="service-header">
+                    <h3 class="service-name">ShmrySQL</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Distributed SQL database with ACID compliance, horizontal scaling, and advanced query optimization.</p>
+                <ul class="service-features">
+                    <li>ACID compliance</li>
+                    <li>Horizontal scaling</li>
+                    <li>Query optimization</li>
+                    <li>Real-time analytics</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import SQL<br>
+                    db = SQL.connect()<br>
+                    result = db.query("SELECT * FROM users")
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/api/vector-db" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <!-- Compute & Edge Services -->
+            <div class="service-card" data-category="compute">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryFunctions</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Serverless compute platform with automatic scaling, cold start optimization, and pay-per-use pricing.</p>
+                <ul class="service-features">
+                    <li>Auto-scaling</li>
+                    <li>Cold start optimization</li>
+                    <li>Pay-per-use</li>
+                    <li>Multiple runtimes</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import Functions<br>
+                    @Functions.handler<br>
+                    def my_function(event):<br>
+                    &nbsp;&nbsp;return {"message": "Hello World"}
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/quickstart" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="compute">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryEdgeRuntime</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Edge computing runtime for distributed applications with low latency and offline capabilities.</p>
+                <ul class="service-features">
+                    <li>Low latency</li>
+                    <li>Offline support</li>
+                    <li>Edge synchronization</li>
+                    <li>Device management</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import EdgeRuntime<br>
+                    runtime = EdgeRuntime()<br>
+                    runtime.deploy("my_edge_app")
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/quickstart" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <!-- Platform & Security Services -->
+            <div class="service-card" data-category="platform">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryAuth</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Identity and access management with OAuth, SSO, MFA, and enterprise-grade security features.</p>
+                <ul class="service-features">
+                    <li>OAuth integration</li>
+                    <li>SSO support</li>
+                    <li>Multi-factor auth</li>
+                    <li>Enterprise security</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import Auth<br>
+                    auth = Auth()<br>
+                    user = auth.verify_token(token)
+                </div>
+                <div class="service-actions">
+                    <a href="/docs/auth" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="platform">
+                <div class="service-header">
+                    <h3 class="service-name">ShmrySecurity</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-email">Email Login</span>
+                </div>
+                <p class="service-description">Advanced security features including encryption, threat detection, and compliance monitoring.</p>
+                <ul class="service-features">
+                    <li>End-to-end encryption</li>
+                    <li>Threat detection</li>
+                    <li>Compliance monitoring</li>
+                    <li>Security audits</li>
+                </ul>
+                <div class="service-code">
+                    from shmry import Security<br>
+                    security = Security()<br>
+                    encrypted = security.encrypt(data, key)
+                </div>
+                <div class="service-actions">
+                    <a href="/docs/security" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Email)</a>
+                </div>
+            </div>
+
+            <!-- GitHub Login Required Services (for Programmers) -->
+            <div class="service-card" data-category="platform">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryCodeGen</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-github">GitHub Required</span>
+                </div>
+                <p class="service-description">AI-powered code generation with repository integration, syntax highlighting, and multi-language support.</p>
+                <ul class="service-features">
+                    <li>Repository integration</li>
+                    <li>Syntax highlighting</li>
+                    <li>Multi-language support</li>
+                    <li>Code review assistance</li>
+                </ul>
+                <div class="service-code">
+                    # GitHub OAuth required for repository access<br>
+                    from shmry import CodeGen<br>
+                    generator = CodeGen(github_token="ghp_...")<br>
+                    code = generator.generate("Create a REST API endpoint")
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/quickstart" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (GitHub)</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-category="platform">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryDevOps</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-github">GitHub Required</span>
+                </div>
+                <p class="service-description">DevOps automation with CI/CD pipelines, infrastructure as code, and deployment management.</p>
+                <ul class="service-features">
+                    <li>CI/CD pipelines</li>
+                    <li>Infrastructure as code</li>
+                    <li>Deployment management</li>
+                    <li>Repository monitoring</li>
+                </ul>
+                <div class="service-code">
+                    # GitHub OAuth required for repository access<br>
+                    from shmry import DevOps<br>
+                    devops = DevOps(github_token="ghp_...")<br>
+                    pipeline = devops.create_pipeline("my-app")
+                </div>
+                <div class="service-actions">
+                                            <a href="/docs/quickstart" class="btn btn-secondary">View Docs</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (GitHub)</a>
+                </div>
+            </div>
+
+            <!-- Phone Confirmation Required Services (for Reimbursement) -->
+            <div class="service-card" data-category="commerce">
+                <div class="service-header">
+                    <h3 class="service-name">ShmryRevenueShare</h3>
+                    <span class="service-status status-active">Active</span>
+                    <span class="auth-requirement auth-phone">Phone Required</span>
+                </div>
+                <p class="service-description">Revenue sharing platform for service providers with automated payouts and financial tracking.</p>
+                <ul class="service-features">
+                    <li>Automated payouts</li>
+                    <li>Financial tracking</li>
+                    <li>Tax documentation</li>
+                    <li>Payment verification</li>
+                </ul>
+                <div class="service-code">
+                    # Phone verification required for financial services<br>
+                    from shmry import RevenueShare<br>
+                    revenue = RevenueShare(phone_verified=True)<br>
+                    payout = revenue.request_payout(amount=100.00)
+                </div>
+                <div class="service-actions">
+                                            <a href="/pricing" class="btn btn-secondary">View Pricing</a>
+                    <a href="/dashboard" class="btn btn-primary">Try Now (Phone)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn">Next â†’</button>
+        </div>
+    </main>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                const serviceName = card.querySelector('.service-name').textContent.toLowerCase();
+                const description = card.querySelector('.service-description').textContent.toLowerCase();
+                
+                if (serviceName.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Category filtering
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const serviceCards = document.querySelectorAll('.service-card');
+                
+                serviceCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Pagination
+        document.querySelectorAll('.page-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // TODO: Implement actual pagination logic
+            });
+        });
+    </script>
+</body>
+</html>
+

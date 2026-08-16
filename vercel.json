@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "website/shmry-website.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "website/benchmarks.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "website/architecture.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "website/status.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "products/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "admin-device-manager.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "master-dashboard.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/website/shmry-website.html"
+    },
+    {
+      "src": "/benchmarks",
+      "dest": "/website/benchmarks.html"
+    },
+    {
+      "src": "/architecture",
+      "dest": "/website/architecture.html"
+    },
+    {
+      "src": "/status",
+      "dest": "/website/status.html"
+    },
+    {
+      "src": "/products",
+      "dest": "/products/index.html"
+    },
+    {
+      "src": "/products/(.*)",
+      "dest": "/products/$1"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin-device-manager.html"
+    },
+    {
+      "src": "/master",
+      "dest": "/master-dashboard.html"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "http://154.57.212.38:3001/api/$1"
+    },
+    {
+      "src": "/master-api/(.*)",
+      "dest": "http://154.57.212.38:3002/api/$1"
+    },
+    {
+      "src": "/network-api/(.*)",
+      "dest": "http://154.57.212.38:3003/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "BACKEND_URL": "http://154.57.212.38",
+    "ADMIN_PORT": "3001",
+    "MASTER_PORT": "3002",
+    "NETWORK_PORT": "3003"
+  }
+}

@@ -1,0 +1,929 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to Shmry Platform - Complete AI & Cloud Platform</title>
+    <meta name="description" content="Sign in to Shmry Platform using WhatsApp OTP, Gmail magic links, or GitHub OAuth. Access your AI models, vector databases, and cloud resources.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shmry.com/dashboard">
+    <meta property="og:title" content="Sign in to Shmry Platform">
+    <meta property="og:description" content="Sign in to Shmry Platform using WhatsApp OTP, Gmail magic links, or GitHub OAuth.">
+    <meta property="og:image" content="https://www.shmry.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.shmry.com/dashboard">
+    <meta property="twitter:title" content="Sign in to Shmry Platform">
+    <meta property="twitter:description" content="Sign in to Shmry Platform using WhatsApp OTP, Gmail magic links, or GitHub OAuth.">
+    <meta property="twitter:image" content="https://www.shmry.com/og-image.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --dark: #1f2937;
+            --darker: #111827;
+            --light: #f3f4f6;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .logo p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 12px 16px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .auth-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+                .auth-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+
+        /* Service Selection Styles */
+        .service-selection {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .service-selection h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 2rem;
+        }
+
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .service-option i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-option h4 {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-option p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .service-option .btn {
+            width: 100%;
+        }
+        
+        .auth-content {
+            display: none;
+        }
+
+        .auth-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: var(--gray);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--primary);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .otp-input {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .otp-input input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .status-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .status-message.success {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .status-message.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--error);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .status-message.info {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .resend-timer {
+            text-align: center;
+            color: var(--gray);
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .resend-button {
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        .resend-button:disabled {
+            color: var(--gray);
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        .user-welcome {
+            text-align: center;
+        }
+
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--primary);
+        }
+
+        .user-plan {
+            margin: 1.5rem 0;
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .plan-badge.free {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+
+        .plan-badge.builder {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary);
+        }
+
+        .plan-badge.scale {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--secondary);
+        }
+
+        .plan-badge.enterprise {
+            background: rgba(6, 182, 212, 0.2);
+            color: var(--accent);
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .whatsapp-info {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: var(--success);
+        }
+
+        .gmail-info {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: var(--error);
+        }
+
+        .github-info {
+            background: rgba(31, 41, 55, 0.1);
+            border: 1px solid rgba(31, 41, 55, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: var(--light);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            .auth-tabs {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .otp-input {
+                gap: 8px;
+            }
+
+            .otp-input input {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+
+            .dashboard-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Shmry Platform</h1>
+            <p>Sign in to access your services</p>
+            <div style="margin-top: 15px; padding: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 8px; font-size: 14px;">
+                <p style="margin: 0; color: var(--gray);">Need help? Contact us at <a href="mailto:xepcam@gmail.com" style="color: var(--primary);">xepcam@gmail.com</a> or <a href="https://wa.me/923001555681" target="_blank" style="color: var(--success);">WhatsApp +923001555681</a></p>
+            </div>
+        </div>
+
+        <!-- Service Selection for Unauthenticated Users -->
+        <div id="service-selection" class="service-selection" style="display: none;">
+            <h3>What would you like to do?</h3>
+            <div class="service-options">
+                <div class="service-option" data-auth="none">
+                    <i class="fas fa-search"></i>
+                    <h4>Use AI Services (No Login)</h4>
+                    <p>Search, chat, generate images, voice, and video</p>
+                    <button class="btn btn-primary" onclick="accessService('none')">Start Using</button>
+                </div>
+                <div class="service-option" data-auth="email">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Store & Manage Data</h4>
+                    <p>AI inference, vector databases, compute resources</p>
+                    <button class="btn btn-primary" onclick="accessService('email')">Sign In with Email</button>
+                </div>
+                <div class="service-option" data-auth="phone">
+                    <i class="fas fa-phone"></i>
+                    <h4>Financial Services</h4>
+                    <p>Revenue sharing, payouts, reimbursement</p>
+                    <button class="btn btn-primary" onclick="accessService('phone')">Verify Phone</button>
+                </div>
+                <div class="service-option" data-auth="github">
+                    <i class="fab fa-github"></i>
+                    <h4>Developer Tools</h4>
+                    <p>Code generation, DevOps, repository integration</p>
+                    <button class="btn btn-primary" onclick="accessService('github')">Connect GitHub</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Authentication Forms -->
+        <div id="auth-forms" class="auth-forms" style="display: none;">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="whatsapp">WhatsApp</button>
+                <button class="auth-tab" data-tab="email">Gmail</button>
+                <button class="auth-tab" data-tab="github">GitHub</button>
+            </div>
+
+            <!-- WhatsApp OTP Authentication -->
+            <div id="whatsapp-auth" class="auth-content active">
+                <div class="whatsapp-info">
+                    <i class="fab fa-whatsapp"></i>
+                    Sign in with your phone number via WhatsApp OTP
+                </div>
+                
+                <form id="whatsapp-form">
+                    <div class="form-group">
+                        <label for="whatsapp-phone">Phone Number (E.164 format)</label>
+                        <input type="tel" id="whatsapp-phone" placeholder="+1234567890" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="whatsapp-send-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Send OTP via WhatsApp
+                    </button>
+                </form>
+
+                <div id="whatsapp-otp-section" style="display: none;">
+                    <div class="form-group">
+                        <label>Enter 6-digit OTP</label>
+                        <div class="otp-input">
+                            <input type="text" maxlength="1" class="otp-digit" data-index="0">
+                            <input type="text" maxlength="1" class="otp-digit" data-index="1">
+                            <input type="text" maxlength="1" class="otp-digit" data-index="2">
+                            <input type="text" maxlength="1" class="otp-digit" data-index="3">
+                            <input type="text" maxlength="1" class="otp-digit" data-index="4">
+                            <input type="text" maxlength="1" class="otp-digit" data-index="5">
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary" onclick="verifyWhatsAppOTP()">
+                        <i class="fas fa-check"></i>
+                        Verify OTP
+                    </button>
+                    
+                    <div class="resend-timer">
+                        <span id="resend-timer">60</span>s until you can resend
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="resend-btn" onclick="resendWhatsAppOTP()" disabled>
+                        <i class="fas fa-redo"></i>
+                        Resend OTP
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gmail Magic Link Authentication -->
+            <div id="email-auth" class="auth-content">
+                <div class="gmail-info">
+                    <i class="fas fa-envelope"></i>
+                    Sign in with your Gmail address via magic link
+                </div>
+                
+                <form id="email-form">
+                    <div class="form-group">
+                        <label for="email-address">Gmail Address</label>
+                        <input type="email" id="email-address" placeholder="yourname@gmail.com" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="email-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Magic Link
+                    </button>
+                </form>
+            </div>
+
+            <!-- GitHub OAuth Authentication -->
+            <div id="github-auth" class="auth-content">
+                <div class="github-info">
+                    <i class="fab fa-github"></i>
+                    Sign in with your GitHub account
+                </div>
+                
+                <button type="button" class="btn btn-primary" onclick="signInWithGitHub()">
+                    <i class="fab fa-github"></i>
+                    Continue with GitHub
+                </button>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="status-message" class="status-message" style="display: none;"></div>
+
+            <!-- User Welcome Section (shown after authentication) -->
+            <div id="user-welcome" class="user-welcome" style="display: none;">
+                <img src="https://via.placeholder.com/150" alt="User Avatar" class="user-avatar" id="userAvatar">
+                <h2 id="userName">Welcome back!</h2>
+                <p id="userEmail">You're successfully signed in</p>
+                
+                <div class="user-plan">
+                    <span class="plan-badge" id="userPlan">Free</span>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <a href="/dashboard/app" class="btn btn-primary">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Go to Dashboard
+                    </a>
+                    <button class="btn btn-secondary" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sign Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+        let resendTimer = null;
+        let currentPhone = '';
+
+        // Show authentication tab
+        function showAuthTab(tabName) {
+            // Hide all auth content
+            document.querySelectorAll('.auth-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.auth-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-auth').classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Clear status messages
+            hideStatusMessage();
+        }
+
+        // Show status message
+        function showStatusMessage(message, type = 'info') {
+            const statusDiv = document.getElementById('status-message');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message ${type}`;
+            statusDiv.style.display = 'block';
+        }
+
+        // Hide status message
+        function hideStatusMessage() {
+            document.getElementById('status-message').style.display = 'none';
+        }
+
+        // Check authentication status on page load
+        async function checkAuthStatus() {
+            try {
+                const response = await fetch('/api/auth/me', {
+                    credentials: 'include'
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    currentUser = data.user;
+                    showAuthenticatedUser();
+                } else {
+                    showServiceSelection();
+                }
+            } catch (error) {
+                console.error('Auth check error:', error);
+                showServiceSelection();
+            }
+        }
+
+        // Show authenticated user
+        function showAuthenticatedUser() {
+            document.querySelectorAll('.auth-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.querySelector('.auth-tabs').style.display = 'none';
+            
+            document.getElementById('userName').textContent = `Welcome back, ${currentUser.name}!`;
+            document.getElementById('userEmail').textContent = currentUser.email || `Phone: ${currentUser.phone_e164}`;
+            document.getElementById('userPlan').textContent = currentUser.plan;
+            document.getElementById('userPlan').className = `plan-badge ${currentUser.plan}`;
+            
+            if (currentUser.avatar) {
+                document.getElementById('userAvatar').src = currentUser.avatar;
+            }
+            
+            document.getElementById('user-welcome').style.display = 'block';
+        }
+
+        // Show authentication form
+        function showAuthForm() {
+            document.getElementById('user-welcome').style.display = 'none';
+            document.querySelector('.auth-tabs').style.display = 'flex';
+            document.querySelectorAll('.auth-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.getElementById('whatsapp-auth').style.display = 'block';
+        }
+
+        // WhatsApp OTP Functions
+        document.getElementById('whatsapp-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            await sendWhatsAppOTP();
+        });
+
+        async function sendWhatsAppOTP() {
+            const phone = document.getElementById('whatsapp-phone').value;
+            const button = document.getElementById('whatsapp-send-btn');
+            
+            if (!phone) {
+                showStatusMessage('Please enter a phone number', 'error');
+                return;
+            }
+
+            try {
+                button.disabled = true;
+                button.innerHTML = '<span class="loading"></span> Sending...';
+                
+                const response = await fetch('/api/auth/whatsapp/send-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ phone })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showStatusMessage(data.message, 'success');
+                    currentPhone = phone;
+                    document.getElementById('whatsapp-otp-section').style.display = 'block';
+                    startResendTimer();
+                    setupOTPInputs();
+                } else {
+                    showStatusMessage(data.error, 'error');
+                }
+            } catch (error) {
+                showStatusMessage('Failed to send OTP. Please try again.', 'error');
+            } finally {
+                button.disabled = false;
+                button.innerHTML = '<i class="fab fa-whatsapp"></i> Send OTP via WhatsApp';
+            }
+        }
+
+        async function verifyWhatsAppOTP() {
+            const otpDigits = Array.from(document.querySelectorAll('.otp-digit')).map(input => input.value).join('');
+            
+            if (otpDigits.length !== 6) {
+                showStatusMessage('Please enter the complete 6-digit OTP', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/whatsapp/verify-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ 
+                        phone: currentPhone, 
+                        code: otpDigits 
+                    }),
+                    credentials: 'include'
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showStatusMessage('Phone verification successful!', 'success');
+                    currentUser = data.user;
+                    setTimeout(() => {
+                        showAuthenticatedUser();
+                    }, 1000);
+                } else {
+                    showStatusMessage(data.error, 'error');
+                }
+            } catch (error) {
+                showStatusMessage('Failed to verify OTP. Please try again.', 'error');
+            }
+        }
+
+        function setupOTPInputs() {
+            const otpInputs = document.querySelectorAll('.otp-digit');
+            
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', function(e) {
+                    if (e.target.value.length === 1 && index < otpInputs.length - 1) {
+                        otpInputs[index + 1].focus();
+                    }
+                });
+                
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Backspace' && e.target.value.length === 0 && index > 0) {
+                        otpInputs[index - 1].focus();
+                    }
+                });
+            });
+        }
+
+        function startResendTimer() {
+            let timeLeft = 60;
+            const timerDisplay = document.getElementById('resend-timer');
+            const resendButton = document.getElementById('resend-btn');
+            
+            resendButton.disabled = true;
+            
+            resendTimer = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(resendTimer);
+                    timerDisplay.textContent = '0';
+                    resendButton.disabled = false;
+                }
+            }, 1000);
+        }
+
+        async function resendWhatsAppOTP() {
+            await sendWhatsAppOTP();
+        }
+
+        // Gmail Magic Link Functions
+        document.getElementById('email-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            await sendMagicLinkEmail();
+        });
+
+        async function sendMagicLinkEmail() {
+            const email = document.getElementById('email-address').value;
+            const button = document.getElementById('email-send-btn');
+            
+            if (!email) {
+                showStatusMessage('Please enter your Gmail address', 'error');
+                return;
+            }
+
+            if (!email.endsWith('@gmail.com')) {
+                showStatusMessage('Only Gmail addresses are supported', 'error');
+                return;
+            }
+
+            try {
+                button.disabled = true;
+                button.innerHTML = '<span class="loading"></span> Sending...';
+                
+                const response = await fetch('/api/auth/email/send-magiclink', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showStatusMessage(data.message, 'success');
+                    button.innerHTML = '<i class="fas fa-check"></i> Magic Link Sent!';
+                    button.style.background = 'var(--success)';
+                } else {
+                    showStatusMessage(data.error, 'error');
+                }
+            } catch (error) {
+                showStatusMessage('Failed to send magic link. Please try again.', 'error');
+            } finally {
+                setTimeout(() => {
+                    button.disabled = false;
+                    button.innerHTML = '<i class="fas fa-paper-plane"></i> Send Magic Link';
+                    button.style.background = '';
+                }, 3000);
+            }
+        }
+
+        // GitHub OAuth Functions
+        function signInWithGitHub() {
+            // For now, simulate GitHub OAuth
+            // In production, this would redirect to GitHub OAuth
+            showStatusMessage('GitHub OAuth is being configured. Please use WhatsApp or Gmail for now.', 'info');
+        }
+
+        // Logout function
+        async function logout() {
+            try {
+                await fetch('/api/auth/logout', {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                currentUser = null;
+                showAuthForm();
+                hideStatusMessage();
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
+
+        // Service access functions
+        function accessService(authType) {
+            if (authType === 'none') {
+                // Redirect to no-login services
+                window.location.href = '/search';
+            } else {
+                // Show appropriate authentication form
+                showAuthForm(authType);
+            }
+        }
+
+        function showAuthForm(authType) {
+            document.getElementById('service-selection').style.display = 'none';
+            document.getElementById('auth-forms').style.display = 'block';
+            
+            // Show appropriate tab based on auth type
+            if (authType === 'email') {
+                showAuthTab('email');
+            } else if (authType === 'phone') {
+                showAuthTab('whatsapp');
+            } else if (authType === 'github') {
+                showAuthTab('github');
+            }
+        }
+
+        function showServiceSelection() {
+            document.getElementById('service-selection').style.display = 'block';
+            document.getElementById('auth-forms').style.display = 'none';
+            document.getElementById('user-welcome').style.display = 'none';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthStatus();
+        });
+    </script>
+</body>
+</html>
+

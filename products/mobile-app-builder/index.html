@@ -1,0 +1,847 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Builder - Create iOS & Android Apps Without Coding</title>
+    <meta name="description" content="Build native mobile apps for iOS and Android with our visual app builder. No coding required. Cross-platform development made simple.">
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Mobile App Builder - Create iOS & Android Apps Without Coding">
+    <meta property="og:description" content="Build native mobile apps for iOS and Android with our visual app builder. No coding required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.shmry.com/products/mobile-app-builder">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .platforms-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .platforms-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .platform-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .platform-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .platform-card p {
+            color: var(--gray);
+        }
+        
+        .app-templates {
+            margin-bottom: 3rem;
+        }
+        
+        .app-templates h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .template-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .template-preview {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .template-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .template-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+        
+        .template-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .features-section {
+            margin-bottom: 3rem;
+        }
+        
+        .features-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        .start-building {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .start-building h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .start-building p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .start-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .pricing-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: rgba(0, 255, 136, 0.1);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .price .currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+        
+        .price .period {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--darker);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ðŸš€ Shmry Platform</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>Mobile App Builder</h1>
+            <p>Create native iOS and Android apps without writing a single line of code. Visual app development made simple.</p>
+        </div>
+
+        <div class="platforms-section">
+            <h2>ðŸ“± Cross-Platform Development</h2>
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">ðŸŽ</div>
+                    <h3>iOS Apps</h3>
+                    <p>Build native iOS apps that work perfectly on iPhone and iPad</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">ðŸ¤–</div>
+                    <h3>Android Apps</h3>
+                    <p>Create Android apps optimized for all devices and screen sizes</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">ðŸŒ</div>
+                    <h3>Web Apps</h3>
+                    <p>Progressive web apps that work on any device</p>
+                </div>
+                <div class="platform-card">
+                    <div class="platform-icon">ðŸ’»</div>
+                    <h3>Desktop Apps</h3>
+                    <p>Windows, macOS, and Linux applications from the same codebase</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-templates">
+            <h2>ðŸš€ App Templates</h2>
+            <div class="templates-grid">
+                <div class="template-card" data-template="business">
+                    <div class="template-preview">ðŸ¢</div>
+                    <h3>Business App</h3>
+                    <p>CRM, project management, and business tools</p>
+                </div>
+                <div class="template-card" data-template="ecommerce">
+                    <div class="template-preview">ðŸ›’</div>
+                    <h3>E-commerce App</h3>
+                    <p>Online shopping and retail applications</p>
+                </div>
+                <div class="template-card" data-template="social">
+                    <div class="template-preview">ðŸ‘¥</div>
+                    <h3>Social Media</h3>
+                    <p>Social networking and community apps</p>
+                </div>
+                <div class="template-card" data-template="fitness">
+                    <div class="template-preview">ðŸ’ª</div>
+                    <h3>Fitness & Health</h3>
+                    <p>Workout tracking and wellness apps</p>
+                </div>
+                <div class="template-card" data-template="education">
+                    <div class="template-preview">ðŸ“š</div>
+                    <h3>Education</h3>
+                    <p>Learning management and educational tools</p>
+                </div>
+                <div class="template-card" data-template="custom">
+                    <div class="template-preview">âš™ï¸</div>
+                    <h3>Custom App</h3>
+                    <p>Build your app from scratch with our tools</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2>âœ¨ Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">ðŸŽ¨</div>
+                    <h3>Visual Builder</h3>
+                    <p>Drag-and-drop interface for building app screens and navigation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">ðŸ“±</div>
+                    <h3>Native Performance</h3>
+                    <p>True native apps with optimal performance on each platform</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">ðŸ”§</div>
+                    <h3>Pre-built Components</h3>
+                    <p>Ready-to-use UI components, forms, and navigation elements</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">ðŸ“Š</div>
+                    <h3>Analytics & Testing</h3>
+                    <p>Built-in analytics, crash reporting, and A/B testing tools</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">â˜ï¸</div>
+                    <h3>Backend Integration</h3>
+                    <p>Connect to databases, APIs, and cloud services seamlessly</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">ðŸš€</div>
+                    <h3>One-Click Deploy</h3>
+                    <p>Publish to app stores with automated build and deployment</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="start-building">
+            <h2>ðŸš€ Start Building Your App</h2>
+            <p>Choose your template and start creating your mobile app today</p>
+            <form class="start-form" id="startForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appName">App Name</label>
+                        <input type="text" id="appName" name="appName" placeholder="My Awesome App" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="template">Choose Template</label>
+                        <select id="template" name="template" required>
+                            <option value="">Select a template</option>
+                            <option value="business">Business App</option>
+                            <option value="ecommerce">E-commerce App</option>
+                            <option value="social">Social Media</option>
+                            <option value="fitness">Fitness & Health</option>
+                            <option value="education">Education</option>
+                            <option value="custom">Custom App</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="platforms">Target Platforms</label>
+                        <select id="platforms" name="platforms" required>
+                            <option value="">Select platforms</option>
+                            <option value="ios">iOS Only</option>
+                            <option value="android">Android Only</option>
+                            <option value="both">iOS & Android</option>
+                            <option value="all">All Platforms</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">App Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="business">Business</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="education">Education</option>
+                            <option value="health">Health & Fitness</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="social">Social</option>
+                            <option value="utilities">Utilities</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">App Description</label>
+                    <textarea id="description" name="description" placeholder="Describe what your app does and its main features"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">ðŸš€ Start Building App</button>
+            </form>
+        </div>
+
+        <div class="pricing-section">
+            <h2>ðŸ’° Simple Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">
+                        <span class="currency">$</span>29<span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>1 App</li>
+                        <li>Basic Templates</li>
+                        <li>iOS & Android</li>
+                        <li>Basic Analytics</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">
+                        <span class="currency">$</span>79<span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>5 Apps</li>
+                        <li>All Templates</li>
+                        <li>All Platforms</li>
+                        <li>Advanced Analytics</li>
+                        <li>Priority Support</li>
+                        <li>Custom Branding</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">
+                        <span class="currency">$</span>199<span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited Apps</li>
+                        <li>Custom Templates</li>
+                        <li>All Platforms</li>
+                        <li>Enterprise Analytics</li>
+                        <li>24/7 Support</li>
+                        <li>API Access</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Build Your App?</h2>
+            <p>Join thousands of developers using SHMRY Mobile App Builder to create amazing apps.</p>
+            <div class="cta-buttons">
+                <a href="#startForm" class="btn btn-primary">ðŸš€ Start Building</a>
+                <a href="/contact" class="btn btn-secondary">ðŸ’¬ Contact Sales</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Template selection
+        document.querySelectorAll('.template-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const template = this.dataset.template;
+                const templateSelect = document.getElementById('template');
+                
+                // Update template selection
+                templateSelect.value = template;
+                
+                // Highlight selected template
+                document.querySelectorAll('.template-card').forEach(c => {
+                    c.style.border = '2px solid transparent';
+                });
+                this.style.border = '2px solid var(--primary)';
+                
+                // Scroll to start form
+                document.getElementById('startForm').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('startForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data.appName || !data.template || !data.platforms || !data.category) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate app creation
+            alert(`ðŸŽ‰ App "${data.appName}" created successfully!\n\nTemplate: ${data.template}\nPlatforms: ${data.platforms}\nCategory: ${data.category}\n\nYou're now ready to start building your mobile app with our visual builder!`);
+            
+            // Reset form
+            this.reset();
+            
+            // Remove template highlights
+            document.querySelectorAll('.template-card').forEach(c => {
+                c.style.border = '2px solid transparent';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Pricing card interactions
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove featured from all cards
+                document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('featured'));
+                // Add featured to clicked card
+                this.classList.add('featured');
+            });
+        });
+
+        // Template preview animations
+        document.querySelectorAll('.template-preview').forEach(preview => {
+            preview.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            preview.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Platform card interactions
+        document.querySelectorAll('.platform-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
+

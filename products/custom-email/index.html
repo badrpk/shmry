@@ -1,0 +1,1218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom @shmry.com Email - Professional Business Email Service</title>
+    <meta name="description" content="Get your professional @shmry.com email address. Secure, reliable business email with advanced features and 99.9% uptime guarantee.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff6b6b;
+            --accent: #4ecdc4;
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --gray-dark: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 2rem;
+        }
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+        }
+        
+        /* Email Interface Styles */
+        .email-interface {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .email-interface.active {
+            display: block;
+        }
+        
+        .email-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 90%;
+            background: var(--darker);
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .email-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .email-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .close-email {
+            background: var(--secondary);
+            color: var(--light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .email-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .email-sidebar {
+            width: 250px;
+            background: rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+        }
+        
+        .compose-btn {
+            background: var(--primary);
+            color: var(--darker);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .compose-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        .email-nav {
+            list-style: none;
+        }
+        
+        .email-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .email-nav a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            display: block;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .email-nav a:hover,
+        .email-nav a.active {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary);
+        }
+        
+        .email-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .email-toolbar {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .search-box {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+        }
+        
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .email-list {
+            flex: 1;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .email-item {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .email-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .email-item.unread {
+            background: rgba(0, 255, 136, 0.05);
+            font-weight: 600;
+        }
+        
+        .email-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--darker);
+        }
+        
+        .email-content-info {
+            flex: 1;
+        }
+        
+        .email-sender {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .email-subject {
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+        
+        .email-preview {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .email-time {
+            color: var(--gray);
+            font-size: 0.8rem;
+            min-width: 60px;
+            text-align: right;
+        }
+        
+        .compose-interface {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            background: var(--darker);
+            border-radius: 15px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .compose-interface.active {
+            display: block;
+        }
+        
+        .compose-header {
+            background: var(--primary);
+            color: var(--darker);
+            padding: 1rem 1.5rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .compose-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .compose-close {
+            background: none;
+            border: none;
+            color: var(--darker);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .compose-form {
+            padding: 1.5rem;
+        }
+        
+        .compose-field {
+            margin-bottom: 1rem;
+        }
+        
+        .compose-field label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .compose-field input,
+        .compose-field textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        .compose-field textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+        
+        .compose-field input:focus,
+        .compose-field textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .compose-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+        }
+        
+        .btn-compose {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-send {
+            background: var(--primary);
+            color: var(--darker);
+        }
+        
+        .btn-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .email-categories {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-tab {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 20px;
+            color: var(--light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .category-tab.active {
+            background: var(--primary);
+            color: var(--darker);
+        }
+        
+        .category-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .notification-badge {
+            background: var(--secondary);
+            color: var(--light);
+            border-radius: 50%;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+        }
+        
+        /* Additional Gmail Features */
+        .email-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .email-item:hover .email-actions {
+            opacity: 1;
+        }
+        
+        .action-btn {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+        
+        .action-btn.starred {
+            color: #ffd700;
+        }
+        
+        .action-btn.important {
+            color: var(--secondary);
+        }
+        
+        .email-checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .email-item.selected {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .bulk-actions {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .bulk-actions.active {
+            display: flex;
+        }
+        
+        .bulk-actions button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .bulk-actions button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .email-viewer {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--darker);
+            z-index: 3000;
+        }
+        
+        .email-viewer.active {
+            display: block;
+        }
+        
+        .email-viewer-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .email-viewer-content {
+            padding: 2rem;
+            overflow-y: auto;
+            height: calc(100% - 80px);
+        }
+        
+        .email-viewer-subject {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+        
+        .email-viewer-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .email-viewer-sender {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .email-viewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--darker);
+            font-size: 1.2rem;
+        }
+        
+        .email-viewer-info h4 {
+            color: var(--light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .email-viewer-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .email-viewer-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .email-viewer-body {
+            line-height: 1.8;
+            color: var(--light);
+        }
+        
+        .compose-toolbar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+        
+        .compose-toolbar button {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .compose-toolbar button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+        }
+        
+        .compose-toolbar button.active {
+            color: var(--primary);
+        }
+        
+        .email-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        
+        .filter-select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .email-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">ðŸš€ Shmry Platform</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/docs">Docs</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>Custom @shmry.com Email</h1>
+            <p>Get your professional business email address with enterprise-grade security, 99.9% uptime, and advanced features.</p>
+            <button class="btn btn-primary" onclick="openEmailInterface()">
+                ðŸ“§ Open Email Interface
+            </button>
+        </div>
+        
+        <!-- Email Interface -->
+        <div class="email-interface" id="emailInterface">
+            <div class="email-container">
+                <div class="email-header">
+                    <h2>ðŸ“§ SHMRY Email</h2>
+                    <button class="close-email" onclick="closeEmailInterface()">âœ• Close</button>
+                </div>
+                
+                <div class="email-content">
+                    <div class="email-sidebar">
+                        <button class="compose-btn" onclick="openCompose()">
+                            <i class="fas fa-edit"></i> Compose
+                        </button>
+                        
+                        <ul class="email-nav">
+                            <li><a href="#" class="active" onclick="showCategory('inbox')">
+                                <i class="fas fa-inbox"></i> Inbox
+                                <span class="notification-badge">3</span>
+                            </a></li>
+                            <li><a href="#" onclick="showCategory('starred')">
+                                <i class="fas fa-star"></i> Starred
+                            </a></li>
+                            <li><a href="#" onclick="showCategory('sent')">
+                                <i class="fas fa-paper-plane"></i> Sent
+                            </a></li>
+                            <li><a href="#" onclick="showCategory('drafts')">
+                                <i class="fas fa-file-alt"></i> Drafts
+                            </a></li>
+                            <li><a href="#" onclick="showCategory('spam')">
+                                <i class="fas fa-ban"></i> Spam
+                            </a></li>
+                            <li><a href="#" onclick="showCategory('trash')">
+                                <i class="fas fa-trash"></i> Trash
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="email-main">
+                        <div class="email-toolbar">
+                            <input type="text" class="search-box" placeholder="Search emails...">
+                            <button class="btn btn-secondary" onclick="refreshEmails()">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                        
+                        <!-- Bulk Actions Bar -->
+                        <div class="bulk-actions" id="bulkActions">
+                            <span id="selectedCount">0 selected</span>
+                            <button onclick="markAsRead()">Mark as read</button>
+                            <button onclick="markAsUnread()">Mark as unread</button>
+                            <button onclick="starSelected()">Star</button>
+                            <button onclick="archiveSelected()">Archive</button>
+                            <button onclick="deleteSelected()" style="color: var(--secondary);">Delete</button>
+                        </div>
+                        
+                        <!-- Email Stats -->
+                        <div class="email-stats">
+                            <div class="stat-item">
+                                <div class="stat-number" id="totalEmails">6</div>
+                                <div class="stat-label">Total</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="unreadEmails">3</div>
+                                <div class="stat-label">Unread</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="starredEmails">0</div>
+                                <div class="stat-label">Starred</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="importantEmails">0</div>
+                                <div class="stat-label">Important</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email Filters -->
+                        <div class="email-filters">
+                            <select class="filter-select" onchange="sortEmails(this.value)">
+                                <option value="date">Sort by Date</option>
+                                <option value="sender">Sort by Sender</option>
+                                <option value="subject">Sort by Subject</option>
+                                <option value="size">Sort by Size</option>
+                            </select>
+                            <select class="filter-select" onchange="filterByReadStatus(this.value)">
+                                <option value="all">All emails</option>
+                                <option value="unread">Unread only</option>
+                                <option value="read">Read only</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Email Categories -->
+                        <div class="email-categories">
+                            <button class="category-tab active" onclick="filterByCategory('all')">All</button>
+                            <button class="category-tab" onclick="filterByCategory('primary')">Primary</button>
+                            <button class="category-tab" onclick="filterByCategory('promotions')">Promotions <span class="notification-badge">100</span></button>
+                            <button class="category-tab" onclick="filterByCategory('social')">Social <span class="notification-badge">3</span></button>
+                            <button class="category-tab" onclick="filterByCategory('updates')">Updates <span class="notification-badge">92</span></button>
+                        </div>
+                        
+                        <div class="email-list" id="emailList">
+                            <!-- Email items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Compose Email Interface -->
+            <div class="compose-interface" id="composeInterface">
+                <div class="compose-header">
+                    <h3>âœ‰ï¸ New Message</h3>
+                    <button class="compose-close" onclick="closeCompose()">âœ•</button>
+                </div>
+                
+                <form class="compose-form" id="composeForm">
+                    <!-- Compose Toolbar -->
+                    <div class="compose-toolbar">
+                        <button type="button" onclick="formatText('bold')" title="Bold"><i class="fas fa-bold"></i></button>
+                        <button type="button" onclick="formatText('italic')" title="Italic"><i class="fas fa-italic"></i></button>
+                        <button type="button" onclick="formatText('underline')" title="Underline"><i class="fas fa-underline"></i></button>
+                        <button type="button" onclick="formatText('strikethrough')" title="Strikethrough"><i class="fas fa-strikethrough"></i></button>
+                        <span style="width: 1px; background: rgba(255,255,255,0.2); margin: 0 0.5rem;"></span>
+                        <button type="button" onclick="formatText('left')" title="Align Left"><i class="fas fa-align-left"></i></button>
+                        <button type="button" onclick="formatText('center')" title="Align Center"><i class="fas fa-align-center"></i></button>
+                        <button type="button" onclick="formatText('right')" title="Align Right"><i class="fas fa-align-right"></i></button>
+                        <span style="width: 1px; background: rgba(255,255,255,0.2); margin: 0 0.5rem;"></span>
+                        <button type="button" onclick="insertLink()" title="Insert Link"><i class="fas fa-link"></i></button>
+                        <button type="button" onclick="insertImage()" title="Insert Image"><i class="fas fa-image"></i></button>
+                        <button type="button" onclick="insertEmoji()" title="Insert Emoji"><i class="fas fa-smile"></i></button>
+                    </div>
+                    
+                    <div class="compose-field">
+                        <label for="to">To:</label>
+                        <input type="email" id="to" name="to" placeholder="recipient@example.com" required>
+                    </div>
+                    
+                    <div class="compose-field">
+                        <label for="cc">Cc:</label>
+                        <input type="email" id="cc" name="cc" placeholder="cc@example.com">
+                    </div>
+                    
+                    <div class="compose-field">
+                        <label for="bcc">Bcc:</label>
+                        <input type="email" id="bcc" name="bcc" placeholder="bcc@example.com">
+                    </div>
+                    
+                    <div class="compose-field">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" placeholder="Email subject" required>
+                    </div>
+                    
+                    <div class="compose-field">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    
+                    <div class="compose-actions">
+                        <button type="button" class="btn-compose btn-cancel" onclick="closeCompose()">Cancel</button>
+                        <button type="button" class="btn-compose btn-secondary" onclick="saveDraft()">Save Draft</button>
+                        <button type="submit" class="btn-compose btn-send">Send</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Email Viewer Interface -->
+            <div class="email-viewer" id="emailViewer">
+                <div class="email-viewer-header">
+                    <button onclick="closeEmailViewer()" style="background: none; border: none; color: var(--light); cursor: pointer; font-size: 1.2rem;">â† Back</button>
+                    <div class="email-viewer-actions">
+                        <button onclick="replyToEmail()" style="background: var(--primary); color: var(--darker); border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Reply</button>
+                        <button onclick="forwardEmail()" style="background: rgba(255,255,255,0.1); color: var(--light); border: 1px solid rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Forward</button>
+                        <button onclick="deleteCurrentEmail()" style="background: var(--secondary); color: var(--light); border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">Delete</button>
+                    </div>
+                </div>
+                <div class="email-viewer-content" id="emailViewerContent">
+                    <!-- Email content will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample email data
+        const sampleEmails = [
+            {
+                id: 1,
+                sender: 'Vercel',
+                subject: 'Failed production deployment on team Badar\'s projects',
+                preview: 'Your deployment to production has failed. Please check the logs...',
+                time: '12:15 AM',
+                category: 'updates',
+                unread: true,
+                starred: false,
+                important: false,
+                body: 'Dear Team,\n\nYour deployment to production has failed. Please check the logs and resolve the issues before attempting to deploy again.\n\nError details:\n- Build failed at step 3\n- Missing environment variables\n- Database connection timeout\n\nPlease review and fix these issues.\n\nBest regards,\nVercel Team'
+            },
+            {
+                id: 2,
+                sender: 'Google',
+                subject: 'Badar, finish setting up your Redmi Note 12 device with Google',
+                preview: 'Complete the setup process for your new device to access all Google services...',
+                time: '9:37 PM',
+                category: 'primary',
+                unread: true,
+                starred: false,
+                important: true,
+                body: 'Hi Badar,\n\nWe noticed you haven\'t completed setting up your Redmi Note 12 device with Google. To access all Google services and ensure your data is backed up, please complete the setup process.\n\nSteps to complete setup:\n1. Open Settings on your device\n2. Go to Accounts & Backup\n3. Add your Google account\n4. Enable backup and sync\n\nThis will ensure you have access to:\n- Gmail\n- Google Drive\n- Google Photos\n- Google Play Store\n\nBest regards,\nGoogle Team'
+            },
+            {
+                id: 3,
+                sender: 'Google Play',
+                subject: 'Changes to purchase verification settings on Google Play',
+                preview: 'We\'ve updated our purchase verification process to enhance security...',
+                time: '9:36 PM',
+                category: 'updates',
+                unread: true,
+                starred: false,
+                important: false,
+                body: 'Hello,\n\nWe\'ve updated our purchase verification process to enhance security and protect your account. These changes will help prevent unauthorized purchases.\n\nNew features:\n- Enhanced fraud detection\n- Two-factor authentication for purchases\n- Purchase verification via email\n- Family payment methods\n\nYour existing purchases and settings remain unchanged.\n\nBest regards,\nGoogle Play Team'
+            },
+            {
+                id: 4,
+                sender: 'AliExpress',
+                subject: 'Badar.Uzaman, Our hottest items, now over 50% off',
+                preview: 'Don\'t miss out on these amazing deals! Limited time offer...',
+                time: 'Aug 29',
+                category: 'promotions',
+                unread: false,
+                starred: false,
+                important: false,
+                body: 'Hi Badar.Uzaman,\n\nDon\'t miss out on these amazing deals! We\'re offering over 50% off on our hottest items for a limited time only.\n\nFeatured deals:\n- Smartphones up to 60% off\n- Electronics with free shipping\n- Fashion items starting at $5\n- Home & garden essentials\n\nHurry, these offers won\'t last long!\n\nBest regards,\nAliExpress Team'
+            },
+            {
+                id: 5,
+                sender: 'JSBank.eBanking',
+                subject: 'RAAST IBFT - Payment request completed successfully',
+                preview: 'Dear BADAR UZAMAN, Your RAAST Payment request has been completed...',
+                time: 'Aug 29',
+                category: 'primary',
+                unread: false,
+                starred: false,
+                important: true,
+                body: 'Dear BADAR UZAMAN,\n\nYour RAAST Payment request has been completed successfully.\n\nTransaction details:\n- Amount: PKR 25,000\n- Recipient: ABC Company\n- Reference: TXN123456\n- Status: Completed\n- Date: August 29, 2025\n\nThank you for using JSBank eBanking.\n\nBest regards,\nJSBank Team'
+            },
+            {
+                id: 6,
+                sender: 'Trinasolar Pakistan',
+                subject: 'Badar, Your Latest Trina Storage Updates Are In',
+                preview: 'Stay updated with the latest solar energy innovations and market trends...',
+                time: 'Aug 29',
+                category: 'promotions',
+                unread: false,
+                starred: false,
+                important: false,
+                body: 'Hi Badar,\n\nStay updated with the latest solar energy innovations and market trends. This month\'s newsletter includes:\n\n- New solar panel technologies\n- Market analysis and trends\n- Installation best practices\n- Maintenance tips\n- Upcoming events\n\nWe hope you find this information valuable.\n\nBest regards,\nTrinasolar Pakistan Team'
+            }
+        ];
+
+        let currentCategory = 'inbox';
+        let currentFilter = 'all';
+        let selectedEmails = new Set();
+        let currentEmail = null;
+
+        // Open email interface
+        function openEmailInterface() {
+            document.getElementById('emailInterface').classList.add('active');
+            loadEmails();
+        }
+
+        // Close email interface
+        function closeEmailInterface() {
+            document.getElementById('emailInterface').classList.remove('active');
+            closeCompose();
+        }
+
+        // Open compose interface
+        function openCompose() {
+            document.getElementById('composeInterface').classList.add('active');
+        }
+
+        // Close compose interface
+        function closeCompose() {
+            document.getElementById('composeInterface').classList.remove('active');
+            document.getElementById('composeForm').reset();
+        }
+
+        // Show category
+        function showCategory(category) {
+            currentCategory = category;
+            
+            // Update active nav item
+            document.querySelectorAll('.email-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            loadEmails();
+        }
+
+        // Filter by category
+        function filterByCategory(filter) {
+            currentFilter = filter;
+            
+            // Update active category tab
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            loadEmails();
+        }
+
+        // Load emails
+        function loadEmails() {
+            const emailList = document.getElementById('emailList');
+            let filteredEmails = sampleEmails;
+            
+            // Filter by category if not showing all
+            if (currentFilter !== 'all') {
+                filteredEmails = sampleEmails.filter(email => email.category === currentFilter);
+            }
+            
+            // Filter by current category (inbox, sent, etc.)
+            if (currentCategory === 'sent') {
+                filteredEmails = filteredEmails.filter(email => email.sender === 'you@shmry.com');
+            } else if (currentCategory === 'drafts') {
+                filteredEmails = [];
+            } else if (currentCategory === 'spam') {
+                filteredEmails = [];
+            } else if (currentCategory === 'trash') {
+                filteredEmails = [];
+            }
+            
+            emailList.innerHTML = '';
+            
+            if (filteredEmails.length === 0) {
+                emailList.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: var(--gray);">
+                        <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p>No emails in ${currentCategory}</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredEmails.forEach(email => {
+                const emailItem = document.createElement('div');
+                emailItem.className = `email-item ${email.unread ? 'unread' : ''} ${selectedEmails.has(email.id) ? 'selected' : ''}`;
+                emailItem.onclick = (e) => {
+                    if (!e.target.closest('.email-checkbox') && !e.target.closest('.action-btn')) {
+                        openEmail(email);
+                    }
+                };
+                
+                const senderInitial = email.sender.charAt(0).toUpperCase();
+                
+                emailItem.innerHTML = `
+                    <input type="checkbox" class="email-checkbox" onchange="toggleEmailSelection(${email.id}, this.checked)">
+                    <div class="email-avatar">${senderInitial}</div>
+                    <div class="email-content-info">
+                        <div class="email-sender">${email.sender}</div>
+                        <div class="email-subject">${email.subject}</div>
+                        <div class="email-preview">${email.preview}</div>
+                    </div>
+                    <div class="email-actions">
+                        <button class="action-btn ${email.starred ? 'starred' : ''}" onclick="toggleStar(${email.id})" title="${email.starred ? 'Unstar' : 'Star'}">
+                            <i class="fas fa-star"></i>
+                        </button>
+                        <button class="action-btn ${email.important ? 'important' : ''}" onclick="toggleImportant(${email.id})" title="${email.important ? 'Mark as not important' : 'Mark as important'}">
+                            <i class="fas fa-exclamation"></i>
+                        </button>
+                        <button class="action-btn" onclick="archiveEmail(${email.id})" title="Archive">
+                            <i class="fas fa-archive"></i>
+                        </button>
+                        <button class="action-btn" onclick="deleteEmail(${email.id})" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="email-time">${email.time}</div>
+                `;
+                
+                emailList.appendChild(emailItem);
+            });
+            
+            updateStats();
+            updateBulkActions();
+        }
+
+        // Open email (placeholder function)
+        function openEmail(email) {
+            alert(`Opening email: ${email.subject}\n\nFrom: ${email.sender}\n\n${email.preview}`);
+        }
+
+        function deleteCurrentEmail() {
+            if (currentEmail && confirm('Are you sure you want to delete this email?')) {
+                const index = sampleEmails.findIndex(e => e.id === currentEmail.id);
+                if (index > -1) {
+                    sampleEmails.splice(index, 1);
+                    closeEmailViewer();
+                    loadEmails();
+                }
+            }
+        }
+
+        // Refresh emails
+        function refreshEmails() {
+            loadEmails();
+            // Simulate refresh delay
+            setTimeout(() => {
+                alert('Emails refreshed!');
+            }, 500);
+        }
+
+        // Handle compose form submission
+        document.getElementById('composeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            if (!data.to || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate sending email
+            alert(`ðŸ“§ Email sent successfully!\n\nTo: ${data.to}\nSubject: ${data.subject}\n\nYour message has been delivered.`);
+            
+            // Close compose and reset form
+            closeCompose();
+            
+            // Add to sent items (in a real app, this would be stored)
+            console.log('Email sent:', data);
+        });
+
+        // Close email interface when clicking outside
+        document.getElementById('emailInterface').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEmailInterface();
+            }
+        });
+
+        // Close compose interface when clicking outside
+        document.getElementById('composeInterface').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCompose();
+            }
+        });
+
+        // Close email viewer when clicking outside
+        document.getElementById('emailViewer').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEmailViewer();
+            }
+        });
+    </script>
+</body>
+</html>
+

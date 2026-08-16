@@ -1,0 +1,56 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.shmry.com/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow crawling of all content
+Allow: /docs/
+Allow: /services/
+Allow: /pricing/
+Allow: /status/
+Allow: /changelog/
+Allow: /contact/
+
+# Allow crawling of legal pages
+Allow: /privacy/
+Allow: /terms/
+Allow: /security/
+Allow: /dpa/
+Allow: /aup/
+Allow: /sla/
+
+# Allow crawling of company pages
+Allow: /company/
+
+# Allow crawling of solutions pages
+Allow: /solutions/
+
+# Crawl delay (optional - be respectful to search engines)
+Crawl-delay: 1
+
+# Disallow admin and private areas (if any exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/ (except for public API documentation)
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow access to important files
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /manifest.json
+Allow: /.well-known/
