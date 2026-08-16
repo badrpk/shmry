@@ -6,6 +6,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "website/downloads.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "website/benchmarks.html",
       "use": "@vercel/static"
     },
@@ -36,6 +40,10 @@
       "dest": "/website/shmry-website.html"
     },
     {
+      "src": "/downloads",
+      "dest": "/website/downloads.html"
+    },
+    {
       "src": "/benchmarks",
       "dest": "/website/benchmarks.html"
     },
@@ -64,26 +72,8 @@
       "dest": "/master-dashboard.html"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "http://154.57.212.38:3001/api/$1"
-    },
-    {
-      "src": "/master-api/(.*)",
-      "dest": "http://154.57.212.38:3002/api/$1"
-    },
-    {
-      "src": "/network-api/(.*)",
-      "dest": "http://154.57.212.38:3003/api/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "/$1"
     }
-  ],
-  "env": {
-    "BACKEND_URL": "http://154.57.212.38",
-    "ADMIN_PORT": "3001",
-    "MASTER_PORT": "3002",
-    "NETWORK_PORT": "3003"
-  }
+  ]
 }
