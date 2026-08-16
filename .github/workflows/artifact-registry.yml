@@ -1,0 +1,27 @@
+name: SHMRY artifact registry
+
+on:
+  push:
+    paths:
+      - 'platform/artifact_registry.py'
+      - 'tests/test_artifact_registry.py'
+      - '.github/workflows/artifact-registry.yml'
+  pull_request:
+    paths:
+      - 'platform/artifact_registry.py'
+      - 'tests/test_artifact_registry.py'
+      - '.github/workflows/artifact-registry.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run artifact registry tests
+        run: python -m unittest discover -s tests -p 'test_artifact_registry.py' -v
