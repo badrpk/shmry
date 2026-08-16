@@ -23,6 +23,9 @@ venv/
 *.p12
 *.pfx
 
+# Vercel local project/auth state
+.vercel/
+
 # Runtime state
 runtime-storage/
 admin-devices-storage/
