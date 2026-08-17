@@ -4,6 +4,7 @@
   "description": "Complete AI & Cloud Platform",
   "main": "deployment/server.js",
   "scripts": {
+    "test:auth": "node tests-js/auth.test.js",
     "start": "node deployment/server.js",
     "dev": "nodemon deployment/server.js",
     "build": "echo 'No build step required'",
