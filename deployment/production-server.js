@@ -2,11 +2,13 @@
 // Secure, production-ready server with proper security configurations
 
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 const path = require('path');
 const securityConfig = require('../security-config');
+const { createShmryAuth } = require('./auth');
 
 class ProductionServer {
   constructor() {
@@ -71,6 +73,7 @@ class ProductionServer {
     this.app.use(limiter);
 
     // Body parsing
+    this.app.use(cookieParser());
     this.app.use(express.json({ limit: '10mb' }));
     this.app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
@@ -110,6 +113,9 @@ class ProductionServer {
     // Static file serving (only for public website)
     this.app.use('/', express.static(path.join(__dirname, '../website')));
     this.app.use('/products', express.static(path.join(__dirname, '../products')));
+
+    const shmryAuth = createShmryAuth();
+    this.app.use('/api/auth', shmryAuth.router);
 
     // API routes (public)
     this.app.use('/api/public', require('./routes/public-api'));
