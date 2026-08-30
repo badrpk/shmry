@@ -56,6 +56,14 @@
       "dest": "/website/status.html"
     },
     {
+      "src": "/harness",
+      "dest": "/products/sophyane-harness/index.html"
+    },
+    {
+      "src": "/sophyane",
+      "dest": "/products/sophyane-harness/index.html"
+    },
+    {
       "src": "/products",
       "dest": "/products/index.html"
     },
