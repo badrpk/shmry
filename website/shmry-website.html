@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Code — Terminal AI Coding Assistant</title>
-    <meta name="description" content="Claude Code is Anthropic's agentic command-line tool that lives in your terminal, understands your codebase, and helps you code faster through natural language.">
+    <title>Sophyane 21.4.2 — Evidence-Gated Software Engineering Harness</title>
+    <meta name="description" content="Sophyane 21.4.2 is a local-first, evidence-gated software engineering harness for autonomous planning, AST code synthesis, sandboxed execution, and validator-driven self-repair.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-canvas: #141413;
-            --bg-surface: #1e1d1b;
-            --bg-panel: #262523;
-            --bg-input: #1b1a18;
-            --bg-code: #0f0e0d;
-            --border-color: #383734;
-            --border-focus: #d97757;
-            --text-primary: #f4f3ef;
-            --text-secondary: #a8a59e;
-            --text-muted: #6e6c66;
-            --accent-coral: #d97757;
-            --accent-coral-glow: rgba(217, 119, 87, 0.25);
-            --accent-coral-dim: rgba(217, 119, 87, 0.12);
-            --diff-add-bg: rgba(74, 222, 128, 0.15);
+            --bg-canvas: #090c15;
+            --bg-surface: #101524;
+            --bg-panel: #161d30;
+            --bg-input: #0d121f;
+            --bg-code: #080a10;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(0, 255, 136, 0.35);
+            --text-primary: #f4f6fb;
+            --text-secondary: #9aa5b9;
+            --text-muted: #64748b;
+            --accent-emerald: #00ff88;
+            --accent-emerald-glow: rgba(0, 255, 136, 0.25);
+            --accent-emerald-dim: rgba(0, 255, 136, 0.1);
+            --accent-cyan: #4ecdc4;
+            --accent-purple: #b680ff;
+            --accent-blue: #79a8ff;
+            --diff-add-bg: rgba(0, 255, 136, 0.14);
             --diff-add-text: #4ade80;
-            --diff-del-bg: rgba(248, 113, 113, 0.15);
+            --diff-del-bg: rgba(248, 113, 113, 0.14);
             --diff-del-text: #f87171;
             --syntax-kw: #f59e0b;
             --syntax-str: #34d399;
             --syntax-fn: #60a5fa;
-            --syntax-comment: #71717a;
-            --status-ok: #4ade80;
+            --syntax-comment: #64748b;
+            --status-ok: #00ff88;
             --status-warn: #fbbf24;
             --status-err: #f87171;
             --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, Menlo, Monaco, monospace;
@@ -52,11 +55,16 @@
             flex-direction: column;
             overflow: hidden;
             -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 85% 0%, rgba(121, 168, 255, 0.08), transparent 40%),
+                radial-gradient(circle at 10% 20%, rgba(182, 128, 255, 0.06), transparent 35%),
+                radial-gradient(circle at 50% 100%, rgba(0, 255, 136, 0.04), transparent 45%);
         }
 
         /* Top Header Bar */
         .app-header {
-            background: var(--bg-surface);
+            background: rgba(16, 21, 36, 0.95);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
             height: 48px;
             display: flex;
@@ -73,35 +81,36 @@
             gap: 12px;
         }
 
-        .claude-brand {
+        .sophyane-brand {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 0.95rem;
             color: var(--text-primary);
             letter-spacing: -0.02em;
         }
 
-        .brand-icon {
+        .brand-shield {
             width: 22px;
             height: 22px;
-            background: var(--accent-coral);
+            background: linear-gradient(135deg, var(--accent-emerald), var(--accent-cyan));
             border-radius: 5px;
             display: grid;
             place-items: center;
-            color: #141413;
+            color: #090c15;
             font-size: 0.75rem;
             font-weight: 900;
         }
 
         .version-badge {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             background: var(--bg-panel);
-            color: var(--text-secondary);
+            color: var(--accent-emerald);
             padding: 2px 6px;
             border-radius: 4px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-highlight);
+            font-weight: 700;
         }
 
         .workspace-path {
@@ -117,7 +126,7 @@
         }
 
         .git-branch {
-            color: var(--accent-coral);
+            color: var(--accent-cyan);
             font-weight: 600;
         }
 
@@ -127,7 +136,7 @@
             gap: 8px;
         }
 
-        .model-selector-btn {
+        .mode-selector-btn {
             background: var(--bg-panel);
             border: 1px solid var(--border-color);
             color: var(--text-primary);
@@ -142,8 +151,8 @@
             transition: all 0.2s;
         }
 
-        .model-selector-btn:hover {
-            border-color: var(--accent-coral);
+        .mode-selector-btn:hover {
+            border-color: var(--accent-emerald);
             background: var(--bg-surface);
         }
 
@@ -166,7 +175,7 @@
             font-weight: 600;
         }
 
-        .cost-badge {
+        .score-badge {
             color: var(--status-ok);
         }
 
@@ -191,9 +200,9 @@
         }
 
         .icon-btn.active {
-            background: var(--accent-coral-dim);
-            color: var(--accent-coral);
-            border-color: var(--accent-coral);
+            background: var(--accent-emerald-dim);
+            color: var(--accent-emerald);
+            border-color: var(--accent-emerald);
         }
 
         /* Main Body Layout */
@@ -234,18 +243,18 @@
             background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background: #383734;
+            background: #242c42;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #4f4d49;
+            background: #333d59;
         }
 
-        /* Welcome Banner */
+        /* Welcome Card */
         .welcome-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
-            border-left: 3px solid var(--accent-coral);
+            border-left: 3px solid var(--accent-emerald);
             border-radius: 8px;
             padding: 16px 20px;
             display: flex;
@@ -290,9 +299,9 @@
         }
 
         .chip:hover {
-            border-color: var(--accent-coral);
-            color: var(--text-primary);
-            background: var(--accent-coral-dim);
+            border-color: var(--accent-emerald);
+            color: var(--accent-emerald);
+            background: var(--accent-emerald-dim);
         }
 
         /* Message Turn */
@@ -310,7 +319,7 @@
         }
 
         .prompt-symbol {
-            color: var(--accent-coral);
+            color: var(--accent-emerald);
             font-weight: 800;
             font-size: 1.1rem;
             line-height: 1.4;
@@ -328,7 +337,7 @@
             word-break: break-word;
         }
 
-        /* Thinking Block */
+        /* SLI Thinking & Intent Decomposition Block */
         .thinking-card {
             background: var(--bg-input);
             border: 1px solid var(--border-color);
@@ -377,7 +386,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         .tool-header {
@@ -398,7 +407,7 @@
         }
 
         .tool-icon {
-            color: var(--accent-coral);
+            color: var(--accent-emerald);
         }
 
         .tool-path {
@@ -424,9 +433,9 @@
         }
 
         .status-success {
-            background: rgba(74, 222, 128, 0.15);
+            background: rgba(0, 255, 136, 0.15);
             color: var(--status-ok);
-            border: 1px solid rgba(74, 222, 128, 0.3);
+            border: 1px solid rgba(0, 255, 136, 0.3);
         }
 
         .tool-content {
@@ -467,7 +476,7 @@
             color: var(--text-muted);
         }
 
-        /* Assistant Markdown Message */
+        /* Assistant Response */
         .assistant-msg {
             font-size: 0.88rem;
             color: var(--text-primary);
@@ -486,66 +495,8 @@
             padding: 2px 6px;
             border-radius: 4px;
             font-size: 0.82rem;
-            color: var(--accent-coral);
+            color: var(--accent-emerald);
             border: 1px solid var(--border-color);
-        }
-
-        /* Interactive Confirmation Gate */
-        .confirmation-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--accent-coral);
-            border-radius: 8px;
-            padding: 14px 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .confirmation-title {
-            font-size: 0.85rem;
-            color: var(--accent-coral);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .confirmation-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-confirm {
-            background: var(--accent-coral);
-            color: #141413;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 5px;
-            font-size: 0.78rem;
-            font-family: inherit;
-            font-weight: 700;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .btn-confirm:hover {
-            opacity: 0.9;
-        }
-
-        .btn-reject {
-            background: var(--bg-panel);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            padding: 6px 14px;
-            border-radius: 5px;
-            font-size: 0.78rem;
-            font-family: inherit;
-            cursor: pointer;
-        }
-
-        .btn-reject:hover {
-            color: var(--text-primary);
-            border-color: var(--text-secondary);
         }
 
         /* Terminal Input Area */
@@ -571,12 +522,12 @@
         }
 
         .prompt-wrapper:focus-within {
-            border-color: var(--accent-coral);
-            box-shadow: 0 0 0 2px var(--accent-coral-glow);
+            border-color: var(--accent-emerald);
+            box-shadow: 0 0 0 2px var(--accent-emerald-glow);
         }
 
         .input-icon {
-            color: var(--accent-coral);
+            color: var(--accent-emerald);
             font-weight: 800;
             font-size: 1rem;
             user-select: none;
@@ -602,8 +553,8 @@
         }
 
         .send-btn {
-            background: var(--accent-coral);
-            color: #141413;
+            background: linear-gradient(135deg, var(--accent-emerald), var(--accent-cyan));
+            color: #090c15;
             border: none;
             width: 28px;
             height: 28px;
@@ -654,13 +605,13 @@
         }
 
         .slash-item:hover, .slash-item.selected {
-            background: var(--accent-coral-dim);
+            background: var(--accent-emerald-dim);
             color: var(--text-primary);
         }
 
         .slash-name {
             font-weight: 700;
-            color: var(--accent-coral);
+            color: var(--accent-emerald);
         }
 
         .slash-desc {
@@ -691,9 +642,9 @@
             color: var(--text-secondary);
         }
 
-        /* Collapsible Right Sidebar Workspace Drawer */
+        /* Workspace Drawer Sidebar */
         .workspace-sidebar {
-            width: 380px;
+            width: 400px;
             background: var(--bg-surface);
             border-left: 1px solid var(--border-color);
             display: flex;
@@ -733,7 +684,7 @@
 
         .s-tab.active {
             background: var(--bg-surface);
-            color: var(--accent-coral);
+            color: var(--accent-emerald);
             font-weight: 600;
         }
 
@@ -788,7 +739,7 @@
             margin-left: 14px;
         }
 
-        /* Quick Code Viewer Drawer */
+        /* Code Viewer Box */
         .code-preview-box {
             background: var(--bg-code);
             border: 1px solid var(--border-color);
@@ -798,15 +749,15 @@
             overflow-x: auto;
             color: #d4d4d8;
             line-height: 1.5;
-            max-height: 320px;
+            max-height: 340px;
         }
 
-        /* Modal Overlays */
+        /* Modals */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
             display: none;
             place-items: center;
             z-index: 1000;
@@ -820,8 +771,8 @@
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            width: min(560px, 90vw);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            width: min(580px, 90vw);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -854,7 +805,18 @@
             gap: 8px;
         }
 
-        /* Responsive Breakpoints */
+        .btn-confirm {
+            background: var(--accent-emerald);
+            color: #090c15;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 0.78rem;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
         @media (max-width: 860px) {
             .workspace-sidebar {
                 position: absolute;
@@ -875,43 +837,43 @@
     <!-- Header Navigation Bar -->
     <header class="app-header">
         <div class="header-left">
-            <div class="claude-brand">
-                <span class="brand-icon">C</span>
-                <span>Claude Code</span>
+            <div class="sophyane-brand">
+                <span class="brand-shield"><i class="fas fa-shield-alt"></i></span>
+                <span>SOPHYANE</span>
             </div>
-            <span class="version-badge">v1.0.8</span>
+            <span class="version-badge">v21.4.2</span>
             <div class="workspace-path">
                 <i class="fas fa-folder"></i>
-                <span>~/shmry/workspace</span>
+                <span>~/sophyane-workspace</span>
                 <span class="git-branch"><i class="fas fa-code-branch"></i> main</span>
             </div>
         </div>
 
         <div class="header-center">
-            <button class="model-selector-btn" onclick="openModal('modelModal')">
-                <i class="fas fa-brain" style="color: var(--accent-coral);"></i>
-                <span id="activeModelLabel">Claude 3.7 Sonnet (Thinking)</span>
+            <button class="mode-selector-btn" onclick="openModal('modeModal')">
+                <i class="fas fa-microchip" style="color: var(--accent-emerald);"></i>
+                <span id="activeModeLabel">Option 1: Evidence-Gated Fast Path (Strict TDD)</span>
                 <i class="fas fa-chevron-down" style="font-size: 0.65rem; color: var(--text-muted);"></i>
             </button>
         </div>
 
         <div class="header-right">
-            <div class="stat-item" title="Tokens used in current context">
-                <i class="fas fa-layer-group"></i>
-                <span class="stat-val" id="tokenCount">14.2k</span>
-                <span style="color: var(--text-muted);">/ 200k</span>
+            <div class="stat-item" title="Tough100 benchmark verified score">
+                <i class="fas fa-chart-line"></i>
+                <span>Tough100:</span>
+                <span class="stat-val score-badge" id="evalScore">94.8%</span>
             </div>
-            <div class="stat-item" title="Session estimated cost">
-                <i class="fas fa-dollar-sign"></i>
-                <span class="stat-val cost-badge" id="costTotal">$0.042</span>
+            <div class="stat-item" title="Evidence-gated policy status">
+                <i class="fas fa-check-double" style="color: var(--accent-cyan);"></i>
+                <span class="stat-val" style="color: var(--accent-cyan);">EVIDENCE-GATED</span>
             </div>
-            <button class="icon-btn" title="Session Doctor & Health" onclick="runSlashCommand('/doctor')">
+            <button class="icon-btn" title="Run Sophyane Doctor" onclick="runSlashCommand('/doctor')">
                 <i class="fas fa-stethoscope"></i>
             </button>
-            <button class="icon-btn" title="Settings" onclick="openModal('configModal')">
+            <button class="icon-btn" title="Harness Configuration" onclick="openModal('configModal')">
                 <i class="fas fa-gear"></i>
             </button>
-            <button class="icon-btn" id="toggleSidebarBtn" title="Toggle Workspace Drawer" onclick="toggleSidebar()">
+            <button class="icon-btn" id="toggleSidebarBtn" title="Toggle Code Explorer" onclick="toggleSidebar()">
                 <i class="fas fa-sidebar"></i>
             </button>
         </div>
@@ -925,24 +887,27 @@
             
             <div class="terminal-feed" id="terminalFeed">
                 
-                <!-- Initial Claude Code Welcome Card -->
+                <!-- Initial Sophyane Startup Card -->
                 <div class="welcome-card">
                     <div class="welcome-title">
-                        <i class="fas fa-terminal" style="color: var(--accent-coral);"></i>
-                        <span>Welcome to Claude Code</span>
+                        <i class="fas fa-shield-alt" style="color: var(--accent-emerald);"></i>
+                        <span>Sophyane 21.4.2 Autonomous Software Engineering Harness</span>
                     </div>
                     <div class="welcome-desc">
-                        Claude Code is an agentic coding assistant that executes bash commands, edits files, searches repositories, runs test suites, and verifies code with zero-hallucination tools.
+                        Local-first evidence-gated software engineering platform. Plans, synthesizes AST patches, runs sandboxed commands, audits test suites, and enforces zero unhandled success claims. Connected via <code>sophyane-ecosystem-v1</code> contract.
                     </div>
                     <div class="shortcut-chips">
-                        <span class="chip" onclick="executeQuickPrompt('Fix failing pytest assertion in tests/test_auth.py')">
-                            <i class="fas fa-bug" style="color: var(--accent-coral);"></i> Fix Failing Pytest
+                        <span class="chip" onclick="executeQuickPrompt('Repair Pytest assertion regression with PostgreSQL cutover rollback isolation guard')">
+                            <i class="fas fa-bug" style="color: var(--status-err);"></i> Repair Postgres Cutover
                         </span>
-                        <span class="chip" onclick="executeQuickPrompt('Refactor database connection pool with rollback guard')">
-                            <i class="fas fa-database" style="color: var(--syntax-fn);"></i> Refactor DB Pool
+                        <span class="chip" onclick="executeQuickPrompt('Decompose semantic intent concepts and generate AST repair patch for sli_semantic_intelligence')">
+                            <i class="fas fa-brain" style="color: var(--accent-purple);"></i> SLI Semantic Decomposition
                         </span>
-                        <span class="chip" onclick="executeQuickPrompt('Audit codebase security and dependency vulnerabilities')">
-                            <i class="fas fa-shield-halved" style="color: var(--syntax-str);"></i> Security Audit
+                        <span class="chip" onclick="executeQuickPrompt('Run Tough100 candidate evolution benchmark against vanilla models')">
+                            <i class="fas fa-bolt" style="color: var(--syntax-kw);"></i> Tough100 Benchmark Race
+                        </span>
+                        <span class="chip" onclick="runSlashCommand('/sli')">
+                            <i class="fas fa-network-wired"></i> /sli (Ontology)
                         </span>
                         <span class="chip" onclick="runSlashCommand('/doctor')">
                             <i class="fas fa-stethoscope"></i> /doctor
@@ -953,42 +918,45 @@
                     </div>
                 </div>
 
-                <!-- Initial Conversation Sample -->
+                <!-- Initial Verified Execution Trace -->
                 <div class="turn-group" id="welcomeTurn">
                     <div class="user-turn">
                         <span class="prompt-symbol">❯</span>
-                        <div class="user-content">Run test suites and fix the PostgreSQL cutover schema validation regression</div>
+                        <div class="user-content">Repair Pytest assertion regression with PostgreSQL cutover rollback isolation guard</div>
                     </div>
 
-                    <!-- Thinking Step -->
+                    <!-- SLI Intent & Ontology Decomposition -->
                     <div class="thinking-card">
                         <div class="thinking-header" onclick="toggleThinking(this)">
                             <div class="thinking-header-left">
-                                <i class="fas fa-lightbulb" style="color: var(--syntax-kw);"></i>
-                                <span>Thinking Process (Claude 3.7 Sonnet · 1.8s)</span>
+                                <i class="fas fa-brain" style="color: var(--accent-emerald);"></i>
+                                <span>SLI Intent Decomposition & Evidence Plan (Sophyane Kernel · 142ms)</span>
                             </div>
                             <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
                         </div>
-                        <div class="thinking-body">1. The user wants to run the test suite and resolve any schema validation failures in the PostgreSQL cutover subsystem.
-2. First, let's invoke `Bash` to execute `pytest` on `tests/test_sli_postgres_cutover.py` to inspect the exact failure traceback.
-3. Once we locate the assertion error in `src/sophyane/sli_postgres.py`, we will use `EditFile` to insert the atomic transaction guard and invariant assertions.
-4. Finally, re-run verification tests to prove the fix passes with exit code 0.</div>
+                        <div class="thinking-body">[1] Intent Classification: Request contains repair verbs ('repair', 'fix') and software terms ('pytest', 'cutover', 'guard').
+[2] Policy Engine: Assigned Option 1 (Evidence-Gated Fast Path), timeout budget: 10,000ms.
+[3] Capability Engine: Decomposed into `software_repair_postgres_cutover` & `ast_transaction_isolation`.
+[4] Step 1: Run sandboxed `pytest` on `tests/test_sli_postgres_cutover.py` to capture baseline failure traceback.
+[5] Step 2: Use `EditFile` to inject guarded transaction block, `SET LOCAL lock_timeout`, and invariant assertion.
+[6] Step 3: Re-run verification tests to prove exit code 0.
+[7] Step 4: Persist `.sophyane-harness-report.json` and promote pattern to Xerus memory.</div>
                     </div>
 
-                    <!-- Tool 1: Bash -->
+                    <!-- Tool 1: Sandboxed Bash Failure Baseline -->
                     <div class="tool-card">
                         <div class="tool-header">
                             <div class="tool-name-group">
                                 <i class="fas fa-terminal tool-icon"></i>
-                                <span>Bash</span>
-                                <span class="tool-path">pytest tests/test_sli_postgres_cutover.py -v</span>
+                                <span>Bash (Sandbox)</span>
+                                <span class="tool-path">python -m pytest tests/test_sli_postgres_cutover.py -v</span>
                             </div>
                             <span class="tool-status-badge status-running">
-                                <i class="fas fa-circle-notch fa-spin"></i> Completed
+                                <i class="fas fa-circle-notch fa-spin"></i> Baseline Captured
                             </span>
                         </div>
                         <div class="tool-content">============================= test session starts ==============================
-rootdir: /root/workspace
+rootdir: /root/sophyane-workspace
 collected 3 items
 
 tests/test_sli_postgres_cutover.py::test_cutover_guard FAILED            [ 33%]
@@ -1000,20 +968,20 @@ ______________________________ test_cutover_guard ______________________________
     async def test_cutover_guard():
 >       res = await cutover.execute_cutover("sophyane_v2")
 E       AssertionError: Schema invariant violated: lock_timeout was not set.
-=========================== 1 failed, 2 passed in 0.28s ===========================
+=========================== 1 failed, 2 passed in 0.18s ===========================
 [Exit code: 1]</div>
                     </div>
 
-                    <!-- Tool 2: EditFile -->
+                    <!-- Tool 2: AST Mutation via EditFile -->
                     <div class="tool-card">
                         <div class="tool-header">
                             <div class="tool-name-group">
                                 <i class="fas fa-file-pen tool-icon"></i>
-                                <span>EditFile</span>
+                                <span>EditFile (AST Patch)</span>
                                 <span class="tool-path">src/sophyane/sli_postgres.py</span>
                             </div>
                             <span class="tool-status-badge status-success">
-                                <i class="fas fa-check"></i> Applied
+                                <i class="fas fa-check"></i> Reconciled
                             </span>
                         </div>
                         <div class="tool-content">
@@ -1023,6 +991,7 @@ E       AssertionError: Schema invariant violated: lock_timeout was not set.
                                 <div class="diff-line del">-         await conn.execute(f"ALTER DATABASE SET SCHEMA {target_schema}")</div>
                                 <div class="diff-line del">-         return CutoverResult(success=True)</div>
                                 <div class="diff-line add">+         async with conn.transaction():</div>
+                                <div class="diff-line add">+             # Guarded transaction with automated rollback & invariant check</div>
                                 <div class="diff-line add">+             await conn.execute("SET LOCAL lock_timeout = '2000ms';")</div>
                                 <div class="diff-line add">+             await conn.execute(f"ALTER DATABASE SET SCHEMA {target_schema}")</div>
                                 <div class="diff-line add">+             await self._verify_invariants(conn)</div>
@@ -1031,16 +1000,16 @@ E       AssertionError: Schema invariant violated: lock_timeout was not set.
                         </div>
                     </div>
 
-                    <!-- Tool 3: Verification Bash -->
+                    <!-- Tool 3: Verification Pass -->
                     <div class="tool-card">
                         <div class="tool-header">
                             <div class="tool-name-group">
                                 <i class="fas fa-terminal tool-icon"></i>
-                                <span>Bash</span>
-                                <span class="tool-path">pytest tests/test_sli_postgres_cutover.py -v</span>
+                                <span>Bash (Verification)</span>
+                                <span class="tool-path">python -m pytest tests/test_sli_postgres_cutover.py -v</span>
                             </div>
                             <span class="tool-status-badge status-success">
-                                <i class="fas fa-check"></i> Pass
+                                <i class="fas fa-check"></i> 100% Pass
                             </span>
                         </div>
                         <div class="tool-content">============================= test session starts ==============================
@@ -1050,17 +1019,16 @@ tests/test_sli_postgres_cutover.py::test_cutover_guard PASSED            [ 33%]
 tests/test_sli_postgres_cutover.py::test_rollback_isolation PASSED       [ 66%]
 tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%]
 
-============================== 3 passed in 0.14s ===============================
+============================== 3 passed in 0.09s ===============================
 [Exit code: 0]</div>
                     </div>
 
-                    <!-- Assistant Response -->
+                    <!-- Sophyane Assistant Response -->
                     <div class="assistant-msg">
-                        <p>I have diagnosed and resolved the regression in <code>src/sophyane/sli_postgres.py</code>:</p>
-                        <p>1. Wrapped the schema cutover statement inside an atomic <code>conn.transaction()</code> block.<br>
-                        2. Configured a strict <code>SET LOCAL lock_timeout = '2000ms'</code> guard to prevent blocking concurrent transactions.<br>
-                        3. Enforced <code>_verify_invariants()</code> before final transaction commit.</p>
-                        <p>All 3 tests in <code>tests/test_sli_postgres_cutover.py</code> now pass cleanly with exit code <code>0</code>.</p>
+                        <p><strong>Sophyane Harness Report (Verified)</strong>:</p>
+                        <p>1. Fixed the cutover invariant defect in <code>src/sophyane/sli_postgres.py</code> by wrapping schema mutations inside an isolated transaction with <code>lock_timeout = '2000ms'</code>.<br>
+                        2. Verified all 3 pytest suites with exit code <code>0</code> (duration: 0.09s).<br>
+                        3. Machine-readable evidence written to <code>.sophyane-harness-report.json</code> and promoted to Xerus persistent memory ontology.</p>
                     </div>
 
                 </div>
@@ -1073,28 +1041,31 @@ tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%
                 <!-- Slash Command Autocomplete Popover -->
                 <div class="slash-popup" id="slashPopup">
                     <div class="slash-item" onclick="pickSlashCommand('/help')">
-                        <div><span class="slash-name">/help</span> <span class="slash-desc">— Show all commands and keybindings</span></div>
+                        <div><span class="slash-name">/help</span> <span class="slash-desc">— List all Sophyane harness commands</span></div>
                     </div>
-                    <div class="slash-item" onclick="pickSlashCommand('/cost')">
-                        <div><span class="slash-name">/cost</span> <span class="slash-desc">— Display token consumption and dollar cost</span></div>
+                    <div class="slash-item" onclick="pickSlashCommand('/sli')">
+                        <div><span class="slash-name">/sli</span> <span class="slash-desc">— Inspect SLI concept ontology and learned rules</span></div>
                     </div>
-                    <div class="slash-item" onclick="pickSlashCommand('/compact')">
-                        <div><span class="slash-name">/compact</span> <span class="slash-desc">— Compact conversation history to reduce context</span></div>
+                    <div class="slash-item" onclick="pickSlashCommand('/harness')">
+                        <div><span class="slash-name">/harness</span> <span class="slash-desc">— Execute strict evidence-gated TDD repair</span></div>
+                    </div>
+                    <div class="slash-item" onclick="pickSlashCommand('/race')">
+                        <div><span class="slash-name">/race</span> <span class="slash-desc">— Run adaptive multi-provider race (Option 2)</span></div>
+                    </div>
+                    <div class="slash-item" onclick="pickSlashCommand('/evolve')">
+                        <div><span class="slash-name">/evolve</span> <span class="slash-desc">— Run candidate self-evolution against Tough100</span></div>
                     </div>
                     <div class="slash-item" onclick="pickSlashCommand('/doctor')">
-                        <div><span class="slash-name">/doctor</span> <span class="slash-desc">— Verify tools, dependencies, and environment health</span></div>
+                        <div><span class="slash-name">/doctor</span> <span class="slash-desc">— Diagnostics on Python, C++ fast-path, Postgres</span></div>
                     </div>
                     <div class="slash-item" onclick="pickSlashCommand('/diff')">
                         <div><span class="slash-name">/diff</span> <span class="slash-desc">— View working directory git status and diff</span></div>
                     </div>
-                    <div class="slash-item" onclick="pickSlashCommand('/review')">
-                        <div><span class="slash-name">/review</span> <span class="slash-desc">— Run automated code review on current changes</span></div>
+                    <div class="slash-item" onclick="pickSlashCommand('/evidence')">
+                        <div><span class="slash-name">/evidence</span> <span class="slash-desc">— View persisted JSON evidence report</span></div>
                     </div>
                     <div class="slash-item" onclick="pickSlashCommand('/clear')">
                         <div><span class="slash-name">/clear</span> <span class="slash-desc">— Clear terminal screen history</span></div>
-                    </div>
-                    <div class="slash-item" onclick="pickSlashCommand('/model')">
-                        <div><span class="slash-name">/model</span> <span class="slash-desc">— Switch active model</span></div>
                     </div>
                 </div>
 
@@ -1103,25 +1074,25 @@ tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%
                     <textarea 
                         id="cliInput" 
                         class="cli-textarea" 
-                        placeholder="Ask a question, enter instructions, or type / for commands..." 
+                        placeholder="Enter engineering task, repair instruction, or type / for harness commands..." 
                         rows="1"
                         onkeydown="handleInputKeyDown(event)"
                         oninput="handleInputChange(this)"
                     ></textarea>
                     <button class="send-btn" id="sendBtn" onclick="submitUserPrompt()" title="Submit (Enter)">
-                        <i class="fas fa-arrow-up"></i>
+                        <i class="fas fa-play"></i>
                     </button>
                 </div>
 
                 <div class="input-hint-row">
                     <div class="hint-left">
-                        <span><span class="hint-key">Enter</span> Send</span>
+                        <span><span class="hint-key">Enter</span> Run Task</span>
                         <span><span class="hint-key">Shift+Enter</span> Newline</span>
                         <span><span class="hint-key">/</span> Commands</span>
                         <span><span class="hint-key">Tab</span> Autocomplete</span>
                     </div>
                     <div class="hint-right">
-                        <span>Mode: <strong style="color: var(--accent-coral);">Auto-Approve</strong> (YOLO)</span>
+                        <span>Policy: <strong style="color: var(--accent-emerald);">Evidence-Gated Zero-Hallucination</strong></span>
                     </div>
                 </div>
 
@@ -1134,54 +1105,59 @@ tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%
             
             <div class="sidebar-tabs">
                 <button class="s-tab active" onclick="switchSidebarTab('filesTab', this)">
-                    <i class="fas fa-folder-tree"></i> Files
+                    <i class="fas fa-folder-tree"></i> Sophyane Source
                 </button>
-                <button class="s-tab" onclick="switchSidebarTab('gitTab', this)">
-                    <i class="fas fa-code-branch"></i> Changes (1)
+                <button class="s-tab" onclick="switchSidebarTab('ontologyTab', this)">
+                    <i class="fas fa-brain"></i> SLI Ontology
                 </button>
-                <button class="s-tab" onclick="switchSidebarTab('guideTab', this)">
-                    <i class="fas fa-book"></i> CLAUDE.md
+                <button class="s-tab" onclick="switchSidebarTab('reportTab', this)">
+                    <i class="fas fa-file-code"></i> Evidence JSON
                 </button>
             </div>
 
-            <!-- Tab 1: Files Explorer -->
+            <!-- Tab 1: Sophyane Source Tree -->
             <div class="sidebar-content active" id="filesTab">
                 <div class="file-tree">
                     <div class="tree-item"><i class="fas fa-folder tree-icon" style="color: #fbbf24;"></i> <span>src/sophyane/</span></div>
                     <div class="tree-item tree-indent changed" onclick="previewFile('src/sophyane/sli_postgres.py')">
-                        <i class="fas fa-file-code tree-icon" style="color: var(--accent-coral);"></i> 
+                        <i class="fas fa-file-code tree-icon" style="color: var(--accent-emerald);"></i> 
                         <span>sli_postgres.py</span> <span style="font-size: 0.65rem; color: var(--status-warn); margin-left: auto;">[M]</span>
                     </div>
-                    <div class="tree-item tree-indent" onclick="previewFile('src/sophyane/harness_policy.py')">
+                    <div class="tree-item tree-indent" onclick="previewFile('src/sophyane/sli_semantic_intelligence.py')">
                         <i class="fas fa-file-code tree-icon" style="color: var(--syntax-fn);"></i> 
-                        <span>harness_policy.py</span>
+                        <span>sli_semantic_intelligence.py</span>
                     </div>
-                    <div class="tree-item tree-indent" onclick="previewFile('src/sophyane/unified_kernel.py')">
+                    <div class="tree-item tree-indent" onclick="previewFile('src/sophyane/sli_harness_orchestrator.py')">
                         <i class="fas fa-file-code tree-icon" style="color: var(--syntax-fn);"></i> 
-                        <span>unified_kernel.py</span>
+                        <span>sli_harness_orchestrator.py</span>
+                    </div>
+                    <div class="tree-item tree-indent" onclick="previewFile('src/sophyane/unified_execution_kernel.py')">
+                        <i class="fas fa-file-code tree-icon" style="color: var(--syntax-fn);"></i> 
+                        <span>unified_execution_kernel.py</span>
+                    </div>
+                    <div class="tree-item tree-indent" onclick="previewFile('src/sophyane/harness_task_policy.py')">
+                        <i class="fas fa-file-code tree-icon" style="color: var(--syntax-fn);"></i> 
+                        <span>harness_task_policy.py</span>
                     </div>
                     <div class="tree-item"><i class="fas fa-folder tree-icon" style="color: #fbbf24;"></i> <span>tests/</span></div>
                     <div class="tree-item tree-indent" onclick="previewFile('tests/test_sli_postgres_cutover.py')">
                         <i class="fas fa-vial tree-icon" style="color: var(--syntax-str);"></i> 
                         <span>test_sli_postgres_cutover.py</span>
                     </div>
-                    <div class="tree-item" onclick="previewFile('CLAUDE.md')">
-                        <i class="fas fa-file-lines tree-icon" style="color: var(--accent-coral);"></i> 
-                        <span>CLAUDE.md</span>
-                    </div>
-                    <div class="tree-item" onclick="previewFile('package.json')">
-                        <i class="fab fa-node-js tree-icon" style="color: #22c55e;"></i> 
-                        <span>package.json</span>
+                    <div class="tree-item" onclick="previewFile('ecosystem.json')">
+                        <i class="fas fa-shield-halved tree-icon" style="color: var(--accent-purple);"></i> 
+                        <span>ecosystem.json</span>
                     </div>
                 </div>
 
                 <div style="margin-top: 10px;">
                     <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; display: flex; justify-content: space-between;">
-                        <span>File Preview: <strong id="previewFileName" style="color: var(--text-primary);">sli_postgres.py</strong></span>
+                        <span>Source Preview: <strong id="previewFileName" style="color: var(--accent-emerald);">sli_postgres.py</strong></span>
                     </div>
                     <pre class="code-preview-box" id="codePreviewBox">async def execute_cutover(self, target_schema: str) -> CutoverResult:
     async with self._pool.acquire() as conn:
         async with conn.transaction():
+            # Guarded transaction with automated rollback & invariant check
             await conn.execute("SET LOCAL lock_timeout = '2000ms';")
             await conn.execute(f"ALTER DATABASE SET SCHEMA {target_schema}")
             await self._verify_invariants(conn)
@@ -1189,76 +1165,95 @@ tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%
                 </div>
             </div>
 
-            <!-- Tab 2: Git Changes -->
-            <div class="sidebar-content" id="gitTab">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary);">Staged Changes (1 file)</span>
-                    <button class="chip" onclick="alert('Changes committed successfully.')">Commit All</button>
+            <!-- Tab 2: SLI Ontology Graph & Concepts -->
+            <div class="sidebar-content" id="ontologyTab">
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-emerald);">SLI Semantic Ontology Engine</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
+                    LLM-free deterministic concept extraction & capability routing.
                 </div>
-                <div class="tree-item changed" style="background: var(--bg-panel);">
-                    <i class="fas fa-file-pen tree-icon" style="color: var(--status-warn);"></i>
-                    <span>src/sophyane/sli_postgres.py</span>
-                    <span style="color: var(--diff-add-text); font-size: 0.75rem; margin-left: auto;">+4 -2</span>
-                </div>
-                <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin-top: 8px;">
-                    Branch <code>main</code> is up to date with <code>origin/main</code>. Clean working tree.
+                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+                    <div style="background: var(--bg-panel); padding: 8px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <div style="color: var(--accent-emerald); font-weight: 700; font-size: 0.78rem;">#1 document_shell</div>
+                        <div style="color: var(--text-secondary); font-size: 0.72rem;">Concepts: html, website, frontend, ui, browser</div>
+                    </div>
+                    <div style="background: var(--bg-panel); padding: 8px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <div style="color: var(--accent-cyan); font-weight: 700; font-size: 0.78rem;">#2 postgres_cutover_guard</div>
+                        <div style="color: var(--text-secondary); font-size: 0.72rem;">Concepts: postgres, migration, lock_timeout, invariant</div>
+                    </div>
+                    <div style="background: var(--bg-panel); padding: 8px; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <div style="color: var(--accent-purple); font-weight: 700; font-size: 0.78rem;">#3 ast_repair_loop</div>
+                        <div style="color: var(--text-secondary); font-size: 0.72rem;">Concepts: pytest, traceback, patch, repair_existing</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Tab 3: CLAUDE.md Guide -->
-            <div class="sidebar-content" id="guideTab">
-                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
-                    <h4 style="color: var(--text-primary); margin-bottom: 8px;">Project Instructions (`CLAUDE.md`)</h4>
-                    <p>• <strong>Test command:</strong> <code>pytest tests/ -v</code></p>
-                    <p>• <strong>Build command:</strong> <code>python -m build</code></p>
-                    <p>• <strong>Style rules:</strong> PEP8, strict type hints, zero unverified claims.</p>
-                    <p>• <strong>Ecosystem:</strong> `sophyane-ecosystem-v1` contract.</p>
-                </div>
+            <!-- Tab 3: Evidence JSON Report -->
+            <div class="sidebar-content" id="reportTab">
+                <div style="font-size: 0.78rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">.sophyane-harness-report.json</div>
+                <pre class="code-preview-box" style="color: #67e8f9;">{
+  "schema": "sophyane-ecosystem-v1",
+  "harness_version": "21.4.2",
+  "task": "Repair Pytest cutover regression",
+  "handled": true,
+  "kernel_ok": true,
+  "ok": true,
+  "capability": "software_repair_postgres_cutover",
+  "duration_ms": 142.6,
+  "commands": [
+    {
+      "command": "python -m pytest tests/test_sli_postgres_cutover.py -v",
+      "exit_code": 0,
+      "ok": true
+    }
+  ],
+  "evidence_persisted": true,
+  "promoted_to_sli": true
+}</pre>
             </div>
 
         </aside>
 
     </div>
 
-    <!-- Model Switcher Modal -->
-    <div class="modal-overlay" id="modelModal" onclick="closeModalOnBackdrop(event, 'modelModal')">
+    <!-- Mode Selector Modal -->
+    <div class="modal-overlay" id="modeModal" onclick="closeModalOnBackdrop(event, 'modeModal')">
         <div class="modal-card">
             <div class="modal-head">
-                <span>Select Model</span>
-                <i class="fas fa-xmark" style="cursor: pointer;" onclick="closeModal('modelModal')"></i>
+                <span>Select Sophyane Execution Policy</span>
+                <i class="fas fa-xmark" style="cursor: pointer;" onclick="closeModal('modeModal')"></i>
             </div>
             <div class="modal-body">
-                <div class="tree-item active" style="padding: 10px; border: 1px solid var(--accent-coral);" onclick="selectModel('Claude 3.7 Sonnet (Thinking)')">
-                    <i class="fas fa-brain tree-icon" style="color: var(--accent-coral);"></i>
+                <div class="tree-item active" style="padding: 10px; border: 1px solid var(--accent-emerald);" onclick="selectMode('Option 1: Evidence-Gated Fast Path (Strict TDD)')">
+                    <i class="fas fa-shield-alt tree-icon" style="color: var(--accent-emerald);"></i>
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Claude 3.7 Sonnet (Thinking)</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">Hybrid reasoning with extended thinking tokens & zero-shot coding</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Option 1: Evidence-Gated Fast Path</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">Deterministic AST code repair, sandboxed test execution & 0-exit verification</div>
                     </div>
                 </div>
-                <div class="tree-item" style="padding: 10px;" onclick="selectModel('Claude 3.5 Sonnet')">
-                    <i class="fas fa-bolt tree-icon" style="color: var(--syntax-fn);"></i>
+                <div class="tree-item" style="padding: 10px;" onclick="selectMode('Option 2: Adaptive Multi-Provider Race')">
+                    <i class="fas fa-flag-checkered tree-icon" style="color: var(--accent-cyan);"></i>
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Claude 3.5 Sonnet</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">High speed, ultra-reliable code editing & tool execution</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Option 2: Adaptive Multi-Provider Race</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">Parallel competition: Local SLI vs Cloud models (Claude, Gemini, GPT-4o, DeepSeek)</div>
                     </div>
                 </div>
-                <div class="tree-item" style="padding: 10px;" onclick="selectModel('Claude 3.5 Haiku')">
-                    <i class="fas fa-feather tree-icon" style="color: var(--syntax-str);"></i>
+                <div class="tree-item" style="padding: 10px;" onclick="selectMode('Option 3: Guarded Evolution Pipeline')">
+                    <i class="fas fa-dna tree-icon" style="color: var(--accent-purple);"></i>
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Claude 3.5 Haiku</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">Ultra lightweight & lowest latency for quick search & script execution</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Option 3: Guarded Evolution Pipeline</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">Candidate self-improvement with Tough100 automated regression gate</div>
                     </div>
                 </div>
-                <div class="tree-item" style="padding: 10px;" onclick="selectModel('Sophyane Local SLI (llama.cpp GGUF)')">
+                <div class="tree-item" style="padding: 10px;" onclick="selectMode('Option 4: Local-First GGUF (llama.cpp)')">
                     <i class="fas fa-microchip tree-icon" style="color: var(--syntax-kw);"></i>
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Sophyane Local SLI (llama.cpp GGUF)</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">100% offline local inference on edge hardware</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Option 4: Local-First GGUF (llama.cpp)</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">100% offline local inference on Android Termux, Linux, and edge hardware</div>
                     </div>
                 </div>
             </div>
             <div class="modal-foot">
-                <button class="btn-confirm" onclick="closeModal('modelModal')">Done</button>
+                <button class="btn-confirm" onclick="closeModal('modeModal')">Done</button>
             </div>
         </div>
     </div>
@@ -1267,64 +1262,99 @@ tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%
     <div class="modal-overlay" id="configModal" onclick="closeModalOnBackdrop(event, 'configModal')">
         <div class="modal-card">
             <div class="modal-head">
-                <span>Claude Code Settings</span>
+                <span>Sophyane Harness Settings</span>
                 <i class="fas fa-xmark" style="cursor: pointer;" onclick="closeModal('configModal')"></i>
             </div>
             <div class="modal-body">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Auto-Approve Safe Commands (YOLO)</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">Automatically execute bash commands without prompting</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Evidence-Gated Policy Gate</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">Block any claim of success without verified exit code 0 evidence</div>
                     </div>
-                    <input type="checkbox" checked style="accent-color: var(--accent-coral); transform: scale(1.3);">
+                    <input type="checkbox" checked style="accent-color: var(--accent-emerald); transform: scale(1.3);">
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Extended Thinking Budget</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">Max thinking tokens for deep reasoning</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">SLI Ontology Auto-Promotion</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">Promote passing patches to Xerus persistent disk memory</div>
                     </div>
-                    <span style="font-weight: 700; color: var(--accent-coral);">8,000 tokens</span>
+                    <input type="checkbox" checked style="accent-color: var(--accent-emerald); transform: scale(1.3);">
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <div style="font-weight: 700; color: var(--text-primary);">Compact Context Window</div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted);">Auto-prune old command logs to conserve token limits</div>
+                        <div style="font-weight: 700; color: var(--text-primary);">Nifdu Visual UI Verification</div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted);">Headless browser layout diffing & zero-overflow assertions</div>
                     </div>
-                    <input type="checkbox" checked style="accent-color: var(--accent-coral); transform: scale(1.3);">
+                    <input type="checkbox" checked style="accent-color: var(--accent-emerald); transform: scale(1.3);">
                 </div>
             </div>
             <div class="modal-foot">
-                <button class="btn-confirm" onclick="closeModal('configModal')">Save Settings</button>
+                <button class="btn-confirm" onclick="closeModal('configModal')">Save Configuration</button>
             </div>
         </div>
     </div>
 
     <!-- Script Logic -->
     <script>
-        let sessionStats = {
-            tokens: 14200,
-            cost: 0.042
-        };
-
-        const FILE_PREVIEWS = {
+        const SOPHYANE_SOURCES = {
             'src/sophyane/sli_postgres.py': `async def execute_cutover(self, target_schema: str) -> CutoverResult:
     async with self._pool.acquire() as conn:
         async with conn.transaction():
+            # Guarded transaction with automated rollback & invariant check
             await conn.execute("SET LOCAL lock_timeout = '2000ms';")
             await conn.execute(f"ALTER DATABASE SET SCHEMA {target_schema}")
             await self._verify_invariants(conn)
-            return CutoverResult(success=True, isolated=True)`,
-            
-            'src/sophyane/harness_policy.py': `def classify_task_intent(prompt: str) -> IntentClassification:
-    prompt_norm = prompt.strip().lower()
-    is_repair = any(k in prompt_norm for k in ("fix", "repair", "pytest", "regression"))
-    return IntentClassification(is_repair=is_repair, budget_ms=10000)`,
+            return CutoverResult(success=True, isolated=True)
 
-            'src/sophyane/unified_kernel.py': `class UnifiedExecutionKernel:
-    async def execute(self, task: TaskSpec) -> ExecutionEvidence:
-        evidence = await self.run_sandboxed_tools(task)
-        assert evidence.exit_code == 0, "Execution failed"
-        return evidence`,
+async def _verify_invariants(self, conn) -> None:
+    count = await conn.fetchval("SELECT count(*) FROM sophyane_schema_guard WHERE active = true")
+    if count == 0:
+        raise SchemaCutoverSafetyError("Invariant validation failed")`,
+
+            'src/sophyane/sli_semantic_intelligence.py': `"""Deterministic semantic intelligence for SLI code memory."""
+from __future__ import annotations
+import math, re
+from typing import Any
+
+CAPABILITY_ONTOLOGY: dict[str, dict[str, Any]] = {
+    "document_shell": {
+        "concepts": {"html", "website", "webpage", "web app", "browser", "frontend", "ui"},
+        "required_invariants": ["viewport_meta", "utf8_charset"],
+    },
+    "postgres_cutover_guard": {
+        "concepts": {"postgres", "postgresql", "cutover", "database", "migration", "pool"},
+        "required_invariants": ["transaction_isolation", "lock_timeout"],
+    }
+}`,
+
+            'src/sophyane/sli_harness_orchestrator.py': `"""Evidence-gated harness orchestration for Sophyane Option 1."""
+from __future__ import annotations
+from sophyane.harness_task_policy import classify
+from sophyane.unified_execution_kernel import execute_request
+
+def is_harness_execution_request(message: str) -> bool:
+    normalized = " ".join(str(message or "").lower().split())
+    repair_signals = ("pytest", "test suite", "stack trace", "traceback", "repair", "fix", "patch")
+    return sum(1 for term in repair_signals if term in normalized) >= 1`,
+
+            'src/sophyane/unified_execution_kernel.py': `"""Unified capability execution kernel for Sophyane."""
+from __future__ import annotations
+from dataclasses import dataclass, field
+from typing import Any
+
+@dataclass(frozen=True)
+class ExecutionResult:
+    handled: bool
+    ok: bool
+    capability: str
+    output: str
+    evidence: dict[str, Any]
+    started_at: float
+    finished_at: float`,
+
+            'src/sophyane/harness_task_policy.py': `"""Routing policy for compound agentic software tasks."""
+EXECUTION_VERBS = {"implement", "build", "create", "fix", "repair", "refactor", "test", "verify", "audit"}
+SOFTWARE_TERMS = {"repository", "repo", "project", "code", "pytest", "fastapi", "dockerfile", "postgres"}`,
 
             'tests/test_sli_postgres_cutover.py': `import pytest
 from sophyane.sli_postgres import PostgresCutover
@@ -1332,20 +1362,21 @@ from sophyane.sli_postgres import PostgresCutover
 @pytest.mark.asyncio
 async def test_cutover_guard():
     p = PostgresCutover()
-    res = await p.execute_cutover("target_v2")
+    res = await p.execute_cutover("sophyane_v2")
     assert res.success is True
     assert res.isolated is True`,
 
-            'CLAUDE.md': `# CLAUDE.md - Workspace Instructions
-- **Project:** Sophyane / Shmry Core Engineering Engine
-- **Test:** pytest tests/ -v
-- **Philosophy:** Zero-hallucination, evidence-gated verification.`,
-
-            'package.json': `{
-  "name": "claude-code-web",
-  "version": "1.0.8",
-  "description": "Terminal AI coding assistant web interface",
-  "main": "index.html"
+            'ecosystem.json': `{
+  "schema": "sophyane-ecosystem-v1",
+  "name": "shmry-software-inc",
+  "components": {
+    "sophyane": "multi-option-software-engineering-harness",
+    "shmry": "cloud-infrastructure-storage-email",
+    "xerus": "disk-first-persistent-memory-and-retrieval",
+    "nifdu": "browser-visual-verification-repair-harness",
+    "vps": "native-tls-sni-webserver-and-proxy",
+    "neuron": "biological-intelligence-engine"
+  }
 }`
         };
 
@@ -1366,7 +1397,7 @@ async def test_cutover_guard():
         function previewFile(path) {
             const fileName = path.split('/').pop();
             document.getElementById('previewFileName').innerText = fileName;
-            document.getElementById('codePreviewBox').innerText = FILE_PREVIEWS[path] || '// File content loaded from disk.';
+            document.getElementById('codePreviewBox').innerText = SOPHYANE_SOURCES[path] || '// Source loaded from repository.';
             
             document.querySelectorAll('.tree-item').forEach(item => item.classList.remove('active'));
             if (event && event.currentTarget) {
@@ -1377,7 +1408,7 @@ async def test_cutover_guard():
         function toggleThinking(header) {
             const card = header.closest('.thinking-card');
             card.classList.toggle('collapsed');
-            const icon = header.querySelector('.fa-chevron-down');
+            const icon = header.querySelector('.fa-chevron-down') || header.querySelector('.fa-chevron-right');
             if (card.classList.contains('collapsed')) {
                 icon.className = 'fas fa-chevron-right';
             } else {
@@ -1399,10 +1430,10 @@ async def test_cutover_guard():
             }
         }
 
-        function selectModel(modelName) {
-            document.getElementById('activeModelLabel').innerText = modelName;
-            closeModal('modelModal');
-            addAssistantMessage(`Switched active model to **${modelName}**.`);
+        function selectMode(modeName) {
+            document.getElementById('activeModeLabel').innerText = modeName;
+            closeModal('modeModal');
+            addAssistantMessage(`Switched Sophyane execution policy to **${modeName}**.`);
         }
 
         function handleInputChange(textarea) {
@@ -1458,7 +1489,7 @@ async def test_cutover_guard():
             if (val.startsWith('/')) {
                 handleSlashExecution(val);
             } else {
-                simulateClaudeAgentExecution(val);
+                simulateSophyaneHarnessExecution(val);
             }
         }
 
@@ -1489,60 +1520,75 @@ async def test_cutover_guard():
 
             if (c === '/help') {
                 addAssistantMessage(`
-**Claude Code Available Commands:**
-• \`/help\` — Display command reference and shortcuts
-• \`/cost\` — View session token count and cost breakdown
-• \`/compact\` — Compact context window to extend session
-• \`/doctor\` — Check environment health and CLI tools
-• \`/diff\` — View current working tree git diff
-• \`/review\` — Review staged/unstaged code changes
+**Sophyane 21.4.2 Harness Command Reference:**
+• \`/harness\` — Run evidence-gated software repair task
+• \`/sli\` — Display SLI semantic ontology graph and concept weights
+• \`/race\` — Launch adaptive multi-provider race (Option 2)
+• \`/evolve\` — Run candidate self-evolution pipeline against Tough100
+• \`/doctor\` — Diagnostic report (Python, Native fast-paths, Postgres, Nifdu)
+• \`/diff\` — View current working tree AST diffs
+• \`/evidence\` — Inspect persisted \`.sophyane-harness-report.json\`
 • \`/clear\` — Clear terminal feed history
-• \`/model\` — Switch LLM engine (Sonnet, Haiku, Local GGUF)
-• \`/config\` — Open configuration settings
                 `);
-            } else if (c === '/cost') {
+            } else if (c === '/sli') {
                 addAssistantMessage(`
-**Session Token & Cost Analytics:**
-• **Input Tokens:** ${(sessionStats.tokens * 0.75).toFixed(0)}
-• **Output Tokens:** ${(sessionStats.tokens * 0.25).toFixed(0)}
-• **Extended Thinking Tokens:** 3,420
-• **Total Estimated Cost:** \`$${sessionStats.cost.toFixed(3)}\`
-• **Cache Read/Write Hit Rate:** 94.2%
-                `);
-            } else if (c === '/compact') {
-                const oldTokens = sessionStats.tokens;
-                sessionStats.tokens = Math.round(sessionStats.tokens * 0.35);
-                updateStats();
-                addAssistantMessage(`
-<i class="fas fa-compress" style="color: var(--syntax-str);"></i> **Context Compacted:** Reduced context from **${(oldTokens/1000).toFixed(1)}k** to **${(sessionStats.tokens/1000).toFixed(1)}k** tokens (65% saved).
+**SLI Semantic Ontology Matrix (v21.4.2):**
+• \`document_shell\` -> \`[html, website, frontend, ui, browser]\` (Coverage: 100%)
+• \`postgres_cutover_guard\` -> \`[postgres, cutover, migration, lock_timeout]\` (Weight: 0.994)
+• \`ast_repair_loop\` -> \`[pytest, traceback, patch, repair_existing]\` (Weight: 1.000)
+• \`nifdu_layout_diff\` -> \`[screenshot, visual_proof, zero_overflow]\` (Weight: 0.952)
+• **Memory Store:** \`sophyane-ecosystem-v1\` on Xerus Disk
                 `);
             } else if (c === '/doctor') {
                 addAssistantMessage(`
-**Claude Code Doctor Report:**
-✓ Node.js v20.11.0 (Installed)
-✓ Python 3.11.8 (Installed, pytest available)
-✓ Git v2.43.0 (Working directory clean)
-✓ LLM API Endpoint: Connected (Latency: 118ms)
-✓ Contract: \`sophyane-ecosystem-v1\` Active
-✓ Permissions: Auto-approve safe bash commands
+**Sophyane 21.4.2 Environment Health Check:**
+✓ Sophyane Python Runtime: v21.4.2 Verified
+✓ C++ Native Fast-Path Hook: Enabled & Active
+✓ PostgreSQL Subsystem: Active & Schema-Guarded
+✓ Nifdu Visual Verifier: Operational (Headless Chromium)
+✓ Tough100 Benchmark Regression Gate: 94.8% Pass
+✓ Contract \`sophyane-ecosystem-v1\`: Connected to Shmry, Xerus, VPS, Neuron, Nifdu
                 `);
-            } else if (c === '/diff') {
+            } else if (c === '/race') {
+                addAssistantMessage(`
+**Adaptive Multi-Provider Race (Option 2):**
+🏁 **Candidates Competing:**
+1. **Local SLI Kernel:** Completed in **118ms** (Pass: 100%, Cost: $0.00) 🏆
+2. **Claude 3.7 Sonnet:** Completed in **1.84s** (Pass: 100%, Cost: $0.012)
+3. **Gemini 2.5 Pro:** Completed in **1.42s** (Pass: 100%, Cost: $0.008)
+4. **DeepSeek R1:** Completed in **2.61s** (Pass: 92%, Cost: $0.004)
+Winner promoted: **Local SLI Kernel** (Zero latency, deterministic validation).
+                `);
+            } else if (c === '/evolve') {
+                addAssistantMessage(`
+**Sophyane Candidate Evolution Pipeline:**
+• Benchmarking active harness candidates against Tough100 evaluation suite...
+• **Baseline Score:** 94.8% (100 / 100 tasks passed)
+• **Candidate Mutation:** AST line-level boundary repair
+• **Regression Check:** 0 regressions detected. Candidate promoted to active release!
+                `);
+            } else if (c === '/evidence') {
                 const diffHtml = `
 <div class="tool-card" style="margin-top: 6px;">
     <div class="tool-header">
         <div class="tool-name-group">
-            <i class="fas fa-code-commit tool-icon"></i>
-            <span>git diff</span>
-            <span class="tool-path">src/sophyane/sli_postgres.py</span>
+            <i class="fas fa-file-code tool-icon"></i>
+            <span>.sophyane-harness-report.json</span>
         </div>
-        <span class="tool-status-badge status-success">1 file changed</span>
+        <span class="tool-status-badge status-success">Verified Evidence</span>
     </div>
     <div class="tool-content">
-        <div class="diff-block">
-            <div class="diff-line del">-  await conn.execute(f"ALTER DATABASE SET SCHEMA {target_schema}")</div>
-            <div class="diff-line add">+  async with conn.transaction():</div>
-            <div class="diff-line add">+      await conn.execute("SET LOCAL lock_timeout = '2000ms';")</div>
-        </div>
+<pre style="color: #67e8f9; margin: 0;">{
+  "schema": "sophyane-ecosystem-v1",
+  "harness_version": "21.4.2",
+  "handled": true,
+  "ok": true,
+  "commands_executed": 2,
+  "exit_codes": [0, 0],
+  "pytest_assertions_passed": 3,
+  "evidence_persisted": true,
+  "promoted_to_sli": true
+}</pre>
     </div>
 </div>`;
                 const d = document.createElement('div');
@@ -1551,50 +1597,47 @@ async def test_cutover_guard():
                 feed.scrollTop = feed.scrollHeight;
             } else if (c === '/clear') {
                 feed.innerHTML = '';
-                addAssistantMessage('Screen cleared. Ready for new instructions.');
-            } else if (c === '/model') {
-                openModal('modelModal');
+                addAssistantMessage('Sophyane harness screen cleared. Ready for instructions.');
             } else {
-                addAssistantMessage(`Unknown command \`${cmd}\`. Type \`/help\` to see all supported slash commands.`);
+                addAssistantMessage(`Unknown harness command \`${cmd}\`. Type \`/help\` to inspect all available options.`);
             }
         }
 
-        async function simulateClaudeAgentExecution(userText) {
+        async function simulateSophyaneHarnessExecution(userText) {
             const feed = document.getElementById('terminalFeed');
             const turnGroup = document.createElement('div');
             turnGroup.className = 'turn-group';
             feed.appendChild(turnGroup);
 
-            // 1. Thinking Block
+            // 1. SLI Thinking
             const thinkingCard = document.createElement('div');
             thinkingCard.className = 'thinking-card';
             thinkingCard.innerHTML = `
                 <div class="thinking-header" onclick="toggleThinking(this)">
                     <div class="thinking-header-left">
-                        <i class="fas fa-lightbulb" style="color: var(--syntax-kw);"></i>
-                        <span>Thinking Process (Claude 3.7 Sonnet · Analyzing...)</span>
+                        <i class="fas fa-brain" style="color: var(--accent-emerald);"></i>
+                        <span>SLI Intent Decomposition & Capability Plan (Sophyane Kernel · Active)</span>
                     </div>
                     <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
                 </div>
-                <div class="thinking-body">1. Instruction received: "${escapeHtml(userText)}".
-2. Scanning workspace files and AST structures for relevant symbols.
-3. Formulating patch with minimal blast radius and zero side-effects.
-4. Invoking test runner to verify complete correctness.</div>
+                <div class="thinking-body">[1] Incoming objective: "${escapeHtml(userText)}".
+[2] Routing through \`sophyane.harness_task_policy.classify\`: Matches software repair invariants.
+[3] Invoking unified execution kernel with deterministic AST patcher and sandboxed verification tests.</div>
             `;
             turnGroup.appendChild(thinkingCard);
             feed.scrollTop = feed.scrollHeight;
 
-            await new Promise(r => setTimeout(r, 600));
+            await new Promise(r => setTimeout(r, 500));
 
-            // 2. Tool Call: Grep / View
+            // 2. Tool Call: Grep
             const tool1 = document.createElement('div');
             tool1.className = 'tool-card';
             tool1.innerHTML = `
                 <div class="tool-header">
                     <div class="tool-name-group">
                         <i class="fas fa-magnifying-glass tool-icon"></i>
-                        <span>Grep</span>
-                        <span class="tool-path">pattern: "execute_cutover" in src/</span>
+                        <span>GrepSearch</span>
+                        <span class="tool-path">pattern: "execute_cutover" in src/sophyane/</span>
                     </div>
                     <span class="tool-status-badge status-success"><i class="fas fa-check"></i> 1 match</span>
                 </div>
@@ -1603,7 +1646,7 @@ async def test_cutover_guard():
             turnGroup.appendChild(tool1);
             feed.scrollTop = feed.scrollHeight;
 
-            await new Promise(r => setTimeout(r, 700));
+            await new Promise(r => setTimeout(r, 600));
 
             // 3. Tool Call: EditFile
             const tool2 = document.createElement('div');
@@ -1612,32 +1655,33 @@ async def test_cutover_guard():
                 <div class="tool-header">
                     <div class="tool-name-group">
                         <i class="fas fa-file-pen tool-icon"></i>
-                        <span>EditFile</span>
+                        <span>EditFile (AST Patch)</span>
                         <span class="tool-path">src/sophyane/sli_postgres.py</span>
                     </div>
                     <span class="tool-status-badge status-success"><i class="fas fa-check"></i> Applied</span>
                 </div>
                 <div class="tool-content">
                     <div class="diff-block">
-                        <div class="diff-line add">+     # Auto-injected guarded execution patch</div>
-                        <div class="diff-line add">+     await self.enforce_guard_invariants(target_schema)</div>
+                        <div class="diff-line add">+         # Guarded transaction with automated rollback & invariant check</div>
+                        <div class="diff-line add">+         await conn.execute("SET LOCAL lock_timeout = '2000ms';")</div>
+                        <div class="diff-line add">+         await self._verify_invariants(conn)</div>
                     </div>
                 </div>
             `;
             turnGroup.appendChild(tool2);
             feed.scrollTop = feed.scrollHeight;
 
-            await new Promise(r => setTimeout(r, 600));
+            await new Promise(r => setTimeout(r, 500));
 
-            // 4. Tool Call: Bash Test
+            // 4. Tool Call: Bash Test Verification
             const tool3 = document.createElement('div');
             tool3.className = 'tool-card';
             tool3.innerHTML = `
                 <div class="tool-header">
                     <div class="tool-name-group">
                         <i class="fas fa-terminal tool-icon"></i>
-                        <span>Bash</span>
-                        <span class="tool-path">pytest tests/ -v</span>
+                        <span>Bash (Sandboxed Verification)</span>
+                        <span class="tool-path">python -m pytest tests/ -v</span>
                     </div>
                     <span class="tool-status-badge status-success"><i class="fas fa-check"></i> Exit 0</span>
                 </div>
@@ -1648,7 +1692,7 @@ tests/test_sli_postgres_cutover.py::test_cutover_guard PASSED            [ 33%]
 tests/test_sli_postgres_cutover.py::test_rollback_isolation PASSED       [ 66%]
 tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%]
 
-============================== 3 passed in 0.11s ===============================
+============================== 3 passed in 0.08s ===============================
 [Exit code: 0]</div>
             `;
             turnGroup.appendChild(tool3);
@@ -1658,22 +1702,12 @@ tests/test_sli_postgres_cutover.py::test_connection_pool_resilience PASSED [100%
             const assist = document.createElement('div');
             assist.className = 'assistant-msg';
             assist.innerHTML = `
-                <p>Task completed successfully. I investigated the workspace, synthesized the necessary modifications with automated rollback guards, and validated the result against the test suite.</p>
-                <p>All verification tests passed with exit code <code>0</code>.</p>
+                <p>Task executed through Sophyane Evidence-Gated Harness. Invariants verified, AST patches applied, and 100% test assertions passed (exit code <code>0</code>).</p>
+                <p>Evidence persisted to <code>.sophyane-harness-report.json</code> and promoted to Xerus persistent ontology.</p>
             `;
             turnGroup.appendChild(assist);
 
-            // Update stats
-            sessionStats.tokens += 1840;
-            sessionStats.cost += 0.006;
-            updateStats();
-
             feed.scrollTop = feed.scrollHeight;
-        }
-
-        function updateStats() {
-            document.getElementById('tokenCount').innerText = (sessionStats.tokens / 1000).toFixed(1) + 'k';
-            document.getElementById('costTotal').innerText = '$' + sessionStats.cost.toFixed(3);
         }
 
         function escapeHtml(str) {
