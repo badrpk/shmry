@@ -2,86 +2,18 @@
   "version": 2,
   "builds": [
     {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "website/shmry-website.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "website/downloads.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "website/benchmarks.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "website/architecture.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "website/status.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "products/**/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "admin-device-manager.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "master-dashboard.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/website/shmry-website.html"
-    },
-    {
-      "src": "/downloads",
-      "dest": "/website/downloads.html"
-    },
-    {
-      "src": "/benchmarks",
-      "dest": "/website/benchmarks.html"
-    },
-    {
-      "src": "/architecture",
-      "dest": "/website/architecture.html"
-    },
-    {
-      "src": "/status",
-      "dest": "/website/status.html"
-    },
-    {
-      "src": "/harness",
-      "dest": "/products/sophyane-harness/index.html"
-    },
-    {
-      "src": "/sophyane",
-      "dest": "/products/sophyane-harness/index.html"
-    },
-    {
-      "src": "/products",
-      "dest": "/products/index.html"
-    },
-    {
-      "src": "/products/(.*)",
-      "dest": "/products/$1"
-    },
-    {
-      "src": "/admin",
-      "dest": "/admin-device-manager.html"
-    },
-    {
-      "src": "/master",
-      "dest": "/master-dashboard.html"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
   ]
 }
